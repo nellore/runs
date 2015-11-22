@@ -11,7 +11,7 @@ preprocess job flow, and the other for Rail's align job flow.
 
 We ran
 
-python gen.py --s3-bucket s3://rail-dbgap --region us-east-1
+python gen.py --s3-bucket s3://dbgap-stack-361204003210 --region us-east-1
     --c3-2xlarge-bid-price 0.25 --c3-8xlarge-bid-price 1.20
     --dbgap-key /Users/eterna/gtex/prj_8716.ngc
 
@@ -23,6 +23,7 @@ import random
 import sys
 import os
 from itertools import cycle
+import re
 
 if __name__ == '__main__':
     import argparse
@@ -84,7 +85,9 @@ if __name__ == '__main__':
                     ['dbgap:' + tokens[0], '0', 
                      '_'.join([tokens[0],
                                 tokens[36],
-                                tokens[42].replace(' - ', '.')])]
+                                re.sub('[^a-zA-Z\d:]+', '.',
+                                            tokens[42].lower().strip()
+                                            ).strip('.')])]
                 ))
     random.seed(args.seed)
     random.shuffle(manifest_lines)

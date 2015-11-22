@@ -1,489 +1,489 @@
-dbgap:SRR1322711	0	SRR1322711_male_Thyroid
-dbgap:SRR1351931	0	SRR1351931_male_Heart.Left Ventricle
-dbgap:SRR1405413	0	SRR1405413_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1446092	0	SRR1446092_male_Brain.Hypothalamus
-dbgap:SRR1102780	0	SRR1102780_female_Ovary
-dbgap:SRR1480221	0	SRR1480221_female_Nerve.Tibial
-dbgap:SRR1395951	0	SRR1395951_female_Brain.Amygdala
-dbgap:SRR1459211	0	SRR1459211_female_Brain.Substantia nigra
-dbgap:SRR1429678	0	SRR1429678_male_Adipose.Subcutaneous
-dbgap:SRR1401252	0	SRR1401252_female_Adipose.Visceral (Omentum)
-dbgap:SRR2135332	0	SRR2135332_female_Breast.Mammary Tissue
-dbgap:SRR2135323	0	SRR2135323_female_Stomach
-dbgap:SRR1474863	0	SRR1474863_male_Whole Blood
-dbgap:SRR1395975	0	SRR1395975_male_Nerve.Tibial
-dbgap:SRR1311958	0	SRR1311958_male_Pituitary
-dbgap:SRR663874	0	SRR663874_male_Muscle.Skeletal
-dbgap:SRR1486538	0	SRR1486538_female_Adipose.Visceral (Omentum)
-dbgap:SRR659995	0	SRR659995_female_Cells.Leukemia cell line (CML)
-dbgap:SRR1404555	0	SRR1404555_male_Artery.Coronary
-dbgap:SRR1105130	0	SRR1105130_female_Uterus
-dbgap:SRR1429603	0	SRR1429603_male_Adipose.Visceral (Omentum)
-dbgap:SRR1466490	0	SRR1466490_female_Stomach
-dbgap:SRR1090407	0	SRR1090407_male_Adipose.Subcutaneous
-dbgap:SRR1083408	0	SRR1083408_male_Stomach
-dbgap:SRR1443507	0	SRR1443507_female_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1444138	0	SRR1444138_male_Adipose.Subcutaneous
-dbgap:SRR1366519	0	SRR1366519_male_Heart.Atrial Appendage
-dbgap:SRR2135330	0	SRR2135330_female_Uterus
-dbgap:SRR1348951	0	SRR1348951_male_Whole Blood
-dbgap:SRR1346861	0	SRR1346861_female_Breast.Mammary Tissue
-dbgap:SRR1374141	0	SRR1374141_female_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1457619	0	SRR1457619_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1353199	0	SRR1353199_male_Adipose.Subcutaneous
-dbgap:SRR1386753	0	SRR1386753_male_Colon.Sigmoid
-dbgap:SRR1325401	0	SRR1325401_male_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1095261	0	SRR1095261_female_Uterus
-dbgap:SRR808566	0	SRR808566_male_Adipose.Visceral (Omentum)
-dbgap:SRR1325182	0	SRR1325182_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR1370818	0	SRR1370818_male_Esophagus.Mucosa
-dbgap:SRR1081910	0	SRR1081910_male_Artery.Aorta
-dbgap:SRR1319793	0	SRR1319793_female_Ovary
-dbgap:SRR1345692	0	SRR1345692_female_Esophagus.Muscularis
-dbgap:SRR1070036	0	SRR1070036_male_Esophagus.Mucosa
-dbgap:SRR1418795	0	SRR1418795_male_Breast.Mammary Tissue
-dbgap:SRR604146	0	SRR604146_male_Brain.Cerebellum
-dbgap:SRR1479845	0	SRR1479845_male_Whole Blood
-dbgap:SRR1456818	0	SRR1456818_male_Breast.Mammary Tissue
-dbgap:SRR1074239	0	SRR1074239_female_Colon.Transverse
-dbgap:SRR1329947	0	SRR1329947_male_Esophagus.Mucosa
-dbgap:SRR1392121	0	SRR1392121_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR612178	0	SRR612178_female_Nerve.Tibial
-dbgap:SRR1500342	0	SRR1500342_male_Adipose.Visceral (Omentum)
-dbgap:SRR612863	0	SRR612863_female_Adipose.Subcutaneous
-dbgap:SRR1376640	0	SRR1376640_male_Artery.Tibial
-dbgap:SRR1355262	0	SRR1355262_male_Brain.Caudate (basal ganglia)
-dbgap:SRR1390094	0	SRR1390094_male_Prostate
-dbgap:SRR1431552	0	SRR1431552_male_Thyroid
-dbgap:SRR1399335	0	SRR1399335_female_Adrenal Gland
-dbgap:SRR1395788	0	SRR1395788_female_Colon.Transverse
-dbgap:SRR1363742	0	SRR1363742_male_Whole Blood
-dbgap:SRR1361174	0	SRR1361174_female_Adipose.Subcutaneous
-dbgap:SRR1318426	0	SRR1318426_male_Brain.Anterior cingulate cortex (BA24)
-dbgap:SRR1335651	0	SRR1335651_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1340260	0	SRR1340260_male_Minor Salivary Gland
-dbgap:SRR627439	0	SRR627439_female_Muscle.Skeletal
-dbgap:SRR812625	0	SRR812625_female_Artery.Tibial
-dbgap:SRR1354532	0	SRR1354532_male_Stomach
-dbgap:SRR810105	0	SRR810105_female_Uterus
-dbgap:SRR1418412	0	SRR1418412_female_Esophagus.Mucosa
-dbgap:SRR1078417	0	SRR1078417_male_Cells.Transformed fibroblasts
-dbgap:SRR663161	0	SRR663161_male_Whole Blood
-dbgap:SRR615731	0	SRR615731_female_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1396166	0	SRR1396166_female_Artery.Coronary
-dbgap:SRR1500323	0	SRR1500323_female_Muscle.Skeletal
-dbgap:SRR1360420	0	SRR1360420_male_Artery.Coronary
-dbgap:SRR1486475	0	SRR1486475_male_Brain.Anterior cingulate cortex (BA24)
-dbgap:SRR813584	0	SRR813584_male_Adipose.Visceral (Omentum)
-dbgap:SRR613378	0	SRR613378_male_Artery.Tibial
-dbgap:SRR1389886	0	SRR1389886_male_Adrenal Gland
-dbgap:SRR1468403	0	SRR1468403_male_Brain.Spinal cord (cervical c-1)
-dbgap:SRR654898	0	SRR654898_female_Adipose.Subcutaneous
-dbgap:SRR1452803	0	SRR1452803_male_Adrenal Gland
-dbgap:SRR1329761	0	SRR1329761_female_Brain.Caudate (basal ganglia)
-dbgap:SRR662138	0	SRR662138_male_Brain.Substantia nigra
-dbgap:SRR1400078	0	SRR1400078_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1469839	0	SRR1469839_male_Esophagus.Mucosa
-dbgap:SRR655613	0	SRR655613_female_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1327811	0	SRR1327811_male_Brain.Cerebellum
-dbgap:SRR1474975	0	SRR1474975_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR603566	0	SRR603566_male_Whole Blood
-dbgap:SRR1323512	0	SRR1323512_female_Heart.Atrial Appendage
-dbgap:SRR807949	0	SRR807949_male_Pituitary
-dbgap:SRR1382912	0	SRR1382912_male_Nerve.Tibial
-dbgap:SRR1442966	0	SRR1442966_female_Small Intestine.Terminal Ileum
-dbgap:SRR1459190	0	SRR1459190_male_Adipose.Subcutaneous
-dbgap:SRR1456754	0	SRR1456754_male_Pituitary
-dbgap:SRR661818	0	SRR661818_male_Brain.Amygdala
-dbgap:SRR601755	0	SRR601755_female_Brain.Anterior cingulate cortex (BA24)
-dbgap:SRR1323914	0	SRR1323914_male_Thyroid
-dbgap:SRR1353994	0	SRR1353994_female_Breast.Mammary Tissue
-dbgap:SRR1321165	0	SRR1321165_male_Artery.Aorta
-dbgap:SRR1394190	0	SRR1394190_male_Muscle.Skeletal
-dbgap:SRR1315041	0	SRR1315041_female_Artery.Tibial
-dbgap:SRR662257	0	SRR662257_female_Lung
-dbgap:SRR1402172	0	SRR1402172_female_Muscle.Skeletal
-dbgap:SRR1347667	0	SRR1347667_female_Heart.Left Ventricle
-dbgap:SRR1085874	0	SRR1085874_male_Cells.Transformed fibroblasts
-dbgap:SRR1464535	0	SRR1464535_female_Heart.Atrial Appendage
-dbgap:SRR1475633	0	SRR1475633_male_Stomach
-dbgap:SRR2135336	0	SRR2135336_male_Brain.Substantia nigra
-dbgap:SRR1318046	0	SRR1318046_male_Nerve.Tibial
-dbgap:SRR1309578	0	SRR1309578_male_Thyroid
-dbgap:SRR1324025	0	SRR1324025_male_Adipose.Subcutaneous
-dbgap:SRR821690	0	SRR821690_male_Brain.Hippocampus
-dbgap:SRR1456354	0	SRR1456354_female_Vagina
-dbgap:SRR2166787	0	SRR2166787_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1365938	0	SRR1365938_female_Lung
-dbgap:SRR1379495	0	SRR1379495_female_Adipose.Subcutaneous
-dbgap:SRR598589	0	SRR598589_male_Heart.Left Ventricle
-dbgap:SRR1316367	0	SRR1316367_female_Adipose.Subcutaneous
-dbgap:SRR1458619	0	SRR1458619_male_Testis
-dbgap:SRR1409263	0	SRR1409263_male_Muscle.Skeletal
-dbgap:SRR1486174	0	SRR1486174_female_Heart.Atrial Appendage
-dbgap:SRR1326579	0	SRR1326579_male_Adipose.Subcutaneous
-dbgap:SRR1500216	0	SRR1500216_male_Adipose.Subcutaneous
-dbgap:SRR1364056	0	SRR1364056_male_Esophagus.Mucosa
-dbgap:SRR2166064	0	SRR2166064_female_Muscle.Skeletal
-dbgap:SRR1099881	0	SRR1099881_female_Small Intestine.Terminal Ileum
-dbgap:SRR1385101	0	SRR1385101_male_Muscle.Skeletal
-dbgap:SRR1312266	0	SRR1312266_female_Liver
-dbgap:SRR1349433	0	SRR1349433_female_Heart.Atrial Appendage
-dbgap:SRR614323	0	SRR614323_male_Brain.Cerebellar Hemisphere
-dbgap:SRR819210	0	SRR819210_male_Whole Blood
-dbgap:SRR661349	0	SRR661349_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1413392	0	SRR1413392_male_Breast.Mammary Tissue
-dbgap:SRR1083678	0	SRR1083678_male_Colon.Sigmoid
-dbgap:SRR1338812	0	SRR1338812_male_Cells.EBV-transformed lymphocytes
-dbgap:SRR665334	0	SRR665334_female_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1402051	0	SRR1402051_male_Adrenal Gland
-dbgap:SRR1334919	0	SRR1334919_female_Heart.Left Ventricle
-dbgap:SRR627459	0	SRR627459_female_Lung
-dbgap:SRR1331289	0	SRR1331289_male_Brain.Caudate (basal ganglia)
-dbgap:SRR662414	0	SRR662414_male_Nerve.Tibial
-dbgap:SRR1338346	0	SRR1338346_male_Artery.Coronary
-dbgap:SRR1441245	0	SRR1441245_female_Esophagus.Muscularis
-dbgap:SRR1384163	0	SRR1384163_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR1352554	0	SRR1352554_female_Brain.Amygdala
-dbgap:SRR1447986	0	SRR1447986_female_Brain.Cerebellar Hemisphere
-dbgap:SRR1417422	0	SRR1417422_male_Breast.Mammary Tissue
-dbgap:SRR1436804	0	SRR1436804_male_Artery.Aorta
-dbgap:SRR813043	0	SRR813043_male_Lung
-dbgap:SRR1431104	0	SRR1431104_female_Uterus
-dbgap:SRR1471178	0	SRR1471178_male_Prostate
-dbgap:SRR1439719	0	SRR1439719_male_Lung
-dbgap:SRR1080415	0	SRR1080415_female_Heart.Left Ventricle
-dbgap:SRR1362200	0	SRR1362200_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1474374	0	SRR1474374_female_Esophagus.Gastroesophageal Junction
-dbgap:SRR1397627	0	SRR1397627_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1315165	0	SRR1315165_male_Adipose.Visceral (Omentum)
-dbgap:SRR1412969	0	SRR1412969_male_Liver
-dbgap:SRR1457015	0	SRR1457015_male_Nerve.Tibial
-dbgap:SRR1081789	0	SRR1081789_male_Prostate
-dbgap:SRR1355578	0	SRR1355578_male_Lung
-dbgap:SRR1332816	0	SRR1332816_female_Artery.Aorta
-dbgap:SRR1355635	0	SRR1355635_male_Brain.Hypothalamus
-dbgap:SRR600632	0	SRR600632_female_Lung
-dbgap:SRR2135362	0	SRR2135362_male_Esophagus.Mucosa
-dbgap:SRR659971	0	SRR659971_female_Whole Blood
-dbgap:SRR808658	0	SRR808658_female_Thyroid
-dbgap:SRR1410890	0	SRR1410890_male_Whole Blood
-dbgap:SRR1473422	0	SRR1473422_male_Brain.Amygdala
-dbgap:SRR1082217	0	SRR1082217_male_Cells.Transformed fibroblasts
-dbgap:SRR1314916	0	SRR1314916_female_Whole Blood
-dbgap:SRR1090928	0	SRR1090928_female_Ovary
-dbgap:SRR1476485	0	SRR1476485_male_Liver
-dbgap:SRR657384	0	SRR657384_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1312666	0	SRR1312666_male_Colon.Sigmoid
-dbgap:SRR1074189	0	SRR1074189_male_Thyroid
-dbgap:SRR661735	0	SRR661735_male_Adipose.Subcutaneous
-dbgap:SRR614743	0	SRR614743_female_Thyroid
-dbgap:SRR1386689	0	SRR1386689_male_Adipose.Subcutaneous
-dbgap:SRR1403589	0	SRR1403589_female_Artery.Tibial
-dbgap:SRR1420215	0	SRR1420215_female_Brain.Putamen (basal ganglia)
-dbgap:SRR1310997	0	SRR1310997_female_Esophagus.Gastroesophageal Junction
-dbgap:SRR1097320	0	SRR1097320_female_Stomach
-dbgap:SRR1475086	0	SRR1475086_female_Uterus
-dbgap:SRR1079168	0	SRR1079168_male_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1096174	0	SRR1096174_male_Muscle.Skeletal
-dbgap:SRR1421444	0	SRR1421444_female_Artery.Coronary
-dbgap:SRR1339675	0	SRR1339675_male_Thyroid
-dbgap:SRR1308734	0	SRR1308734_female_Esophagus.Muscularis
-dbgap:SRR1342849	0	SRR1342849_female_Ovary
-dbgap:SRR1441505	0	SRR1441505_male_Testis
-dbgap:SRR1354203	0	SRR1354203_female_Esophagus.Mucosa
-dbgap:SRR1467316	0	SRR1467316_male_Adipose.Visceral (Omentum)
-dbgap:SRR1406521	0	SRR1406521_male_Nerve.Tibial
-dbgap:SRR1435712	0	SRR1435712_male_Esophagus.Mucosa
-dbgap:SRR1105463	0	SRR1105463_male_Artery.Aorta
-dbgap:SRR661179	0	SRR661179_male_Brain.Hypothalamus
-dbgap:SRR612851	0	SRR612851_female_Artery.Tibial
-dbgap:SRR1331793	0	SRR1331793_female_Cells.Transformed fibroblasts
-dbgap:SRR655052	0	SRR655052_female_Muscle.Skeletal
-dbgap:SRR1340700	0	SRR1340700_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1480813	0	SRR1480813_female_Adipose.Visceral (Omentum)
-dbgap:SRR1401815	0	SRR1401815_female_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1404123	0	SRR1404123_male_Lung
-dbgap:SRR1488349	0	SRR1488349_male_Brain.Hypothalamus
-dbgap:SRR614419	0	SRR614419_male_Adipose.Subcutaneous
-dbgap:SRR1096222	0	SRR1096222_male_Nerve.Tibial
-dbgap:SRR1084553	0	SRR1084553_female_Uterus
-dbgap:SRR1394428	0	SRR1394428_female_Uterus
-dbgap:SRR1338729	0	SRR1338729_female_Esophagus.Muscularis
-dbgap:SRR1488672	0	SRR1488672_male_Brain.Cortex
-dbgap:SRR1338603	0	SRR1338603_female_Colon.Transverse
-dbgap:SRR1362731	0	SRR1362731_female_Ovary
-dbgap:SRR1309160	0	SRR1309160_male_Adipose.Subcutaneous
-dbgap:SRR1375738	0	SRR1375738_male_Lung
-dbgap:SRR1079259	0	SRR1079259_female_Whole Blood
-dbgap:SRR1093773	0	SRR1093773_male_Brain.Hippocampus
-dbgap:SRR1458595	0	SRR1458595_male_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1093148	0	SRR1093148_female_Adipose.Subcutaneous
-dbgap:SRR2135316	0	SRR2135316_male_Prostate
-dbgap:SRR1389979	0	SRR1389979_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1089375	0	SRR1089375_male_Artery.Coronary
-dbgap:SRR1368178	0	SRR1368178_female_Brain.Cerebellum
-dbgap:SRR1319539	0	SRR1319539_female_Brain.Hippocampus
-dbgap:SRR1091942	0	SRR1091942_female_Cells.Transformed fibroblasts
-dbgap:SRR1370262	0	SRR1370262_female_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1322115	0	SRR1322115_female_Vagina
-dbgap:SRR1396682	0	SRR1396682_male_Breast.Mammary Tissue
-dbgap:SRR1444701	0	SRR1444701_female_Colon.Sigmoid
-dbgap:SRR1376497	0	SRR1376497_female_Thyroid
-dbgap:SRR1479802	0	SRR1479802_male_Brain.Cerebellum
-dbgap:SRR1310645	0	SRR1310645_male_Nerve.Tibial
-dbgap:SRR1330588	0	SRR1330588_female_Adipose.Subcutaneous
-dbgap:SRR1440852	0	SRR1440852_male_Whole Blood
-dbgap:SRR813608	0	SRR813608_female_Artery.Tibial
-dbgap:SRR1412987	0	SRR1412987_male_Whole Blood
-dbgap:SRR1368939	0	SRR1368939_female_Artery.Tibial
-dbgap:SRR1499804	0	SRR1499804_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1365894	0	SRR1365894_male_Adipose.Visceral (Omentum)
-dbgap:SRR1332946	0	SRR1332946_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1326078	0	SRR1326078_male_Nerve.Tibial
-dbgap:SRR1400754	0	SRR1400754_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1472079	0	SRR1472079_female_Brain.Caudate (basal ganglia)
-dbgap:SRR612275	0	SRR612275_female_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1404339	0	SRR1404339_male_Minor Salivary Gland
-dbgap:SRR808862	0	SRR808862_male_Adrenal Gland
-dbgap:SRR1400823	0	SRR1400823_male_Muscle.Skeletal
-dbgap:SRR1435394	0	SRR1435394_female_Esophagus.Muscularis
-dbgap:SRR627425	0	SRR627425_male_Brain.Cortex
-dbgap:SRR1069445	0	SRR1069445_male_Cells.Transformed fibroblasts
-dbgap:SRR819164	0	SRR819164_female_Whole Blood
-dbgap:SRR1382687	0	SRR1382687_female_Spleen
-dbgap:SRR1474295	0	SRR1474295_male_Esophagus.Mucosa
-dbgap:SRR1363992	0	SRR1363992_female_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1090674	0	SRR1090674_male_Breast.Mammary Tissue
-dbgap:SRR1380358	0	SRR1380358_male_Small Intestine.Terminal Ileum
-dbgap:SRR1465565	0	SRR1465565_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1440603	0	SRR1440603_female_Whole Blood
-dbgap:SRR1318839	0	SRR1318839_female_Muscle.Skeletal
-dbgap:SRR1092208	0	SRR1092208_female_Bladder
-dbgap:SRR1454265	0	SRR1454265_female_Thyroid
-dbgap:SRR1320987	0	SRR1320987_male_Nerve.Tibial
-dbgap:SRR1452935	0	SRR1452935_male_Adipose.Subcutaneous
-dbgap:SRR613591	0	SRR613591_female_Nerve.Tibial
-dbgap:SRR1420891	0	SRR1420891_male_Brain.Cerebellum
-dbgap:SRR1431887	0	SRR1431887_female_Esophagus.Muscularis
-dbgap:SRR1440643	0	SRR1440643_female_Pituitary
-dbgap:SRR1072223	0	SRR1072223_male_Cells.Transformed fibroblasts
-dbgap:SRR1465693	0	SRR1465693_male_Breast.Mammary Tissue
-dbgap:SRR1338103	0	SRR1338103_male_Liver
-dbgap:SRR1312522	0	SRR1312522_male_Lung
-dbgap:SRR1453110	0	SRR1453110_male_Esophagus.Muscularis
-dbgap:SRR1366579	0	SRR1366579_male_Brain.Hippocampus
-dbgap:SRR1100346	0	SRR1100346_female_Artery.Tibial
-dbgap:SRR1500846	0	SRR1500846_male_Artery.Aorta
-dbgap:SRR1489734	0	SRR1489734_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1378085	0	SRR1378085_female_Esophagus.Mucosa
-dbgap:SRR1387516	0	SRR1387516_male_Stomach
-dbgap:SRR1098426	0	SRR1098426_male_Esophagus.Mucosa
-dbgap:SRR1316096	0	SRR1316096_male_Liver
-dbgap:SRR1351432	0	SRR1351432_male_Cells.Transformed fibroblasts
-dbgap:SRR1358520	0	SRR1358520_male_Artery.Tibial
-dbgap:SRR1380393	0	SRR1380393_male_Adipose.Subcutaneous
-dbgap:SRR1089106	0	SRR1089106_female_Vagina
-dbgap:SRR1071011	0	SRR1071011_female_Esophagus.Muscularis
-dbgap:SRR661361	0	SRR661361_male_Adipose.Subcutaneous
-dbgap:SRR1388809	0	SRR1388809_female_Muscle.Skeletal
-dbgap:SRR1366873	0	SRR1366873_male_Adrenal Gland
-dbgap:SRR1442885	0	SRR1442885_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1329783	0	SRR1329783_female_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1490160	0	SRR1490160_female_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1085759	0	SRR1085759_female_Kidney.Cortex
-dbgap:SRR600829	0	SRR600829_male_Heart.Left Ventricle
-dbgap:SRR1458134	0	SRR1458134_female_Brain.Hippocampus
-dbgap:SRR1309314	0	SRR1309314_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR1089424	0	SRR1089424_male_Muscle.Skeletal
-dbgap:SRR1465040	0	SRR1465040_male_Adrenal Gland
-dbgap:SRR1457503	0	SRR1457503_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1387054	0	SRR1387054_male_Muscle.Skeletal
-dbgap:SRR1444678	0	SRR1444678_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1094192	0	SRR1094192_female_Heart.Atrial Appendage
-dbgap:SRR1348885	0	SRR1348885_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR1446673	0	SRR1446673_female_Nerve.Tibial
-dbgap:SRR814539	0	SRR814539_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1360652	0	SRR1360652_female_Breast.Mammary Tissue
-dbgap:SRR1400245	0	SRR1400245_male_Brain.Caudate (basal ganglia)
-dbgap:SRR1323957	0	SRR1323957_female_Vagina
-dbgap:SRR1356327	0	SRR1356327_male_Small Intestine.Terminal Ileum
-dbgap:SRR1070813	0	SRR1070813_male_Whole Blood
-dbgap:SRR1405245	0	SRR1405245_male_Spleen
-dbgap:SRR1095334	0	SRR1095334_male_Nerve.Tibial
-dbgap:SRR1102005	0	SRR1102005_female_Ovary
-dbgap:SRR1470947	0	SRR1470947_male_Artery.Tibial
-dbgap:SRR1092184	0	SRR1092184_male_Stomach
-dbgap:SRR2165379	0	SRR2165379_male_Testis
-dbgap:SRR1079973	0	SRR1079973_male_Small Intestine.Terminal Ileum
-dbgap:SRR1344185	0	SRR1344185_female_Vagina
-dbgap:SRR1403893	0	SRR1403893_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR662617	0	SRR662617_female_Nerve.Tibial
-dbgap:SRR1367943	0	SRR1367943_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR614827	0	SRR614827_male_Nerve.Tibial
-dbgap:SRR1360630	0	SRR1360630_female_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1366495	0	SRR1366495_male_Esophagus.Mucosa
-dbgap:SRR614912	0	SRR614912_female_Thyroid
-dbgap:SRR1455281	0	SRR1455281_female_Cells.Transformed fibroblasts
-dbgap:SRR1312446	0	SRR1312446_female_Ovary
-dbgap:SRR1383674	0	SRR1383674_male_Colon.Transverse
-dbgap:SRR1327769	0	SRR1327769_female_Esophagus.Muscularis
-dbgap:SRR655218	0	SRR655218_male_Brain.Hypothalamus
-dbgap:SRR612887	0	SRR612887_female_Lung
-dbgap:SRR659212	0	SRR659212_male_Adipose.Subcutaneous
-dbgap:SRR1075004	0	SRR1075004_male_Esophagus.Muscularis
-dbgap:SRR1403565	0	SRR1403565_male_Pituitary
-dbgap:SRR809259	0	SRR809259_female_Cells.EBV-transformed lymphocytes
-dbgap:SRR1320939	0	SRR1320939_female_Heart.Left Ventricle
-dbgap:SRR1120733	0	SRR1120733_male_Colon.Transverse
-dbgap:SRR1328642	0	SRR1328642_male_Whole Blood
-dbgap:SRR1098074	0	SRR1098074_male_Lung
-dbgap:SRR1381372	0	SRR1381372_female_Uterus
-dbgap:SRR1314137	0	SRR1314137_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1357233	0	SRR1357233_female_Lung
-dbgap:SRR1347298	0	SRR1347298_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1393529	0	SRR1393529_female_Colon.Transverse
-dbgap:SRR602622	0	SRR602622_male_Brain.Caudate (basal ganglia)
-dbgap:SRR1340804	0	SRR1340804_male_Cells.EBV-transformed lymphocytes
-dbgap:SRR661385	0	SRR661385_male_Whole Blood
-dbgap:SRR817353	0	SRR817353_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1500732	0	SRR1500732_male_Artery.Coronary
-dbgap:SRR1478946	0	SRR1478946_male_Brain.Putamen (basal ganglia)
-dbgap:SRR1413959	0	SRR1413959_male_Brain.Substantia nigra
-dbgap:SRR1417588	0	SRR1417588_female_Artery.Coronary
-dbgap:SRR1474908	0	SRR1474908_female_Pancreas
-dbgap:SRR663549	0	SRR663549_male_Lung
-dbgap:SRR1332733	0	SRR1332733_male_Testis
-dbgap:SRR1437056	0	SRR1437056_male_Thyroid
-dbgap:SRR1381566	0	SRR1381566_female_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1087585	0	SRR1087585_male_Cells.EBV-transformed lymphocytes
-dbgap:SRR656899	0	SRR656899_male_Heart.Left Ventricle
-dbgap:SRR1479239	0	SRR1479239_male_Brain.Cerebellum
-dbgap:SRR657528	0	SRR657528_male_Breast.Mammary Tissue
-dbgap:SRR1434436	0	SRR1434436_female_Pancreas
-dbgap:SRR1088168	0	SRR1088168_male_Whole Blood
-dbgap:SRR1310584	0	SRR1310584_male_Adipose.Subcutaneous
-dbgap:SRR1361308	0	SRR1361308_male_Esophagus.Muscularis
-dbgap:SRR1415195	0	SRR1415195_female_Thyroid
-dbgap:SRR1477316	0	SRR1477316_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR2170537	0	SRR2170537_male_Heart.Left Ventricle
-dbgap:SRR615982	0	SRR615982_male_Artery.Tibial
-dbgap:SRR1073242	0	SRR1073242_male_Cells.Transformed fibroblasts
-dbgap:SRR659295	0	SRR659295_female_Whole Blood
-dbgap:SRR1347144	0	SRR1347144_female_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR812493	0	SRR812493_female_Lung
-dbgap:SRR1476547	0	SRR1476547_female_Cells.Transformed fibroblasts
-dbgap:SRR1103048	0	SRR1103048_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1446911	0	SRR1446911_male_Testis
-dbgap:SRR1443847	0	SRR1443847_male_Testis
-dbgap:SRR1332607	0	SRR1332607_male_Heart.Left Ventricle
-dbgap:SRR1324349	0	SRR1324349_male_Artery.Tibial
-dbgap:SRR1419039	0	SRR1419039_female_Uterus
-dbgap:SRR656994	0	SRR656994_male_Nerve.Tibial
-dbgap:SRR1086728	0	SRR1086728_male_Lung
-dbgap:SRR1324206	0	SRR1324206_male_Breast.Mammary Tissue
-dbgap:SRR615910	0	SRR615910_male_Breast.Mammary Tissue
-dbgap:SRR811029	0	SRR811029_male_Pancreas
-dbgap:SRR1380208	0	SRR1380208_female_Adipose.Visceral (Omentum)
-dbgap:SRR1085159	0	SRR1085159_female_Artery.Aorta
-dbgap:SRR1420391	0	SRR1420391_female_Colon.Transverse
-dbgap:SRR1341898	0	SRR1341898_male_Brain.Hippocampus
-dbgap:SRR1499325	0	SRR1499325_male_Esophagus.Gastroesophageal Junction
-dbgap:SRR809643	0	SRR809643_male_Nerve.Tibial
-dbgap:SRR1352256	0	SRR1352256_male_Testis
-dbgap:SRR1317554	0	SRR1317554_female_Liver
-dbgap:SRR1095358	0	SRR1095358_male_Esophagus.Muscularis
-dbgap:SRR1413768	0	SRR1413768_male_Brain.Spinal cord (cervical c-1)
-dbgap:SRR1093837	0	SRR1093837_male_Cells.Transformed fibroblasts
-dbgap:SRR1331751	0	SRR1331751_female_Brain.Cortex
-dbgap:SRR1332208	0	SRR1332208_male_Artery.Aorta
-dbgap:SRR817539	0	SRR817539_female_Nerve.Tibial
-dbgap:SRR1451857	0	SRR1451857_male_Thyroid
-dbgap:SRR1487969	0	SRR1487969_male_Esophagus.Muscularis
-dbgap:SRR1353332	0	SRR1353332_female_Colon.Sigmoid
-dbgap:SRR1080859	0	SRR1080859_male_Testis
-dbgap:SRR1380375	0	SRR1380375_female_Artery.Aorta
-dbgap:SRR1335113	0	SRR1335113_male_Artery.Aorta
-dbgap:SRR1453549	0	SRR1453549_male_Spleen
-dbgap:SRR1417404	0	SRR1417404_female_Lung
-dbgap:SRR1071519	0	SRR1071519_male_Pancreas
-dbgap:SRR1320579	0	SRR1320579_female_Muscle.Skeletal
-dbgap:SRR1374221	0	SRR1374221_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1445365	0	SRR1445365_female_Whole Blood
-dbgap:SRR1416754	0	SRR1416754_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1084742	0	SRR1084742_male_Esophagus.Muscularis
-dbgap:SRR1088093	0	SRR1088093_female_Esophagus.Mucosa
-dbgap:SRR614575	0	SRR614575_female_Muscle.Skeletal
-dbgap:SRR1383192	0	SRR1383192_female_Esophagus.Mucosa
-dbgap:SRR1386991	0	SRR1386991_female_Muscle.Skeletal
-dbgap:SRR1351325	0	SRR1351325_male_Brain.Cerebellar Hemisphere
-dbgap:SRR627421	0	SRR627421_male_Brain.Cortex
-dbgap:SRR1479640	0	SRR1479640_female_Lung
-dbgap:SRR1072199	0	SRR1072199_female_Stomach
-dbgap:SRR1350196	0	SRR1350196_male_Nerve.Tibial
-dbgap:SRR1383937	0	SRR1383937_female_Heart.Atrial Appendage
-dbgap:SRR1071181	0	SRR1071181_male_Small Intestine.Terminal Ileum
-dbgap:SRR1338988	0	SRR1338988_male_Artery.Tibial
-dbgap:SRR810461	0	SRR810461_male_Lung
-dbgap:SRR811379	0	SRR811379_female_Whole Blood
-dbgap:SRR1402437	0	SRR1402437_male_Esophagus.Mucosa
-dbgap:SRR1376676	0	SRR1376676_male_Lung
-dbgap:SRR658707	0	SRR658707_male_Muscle.Skeletal
-dbgap:SRR1499849	0	SRR1499849_male_Artery.Aorta
-dbgap:SRR1092985	0	SRR1092985_male_Muscle.Skeletal
-dbgap:SRR2135319	0	SRR2135319_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1442686	0	SRR1442686_female_Heart.Left Ventricle
-dbgap:SRR1420625	0	SRR1420625_male_Brain.Substantia nigra
-dbgap:SRR1385542	0	SRR1385542_male_Cells.Transformed fibroblasts
-dbgap:SRR1079094	0	SRR1079094_male_Esophagus.Muscularis
-dbgap:SRR1452143	0	SRR1452143_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1471922	0	SRR1471922_male_Brain.Caudate (basal ganglia)
-dbgap:SRR1403072	0	SRR1403072_female_Artery.Coronary
-dbgap:SRR1433860	0	SRR1433860_female_Whole Blood
-dbgap:SRR1317832	0	SRR1317832_male_Whole Blood
-dbgap:SRR1418323	0	SRR1418323_male_Nerve.Tibial
-dbgap:SRR1320963	0	SRR1320963_male_Brain.Frontal Cortex (BA9)
-dbgap:SRR1355595	0	SRR1355595_male_Brain.Amygdala
-dbgap:SRR1357413	0	SRR1357413_male_Brain.Cerebellum
-dbgap:SRR1328429	0	SRR1328429_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1489438	0	SRR1489438_male_Artery.Tibial
-dbgap:SRR663783	0	SRR663783_female_Adipose.Subcutaneous
-dbgap:SRR1342701	0	SRR1342701_male_Heart.Atrial Appendage
-dbgap:SRR1420710	0	SRR1420710_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1385124	0	SRR1385124_female_Brain.Putamen (basal ganglia)
-dbgap:SRR2166114	0	SRR2166114_male_Testis
-dbgap:SRR601387	0	SRR601387_female_Muscle.Skeletal
-dbgap:SRR1387745	0	SRR1387745_female_Small Intestine.Terminal Ileum
-dbgap:SRR1349032	0	SRR1349032_female_Whole Blood
-dbgap:SRR1367965	0	SRR1367965_male_Skin.Sun Exposed (Lower leg)
-dbgap:SRR1370780	0	SRR1370780_male_Muscle.Skeletal
-dbgap:SRR1101015	0	SRR1101015_male_Cells.Transformed fibroblasts
-dbgap:SRR1310334	0	SRR1310334_male_Esophagus.Mucosa
-dbgap:SRR1368638	0	SRR1368638_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR2135310	0	SRR2135310_male_Heart.Left Ventricle
-dbgap:SRR1396035	0	SRR1396035_male_Esophagus.Muscularis
-dbgap:SRR1466597	0	SRR1466597_male_Colon.Transverse
-dbgap:SRR612323	0	SRR612323_male_Artery.Tibial
-dbgap:SRR813076	0	SRR813076_male_Cells.Transformed fibroblasts
-dbgap:SRR663026	0	SRR663026_female_Muscle.Skeletal
-dbgap:SRR1097574	0	SRR1097574_female_Cervix.Ectocervix
-dbgap:SRR1458529	0	SRR1458529_male_Colon.Sigmoid
-dbgap:SRR627435	0	SRR627435_male_Whole Blood
-dbgap:SRR1440625	0	SRR1440625_male_Thyroid
-dbgap:SRR1321029	0	SRR1321029_female_Adrenal Gland
-dbgap:SRR1453047	0	SRR1453047_male_Pancreas
-dbgap:SRR1325733	0	SRR1325733_male_Artery.Aorta
-dbgap:SRR659863	0	SRR659863_female_Cells.Leukemia cell line (CML)
-dbgap:SRR661481	0	SRR661481_female_Adipose.Visceral (Omentum)
-dbgap:SRR1333930	0	SRR1333930_male_Brain.Cortex
-dbgap:SRR1308674	0	SRR1308674_male_Heart.Atrial Appendage
-dbgap:SRR613939	0	SRR613939_female_Artery.Tibial
-dbgap:SRR1084007	0	SRR1084007_male_Cells.EBV-transformed lymphocytes
-dbgap:SRR1442356	0	SRR1442356_female_Brain.Cerebellum
-dbgap:SRR1343967	0	SRR1343967_male_Pancreas
-dbgap:SRR1356142	0	SRR1356142_male_Skin.Not Sun Exposed (Suprapubic)
-dbgap:SRR1091548	0	SRR1091548_male_Stomach
-dbgap:SRR1392055	0	SRR1392055_male_Adrenal Gland
-dbgap:SRR1440491	0	SRR1440491_female_Whole Blood
-dbgap:SRR1333767	0	SRR1333767_male_Brain.Nucleus accumbens (basal ganglia)
-dbgap:SRR1490037	0	SRR1490037_male_Muscle.Skeletal
+dbgap:SRR1322711	0	SRR1322711_male_thyroid
+dbgap:SRR1351931	0	SRR1351931_male_heart.left.ventricle
+dbgap:SRR1405413	0	SRR1405413_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1446092	0	SRR1446092_male_brain.hypothalamus
+dbgap:SRR1102780	0	SRR1102780_female_ovary
+dbgap:SRR1480221	0	SRR1480221_female_nerve.tibial
+dbgap:SRR1395951	0	SRR1395951_female_brain.amygdala
+dbgap:SRR1459211	0	SRR1459211_female_brain.substantia.nigra
+dbgap:SRR1429678	0	SRR1429678_male_adipose.subcutaneous
+dbgap:SRR1401252	0	SRR1401252_female_adipose.visceral.omentum
+dbgap:SRR2135332	0	SRR2135332_female_breast.mammary.tissue
+dbgap:SRR2135323	0	SRR2135323_female_stomach
+dbgap:SRR1474863	0	SRR1474863_male_whole.blood
+dbgap:SRR1395975	0	SRR1395975_male_nerve.tibial
+dbgap:SRR1311958	0	SRR1311958_male_pituitary
+dbgap:SRR663874	0	SRR663874_male_muscle.skeletal
+dbgap:SRR1486538	0	SRR1486538_female_adipose.visceral.omentum
+dbgap:SRR659995	0	SRR659995_female_cells.leukemia.cell.line.cml
+dbgap:SRR1404555	0	SRR1404555_male_artery.coronary
+dbgap:SRR1105130	0	SRR1105130_female_uterus
+dbgap:SRR1429603	0	SRR1429603_male_adipose.visceral.omentum
+dbgap:SRR1466490	0	SRR1466490_female_stomach
+dbgap:SRR1090407	0	SRR1090407_male_adipose.subcutaneous
+dbgap:SRR1083408	0	SRR1083408_male_stomach
+dbgap:SRR1443507	0	SRR1443507_female_skin.sun.exposed.lower.leg
+dbgap:SRR1444138	0	SRR1444138_male_adipose.subcutaneous
+dbgap:SRR1366519	0	SRR1366519_male_heart.atrial.appendage
+dbgap:SRR2135330	0	SRR2135330_female_uterus
+dbgap:SRR1348951	0	SRR1348951_male_whole.blood
+dbgap:SRR1346861	0	SRR1346861_female_breast.mammary.tissue
+dbgap:SRR1374141	0	SRR1374141_female_skin.not.sun.exposed.suprapubic
+dbgap:SRR1457619	0	SRR1457619_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1353199	0	SRR1353199_male_adipose.subcutaneous
+dbgap:SRR1386753	0	SRR1386753_male_colon.sigmoid
+dbgap:SRR1325401	0	SRR1325401_male_brain.spinal.cord.cervical.c.1
+dbgap:SRR1095261	0	SRR1095261_female_uterus
+dbgap:SRR808566	0	SRR808566_male_adipose.visceral.omentum
+dbgap:SRR1325182	0	SRR1325182_male_esophagus.gastroesophageal.junction
+dbgap:SRR1370818	0	SRR1370818_male_esophagus.mucosa
+dbgap:SRR1081910	0	SRR1081910_male_artery.aorta
+dbgap:SRR1319793	0	SRR1319793_female_ovary
+dbgap:SRR1345692	0	SRR1345692_female_esophagus.muscularis
+dbgap:SRR1070036	0	SRR1070036_male_esophagus.mucosa
+dbgap:SRR1418795	0	SRR1418795_male_breast.mammary.tissue
+dbgap:SRR604146	0	SRR604146_male_brain.cerebellum
+dbgap:SRR1479845	0	SRR1479845_male_whole.blood
+dbgap:SRR1456818	0	SRR1456818_male_breast.mammary.tissue
+dbgap:SRR1074239	0	SRR1074239_female_colon.transverse
+dbgap:SRR1329947	0	SRR1329947_male_esophagus.mucosa
+dbgap:SRR1392121	0	SRR1392121_male_skin.sun.exposed.lower.leg
+dbgap:SRR612178	0	SRR612178_female_nerve.tibial
+dbgap:SRR1500342	0	SRR1500342_male_adipose.visceral.omentum
+dbgap:SRR612863	0	SRR612863_female_adipose.subcutaneous
+dbgap:SRR1376640	0	SRR1376640_male_artery.tibial
+dbgap:SRR1355262	0	SRR1355262_male_brain.caudate.basal.ganglia
+dbgap:SRR1390094	0	SRR1390094_male_prostate
+dbgap:SRR1431552	0	SRR1431552_male_thyroid
+dbgap:SRR1399335	0	SRR1399335_female_adrenal.gland
+dbgap:SRR1395788	0	SRR1395788_female_colon.transverse
+dbgap:SRR1363742	0	SRR1363742_male_whole.blood
+dbgap:SRR1361174	0	SRR1361174_female_adipose.subcutaneous
+dbgap:SRR1318426	0	SRR1318426_male_brain.anterior.cingulate.cortex.ba24
+dbgap:SRR1335651	0	SRR1335651_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1340260	0	SRR1340260_male_minor.salivary.gland
+dbgap:SRR627439	0	SRR627439_female_muscle.skeletal
+dbgap:SRR812625	0	SRR812625_female_artery.tibial
+dbgap:SRR1354532	0	SRR1354532_male_stomach
+dbgap:SRR810105	0	SRR810105_female_uterus
+dbgap:SRR1418412	0	SRR1418412_female_esophagus.mucosa
+dbgap:SRR1078417	0	SRR1078417_male_cells.transformed.fibroblasts
+dbgap:SRR663161	0	SRR663161_male_whole.blood
+dbgap:SRR615731	0	SRR615731_female_brain.spinal.cord.cervical.c.1
+dbgap:SRR1396166	0	SRR1396166_female_artery.coronary
+dbgap:SRR1500323	0	SRR1500323_female_muscle.skeletal
+dbgap:SRR1360420	0	SRR1360420_male_artery.coronary
+dbgap:SRR1486475	0	SRR1486475_male_brain.anterior.cingulate.cortex.ba24
+dbgap:SRR813584	0	SRR813584_male_adipose.visceral.omentum
+dbgap:SRR613378	0	SRR613378_male_artery.tibial
+dbgap:SRR1389886	0	SRR1389886_male_adrenal.gland
+dbgap:SRR1468403	0	SRR1468403_male_brain.spinal.cord.cervical.c.1
+dbgap:SRR654898	0	SRR654898_female_adipose.subcutaneous
+dbgap:SRR1452803	0	SRR1452803_male_adrenal.gland
+dbgap:SRR1329761	0	SRR1329761_female_brain.caudate.basal.ganglia
+dbgap:SRR662138	0	SRR662138_male_brain.substantia.nigra
+dbgap:SRR1400078	0	SRR1400078_male_skin.sun.exposed.lower.leg
+dbgap:SRR1469839	0	SRR1469839_male_esophagus.mucosa
+dbgap:SRR655613	0	SRR655613_female_skin.sun.exposed.lower.leg
+dbgap:SRR1327811	0	SRR1327811_male_brain.cerebellum
+dbgap:SRR1474975	0	SRR1474975_male_esophagus.gastroesophageal.junction
+dbgap:SRR603566	0	SRR603566_male_whole.blood
+dbgap:SRR1323512	0	SRR1323512_female_heart.atrial.appendage
+dbgap:SRR807949	0	SRR807949_male_pituitary
+dbgap:SRR1382912	0	SRR1382912_male_nerve.tibial
+dbgap:SRR1442966	0	SRR1442966_female_small.intestine.terminal.ileum
+dbgap:SRR1459190	0	SRR1459190_male_adipose.subcutaneous
+dbgap:SRR1456754	0	SRR1456754_male_pituitary
+dbgap:SRR661818	0	SRR661818_male_brain.amygdala
+dbgap:SRR601755	0	SRR601755_female_brain.anterior.cingulate.cortex.ba24
+dbgap:SRR1323914	0	SRR1323914_male_thyroid
+dbgap:SRR1353994	0	SRR1353994_female_breast.mammary.tissue
+dbgap:SRR1321165	0	SRR1321165_male_artery.aorta
+dbgap:SRR1394190	0	SRR1394190_male_muscle.skeletal
+dbgap:SRR1315041	0	SRR1315041_female_artery.tibial
+dbgap:SRR662257	0	SRR662257_female_lung
+dbgap:SRR1402172	0	SRR1402172_female_muscle.skeletal
+dbgap:SRR1347667	0	SRR1347667_female_heart.left.ventricle
+dbgap:SRR1085874	0	SRR1085874_male_cells.transformed.fibroblasts
+dbgap:SRR1464535	0	SRR1464535_female_heart.atrial.appendage
+dbgap:SRR1475633	0	SRR1475633_male_stomach
+dbgap:SRR2135336	0	SRR2135336_male_brain.substantia.nigra
+dbgap:SRR1318046	0	SRR1318046_male_nerve.tibial
+dbgap:SRR1309578	0	SRR1309578_male_thyroid
+dbgap:SRR1324025	0	SRR1324025_male_adipose.subcutaneous
+dbgap:SRR821690	0	SRR821690_male_brain.hippocampus
+dbgap:SRR1456354	0	SRR1456354_female_vagina
+dbgap:SRR2166787	0	SRR2166787_male_skin.sun.exposed.lower.leg
+dbgap:SRR1365938	0	SRR1365938_female_lung
+dbgap:SRR1379495	0	SRR1379495_female_adipose.subcutaneous
+dbgap:SRR598589	0	SRR598589_male_heart.left.ventricle
+dbgap:SRR1316367	0	SRR1316367_female_adipose.subcutaneous
+dbgap:SRR1458619	0	SRR1458619_male_testis
+dbgap:SRR1409263	0	SRR1409263_male_muscle.skeletal
+dbgap:SRR1486174	0	SRR1486174_female_heart.atrial.appendage
+dbgap:SRR1326579	0	SRR1326579_male_adipose.subcutaneous
+dbgap:SRR1500216	0	SRR1500216_male_adipose.subcutaneous
+dbgap:SRR1364056	0	SRR1364056_male_esophagus.mucosa
+dbgap:SRR2166064	0	SRR2166064_female_muscle.skeletal
+dbgap:SRR1099881	0	SRR1099881_female_small.intestine.terminal.ileum
+dbgap:SRR1385101	0	SRR1385101_male_muscle.skeletal
+dbgap:SRR1312266	0	SRR1312266_female_liver
+dbgap:SRR1349433	0	SRR1349433_female_heart.atrial.appendage
+dbgap:SRR614323	0	SRR614323_male_brain.cerebellar.hemisphere
+dbgap:SRR819210	0	SRR819210_male_whole.blood
+dbgap:SRR661349	0	SRR661349_male_brain.frontal.cortex.ba9
+dbgap:SRR1413392	0	SRR1413392_male_breast.mammary.tissue
+dbgap:SRR1083678	0	SRR1083678_male_colon.sigmoid
+dbgap:SRR1338812	0	SRR1338812_male_cells.ebv.transformed.lymphocytes
+dbgap:SRR665334	0	SRR665334_female_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1402051	0	SRR1402051_male_adrenal.gland
+dbgap:SRR1334919	0	SRR1334919_female_heart.left.ventricle
+dbgap:SRR627459	0	SRR627459_female_lung
+dbgap:SRR1331289	0	SRR1331289_male_brain.caudate.basal.ganglia
+dbgap:SRR662414	0	SRR662414_male_nerve.tibial
+dbgap:SRR1338346	0	SRR1338346_male_artery.coronary
+dbgap:SRR1441245	0	SRR1441245_female_esophagus.muscularis
+dbgap:SRR1384163	0	SRR1384163_male_esophagus.gastroesophageal.junction
+dbgap:SRR1352554	0	SRR1352554_female_brain.amygdala
+dbgap:SRR1447986	0	SRR1447986_female_brain.cerebellar.hemisphere
+dbgap:SRR1417422	0	SRR1417422_male_breast.mammary.tissue
+dbgap:SRR1436804	0	SRR1436804_male_artery.aorta
+dbgap:SRR813043	0	SRR813043_male_lung
+dbgap:SRR1431104	0	SRR1431104_female_uterus
+dbgap:SRR1471178	0	SRR1471178_male_prostate
+dbgap:SRR1439719	0	SRR1439719_male_lung
+dbgap:SRR1080415	0	SRR1080415_female_heart.left.ventricle
+dbgap:SRR1362200	0	SRR1362200_male_skin.sun.exposed.lower.leg
+dbgap:SRR1474374	0	SRR1474374_female_esophagus.gastroesophageal.junction
+dbgap:SRR1397627	0	SRR1397627_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1315165	0	SRR1315165_male_adipose.visceral.omentum
+dbgap:SRR1412969	0	SRR1412969_male_liver
+dbgap:SRR1457015	0	SRR1457015_male_nerve.tibial
+dbgap:SRR1081789	0	SRR1081789_male_prostate
+dbgap:SRR1355578	0	SRR1355578_male_lung
+dbgap:SRR1332816	0	SRR1332816_female_artery.aorta
+dbgap:SRR1355635	0	SRR1355635_male_brain.hypothalamus
+dbgap:SRR600632	0	SRR600632_female_lung
+dbgap:SRR2135362	0	SRR2135362_male_esophagus.mucosa
+dbgap:SRR659971	0	SRR659971_female_whole.blood
+dbgap:SRR808658	0	SRR808658_female_thyroid
+dbgap:SRR1410890	0	SRR1410890_male_whole.blood
+dbgap:SRR1473422	0	SRR1473422_male_brain.amygdala
+dbgap:SRR1082217	0	SRR1082217_male_cells.transformed.fibroblasts
+dbgap:SRR1314916	0	SRR1314916_female_whole.blood
+dbgap:SRR1090928	0	SRR1090928_female_ovary
+dbgap:SRR1476485	0	SRR1476485_male_liver
+dbgap:SRR657384	0	SRR657384_male_skin.sun.exposed.lower.leg
+dbgap:SRR1312666	0	SRR1312666_male_colon.sigmoid
+dbgap:SRR1074189	0	SRR1074189_male_thyroid
+dbgap:SRR661735	0	SRR661735_male_adipose.subcutaneous
+dbgap:SRR614743	0	SRR614743_female_thyroid
+dbgap:SRR1386689	0	SRR1386689_male_adipose.subcutaneous
+dbgap:SRR1403589	0	SRR1403589_female_artery.tibial
+dbgap:SRR1420215	0	SRR1420215_female_brain.putamen.basal.ganglia
+dbgap:SRR1310997	0	SRR1310997_female_esophagus.gastroesophageal.junction
+dbgap:SRR1097320	0	SRR1097320_female_stomach
+dbgap:SRR1475086	0	SRR1475086_female_uterus
+dbgap:SRR1079168	0	SRR1079168_male_brain.spinal.cord.cervical.c.1
+dbgap:SRR1096174	0	SRR1096174_male_muscle.skeletal
+dbgap:SRR1421444	0	SRR1421444_female_artery.coronary
+dbgap:SRR1339675	0	SRR1339675_male_thyroid
+dbgap:SRR1308734	0	SRR1308734_female_esophagus.muscularis
+dbgap:SRR1342849	0	SRR1342849_female_ovary
+dbgap:SRR1441505	0	SRR1441505_male_testis
+dbgap:SRR1354203	0	SRR1354203_female_esophagus.mucosa
+dbgap:SRR1467316	0	SRR1467316_male_adipose.visceral.omentum
+dbgap:SRR1406521	0	SRR1406521_male_nerve.tibial
+dbgap:SRR1435712	0	SRR1435712_male_esophagus.mucosa
+dbgap:SRR1105463	0	SRR1105463_male_artery.aorta
+dbgap:SRR661179	0	SRR661179_male_brain.hypothalamus
+dbgap:SRR612851	0	SRR612851_female_artery.tibial
+dbgap:SRR1331793	0	SRR1331793_female_cells.transformed.fibroblasts
+dbgap:SRR655052	0	SRR655052_female_muscle.skeletal
+dbgap:SRR1340700	0	SRR1340700_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1480813	0	SRR1480813_female_adipose.visceral.omentum
+dbgap:SRR1401815	0	SRR1401815_female_skin.not.sun.exposed.suprapubic
+dbgap:SRR1404123	0	SRR1404123_male_lung
+dbgap:SRR1488349	0	SRR1488349_male_brain.hypothalamus
+dbgap:SRR614419	0	SRR614419_male_adipose.subcutaneous
+dbgap:SRR1096222	0	SRR1096222_male_nerve.tibial
+dbgap:SRR1084553	0	SRR1084553_female_uterus
+dbgap:SRR1394428	0	SRR1394428_female_uterus
+dbgap:SRR1338729	0	SRR1338729_female_esophagus.muscularis
+dbgap:SRR1488672	0	SRR1488672_male_brain.cortex
+dbgap:SRR1338603	0	SRR1338603_female_colon.transverse
+dbgap:SRR1362731	0	SRR1362731_female_ovary
+dbgap:SRR1309160	0	SRR1309160_male_adipose.subcutaneous
+dbgap:SRR1375738	0	SRR1375738_male_lung
+dbgap:SRR1079259	0	SRR1079259_female_whole.blood
+dbgap:SRR1093773	0	SRR1093773_male_brain.hippocampus
+dbgap:SRR1458595	0	SRR1458595_male_brain.spinal.cord.cervical.c.1
+dbgap:SRR1093148	0	SRR1093148_female_adipose.subcutaneous
+dbgap:SRR2135316	0	SRR2135316_male_prostate
+dbgap:SRR1389979	0	SRR1389979_male_brain.frontal.cortex.ba9
+dbgap:SRR1089375	0	SRR1089375_male_artery.coronary
+dbgap:SRR1368178	0	SRR1368178_female_brain.cerebellum
+dbgap:SRR1319539	0	SRR1319539_female_brain.hippocampus
+dbgap:SRR1091942	0	SRR1091942_female_cells.transformed.fibroblasts
+dbgap:SRR1370262	0	SRR1370262_female_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1322115	0	SRR1322115_female_vagina
+dbgap:SRR1396682	0	SRR1396682_male_breast.mammary.tissue
+dbgap:SRR1444701	0	SRR1444701_female_colon.sigmoid
+dbgap:SRR1376497	0	SRR1376497_female_thyroid
+dbgap:SRR1479802	0	SRR1479802_male_brain.cerebellum
+dbgap:SRR1310645	0	SRR1310645_male_nerve.tibial
+dbgap:SRR1330588	0	SRR1330588_female_adipose.subcutaneous
+dbgap:SRR1440852	0	SRR1440852_male_whole.blood
+dbgap:SRR813608	0	SRR813608_female_artery.tibial
+dbgap:SRR1412987	0	SRR1412987_male_whole.blood
+dbgap:SRR1368939	0	SRR1368939_female_artery.tibial
+dbgap:SRR1499804	0	SRR1499804_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1365894	0	SRR1365894_male_adipose.visceral.omentum
+dbgap:SRR1332946	0	SRR1332946_male_skin.sun.exposed.lower.leg
+dbgap:SRR1326078	0	SRR1326078_male_nerve.tibial
+dbgap:SRR1400754	0	SRR1400754_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1472079	0	SRR1472079_female_brain.caudate.basal.ganglia
+dbgap:SRR612275	0	SRR612275_female_skin.sun.exposed.lower.leg
+dbgap:SRR1404339	0	SRR1404339_male_minor.salivary.gland
+dbgap:SRR808862	0	SRR808862_male_adrenal.gland
+dbgap:SRR1400823	0	SRR1400823_male_muscle.skeletal
+dbgap:SRR1435394	0	SRR1435394_female_esophagus.muscularis
+dbgap:SRR627425	0	SRR627425_male_brain.cortex
+dbgap:SRR1069445	0	SRR1069445_male_cells.transformed.fibroblasts
+dbgap:SRR819164	0	SRR819164_female_whole.blood
+dbgap:SRR1382687	0	SRR1382687_female_spleen
+dbgap:SRR1474295	0	SRR1474295_male_esophagus.mucosa
+dbgap:SRR1363992	0	SRR1363992_female_brain.spinal.cord.cervical.c.1
+dbgap:SRR1090674	0	SRR1090674_male_breast.mammary.tissue
+dbgap:SRR1380358	0	SRR1380358_male_small.intestine.terminal.ileum
+dbgap:SRR1465565	0	SRR1465565_male_skin.sun.exposed.lower.leg
+dbgap:SRR1440603	0	SRR1440603_female_whole.blood
+dbgap:SRR1318839	0	SRR1318839_female_muscle.skeletal
+dbgap:SRR1092208	0	SRR1092208_female_bladder
+dbgap:SRR1454265	0	SRR1454265_female_thyroid
+dbgap:SRR1320987	0	SRR1320987_male_nerve.tibial
+dbgap:SRR1452935	0	SRR1452935_male_adipose.subcutaneous
+dbgap:SRR613591	0	SRR613591_female_nerve.tibial
+dbgap:SRR1420891	0	SRR1420891_male_brain.cerebellum
+dbgap:SRR1431887	0	SRR1431887_female_esophagus.muscularis
+dbgap:SRR1440643	0	SRR1440643_female_pituitary
+dbgap:SRR1072223	0	SRR1072223_male_cells.transformed.fibroblasts
+dbgap:SRR1465693	0	SRR1465693_male_breast.mammary.tissue
+dbgap:SRR1338103	0	SRR1338103_male_liver
+dbgap:SRR1312522	0	SRR1312522_male_lung
+dbgap:SRR1453110	0	SRR1453110_male_esophagus.muscularis
+dbgap:SRR1366579	0	SRR1366579_male_brain.hippocampus
+dbgap:SRR1100346	0	SRR1100346_female_artery.tibial
+dbgap:SRR1500846	0	SRR1500846_male_artery.aorta
+dbgap:SRR1489734	0	SRR1489734_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1378085	0	SRR1378085_female_esophagus.mucosa
+dbgap:SRR1387516	0	SRR1387516_male_stomach
+dbgap:SRR1098426	0	SRR1098426_male_esophagus.mucosa
+dbgap:SRR1316096	0	SRR1316096_male_liver
+dbgap:SRR1351432	0	SRR1351432_male_cells.transformed.fibroblasts
+dbgap:SRR1358520	0	SRR1358520_male_artery.tibial
+dbgap:SRR1380393	0	SRR1380393_male_adipose.subcutaneous
+dbgap:SRR1089106	0	SRR1089106_female_vagina
+dbgap:SRR1071011	0	SRR1071011_female_esophagus.muscularis
+dbgap:SRR661361	0	SRR661361_male_adipose.subcutaneous
+dbgap:SRR1388809	0	SRR1388809_female_muscle.skeletal
+dbgap:SRR1366873	0	SRR1366873_male_adrenal.gland
+dbgap:SRR1442885	0	SRR1442885_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1329783	0	SRR1329783_female_skin.not.sun.exposed.suprapubic
+dbgap:SRR1490160	0	SRR1490160_female_skin.not.sun.exposed.suprapubic
+dbgap:SRR1085759	0	SRR1085759_female_kidney.cortex
+dbgap:SRR600829	0	SRR600829_male_heart.left.ventricle
+dbgap:SRR1458134	0	SRR1458134_female_brain.hippocampus
+dbgap:SRR1309314	0	SRR1309314_male_esophagus.gastroesophageal.junction
+dbgap:SRR1089424	0	SRR1089424_male_muscle.skeletal
+dbgap:SRR1465040	0	SRR1465040_male_adrenal.gland
+dbgap:SRR1457503	0	SRR1457503_male_brain.frontal.cortex.ba9
+dbgap:SRR1387054	0	SRR1387054_male_muscle.skeletal
+dbgap:SRR1444678	0	SRR1444678_male_brain.frontal.cortex.ba9
+dbgap:SRR1094192	0	SRR1094192_female_heart.atrial.appendage
+dbgap:SRR1348885	0	SRR1348885_male_esophagus.gastroesophageal.junction
+dbgap:SRR1446673	0	SRR1446673_female_nerve.tibial
+dbgap:SRR814539	0	SRR814539_male_skin.sun.exposed.lower.leg
+dbgap:SRR1360652	0	SRR1360652_female_breast.mammary.tissue
+dbgap:SRR1400245	0	SRR1400245_male_brain.caudate.basal.ganglia
+dbgap:SRR1323957	0	SRR1323957_female_vagina
+dbgap:SRR1356327	0	SRR1356327_male_small.intestine.terminal.ileum
+dbgap:SRR1070813	0	SRR1070813_male_whole.blood
+dbgap:SRR1405245	0	SRR1405245_male_spleen
+dbgap:SRR1095334	0	SRR1095334_male_nerve.tibial
+dbgap:SRR1102005	0	SRR1102005_female_ovary
+dbgap:SRR1470947	0	SRR1470947_male_artery.tibial
+dbgap:SRR1092184	0	SRR1092184_male_stomach
+dbgap:SRR2165379	0	SRR2165379_male_testis
+dbgap:SRR1079973	0	SRR1079973_male_small.intestine.terminal.ileum
+dbgap:SRR1344185	0	SRR1344185_female_vagina
+dbgap:SRR1403893	0	SRR1403893_male_skin.sun.exposed.lower.leg
+dbgap:SRR662617	0	SRR662617_female_nerve.tibial
+dbgap:SRR1367943	0	SRR1367943_male_brain.frontal.cortex.ba9
+dbgap:SRR614827	0	SRR614827_male_nerve.tibial
+dbgap:SRR1360630	0	SRR1360630_female_skin.sun.exposed.lower.leg
+dbgap:SRR1366495	0	SRR1366495_male_esophagus.mucosa
+dbgap:SRR614912	0	SRR614912_female_thyroid
+dbgap:SRR1455281	0	SRR1455281_female_cells.transformed.fibroblasts
+dbgap:SRR1312446	0	SRR1312446_female_ovary
+dbgap:SRR1383674	0	SRR1383674_male_colon.transverse
+dbgap:SRR1327769	0	SRR1327769_female_esophagus.muscularis
+dbgap:SRR655218	0	SRR655218_male_brain.hypothalamus
+dbgap:SRR612887	0	SRR612887_female_lung
+dbgap:SRR659212	0	SRR659212_male_adipose.subcutaneous
+dbgap:SRR1075004	0	SRR1075004_male_esophagus.muscularis
+dbgap:SRR1403565	0	SRR1403565_male_pituitary
+dbgap:SRR809259	0	SRR809259_female_cells.ebv.transformed.lymphocytes
+dbgap:SRR1320939	0	SRR1320939_female_heart.left.ventricle
+dbgap:SRR1120733	0	SRR1120733_male_colon.transverse
+dbgap:SRR1328642	0	SRR1328642_male_whole.blood
+dbgap:SRR1098074	0	SRR1098074_male_lung
+dbgap:SRR1381372	0	SRR1381372_female_uterus
+dbgap:SRR1314137	0	SRR1314137_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1357233	0	SRR1357233_female_lung
+dbgap:SRR1347298	0	SRR1347298_male_skin.sun.exposed.lower.leg
+dbgap:SRR1393529	0	SRR1393529_female_colon.transverse
+dbgap:SRR602622	0	SRR602622_male_brain.caudate.basal.ganglia
+dbgap:SRR1340804	0	SRR1340804_male_cells.ebv.transformed.lymphocytes
+dbgap:SRR661385	0	SRR661385_male_whole.blood
+dbgap:SRR817353	0	SRR817353_male_skin.sun.exposed.lower.leg
+dbgap:SRR1500732	0	SRR1500732_male_artery.coronary
+dbgap:SRR1478946	0	SRR1478946_male_brain.putamen.basal.ganglia
+dbgap:SRR1413959	0	SRR1413959_male_brain.substantia.nigra
+dbgap:SRR1417588	0	SRR1417588_female_artery.coronary
+dbgap:SRR1474908	0	SRR1474908_female_pancreas
+dbgap:SRR663549	0	SRR663549_male_lung
+dbgap:SRR1332733	0	SRR1332733_male_testis
+dbgap:SRR1437056	0	SRR1437056_male_thyroid
+dbgap:SRR1381566	0	SRR1381566_female_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1087585	0	SRR1087585_male_cells.ebv.transformed.lymphocytes
+dbgap:SRR656899	0	SRR656899_male_heart.left.ventricle
+dbgap:SRR1479239	0	SRR1479239_male_brain.cerebellum
+dbgap:SRR657528	0	SRR657528_male_breast.mammary.tissue
+dbgap:SRR1434436	0	SRR1434436_female_pancreas
+dbgap:SRR1088168	0	SRR1088168_male_whole.blood
+dbgap:SRR1310584	0	SRR1310584_male_adipose.subcutaneous
+dbgap:SRR1361308	0	SRR1361308_male_esophagus.muscularis
+dbgap:SRR1415195	0	SRR1415195_female_thyroid
+dbgap:SRR1477316	0	SRR1477316_male_skin.sun.exposed.lower.leg
+dbgap:SRR2170537	0	SRR2170537_male_heart.left.ventricle
+dbgap:SRR615982	0	SRR615982_male_artery.tibial
+dbgap:SRR1073242	0	SRR1073242_male_cells.transformed.fibroblasts
+dbgap:SRR659295	0	SRR659295_female_whole.blood
+dbgap:SRR1347144	0	SRR1347144_female_skin.not.sun.exposed.suprapubic
+dbgap:SRR812493	0	SRR812493_female_lung
+dbgap:SRR1476547	0	SRR1476547_female_cells.transformed.fibroblasts
+dbgap:SRR1103048	0	SRR1103048_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1446911	0	SRR1446911_male_testis
+dbgap:SRR1443847	0	SRR1443847_male_testis
+dbgap:SRR1332607	0	SRR1332607_male_heart.left.ventricle
+dbgap:SRR1324349	0	SRR1324349_male_artery.tibial
+dbgap:SRR1419039	0	SRR1419039_female_uterus
+dbgap:SRR656994	0	SRR656994_male_nerve.tibial
+dbgap:SRR1086728	0	SRR1086728_male_lung
+dbgap:SRR1324206	0	SRR1324206_male_breast.mammary.tissue
+dbgap:SRR615910	0	SRR615910_male_breast.mammary.tissue
+dbgap:SRR811029	0	SRR811029_male_pancreas
+dbgap:SRR1380208	0	SRR1380208_female_adipose.visceral.omentum
+dbgap:SRR1085159	0	SRR1085159_female_artery.aorta
+dbgap:SRR1420391	0	SRR1420391_female_colon.transverse
+dbgap:SRR1341898	0	SRR1341898_male_brain.hippocampus
+dbgap:SRR1499325	0	SRR1499325_male_esophagus.gastroesophageal.junction
+dbgap:SRR809643	0	SRR809643_male_nerve.tibial
+dbgap:SRR1352256	0	SRR1352256_male_testis
+dbgap:SRR1317554	0	SRR1317554_female_liver
+dbgap:SRR1095358	0	SRR1095358_male_esophagus.muscularis
+dbgap:SRR1413768	0	SRR1413768_male_brain.spinal.cord.cervical.c.1
+dbgap:SRR1093837	0	SRR1093837_male_cells.transformed.fibroblasts
+dbgap:SRR1331751	0	SRR1331751_female_brain.cortex
+dbgap:SRR1332208	0	SRR1332208_male_artery.aorta
+dbgap:SRR817539	0	SRR817539_female_nerve.tibial
+dbgap:SRR1451857	0	SRR1451857_male_thyroid
+dbgap:SRR1487969	0	SRR1487969_male_esophagus.muscularis
+dbgap:SRR1353332	0	SRR1353332_female_colon.sigmoid
+dbgap:SRR1080859	0	SRR1080859_male_testis
+dbgap:SRR1380375	0	SRR1380375_female_artery.aorta
+dbgap:SRR1335113	0	SRR1335113_male_artery.aorta
+dbgap:SRR1453549	0	SRR1453549_male_spleen
+dbgap:SRR1417404	0	SRR1417404_female_lung
+dbgap:SRR1071519	0	SRR1071519_male_pancreas
+dbgap:SRR1320579	0	SRR1320579_female_muscle.skeletal
+dbgap:SRR1374221	0	SRR1374221_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1445365	0	SRR1445365_female_whole.blood
+dbgap:SRR1416754	0	SRR1416754_male_brain.frontal.cortex.ba9
+dbgap:SRR1084742	0	SRR1084742_male_esophagus.muscularis
+dbgap:SRR1088093	0	SRR1088093_female_esophagus.mucosa
+dbgap:SRR614575	0	SRR614575_female_muscle.skeletal
+dbgap:SRR1383192	0	SRR1383192_female_esophagus.mucosa
+dbgap:SRR1386991	0	SRR1386991_female_muscle.skeletal
+dbgap:SRR1351325	0	SRR1351325_male_brain.cerebellar.hemisphere
+dbgap:SRR627421	0	SRR627421_male_brain.cortex
+dbgap:SRR1479640	0	SRR1479640_female_lung
+dbgap:SRR1072199	0	SRR1072199_female_stomach
+dbgap:SRR1350196	0	SRR1350196_male_nerve.tibial
+dbgap:SRR1383937	0	SRR1383937_female_heart.atrial.appendage
+dbgap:SRR1071181	0	SRR1071181_male_small.intestine.terminal.ileum
+dbgap:SRR1338988	0	SRR1338988_male_artery.tibial
+dbgap:SRR810461	0	SRR810461_male_lung
+dbgap:SRR811379	0	SRR811379_female_whole.blood
+dbgap:SRR1402437	0	SRR1402437_male_esophagus.mucosa
+dbgap:SRR1376676	0	SRR1376676_male_lung
+dbgap:SRR658707	0	SRR658707_male_muscle.skeletal
+dbgap:SRR1499849	0	SRR1499849_male_artery.aorta
+dbgap:SRR1092985	0	SRR1092985_male_muscle.skeletal
+dbgap:SRR2135319	0	SRR2135319_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1442686	0	SRR1442686_female_heart.left.ventricle
+dbgap:SRR1420625	0	SRR1420625_male_brain.substantia.nigra
+dbgap:SRR1385542	0	SRR1385542_male_cells.transformed.fibroblasts
+dbgap:SRR1079094	0	SRR1079094_male_esophagus.muscularis
+dbgap:SRR1452143	0	SRR1452143_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1471922	0	SRR1471922_male_brain.caudate.basal.ganglia
+dbgap:SRR1403072	0	SRR1403072_female_artery.coronary
+dbgap:SRR1433860	0	SRR1433860_female_whole.blood
+dbgap:SRR1317832	0	SRR1317832_male_whole.blood
+dbgap:SRR1418323	0	SRR1418323_male_nerve.tibial
+dbgap:SRR1320963	0	SRR1320963_male_brain.frontal.cortex.ba9
+dbgap:SRR1355595	0	SRR1355595_male_brain.amygdala
+dbgap:SRR1357413	0	SRR1357413_male_brain.cerebellum
+dbgap:SRR1328429	0	SRR1328429_male_skin.sun.exposed.lower.leg
+dbgap:SRR1489438	0	SRR1489438_male_artery.tibial
+dbgap:SRR663783	0	SRR663783_female_adipose.subcutaneous
+dbgap:SRR1342701	0	SRR1342701_male_heart.atrial.appendage
+dbgap:SRR1420710	0	SRR1420710_male_skin.sun.exposed.lower.leg
+dbgap:SRR1385124	0	SRR1385124_female_brain.putamen.basal.ganglia
+dbgap:SRR2166114	0	SRR2166114_male_testis
+dbgap:SRR601387	0	SRR601387_female_muscle.skeletal
+dbgap:SRR1387745	0	SRR1387745_female_small.intestine.terminal.ileum
+dbgap:SRR1349032	0	SRR1349032_female_whole.blood
+dbgap:SRR1367965	0	SRR1367965_male_skin.sun.exposed.lower.leg
+dbgap:SRR1370780	0	SRR1370780_male_muscle.skeletal
+dbgap:SRR1101015	0	SRR1101015_male_cells.transformed.fibroblasts
+dbgap:SRR1310334	0	SRR1310334_male_esophagus.mucosa
+dbgap:SRR1368638	0	SRR1368638_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR2135310	0	SRR2135310_male_heart.left.ventricle
+dbgap:SRR1396035	0	SRR1396035_male_esophagus.muscularis
+dbgap:SRR1466597	0	SRR1466597_male_colon.transverse
+dbgap:SRR612323	0	SRR612323_male_artery.tibial
+dbgap:SRR813076	0	SRR813076_male_cells.transformed.fibroblasts
+dbgap:SRR663026	0	SRR663026_female_muscle.skeletal
+dbgap:SRR1097574	0	SRR1097574_female_cervix.ectocervix
+dbgap:SRR1458529	0	SRR1458529_male_colon.sigmoid
+dbgap:SRR627435	0	SRR627435_male_whole.blood
+dbgap:SRR1440625	0	SRR1440625_male_thyroid
+dbgap:SRR1321029	0	SRR1321029_female_adrenal.gland
+dbgap:SRR1453047	0	SRR1453047_male_pancreas
+dbgap:SRR1325733	0	SRR1325733_male_artery.aorta
+dbgap:SRR659863	0	SRR659863_female_cells.leukemia.cell.line.cml
+dbgap:SRR661481	0	SRR661481_female_adipose.visceral.omentum
+dbgap:SRR1333930	0	SRR1333930_male_brain.cortex
+dbgap:SRR1308674	0	SRR1308674_male_heart.atrial.appendage
+dbgap:SRR613939	0	SRR613939_female_artery.tibial
+dbgap:SRR1084007	0	SRR1084007_male_cells.ebv.transformed.lymphocytes
+dbgap:SRR1442356	0	SRR1442356_female_brain.cerebellum
+dbgap:SRR1343967	0	SRR1343967_male_pancreas
+dbgap:SRR1356142	0	SRR1356142_male_skin.not.sun.exposed.suprapubic
+dbgap:SRR1091548	0	SRR1091548_male_stomach
+dbgap:SRR1392055	0	SRR1392055_male_adrenal.gland
+dbgap:SRR1440491	0	SRR1440491_female_whole.blood
+dbgap:SRR1333767	0	SRR1333767_male_brain.nucleus.accumbens.basal.ganglia
+dbgap:SRR1490037	0	SRR1490037_male_muscle.skeletal
