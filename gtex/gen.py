@@ -4,10 +4,12 @@ gen.py
 Uses SraRunInfo.csv to creates manifest files and scripts for running Rail-RNA
 on GTEx RNA-seq data. SraRunInfo.csv was obtained by searching SRA for the GTEx
 project number, (SRP012682) AND "strategy rna seq"[Properties], as depicted in
-SRA_GTEx_search_screenshot_6.37.16_PM_ET_11.21.2015.png . By default, 20
-batches are created.. Sample labels contain gender and tissue metadata. There
-are two scripts for analyzing the samples in each manifest file: one for Rail's
-preprocess job flow, and the other for Rail's align job flow.
+SRA_GTEx_search_screenshot_6.37.16_PM_ET_11.21.2015.png . This returns some
+mmPCR samples, which are removed from consideration in the code here.
+By default, 20 batches are created. Sample labels contain gender and tissue
+metadata. There are two scripts for analyzing the samples in each manifest
+file: one for Rail's preprocess job flow, and the other for Rail's align job
+flow.
 
 We ran
 
@@ -79,11 +81,17 @@ if __name__ == '__main__':
     with open(args.run_info_path) as run_info_stream:
         run_info_stream.readline() # header line
         for line in run_info_stream:
+            if '_rep1' in line or '_rep2' in line:
+                # mmPCR sample
+                continue
             tokens = line.strip().split(',')
             if tokens == ['']: break
+            if int(tokens[5]) < 1000000:
+                # insufficient number of spots
+                continue
             manifest_lines.append('\t'.join(
                     ['dbgap:' + tokens[0], '0', 
-                     '_'.join([tokens[0],
+                     '_'.join([tokens[0], tokens[26], tokens[12],
                                 tokens[36],
                                 re.sub('[^a-zA-Z\d:]+', '.',
                                             tokens[42].lower().strip()
