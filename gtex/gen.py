@@ -15,11 +15,12 @@ We ran
 
 python gen.py --s3-bucket s3://dbgap-stack-361204003210 --region us-east-1
     --c3-2xlarge-bid-price 0.25 --c3-8xlarge-bid-price 1.20
-    --dbgap-key /Users/eterna/gtex/prj_8716.ngc
+    --dbgap-key /Users/eterna/gtex/prj_8716.ngc --prep-stack-name dbgap
+    --align-stack-name dbgap-2
 
 .
 
-Use Rail-RNA v0.2.0 .
+Use Rail-RNA v0.2.0a .
 """
 import random
 import sys
@@ -42,15 +43,23 @@ if __name__ == '__main__':
     parser.add_argument('--region', type=str, required=True,
             help='AWS region in which to run job flows; we used us-east-1'
         )
-    parser.add_argument('--c3-2xlarge-bid-price', type=float, required=False,
-            default=0.15,
-            help='bid price for each c3.2xlarge instance; this instance '
+    parser.add_argument('--m3-xlarge-bid-price', type=float, required=False,
+            default=0.20,
+            help='bid price for each m3.xlarge instance; this instance '
                  'type is used for preprocessing data'
         )
     parser.add_argument('--c3-8xlarge-bid-price', type=float, required=False,
-            default=0.30,
-            help='bid price for each c3.8xlarge instance; this instance '
+            default=1.20,
+            help='bid price for each c3.2xlarge instance; this instance '
                  'type is used for aligning data'
+        )
+    parser.add_argument('--prep-stack-name', type=str, required=False,
+            default='dbgap',
+            help='stack name for preprocess job flow'
+        )
+    parser.add_argument('--align-stack-name', type=str, required=False,
+            default='dbgap',
+            help='stack name for align job flow'
         )
     parser.add_argument('--seed', type=int, required=False,
             default=4523,
@@ -120,17 +129,19 @@ if __name__ == '__main__':
                 )
             print >>prep_stream, (
                     'rail-rna prep elastic -m $DIR/{manifest_file} '
-                    '--profile dbgap --secure-stack-name dbgap '
-                    '--dbgap-key {dbgap_key} --core-instance-type c3.2xlarge '
-                    '--master-instance-type c3.2xlarge '
+                    '--profile dbgap --secure-stack-name {stack_name} '
+                    '--dbgap-key {dbgap_key} --core-instance-type m3.xlarge '
+                    '--master-instance-type m3.xlarge '
                     '-o {s3_bucket}/gtex_prep_batch_{batch_number} '
-                    '-c 63 --core-instance-bid-price {core_price} '
-                    '--master-instance-bid-price {core_price}'
+                    '-c 20 --core-instance-bid-price {core_price} '
+                    '--master-instance-bid-price {core_price} -f '
+                    '--max-task-attempts 6'
                 ).format(manifest_file='gtex_batch_{}.manifest'.format(i),
                             dbgap_key=args.dbgap_key,
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
-                            core_price=args.c3_2xlarge_bid_price)
+                            core_price=args.m3_xlarge_bid_price,
+                            stack_name=args.prep_stack_name)
         with open('align_gtex_batch_{}.sh'.format(i), 'w') as align_stream:
             print >>align_stream, '#!/usr/bin/env bash'
             print >>align_stream, (
@@ -138,15 +149,17 @@ if __name__ == '__main__':
                 )
             print >>align_stream, (
                     'rail-rna align elastic -m $DIR/{manifest_file} '
-                    '--profile dbgap --secure-stack-name dbgap '
+                    '--profile dbgap --secure-stack-name {stack_name} '
                     '-o {s3_bucket} --core-instance-type c3.8xlarge '
                     '--master-instance-type c3.8xlarge '
                     '-c 80 --core-instance-bid-price {core_price} '
                     '--master-instance-bid-price {core_price} '
                     '-i {s3_bucket}/gtex_prep_batch_{batch_number} '
                     '-o {s3_bucket}/gtex_align_batch_{batch_number} '
-                    '-a hg38'
+                    '-a hg38 -f -d jx,tsv,bed,bw,idx '
+                    '--max-task-attempts 6'
                 ).format(manifest_file='gtex_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
-                            core_price=args.c3_8xlarge_bid_price)
+                            core_price=args.c3_8xlarge_bid_price,
+                            stack_name=args.align_stack_name)
