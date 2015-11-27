@@ -6,7 +6,7 @@ on GTEx RNA-seq data. SraRunInfo.csv was obtained by searching SRA for the GTEx
 project number, (SRP012682) AND "strategy rna seq"[Properties], as depicted in
 SRA_GTEx_search_screenshot_6.37.16_PM_ET_11.21.2015.png . This returns some
 mmPCR samples, which are removed from consideration in the code here.
-By default, 20 batches are created. Sample labels contain gender and tissue
+By default, 30 batches are created. Sample labels contain gender and tissue
 metadata. There are two scripts for analyzing the samples in each manifest
 file: one for Rail's preprocess job flow, and the other for Rail's align job
 flow.
@@ -14,10 +14,10 @@ flow.
 We ran
 
 python gen.py --s3-bucket s3://dbgap-stack-361204003210 --region us-east-1
-    --c3-2xlarge-bid-price 0.25 --c3-8xlarge-bid-price 1.20
-    --dbgap-key /Users/eterna/gtex/prj_8716.ngc --prep-stack-name dbgap
-    --align-stack-name dbgap-2
-
+    --m3-xlarge-bid-price 0.25 --c3-8xlarge-bid-price 1.20
+    --dbgap-key /Users/eterna/gtex/prj_8716.ngc
+    --prep-stack-names dbgap-1 dbgap-2 dbgap-3 dbgap-4
+    --align-stack-names dbgap-3
 .
 
 Use Rail-RNA v0.2.0a .
@@ -53,13 +53,13 @@ if __name__ == '__main__':
             help='bid price for each c3.2xlarge instance; this instance '
                  'type is used for aligning data'
         )
-    parser.add_argument('--prep-stack-name', type=str, required=False,
-            default='dbgap',
-            help='stack name for preprocess job flow'
+    parser.add_argument('--prep-stack-names', type=str, required=False,
+            default='dbgap', nargs='+',
+            help='stack name(s) for prep job flow; cycle through them'
         )
-    parser.add_argument('--align-stack-name', type=str, required=False,
-            default='dbgap',
-            help='stack name for align job flow'
+    parser.add_argument('--align-stack-names', type=str, required=False,
+            default='dbgap', nargs='+',
+            help='stack name(s) for align job flow; cycle through them'
         )
     parser.add_argument('--seed', type=int, required=False,
             default=4523,
@@ -77,7 +77,7 @@ if __name__ == '__main__':
                   'SRA_GTEx_search_screenshot_6.37.16_PM_ET_11.21.2015.png')
         )
     parser.add_argument('--batch-count', type=int, required=False,
-            default=20,
+            default=30,
             help='number of batches to create; batches are designed to be '
                  'of approximately equal size'
         )
@@ -95,32 +95,36 @@ if __name__ == '__main__':
                 continue
             tokens = line.strip().split(',')
             if tokens == ['']: break
-            if int(tokens[5]) < 1000000:
-                # insufficient number of spots
-                continue
-            manifest_lines.append('\t'.join(
+            spots = int(tokens[5])
+            manifest_lines.append((spots, '\t'.join(
                     ['dbgap:' + tokens[0], '0', 
                      '_'.join([tokens[0], tokens[26], tokens[12],
                                 tokens[36],
                                 re.sub('[^a-zA-Z\d:]+', '.',
                                             tokens[42].lower().strip()
                                             ).strip('.')])]
-                ))
+                )))
     random.seed(args.seed)
     random.shuffle(manifest_lines)
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    # Write all manifest files
-    manifest_streams = [open('gtex_batch_{}.manifest'.format(i), 'w')
-                        for i in xrange(args.batch_count)]
-    for i, manifest_stream in enumerate(cycle(manifest_streams)):
+    '''Write all manifest files; files in each manifest are listed in order of
+    descending # of spots so biggest samples are downloaded first'''
+    manifest_files = [[] for i in xrange(args.batch_count)]
+    for i, manifest_index in enumerate(cycle(range(args.batch_count))):
         try:
-            print >>manifest_stream, manifest_lines[i]
+            manifest_files[manifest_index].append(manifest_lines[i])
         except IndexError:
             # No more manifest lines
             break
-    for manifest_stream in manifest_streams:
-        manifest_stream.close()
+    for i, manifest_file in enumerate(manifest_files):
+        with open('gtex_batch_{}.manifest'.format(i), 'w') as manifest_stream:
+            for spots, line in sorted(
+                                manifest_file, key=lambda x: x[0], reverse=True
+                            ):
+                print >>manifest_stream, line
     # Write all prep and align scripts
+    prep_stack_name_cycle = cycle(args.prep_stack_names)
+    align_stack_name_cycle = cycle(args.align_stack_names)
     for i in xrange(args.batch_count):
         with open('prep_gtex_batch_{}.sh'.format(i), 'w') as prep_stream:
             print >>prep_stream, '#!/usr/bin/env bash'
@@ -141,7 +145,7 @@ if __name__ == '__main__':
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
                             core_price=args.m3_xlarge_bid_price,
-                            stack_name=args.prep_stack_name)
+                            stack_name=next(prep_stack_name_cycle))
         with open('align_gtex_batch_{}.sh'.format(i), 'w') as align_stream:
             print >>align_stream, '#!/usr/bin/env bash'
             print >>align_stream, (
@@ -150,7 +154,7 @@ if __name__ == '__main__':
             print >>align_stream, (
                     'rail-rna align elastic -m $DIR/{manifest_file} '
                     '--profile dbgap --secure-stack-name {stack_name} '
-                    '-o {s3_bucket} --core-instance-type c3.8xlarge '
+                    '--core-instance-type c3.8xlarge '
                     '--master-instance-type c3.8xlarge '
                     '-c 80 --core-instance-bid-price {core_price} '
                     '--master-instance-bid-price {core_price} '
@@ -162,4 +166,4 @@ if __name__ == '__main__':
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
                             core_price=args.c3_8xlarge_bid_price,
-                            stack_name=args.align_stack_name)
+                            stack_name=next(align_stack_name_cycle))
