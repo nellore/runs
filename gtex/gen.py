@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """
 gen.py
 
@@ -18,9 +19,31 @@ python gen.py --s3-bucket s3://dbgap-stack-361204003210 --region us-east-1
     --dbgap-key /Users/eterna/gtex/prj_8716.ngc
     --prep-stack-names dbgap-1 dbgap-2 dbgap-3 dbgap-4
     --align-stack-names dbgap-3
-.
 
-Use Rail-RNA v0.2.0a .
+and used Rail-RNA v0.2.1 . After the manifests, preprocess, and align scripts
+were generated, we modified some so we could launch into VPC public subnets in
+different availability zones. We created a total of five VPCs using the
+instructions at http://docs.rail.bio/dbgap/ . To simulate our setup, first
+use the CloudFormation template
+
+https://github.com/nellore/rail/blob/v0.2.1/src/cloudformation/dbgap.template
+
+and name the stack "dbgap". Then create another four VPCs in different
+availability zones in us-east-1 using
+
+https://github.com/nellore/rail/blob/v0.2.1/src/cloudformation/
+    dbgap_minus_cloudtrail.template
+
+, and name them "dbgap-1", "dbgap-2", "dbgap-3", and "dbgap-4". Each subnet
+accommodates up to 256 IPs. This means more than 256 instances with public IPs
+can't be launched into the same subnet, which translates to a limit of 
+3 alignment flows with 80 core instances each per subnet. Alternatively, a
+public subnet with a larger CIDR block can be created to launch more flows into
+the same subnet, or a single VPC with more than one public subnet, each in a 
+different availability zone, can be created.)
+We executed each prep_gtex_batch_<index>.sh script and waited for the job
+flow to finish before executing the corresponding align_gtex_batch_<index>.sh
+script.
 """
 import random
 import sys
