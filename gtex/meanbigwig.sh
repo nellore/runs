@@ -21,7 +21,7 @@ do
         rm -f ${chrom}.wig
 	fi
 done
-echo "Summing wigs... "
+echo "Summing wigs..."
 $WIGGLETOOLS sum *.wig >sum.wig
 echo "Bigwigging..."
 $WIGTOBIGWIG sum.wig $DIR/hg38.sizes gtex_mean_coverage.bw
