@@ -81,7 +81,7 @@ if __name__ == '__main__':
                         )
                 run_to_batch[run] = batch_number
                 run_to_bw_file[run] = bw_file
-    with open(os.path.join(pheno_dir,
+    with open(os.path.join(args.pheno_dir,
             'phs000424.v6.pht002741.v6.p1.GTEx_Sample.MULTI.txt'
         )) as id_stream:
         for i in xrange(10): id_stream.readline()
@@ -95,7 +95,7 @@ if __name__ == '__main__':
             sample_to_id[tokens[2]] = tokens[:2] + tokens[3:]
             sample_to_SUBJID[tokens[2]] = tokens[3]
             sample_to_SAMPID[tokens[2]] = tokens[4]
-    with open(os.path.join(pheno_dir,
+    with open(os.path.join(args.pheno_dir,
             'phs000424.v6.pht002743.v6.p1.c1.GTEx_Sample_Attributes.GRU.txt'
         )) as sample_stream:
         for i in xrange(10): sample_stream.readline()
@@ -105,7 +105,7 @@ if __name__ == '__main__':
             if not line.strip(): continue
             tokens = line.strip().split('\t')
             SAMPID_to_sample_pheno[tokens[1]] = tokens[2:]
-    with open(os.path.join(pheno_dir,
+    with open(os.path.join(args.pheno_dir,
             'phs000424.v6.pht002742.v6.p1.c1.GTEx_Subject_Phenotypes.GRU.txt'
         )) as subject_stream:
         for i in xrange(10): subject_stream.readline()
