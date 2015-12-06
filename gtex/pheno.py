@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     current_dir = os.path.dirname(__file__)
     with open(os.path.join(current_dir, 'SraRunInfo.csv')) as run_stream:
-        run_reader - reader(run_stream)
+        run_reader = reader(run_stream)
         run_labels = run_stream.next()
         sample_to_run = {}
         run_to_sample = {}
