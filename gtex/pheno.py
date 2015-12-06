@@ -68,10 +68,10 @@ if __name__ == '__main__':
         run_to_batch = {}
         run_to_bw_file = {}
         with open(manifest) as manifest_stream:
-            for line in manifest:
+            for line in manifest_stream:
                 tokens = line.strip().split('\t')
                 run = tokens[0][6:]
-                bw_file = os.path.join(args.bigwig_out_dir, tokens[1] + '.bw')
+                bw_file = os.path.join(args.bigwig_out_dir, tokens[2] + '.bw')
                 if not os.path.exists(bw_file):
                     raise RuntimeError(
                             'BigWig file {} was not found.'.format(bw_file)
