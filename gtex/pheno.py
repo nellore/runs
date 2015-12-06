@@ -131,8 +131,8 @@ if __name__ == '__main__':
         assert len(subj_data) == len(subject_pheno_labels)
         assert len(sra_data) == len(run_labels)
         print '\t'.join([run, run_to_batch[run], run_to_bw_file[run]]
-                    + blank_to_NA(sra_data)
                     + blank_to_NA(sample_to_id[sample])
+                    + blank_to_NA(sra_data)
                     + blank_to_NA(
                             SAMPID_to_sample_pheno[sample_to_SAMPID[sample]]
                         )
