@@ -48,7 +48,7 @@ if __name__ == '__main__':
                  'paths to sample bigwigs in the table it dumps')
     args = parser.parse_args()
 
-    current_dir = os.path.dirname(__file__)
+    current_dir = os.path.realpath(__file__)
     with open(os.path.join(current_dir, 'SraRunInfo.csv')) as run_stream:
         run_reader = reader(run_stream)
         run_labels = run_stream.next()
