@@ -141,7 +141,8 @@ if __name__ == '__main__':
                                                                     )
         run_to_mate_length[run] = len(single_read[2])
         print >>sys.stderr, \
-            'Finished grabbing read lengths for {} samples.'.format(i + 1)
+            ('Finished grabbing read lengths for {} samples. Last read '
+             'length was {}.').format(i + 1, run_to_mate_length[run])
     print '\t'.join(['Run', 'MateLength', 'RailRnaBatchNumber', 'BigWigPath']
                         + id_labels + sample_pheno_labels
                         + subject_pheno_labels)
