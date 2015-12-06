@@ -131,7 +131,7 @@ if __name__ == '__main__':
                 '{fastq_dump} --split-spot -I --stdout -X 1 {run}'
             ).format(secure_working_dir=args.secure_working_dir,
                         fastq_dump=args.fastq_dump,
-                        run=sra_run)
+                        run=run)
         single_read = subprocess.check_output(fastq_dump_command,
                                                 shell=True,
                                                 executable='/bin/bash').split(
