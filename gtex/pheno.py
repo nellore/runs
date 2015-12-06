@@ -10,6 +10,7 @@ Dumps pheno table to stdout.
 """
 import os
 from csv import reader
+import subprocess
 
 def blank_to_NA(it):
     """ Converts blank fields to NAs in some list it
