@@ -35,14 +35,6 @@ if __name__ == '__main__':
             'phs000424.v6.pht002741.v6.p1.GTEx_Sample.MULTI.txt, and '
             'phs000424.v6.pht002743.v6.p1.c1.GTEx_Sample_Attributes.GRU.txt'
         )
-    parser.add_argument('--fastq-dump', type=str, required=True,
-            help='path to fastq-dump executable'
-        )
-    parser.add_argument('--secure-working-dir', type=str, required=True,
-            help='path to secure working directory especially for working '
-                 'with GTEx data; this is set up by vdb-config using a dbGaP '
-                 'key (NGC) file as described at '
-                 'https://www.youtube.com/watch?v=FjYO6Ys5cpc')
     parser.add_argument('--bigwig-out-dir', type=str, required=True,
             help='path to output directory from download.sh that contains '
                  'various batch_k files for k a batch number; this script '
@@ -53,7 +45,7 @@ if __name__ == '__main__':
     current_dir = os.path.dirname(os.path.realpath(__file__))
     with open(os.path.join(current_dir, 'SraRunInfo.csv')) as run_stream:
         run_reader = reader(run_stream)
-        run_labels = run_stream.next()
+        run_labels = run_reader.next()[1:]
         sample_to_run = {}
         run_to_sample = {}
         run_to_sra_info = {}
@@ -125,37 +117,20 @@ if __name__ == '__main__':
             SUBJID_to_subject_pheno[tokens[1]] = tokens[2:] + [''] * (
                                             label_count - len(tokens) + 2
                                         )
-    # Grab read lengths
-    run_to_mate_length = {}
-    for i, run in enumerate(run_to_batch):
-        fastq_dump_command = (
-                'set -exo pipefail; cd {secure_working_dir}; '
-                '{fastq_dump} --split-spot -I --stdout -X 1 {run}'
-            ).format(secure_working_dir=args.secure_working_dir,
-                        fastq_dump=args.fastq_dump,
-                        run=run)
-        single_read = subprocess.check_output(fastq_dump_command,
-                                                shell=True,
-                                                executable='/bin/bash').split(
-                                                                        '\n'
-                                                                    )
-        run_to_mate_length[run] = len(single_read[1])
-        print >>sys.stderr, \
-            ('Finished grabbing read lengths for {} samples. Last read '
-             'length was {}.').format(i + 1, run_to_mate_length[run])
-    print '\t'.join(['Run', 'MateLength', 'RailRnaBatchNumber', 'BigWigPath']
-                        + id_labels + sample_pheno_labels
+    print '\t'.join(['Run', 'RailRnaBatchNumber', 'BigWigPath']
+                        + id_labels + run_labels + sample_pheno_labels
                         + subject_pheno_labels)
     for run in run_to_batch:
         sample = run_to_sample[run]
         id_data = sample_to_id[sample]
         samp_data = SAMPID_to_sample_pheno[sample_to_SAMPID[sample]]
         subj_data = SUBJID_to_subject_pheno[sample_to_SUBJID[sample]]
+        sra_data = run_to_sra_info[run]
         assert len(id_data) == len(id_labels)
         assert len(samp_data) == len(sample_pheno_labels)
         assert len(subj_data) == len(subject_pheno_labels)
-        print '\t'.join([run, str(run_to_mate_length[run]), run_to_batch[run],
-                            run_to_bw_file[run]]
+        assert len(sra_data) == len(run_labels)
+        print '\t'.join([run, run_to_batch[run], run_to_bw_file[run]]
                     + blank_to_NA(sample_to_id[sample])
                     + blank_to_NA(
                             SAMPID_to_sample_pheno[sample_to_SAMPID[sample]]
