@@ -100,7 +100,7 @@ if __name__ == '__main__':
         )) as sample_stream:
         for i in xrange(10): sample_stream.readline()
         SAMPID_to_sample_pheno = {}
-        sample_pheno_labels = line.strip().split('\t')[2:]
+        sample_pheno_labels = sample_stream.readline().strip().split('\t')[2:]
         for line in sample_stream:
             if not line.strip(): continue
             tokens = line.strip().split('\t')
@@ -110,7 +110,9 @@ if __name__ == '__main__':
         )) as subject_stream:
         for i in xrange(10): subject_stream.readline()
         SUBJID_to_subject_pheno = {}
-        subject_pheno_labels = line.strip().split('\t')[2:]
+        subject_pheno_labels = subject_stream.readline().strip().split(
+                                                                    '\t'
+                                                                )[2:]
         for line in subject_stream:
             if not line.strip(): continue
             tokens = line.strip().split('\t')
