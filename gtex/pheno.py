@@ -139,7 +139,7 @@ if __name__ == '__main__':
                                                 executable='/bin/bash').split(
                                                                         '\n'
                                                                     )
-        run_to_mate_length[run] = len(single_read[2])
+        run_to_mate_length[run] = len(single_read[1])
         print >>sys.stderr, \
             ('Finished grabbing read lengths for {} samples. Last read '
              'length was {}.').format(i + 1, run_to_mate_length[run])
