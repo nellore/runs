@@ -151,7 +151,7 @@ if __name__ == '__main__':
         assert len(id_data) == len(id_labels)
         assert len(samp_data) == len(sample_pheno_labels)
         assert len(subj_data) == len(subject_pheno_labels)
-        print '\t'.join([run, run_to_mate_length[run], run_to_batch[run],
+        print '\t'.join([run, str(run_to_mate_length[run]), run_to_batch[run],
                             run_to_bw_file[run]]
                     + blank_to_NA(sample_to_id[sample])
                     + blank_to_NA(
