@@ -115,9 +115,10 @@ if __name__ == '__main__':
             if not line.strip(): continue
             tokens = line.strip().split('\t')
             SUBJID_to_subject_pheno[tokens[1]] = tokens[2:]
-    '''# Grab read lengths
+    # Grab read lengths
+    run_to_mate_length = {}
+    '''
     for i, run in enumerate(run_to_batch):
-        run_to_mate_length = {}
         fastq_dump_command = (
                 'set -exo pipefail; cd {secure_working_dir}; '
                 '{fastq_dump} --split-spot -I --stdout -X 1 {run}'
