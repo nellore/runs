@@ -12,7 +12,6 @@ import os
 from csv import reader
 import subprocess
 import sys
-import time
 
 def blank_to_NA(it):
     """ Converts blank fields to NAs in some list it
@@ -144,7 +143,6 @@ if __name__ == '__main__':
         print >>sys.stderr, \
             ('Finished grabbing read lengths for {} samples. Last read '
              'length was {}.').format(i + 1, run_to_mate_length[run])
-        time.sleep(2)
     print '\t'.join(['Run', 'MateLength', 'RailRnaBatchNumber', 'BigWigPath']
                         + id_labels + sample_pheno_labels
                         + subject_pheno_labels)
