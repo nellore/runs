@@ -125,7 +125,6 @@ if __name__ == '__main__':
                                         )
     # Grab read lengths
     run_to_mate_length = {}
-    '''
     for i, run in enumerate(run_to_batch):
         fastq_dump_command = (
                 'set -exo pipefail; cd {secure_working_dir}; '
@@ -140,9 +139,7 @@ if __name__ == '__main__':
                                                                     )
         run_to_mate_length[run] = len(single_read[2])
         print >>sys.stderr, \
-            'Finished grabbing read lengths for {} samples.'.format(i + 1)'''
-    for run in run_to_batch:
-        run_to_mate_length[run] = 'filler'
+            'Finished grabbing read lengths for {} samples.'.format(i + 1)s
     print '\t'.join(['Run', 'MateLength', 'RailRnaBatchNumber', 'BigWigPath']
                         + id_labels + sample_pheno_labels
                         + subject_pheno_labels)
