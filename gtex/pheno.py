@@ -56,6 +56,7 @@ if __name__ == '__main__':
         run_to_sample = {}
         run_to_sra_info = {}
         for tokens in run_reader:
+            if not tokens: break
             sample_to_run[tokens[25]] = tokens[0]
             run_to_sample[tokens[0]] = tokens[25]
             run_to_sra_info[tokens[0]] = tokens[1:]
