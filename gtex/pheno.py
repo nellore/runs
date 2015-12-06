@@ -60,13 +60,13 @@ if __name__ == '__main__':
             sample_to_run[tokens[25]] = tokens[0]
             run_to_sample[tokens[0]] = tokens[25]
             run_to_sra_info[tokens[0]] = tokens[1:]
+    run_to_batch = {}
+    run_to_bw_file = {}
     for batch_number, manifest in [
             (filename.split('_')[-1][:-9], filename)
             for filename in os.listdir(current_dir)
             if filename[-9:] == '.manifest'
         ]:
-        run_to_batch = {}
-        run_to_bw_file = {}
         with open(manifest) as manifest_stream:
             for line in manifest_stream:
                 tokens = line.strip().split('\t')
