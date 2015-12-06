@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Computes mean of mean bigwigs with WiggleTools
+# Computes mean of mean bigwigs with WiggleTools; ASSUMES 30 batches
 # $1: path to wiggletools binary; we used v1.1, available at https://github.com/Ensembl/WiggleTools/releases/download/v1.1/wiggletools_x86_64_linux
 # $2: path to output directory from download.sh containing batch_k subdirectories for k the batch number
 # $3: path to wigToBigWig executable from http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/wigToBigWig
