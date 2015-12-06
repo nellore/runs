@@ -101,10 +101,13 @@ if __name__ == '__main__':
         for i in xrange(10): sample_stream.readline()
         SAMPID_to_sample_pheno = {}
         sample_pheno_labels = sample_stream.readline().strip().split('\t')[2:]
+        label_count = len(sample_pheno_labels)
         for line in sample_stream:
             if not line.strip(): continue
             tokens = line.strip().split('\t')
-            SAMPID_to_sample_pheno[tokens[1]] = tokens[2:]
+            SAMPID_to_sample_pheno[tokens[1]] = tokens[2:] + [''] * (
+                                            label_count - len(tokens) + 2
+                                        )
     with open(os.path.join(args.pheno_dir,
             'phs000424.v6.pht002742.v6.p1.c1.GTEx_Subject_Phenotypes.GRU.txt'
         )) as subject_stream:
@@ -113,10 +116,13 @@ if __name__ == '__main__':
         subject_pheno_labels = subject_stream.readline().strip().split(
                                                                     '\t'
                                                                 )[2:]
+        label_count = len(subject_pheno_labels)
         for line in subject_stream:
             if not line.strip(): continue
             tokens = line.strip().split('\t')
-            SUBJID_to_subject_pheno[tokens[1]] = tokens[2:]
+            SUBJID_to_subject_pheno[tokens[1]] = tokens[2:] + [''] * (
+                                            label_count - len(tokens) + 2
+                                        )
     # Grab read lengths
     run_to_mate_length = {}
     '''
