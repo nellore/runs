@@ -39,3 +39,9 @@ for(chr in chrs) {
 
 ## Save results
 save(regionMat, file=paste0('regionMat-cut', cutoff, '.Rdata'))
+
+## Reproducibility info
+proc.time()
+Sys.time()
+options(width = 120)
+devtools::session_info()
