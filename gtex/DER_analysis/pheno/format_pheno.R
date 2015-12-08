@@ -42,6 +42,9 @@ pheno$DTHPRNINT_Minute <- as.integer(gsub(' hour.*', '', as.character(pheno$DTHP
 ## Note that Rail RNA Batch number has to be a factor
 pheno$RailRnaBatchNumber <- as.factor(pheno$RailRnaBatchNumber)
 
+## BigWig file paths are characters
+pheno$BigWigPath <- as.character(pheno$BigWigPath)
+
 
 ## Find which variables are all NA
 number_NA <- sapply(pheno, function(x) { sum(is.na(x))})
@@ -72,8 +75,11 @@ summary(pheno[, number_NA / nrow(pheno) <= 0.1 & number_NA / nrow(pheno) > 0])
 sum(number_NA / nrow(pheno) == 0)
 summary(pheno[, number_NA / nrow(pheno) == 0])
 
+
+## Save pheno tables
 save(pheno, file = 'pheno_complete.Rdata')
-save(pheno[, number_NA / nrow(pheno) <= 0.1], file = 'pheno_missing_less_10.Rdata')
+pheno <- pheno[, number_NA / nrow(pheno) <= 0.1]
+save(pheno, file = 'pheno_missing_less_10.Rdata')
 
 
 ## Reproducibility info
