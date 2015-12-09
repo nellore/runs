@@ -4,6 +4,10 @@
 # mkdir logs
 # Rscript --no-save --no-restore --verbose format_pheno.R > logs/format_pheno_log.txt 2>&1
 
+## Used information from
+## ftp://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000424/phs000424.v6.p1/pheno_variable_summaries/phs000424.v6.pht002742.v6.GTEx_Subject_Phenotypes.data_dict.xml
+## to determine factor levels.
+
 pheno <- read.table('/dcl01/leek/data/gtex_work/gtex_pheno_table.tsv', sep = '\t', header = TRUE, comment.char = '', na.strings = c('NA', 'N/A'), quote = '')
 cols.96.97.98.99 <- c('RACE', 'TRAMP', 'DTHATPSY', 'DTHRFG', 'DTHCERT', 'DTHVNT', 'DTHWTNS', 'LBCMVTAB', 'LBEBVGAB', 'LBEBVMAB', 'LBHBCABM', 'LBHBCABT', 'LBHBSAB', 'LBHBSAG', 'LBHCV1NT', 'LBHBHCVAB', 'LBHIV1NT', 'LBHIVAB', 'LBHIVO', 'LBPRRVDRL', 'LBRPR', 'MHABNWBC', 'MHALS', 'MHALZDMT', 'MHALZHMR', 'MHARTHTS', 'MHASCITES', 'MHASTHMA', 'MHBCTINF', 'MHBLDDND', 'MHBLDOCNT', 'MHCANCER5', 'MHCANCERC', 'MHCANCERNM', 'MHCLLULTS', 'MHCLRD', 'MHCOCAINE5', 'MHCOPD', 'MHCOUGHU', 'MHCVD', 'MHDLYSIS', 'MHDMNTIA', 'MHDPRSSN', 'MHDTND72H', 'MHENCEPHA', 'MHEURO5', 'MHFLU', 'MHFNGINF', 'MHFVRU', 'MHGNRR12M', 'MHHEPBCT', 'MHHEPCCT', 'MHHEROIN', 'MHHGH', 'MHHIVCT', 'MHHIVNT', 'MHHMPHLIA', 'MHHMPHLIAB', 'MHHRTATT', 'MHHRTDIS', 'MHHRTDISB', 'MHHTN', 'MHINFLNE', 'MHIVDRG5', 'MHJAKOB', 'MHLAPTHU', 'MHLUPUS', 'MHLVRDIS', 'MHMENINA', 'MHMS', 'MHMSXWMA', 'MHMSXWMB', 'MHNEPH', 'MHNGHTSWT', 'MHNPHYS4W', 'MHNRTHEUR', 'MHOPNWND', 'MHOPPINF', 'MHORGNTP', 'MHOSTMYLTS', 'MHPLLABS', 'MHPNMIAB', 'MHPNMNIA', 'MHPRCNP', 'MHPRKNSN', 'MHPSBLDCLT', 'MHRA', 'MHRBSANML', 'MHREYES', 'MHRNLFLR', 'MHSARS', 'MHSCHZ', 'MHSCLRDRM', 'MHSDRGABS', 'MHSEPSIS', 'MHSKNSPT', 'MHSMLPXCT', 'MHSMLPXVC', 'MHSRC', 'MHSRCDSS', 'MHSRGHM', 'MHSTD', 'MHSTRDLT', 'MHSUBABSA', 'MHSUBABSB', 'MHSXMDA', 'MHSXMDB', 'MHSYPH12M', 'MHSZRSU', 'MHT1D', 'MHT2D', 'MHTBHX', 'MHTEMPU', 'MHTTOO12M', 'MHTTOONP', 'MHTXCEXP', 'MHUK8096', 'MHUREMIA', 'MHWKNSSU', 'MHWNVCT', 'MHWNVHX', 'MHWTLSUA', 'MHWTLSUB')
 stopifnot(all(cols.96.97.98.99 %in% colnames(pheno)))
