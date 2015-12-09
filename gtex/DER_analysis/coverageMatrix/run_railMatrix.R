@@ -1,5 +1,6 @@
 library('derfinder')
 library('devtools')
+library('BiocParallel')
 
 ## Options
 cutoff <- 2.5
@@ -30,7 +31,7 @@ summary(counts$totalMapped)
 summary(counts$totalMapped) / 1e6
 
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = 1L, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, mc.cores = 24)
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = 1L, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, BPPARAM.custom = MulticoreParam(workers = 24, outfile = Sys.getenv('SGE_STDERR_PATH')))
 
 ## Take into account that each sample had different lengths
 for(chr in chrs) {
