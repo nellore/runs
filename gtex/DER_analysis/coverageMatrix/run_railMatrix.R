@@ -25,7 +25,7 @@ cutoff <- 2.5
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 
 chrs <- paste0('chr', opt$chrnum)
-summaryFiles <- rep('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', 24)
+summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
 sampleFiles <- pheno$BigWigPath
 
 ## Find count files
