@@ -1,13 +1,30 @@
 library('derfinder')
 library('devtools')
 library('BiocParallel')
+library('getopt')
+
+## Specify parameters
+spec <- matrix(c(
+    'chrnum', 'c', 1, 'character', 'Chromosome in the following format: 1, X, Y',
+	'help' , 'h', 0, 'logical', 'Display help'
+), byrow=TRUE, ncol=5)
+opt <- getopt(spec)
+
+
+## if help was asked for print a friendly message
+## and exit with a non-zero error code
+if (!is.null(opt$help)) {
+	cat(getopt(spec, usage=TRUE))
+	q(status=1)
+}
+
 
 ## Options
 cutoff <- 2.5
 
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 
-chrs <- paste0('chr', c(1:22, 'X', 'Y'))
+chrs <- paste0('chr', opt$chrnum)
 summaryFiles <- rep('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', 24)
 sampleFiles <- pheno$BigWigPath
 
@@ -26,20 +43,11 @@ counts$totalMapped <- as.integer(sapply(strsplit(counts$total.mapped.reads, ',')
 map <- match(gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles), counts$X)
 counts <- counts[map, ]
 
-## Check distribution
-summary(counts$totalMapped)
-summary(counts$totalMapped) / 1e6
-
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = 1L, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, BPPARAM.custom = MulticoreParam(workers = 24, outfile = Sys.getenv('SGE_STDERR_PATH')))
-
-## Take into account that each sample had different lengths
-for(chr in chrs) {
-    regionMat[[chr]]$coverageMatrix <- regionMat[[chr]]$coverageMatrix / matrix(rep(pheno$avgLength, each = nrow(regionMat[[chr]]$coverageMatrix)), ncol = ncol(regionMat[[chr]]$coverageMatrix))
-}
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = pheno$avgLength, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 10))
 
 ## Save results
-save(regionMat, file=paste0('regionMat-cut', cutoff, '.Rdata'))
+save(regionMat, file=paste0('regionMat-cut', cutoff, '-chr', opt$chrnum, '.Rdata'))
 
 ## Reproducibility info
 proc.time()
