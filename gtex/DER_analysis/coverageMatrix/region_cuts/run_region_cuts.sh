@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=4G,h_vmem=20G,h_fsize=10G
+#$ -l mem_free=4G,h_vmem=30G,h_fsize=10G
 #$ -N region-cuts
 #$ -pe local 10
 
