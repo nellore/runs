@@ -28,7 +28,7 @@ echo '**** Job starts ****'
 date
 
 # Run railMatrix()
-module load R/devel
+module load R/3.2.x
 Rscript run_railMatrix.R -c "${chrnum}"
 
 ## Move log files into the logs directory
@@ -59,7 +59,7 @@ echo '**** Job starts ****'
 date
 
 # Merge railMatrix() results
-module load R/devel
+module load R/3.2.x
 Rscript merge_railMatrix.R
 
 ## Move log files into the logs directory
