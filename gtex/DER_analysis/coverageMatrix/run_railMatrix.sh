@@ -20,7 +20,7 @@ for chrnum in Y X 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=20G,h_vmem=30G,h_fsize=100G
+#$ -l mem_free=8G,h_vmem=30G,h_fsize=100G
 #$ -N ${sname}
 #$ -pe local ${CORES}
 
