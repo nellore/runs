@@ -45,7 +45,7 @@ map <- match(gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', ''
 counts <- counts[map, ]
 
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = pheno$avgLength / 2, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 40)
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = pheno$avgLength / 2, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 5)
 
 ## Save results
 save(regionMat, file=paste0('regionMat-cut', cutoff, '-chr', opt$chrnum, '.Rdata'))
