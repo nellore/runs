@@ -5,7 +5,7 @@ MAINDIR=/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis
 WDIR=${MAINDIR}/coverageMatrix
 
 # Define variables
-CORES=5
+CORES=4
 
 mkdir -p ${WDIR}
 mkdir -p ${WDIR}/logs
@@ -20,7 +20,7 @@ for chrnum in Y X 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=8G,h_vmem=30G,h_fsize=100G
+#$ -l mem_free=10G,h_vmem=100G,h_fsize=100G
 #$ -N ${sname}
 #$ -pe local ${CORES}
 
