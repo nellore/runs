@@ -30,8 +30,8 @@ getRegs <- function(chr, cutoffs, param) {
 region_cuts_raw <- lapply(chrs, getRegs, cutoffs = cuts, param = bp)
 names(region_cuts_raw) <- chrs
 
-region_cuts <- lapply(as.character(cuts), function(cutoff, chrs = chrs) {
-    regs <- lapply(chrs, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
+region_cuts <- lapply(as.character(cuts), function(cutoff, chromosomes = chrs) {
+    regs <- lapply(chromosomes, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
     regs <- unlist(GRangesList(regs))
     return(regs)
 })
