@@ -13,8 +13,8 @@ bp <- SnowParam(workers = 10, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Find the regions for all the chromosomes given a specific cutoff
 getRegChr <- function(cutoff, chr, meanCov) {
-    library('derfinder')
-    library('IRanges')
+    suppressPackageStartupMessages(library('derfinder'))
+    suppressPackageStartupMessages(library('IRanges'))
     message(paste(Sys.time(), 'processing', chr, 'with cutoff', cutoff))
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
     return(regs)
@@ -23,14 +23,14 @@ getRegs <- function(chr, cutoffs, param) {
     message(paste(Sys.time(), 'loading meanCov for', chr))
     meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', chr)
     res <- bplapply(cutoffs, getRegChr, chr = chr, meanCov = meanCov, BPPARAM = param)
-    names(res) <- cutoffs
+    names(res) <- as.character(cutoffs)
     return(res)
 }
 
 region_cuts_raw <- lapply(chrs, getRegs, cutoffs = cuts, param = bp)
 names(region_cuts_raw) <- chrs
 
-region_cuts <- lapply(cuts, function(cutoff, chrs = chrs) {
+region_cuts <- lapply(as.character(cuts), function(cutoff, chrs = chrs) {
     regs <- lapply(chrs, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
     regs <- unlist(GRangesList(regs))
     return(regs)
