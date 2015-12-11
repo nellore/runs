@@ -9,7 +9,7 @@ chrs <- paste0('chr', c(1:22, 'X', 'Y'))
 cuts <- seq(from = 0.1, to = 5, by = 0.1)
 
 ## Parallel environment to use
-bp <- SnowParam(workers = 10, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- SnowParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Find the regions for all the chromosomes given a specific cutoff
 getRegChr <- function(cutoff, chr, meanCov) {
@@ -17,6 +17,12 @@ getRegChr <- function(cutoff, chr, meanCov) {
     suppressPackageStartupMessages(library('IRanges'))
     message(paste(Sys.time(), 'processing', chr, 'with cutoff', cutoff))
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
+    if(!is(regs, 'GRanges')) {
+        message(paste(Sys.time(), 'processing failed for', chr, 'with cutoff', cutoff))
+        print(regs)
+        regs <- NULL
+    }
+    names(regs) <- NULL
     return(regs)
 }
 getRegs <- function(chr, cutoffs, param) {
@@ -30,11 +36,18 @@ getRegs <- function(chr, cutoffs, param) {
 region_cuts_raw <- lapply(chrs, getRegs, cutoffs = cuts, param = bp)
 names(region_cuts_raw) <- chrs
 
+message(paste(Sys.time(), 'saving region_cuts_raw'))
+save(region_cuts_raw, file = 'region_cuts_raw.Rdata')
+
+
 region_cuts <- lapply(as.character(cuts), function(cutoff, chromosomes = chrs) {
     regs <- lapply(chromosomes, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
+    names(regs) <- chromosomes
     regs <- unlist(GRangesList(regs))
     return(regs)
 })
+names(region_cuts) <- as.character(cuts)
+message(paste(Sys.time(), 'saving region_cuts'))
 save(region_cuts, file = 'region_cuts.Rdata')
 
 ## Extract information of interest

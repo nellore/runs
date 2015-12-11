@@ -1,9 +1,9 @@
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=4G,h_vmem=30G,h_fsize=30G
+#$ -l mem_free=4G,h_vmem=25G,h_fsize=30G
 #$ -N region-cuts
-#$ -pe local 10
+#$ -pe local 20
 
 echo '**** Job starts ****'
 date
