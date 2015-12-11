@@ -6,7 +6,7 @@ library('BiocParallel')
 library('devtools')
 
 chrs <- paste0('chr', c(1:22, 'X', 'Y'))
-cuts <- seq(from = 0.1, to = 5, by = 0.1)
+cuts <- seq(from = 0.2, to = 5, by = 0.1)
 
 ## Parallel environment to use
 bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
