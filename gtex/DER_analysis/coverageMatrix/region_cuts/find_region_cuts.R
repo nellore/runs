@@ -19,8 +19,7 @@ getRegChr <- function(cutoff, chr, meanCov) {
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
     if(!is(regs, 'GRanges')) {
         message(paste(Sys.time(), 'processing failed for', chr, 'with cutoff', cutoff))
-        print(regs)
-        regs <- NULL
+        regs <- GRanges()
     }
     names(regs) <- NULL
     return(regs)
