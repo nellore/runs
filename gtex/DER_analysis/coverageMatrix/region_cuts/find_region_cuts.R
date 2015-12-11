@@ -9,7 +9,7 @@ chrs <- paste0('chr', c(1:22, 'X', 'Y'))
 cuts <- seq(from = 0.1, to = 5, by = 0.1)
 
 ## Parallel environment to use
-bp <- SnowParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Find the regions for all the chromosomes given a specific cutoff
 getRegChr <- function(cutoff, chr, meanCov) {
