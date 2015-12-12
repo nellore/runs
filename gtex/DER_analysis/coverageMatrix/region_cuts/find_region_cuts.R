@@ -76,7 +76,10 @@ plot(x = regInfo$cutoff, y = regInfo$mean * regInfo$n, xlab = 'Cutoff', ylab = '
 
 
 data(hg19Ideogram, package = 'biovizBase', envir = environment())
-plot(x = regInfo$cutoff, y = regInfo$mean * regInfo$n / sum(as.numeric(seqlengths(hg19Ideogram)[chrs])) * 100, xlab = 'Cutoff', ylab = 'Percent of genome in regions', type = 'o')
+percent <- regInfo$mean * regInfo$n / sum(as.numeric(seqlengths(hg19Ideogram)[chrs])) * 100
+names(percent) <- cuts
+plot(x = regInfo$cutoff, y = percent, xlab = 'Cutoff', ylab = 'Percent of genome in regions', type = 'o')
+percent
 
 matplot(x = regInfo$cutoff, data.frame(m_minusSD = regInfo$mean - regInfo$sd, m = regInfo$mean, m_plusSD = regInfo$mean + regInfo$sd), type = 'o', lty = 1, lwd = 2, xlab = 'Cutoff', ylab = 'Mean region width (+- SD)', col = brewer.pal(n = 3, 'Set1'), pch = 21)
 abline(h = 0, col = 'black')
