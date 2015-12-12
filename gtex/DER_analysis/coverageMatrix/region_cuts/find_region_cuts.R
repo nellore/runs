@@ -6,7 +6,7 @@ library('BiocParallel')
 library('devtools')
 
 chrs <- paste0('chr', c(1:22, 'X', 'Y'))
-cuts <- seq(from = 0.2, to = 5, by = 0.1)
+cuts <- seq(from = 0.2, to = 7, by = 0.1)
 
 ## Parallel environment to use
 bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
@@ -57,7 +57,7 @@ info <- lapply(region_cuts, function(regs) {
 
 n <- unlist(lapply(info, '[[', 'n'))
 mean <- unlist(lapply(info, '[[', 'mean'))
-sd <- unlist(lapply(info, '[[', 'mean'))
+sd <- unlist(lapply(info, '[[', 'sd'))
 quantile <- do.call(rbind, lapply(info, '[[', 'quantile'))
 
 ## Arrange information into a single data frame
@@ -68,19 +68,26 @@ save(regInfo, file = 'regInfo.Rdata')
 
 ## Make plots exploring the relationship between the cutoff and the number of regions
 pdf(file = 'regInfo-plots.pdf', width = 10, height = 10)
-plot(x = regInfo$cutoff, y = regInfo$n, xlab = 'Cutoff', ylab = 'Number of regions')
-plot(x = regInfo$cutoff, y = regInfo$mean, xlab = 'Cutoff', ylab = 'Mean region width')
-plot(x = regInfo$cutoff, y = regInfo$sd, xlab = 'Cutoff', ylab = 'SD of region width')
+plot(x = regInfo$cutoff, y = regInfo$n, xlab = 'Cutoff', ylab = 'Number of regions', type = 'o')
+plot(x = regInfo$cutoff, y = regInfo$mean, xlab = 'Cutoff', ylab = 'Mean region width', type = 'o')
+plot(x = regInfo$cutoff, y = regInfo$sd, xlab = 'Cutoff', ylab = 'SD of region width', type = 'o')
+plot(x = regInfo$sd, y = regInfo$mean, xlab = 'SD of region width', ylab = 'Mean region width', type = 'o')
+plot(x = regInfo$cutoff, y = regInfo$mean * regInfo$n, xlab = 'Cutoff', ylab = 'Total bp in regions', type = 'o')
 
-matplot(x = regInfo$cutoff, data.frame(m_minusSD = regInfo$mean - regInfo$sd, m = regInfo$mean, m_plusSD = regInfo$mean + regInfo$sd), type = 'l', lty = 1, lwd = 2, xlab = 'Cutoff', ylab = 'Mean region width (+- SD)', col = brewer.pal(n = 3, 'Set1'))
+
+data(hg19Ideogram, package = 'biovizBase', envir = environment())
+plot(x = regInfo$cutoff, y = regInfo$mean * regInfo$n / sum(as.numeric(seqlengths(hg19Ideogram)[chrs])) * 100, xlab = 'Cutoff', ylab = 'Percent of genome in regions', type = 'o')
+
+matplot(x = regInfo$cutoff, data.frame(m_minusSD = regInfo$mean - regInfo$sd, m = regInfo$mean, m_plusSD = regInfo$mean + regInfo$sd), type = 'o', lty = 1, lwd = 2, xlab = 'Cutoff', ylab = 'Mean region width (+- SD)', col = brewer.pal(n = 3, 'Set1'), pch = 21)
+abline(h = 0, col = 'black')
 
 
 colors <- brewer.pal(11, 'PuOr')
 colors[6] <- 'magenta'
 
-matplot(x = regInfo$cutoff, log2(as.matrix(regInfo[, 5:15]) + 1), type = 'l', xlab = 'Cutoff', col = colors, lty = 1, lwd = 2, ylab = 'log2(length + 1)')
+matplot(x = regInfo$cutoff, log2(as.matrix(regInfo[, 5:15]) + 1), type = 'o', xlab = 'Cutoff', col = colors, lty = 1, lwd = 2, ylab = 'log2(length + 1) quantiles by 10% increments', pch = 21)
 
-matplot(x = regInfo$cutoff, log10(as.matrix(regInfo[, 5:15]) + 1), type = 'l', xlab = 'Cutoff', col = colors, lty = 1, lwd = 2, ylab = 'log10(length + 1)')
+matplot(x = regInfo$cutoff, log10(as.matrix(regInfo[, 5:15]) + 1), type = 'o', xlab = 'Cutoff', col = colors, lty = 1, lwd = 2, ylab = 'log10(length + 1) quantiles by 10% increments', pch = 21)
 dev.off()
 
 
