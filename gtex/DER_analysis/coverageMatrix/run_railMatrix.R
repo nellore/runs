@@ -20,7 +20,7 @@ if (!is.null(opt$help)) {
 
 
 ## Options
-cutoff <- 2.5
+cutoff <- 3
 
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 

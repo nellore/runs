@@ -2,7 +2,7 @@ library('GenomicRanges')
 library('devtools')
 
 # Options
-cutoff <- 2.5
+cutoff <- 3
 
 chrs <- paste0('chr', c(1:22, 'X', 'Y'))
 
