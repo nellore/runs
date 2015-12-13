@@ -268,7 +268,7 @@ if __name__ == '__main__':
                     (batch_number, j)
                 ] = sample_name_to_final_index[name.partition('_')[0]]
     if args.temp_dir is not None:
-        temp_dir = tempfile.mkdtemp(args.temp_dir)
+        temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
     else:
         temp_dir = tempfile.mkdtemp()
     atexit.register(shutil.rmtree, temp_dir)
