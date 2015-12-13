@@ -248,6 +248,13 @@ if __name__ == '__main__':
                 final_index_to_sample_name[i] = sample_name
                 sample_name_to_final_index[sample_name] = i
                 i += 1
+    with open(
+            os.path.join(args.output_dir, 'samples.tsv'), 'w'
+        ) as sample_stream:
+        for i in sorted(final_index_to_sample_name.keys()):
+            print >>sample_stream, '{}\t{}'.format(
+                    i, final_index_to_sample_name[i]
+                )
     # Junction are already sorted, so we can advance counters and print
     first_pass_handles = [
         gzip.open(
