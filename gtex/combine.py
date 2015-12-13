@@ -392,7 +392,7 @@ if __name__ == '__main__':
                     [str(second_pass_dict[sample_index]) for sample_index
                             in all_sample_indexes]
                 )
-            assert first_pass_coverages:
+            assert first_pass_coverages
             print >>first_pass_stream, '\t'.join(
                 key + [start_motif, end_motif,
                 ','.join([str(el[0]) for el in first_pass_coverages]),
