@@ -228,6 +228,9 @@ if __name__ == '__main__':
     parser.add_argument('--temp-dir', required=False,
         default=None,
         help='where temporary files should be stored')
+    parser.add_argument('--sort', required=False,
+        default='sort',
+        help='path to sort executable')
     args = parser.parse_args()
     containing_dir = os.path.dirname(os.path.realpath(__file__))
     # Create original sample index to new sample index map
@@ -321,7 +324,9 @@ if __name__ == '__main__':
                                                     in sample_indexes]),
                                           ','.join(coverages)))
                         )
-    sort_process = subprocess.check_call('sort -k1,1 -k2,2n -k3,3n '
+    sort_process = subprocess.check_call(args.sort + ' -k1,1 -k2,2n -k3,3n '
+                                            + (('-T ' + temp_dir + ' ')
+                                                if args.temp_dir else '')
                                             + temp_file + ' >'
                                             + temp_file + '.sorted', 
                                             shell=True,
