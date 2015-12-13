@@ -331,7 +331,6 @@ if __name__ == '__main__':
     except OSError as e:
         if 'File exists' not in e: 
             raise
-    shutil.copyfile(temp_file + '.sorted', '/Users/eterna/somefi')
     with open(temp_file + '.sorted') as temp_stream, gzip.open(
             os.path.join(args.output_dir, 'first_pass_junctions.tsv.gz'), 'w'
         ) as first_pass_stream, gzip.open(
