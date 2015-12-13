@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-combine.py
+combine_gtex.py
 Abhi Nellore / December 11, 2015
 
 Reformats sorted and merged "collected junctions" files from GTEx batch runs
