@@ -4,7 +4,32 @@ combine.py
 Abhi Nellore / December 11, 2015
 
 Reformats sorted and merged "collected junctions" files from GTEx batch runs
-into a file with one line per junction.
+into files with one line per junction. Three files are written:
+
+first_pass_gtex_junctions.tsv.gz / second_pass_gtex_junctions.tsv.gz
+Coverages reported are after first- or second-pass alignment
+1. chromosome
+2. start position
+3. end position
+4. strand (+ or -)
+5. start motif (e.g., GT)
+6. end motif (e.g., AG)
+7. comma-separated list of sample indexes
+8. comma-separated list of coverages
+
+consolidated_gtex_junctions.tsv.gz
+Puts coverages after first= and second-pass alignment in same file
+1. chromosome
+2. start position
+3. end position
+4. strand (+ or -)
+5. start motif (e.g., GT)
+6. end motif (e.g., AG)
+7. comma-separated list of sample indexes
+8. comma-separated list of coverages after first-pass alignment (some can be
+                                                                    zero)
+9. comma-separated list of coverages after second-pass alignment (some can be
+                                                                    zero)
 """
 import sys
 import itertools
