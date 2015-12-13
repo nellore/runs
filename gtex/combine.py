@@ -389,15 +389,16 @@ if __name__ == '__main__':
                     [str(second_pass_dict[sample_index]) for sample_index
                             in all_sample_indexes]
                 )
-            print >>first_pass_stream, '\t'.join(
+            if first_pass_coverages:
+                print >>first_pass_stream, '\t'.join(
                     key + [start_motif, end_motif,
                     ','.join([str(el[0]) for el in first_pass_coverages]),
                     ','.join([str(el[1]) for el in first_pass_coverages])])
-            print >>second_pass_stream, '\t'.join(
+            if second_pass_coverages:
+                print >>second_pass_stream, '\t'.join(
                     key + [start_motif, end_motif,
                     ','.join([str(el[0]) for el in second_pass_coverages]),
-                    ','.join([str(el[1]) for el in second_pass_coverages])]
-                )
+                    ','.join([str(el[1]) for el in second_pass_coverages])])
             print >>consolidated_stream, '\t'.join(
                     key + [start_motif, end_motif,
                     ','.join([str(el) for el in all_sample_indexes]),
