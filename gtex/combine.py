@@ -344,11 +344,14 @@ if __name__ == '__main__':
         if 'File exists' not in e: 
             raise
     with open(temp_file + '.sorted') as temp_stream, gzip.open(
-            os.path.join(args.output_dir, 'first_pass_junctions.tsv.gz'), 'w'
+            os.path.join(args.output_dir, 'first_pass_gtex_junctions.tsv.gz'),
+            'w'
         ) as first_pass_stream, gzip.open(
-            os.path.join(args.output_dir, 'second_pass_junctions.tsv.gz'), 'w'
+            os.path.join(args.output_dir, 'second_pass_gtex_junctions.tsv.gz'),
+            'w'
         ) as second_pass_stream, gzip.open(
-            os.path.join(args.output_dir, 'consolidated_junctions.tsv.gz'), 'w'
+            os.path.join(args.output_dir,
+            'consolidated_gtex_junctions.tsv.gz'), 'w'
         ) as consolidated_stream:
         for key, group in itertools.groupby(temp_stream,
                                             key=lambda x: x.split('\t')[:4]):
