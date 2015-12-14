@@ -21,7 +21,7 @@ cut -f1 /dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes | while read chr
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=20G,h_vmem=35G,h_fsize=100G
+#$ -l mem_free=15G,h_vmem=25G,h_fsize=100G
 #$ -N ${sname}
 
 echo '**** Job starts ****'
