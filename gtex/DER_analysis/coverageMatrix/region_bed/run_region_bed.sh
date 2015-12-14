@@ -16,7 +16,7 @@ module load R/3.2.x
 Rscript find_region_bed.R
 
 ## Move log files into the logs directory
-mv region-cuts.* logs/
+mv region-bed.* logs/
 
 echo '**** Job ends ****'
 date
