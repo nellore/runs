@@ -2,9 +2,10 @@ library('GenomicRanges')
 library('devtools')
 
 # Options
-cutoff <- 3
+cutoff <- 0.5
 
-chrs <- paste0('chr', c(1:22, 'X', 'Y'))
+chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header = FALSE, stringsAsFactors = FALSE, col.names = c('chr', 'length'))
+chrs <- chrInfo$chr
 
 regionMat <- lapply(chrs, function(chr) {
     load(paste0('regionMat-cut', cutoff, '-', chr, '.Rdata'))

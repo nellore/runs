@@ -5,7 +5,7 @@ library('getopt')
 
 ## Specify parameters
 spec <- matrix(c(
-    'chrnum', 'c', 1, 'character', 'Chromosome in the following format: 1, X, Y',
+    'chr', 'c', 1, 'character', 'Chromosome in the following format: chr1, chrX, chrY',
 	'help' , 'h', 0, 'logical', 'Display help'
 ), byrow=TRUE, ncol=5)
 opt <- getopt(spec)
@@ -20,11 +20,17 @@ if (!is.null(opt$help)) {
 
 
 ## Options
-cutoff <- 3
+cutoff <- 0.5
+
+chrs <- opt$chr
+## Get chr length
+chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header = FALSE, stringsAsFactors = FALSE, col.names = c('chr', 'length'))
+chrlens <- chrInfo$length[chrInfo$chr %in% chrs]
 
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 
-chrs <- paste0('chr', opt$chrnum)
+
+
 summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
@@ -45,10 +51,10 @@ map <- match(gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', ''
 counts <- counts[map, ]
 
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = pheno$avgLength / 2, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 1L, returnBP = FALSE, chunksize = 100)
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = pheno$avgLength / 2, cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 4, returnBP = FALSE, chunksize = 500, verbose.load = FALSE, chrlens = chrlens)
 
 ## Save results
-save(regionMat, file=paste0('regionMat-cut', cutoff, '-chr', opt$chrnum, '.Rdata'))
+save(regionMat, file=paste0('regionMat-cut', cutoff, '-', opt$chr, '.Rdata'))
 
 ## Reproducibility info
 proc.time()

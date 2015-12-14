@@ -5,30 +5,32 @@ MAINDIR=/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis
 WDIR=${MAINDIR}/coverageMatrix
 
 # Define variables
-#CORES=1
+CORES=4
 
 mkdir -p ${WDIR}
 mkdir -p ${WDIR}/logs
 
 
-for chrnum in Y X 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+for chr in chrY chrX chr21 chr22 chr20 chr1 chr2 chr3
+#cut -f1 /dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes | while read chr 
     do 
-    sname="gtex-railMat-chr${chrnum}"
+    sname="gtex-railMat-${chr}"
     ## Create script
-    echo "Creating script for chromosome ${chrnum}"
+    echo "Creating script for chromosome ${chr}"
     cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=300G,h_vmem=350G,h_fsize=100G
+#$ -l mem_free=30G,h_vmem=40G,h_fsize=100G
 #$ -N ${sname}
+#$ -pe local ${CORES}
 
 echo '**** Job starts ****'
 date
 
 # Run railMatrix()
 module load R/3.2.x
-Rscript run_railMatrix.R -c "${chrnum}"
+Rscript run_railMatrix.R -c "${chr}"
 
 ## Move log files into the logs directory
 mv ${sname}.* logs/
