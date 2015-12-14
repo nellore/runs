@@ -93,4 +93,5 @@ save(pheno, file = 'pheno_missing_less_10.Rdata')
 ## Reproducibility info
 Sys.time()
 proc.time()
+options(width = 120)
 devtools::session_info()
