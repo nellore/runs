@@ -23,6 +23,7 @@ cut -f1 /dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes | while read chr
 #$ -m e
 #$ -l mem_free=15G,h_vmem=25G,h_fsize=100G
 #$ -N ${sname}
+#$ -hold_jid pheno-format
 
 echo '**** Job starts ****'
 date
