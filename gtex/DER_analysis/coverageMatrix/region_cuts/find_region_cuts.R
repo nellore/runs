@@ -5,7 +5,7 @@ library('RColorBrewer')
 library('BiocParallel')
 library('devtools')
 
-chrs <- paste0('chr', c(1:22, 'X', 'Y'))
+chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header = FALSE, stringsAsFactors = FALSE, col.names = c('chr', 'length'))
 cuts <- seq(from = 0.2, to = 7, by = 0.1)
 
 ## Parallel environment to use
@@ -17,29 +17,33 @@ getRegChr <- function(cutoff, chr, meanCov) {
     suppressPackageStartupMessages(library('IRanges'))
     message(paste(Sys.time(), 'processing', chr, 'with cutoff', cutoff))
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
-    if(!is(regs, 'GRanges')) {
+    if(is.null(regs)) {
+        message(paste(Sys.time(), 'found no regions for', chr, 'with cutoff', cutoff))
+        regs <- GRanges()
+    }
+    else if(!is(regs, 'GRanges')) {
         message(paste(Sys.time(), 'processing failed for', chr, 'with cutoff', cutoff))
         regs <- GRanges()
     }
     names(regs) <- NULL
     return(regs)
 }
-getRegs <- function(chr, cutoffs, param) {
+getRegs <- function(chr, chrlen, cutoffs, param) {
     message(paste(Sys.time(), 'loading meanCov for', chr))
-    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', chr)
+    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', chr, chrlen = chrlen)
     res <- bplapply(cutoffs, getRegChr, chr = chr, meanCov = meanCov, BPPARAM = param)
     names(res) <- as.character(cutoffs)
     return(res)
 }
 
-region_cuts_raw <- lapply(chrs, getRegs, cutoffs = cuts, param = bp)
-names(region_cuts_raw) <- chrs
+region_cuts_raw <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoffs = cuts, param = bp))
+names(region_cuts_raw) <- chrInfo$chr
 
 message(paste(Sys.time(), 'saving region_cuts_raw'))
 save(region_cuts_raw, file = 'region_cuts_raw.Rdata')
 
 
-region_cuts <- lapply(as.character(cuts), function(cutoff, chromosomes = chrs) {
+region_cuts <- lapply(as.character(cuts), function(cutoff, chromosomes = chrInfo$chr) {
     regs <- lapply(chromosomes, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
     names(regs) <- chromosomes
     regs <- unlist(GRangesList(regs))
@@ -74,9 +78,7 @@ plot(x = regInfo$cutoff, y = regInfo$sd, xlab = 'Cutoff', ylab = 'SD of region w
 plot(x = regInfo$sd, y = regInfo$mean, xlab = 'SD of region width', ylab = 'Mean region width', type = 'o')
 plot(x = regInfo$cutoff, y = regInfo$mean * regInfo$n, xlab = 'Cutoff', ylab = 'Total bp in regions', type = 'o')
 
-
-data(hg19Ideogram, package = 'biovizBase', envir = environment())
-percent <- regInfo$mean * regInfo$n / sum(as.numeric(seqlengths(hg19Ideogram)[chrs])) * 100
+percent <- regInfo$mean * regInfo$n / sum(as.numeric(chrInfo$length)) * 100
 names(percent) <- cuts
 plot(x = regInfo$cutoff, y = percent, xlab = 'Cutoff', ylab = 'Percent of genome in regions', type = 'o')
 percent
