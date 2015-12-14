@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=30G,h_vmem=50G,h_fsize=30G
+#$ -l mem_free=100G,h_vmem=120G,h_fsize=30G
 #$ -N region-bed
 
 echo '**** Job starts ****'
