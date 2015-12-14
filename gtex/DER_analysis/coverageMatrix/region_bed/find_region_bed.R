@@ -25,7 +25,7 @@ getRegs <- function(chr, chrlen, cutoff) {
     return(regs)
 }
 
-regions <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoff = cutoff, param = bp))
+regions <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoff = cutoff))
 
 regions <- unlist(GRangesList(regions))
 
