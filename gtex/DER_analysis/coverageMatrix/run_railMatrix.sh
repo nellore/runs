@@ -5,14 +5,14 @@ MAINDIR=/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis
 WDIR=${MAINDIR}/coverageMatrix
 
 # Define variables
-CORES=4
+#CORES=4
 
 mkdir -p ${WDIR}
 mkdir -p ${WDIR}/logs
 
 
-for chr in chrY chrX chr21 chr22 chr20 chr1 chr2 chr3
-#cut -f1 /dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes | while read chr 
+#for chr in chrY chrX chr21 chr22 chr20 chr1 chr2 chr3
+cut -f1 /dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes | while read chr 
     do 
     sname="gtex-railMat-${chr}"
     ## Create script
@@ -21,9 +21,8 @@ for chr in chrY chrX chr21 chr22 chr20 chr1 chr2 chr3
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=30G,h_vmem=40G,h_fsize=100G
+#$ -l mem_free=20G,h_vmem=35G,h_fsize=100G
 #$ -N ${sname}
-#$ -pe local ${CORES}
 
 echo '**** Job starts ****'
 date
