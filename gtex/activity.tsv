@@ -1,0 +1,81 @@
+batch number	flow type	creation date	end date	number of instances	instance type	number of active worker cores	exclude (exclude = 1 when job flow didn't start)	notes
+0	prep	2015-11-29 12:55 (UTC-5)	2015-11-29 22:51 (UTC-5)	21	m3.xlarge	80	0	accidentally deleted results dumped to S3 by executing same job flow with rail-rna job launcher, so had to redo
+0	prep	2015-11-30 00:32 (UTC-5)	2015-11-30 01:45 (UTC-5)	21	m3.xlarge	80	0	accidentally executed this job flow rather than align job flow, so rail-rna job launcher deleted previous prep results from S3; terminated manually for no good reason 
+0	prep	2015-11-30 03:18 (UTC-5)	2015-11-30 13:38 (UTC-5)	21	m3.xlarge	80	0	NA
+0	align	2015-11-30 14:09 (UTC-5)	2015-12-01 03:39 (UTC-5)	81	c3.8xlarge	2560	0	NA
+1	prep	2015-11-29 12:55 (UTC-5)	2015-11-30 01:19 (UTC-5)	21	m3.xlarge	80	0	job flow's results replaced (accidentally and redundantly) by another execution
+1	prep	2015-11-30 03:19 (UTC-5)	2015-11-30 14:13 (UTC-5)	21	m3.xlarge	80	0	accidentally executed job flow second time, replacing results from first prep job flow
+1	align	2015-11-30 14:19 (UTC-5)	2015-12-01 05:48 (UTC-5)	81	c3.8xlarge	2560	0	NA
+2	prep	2015-11-29 12:55 (UTC-5)	2015-11-29 20:13 (UTC-5)	21	m3.xlarge	80	0	NA
+2	align	2015-11-29 20:27 (UTC-5)	2015-11-30 10:57 (UTC-5)	81	c3.8xlarge	2560	0	NA
+3	prep	2015-11-29 20:28 (UTC-5)	2015-11-30 07:23 (UTC-5)	21	m3.xlarge	80	0	NA
+3	align	2015-11-30 07:32 (UTC-5)	2015-12-01 00:13 (UTC-5)	81	c3.8xlarge	2560	0	NA
+4	prep	2015-11-29 20:30 (UTC-5)	2015-11-30 10:05 (UTC-5)	21	m3.xlarge	80	0	NA
+4	align	2015-11-30 10:04 (UTC-5)	2015-11-30 10:58 (UTC-5)	81	c3.8xlarge	2560	1	job flow didn't start
+4	align	2015-11-30 11:10 (UTC-5)	2015-12-01 05:13 (UTC-5)	81	c3.8xlarge	2560	0	NA
+5	prep	2015-11-29 20:30 (UTC-5)	2015-11-30 08:28 (UTC-5)	21	m3.xlarge	80	0	NA
+5	align	2015-11-30 08:48 (UTC-5)	2015-11-30 08:48 (UTC-5)	81	c3.8xlarge	2560	1	job flow didn't start; subnet wasn't large enough
+5	align	2015-11-30 09:01 (UTC-5)	2015-12-01 04:49 (UTC-5)	81	c3.8xlarge	2560	0	NA
+6	prep	2015-11-30 03:19 (UTC-5)	2015-11-30 12:48 (UTC-5)	21	m3.xlarge	80	0	NA
+6	align	2015-11-30 13:54 (UTC-5)	2015-12-01 04:13 (UTC-5)	81	c3.8xlarge	2560	0	NA
+7	prep	2015-11-30 11:11 (UTC-5)	2015-11-30 21:44 (UTC-5)	21	m3.xlarge	80	0	NA
+7	align	2015-12-01 07:31 (UTC-5)	2015-12-01 14:17 (UTC-5)	81	c3.8xlarge	2560	0	instance failure; job flow was resumed
+7	align	2015-12-01 14:32 (UTC-5)	2015-12-02 01:25 (UTC-5)	81	c3.8xlarge	2560	0	resumed job flow after instance failure
+8	prep	2015-11-30 11:12 (UTC-5)	2015-11-30 19:33 (UTC-5)	21	m3.xlarge	80	0	NA
+8	align	2015-11-30 19:50 (UTC-5)	2015-11-30 21:20 (UTC-5)	81	c3.8xlarge	2560	1	job flow didn't start
+8	align	2015-11-30 21:21 (UTC-5)	2015-11-30 21:22 (UTC-5)	81	c3.8xlarge	2560	1	job flow didn't start
+8	align	2015-11-30 21:23 (UTC-5)	2015-11-30 22:26 (UTC-5)	81	c3.8xlarge	2560	0	job flow failed due to instance failure
+8	align	2015-12-01 01:15 (UTC-5)	2015-12-01 01:41 (UTC-5)	81	c3.8xlarge	2560	1	job flow didn't start
+8	align	2015-12-01 01:42 (UTC-5)	2015-12-01 13:09 (UTC-5)	81	c3.8xlarge	2560	0	NA
+9	prep	2015-11-30 11:12 (UTC-5)	2015-11-30 21:34 (UTC-5)	21	m3.xlarge	80	0	NA
+9	align	2015-12-01 07:29 (UTC-5)	2015-12-01 22:53 (UTC-5)	81	c3.8xlarge	2560	0	NA
+10	prep	2015-11-30 19:51 (UTC-5)	2015-11-30 21:19 (UTC-5)	21	m3.xlarge	80	1	job flow didn't start
+10	prep	2015-11-30 21:20 (UTC-5)	2015-11-30 22:11 (UTC-5)	21	m3.xlarge	80	0	job flow failed; step failure because of download issues
+10	prep	2015-12-01 01:14 (UTC-5)	2015-12-01 07:14 (UTC-5)	21	m3.xlarge	80	0	job flow failed due to instance failure
+10	prep	2015-12-01 07:25 (UTC-5)	2015-12-01 07:32 (UTC-5)	21	m3.xlarge	80	1	job flow didn't start
+10	prep	2015-12-01 07:41 (UTC-5)	2015-12-01 19:45 (UTC-5)	21	m3.xlarge	80	0	NA
+10	align	2015-12-01 20:07 (UTC-5)	2015-12-02 12:49 (UTC-5)	81	c3.8xlarge	2560	0	NA
+11	prep	2015-11-30 19:51 (UTC-5)	2015-12-01 06:29 (UTC-5)	21	m3.xlarge	80	0	NA
+11	align	2015-12-01 07:46 (UTC-5)	2015-12-01 20:07 (UTC-5)	81	c3.8xlarge	2560	0	NA
+12	prep	2015-11-30 19:52 (UTC-5)	2015-11-30 22:11 (UTC-5)	21	m3.xlarge	80	0	job flow failed; step failure because of download issues
+12	prep	2015-12-01 01:13 (UTC-5)	2015-12-01 01:42 (UTC-5)	21	m3.xlarge	80	1	job flow didn't start
+12	prep	2015-12-01 01:43 (UTC-5)	2015-12-01 12:51 (UTC-5)	21	m3.xlarge	80	0	NA
+12	align	2015-12-01 13:40 (UTC-5)	2015-12-02 05:48 (UTC-5)	81	c3.8xlarge	2560	0	NA
+13	prep	2015-12-01 07:55 (UTC-5)	2015-12-01 19:23 (UTC-5)	21	m3.xlarge	80	0	NA
+13	align	2015-12-01 19:55 (UTC-5)	2015-12-02 11:52 (UTC-5)	81	c3.8xlarge	2560	0	NA
+14	prep	2015-12-01 11:42 (UTC-5)	2015-12-01 20:48 (UTC-5)	21	m3.xlarge	80	0	NA
+14	align	2015-12-02 01:31 (UTC-5)	2015-12-02 17:49 (UTC-5)	81	c3.8xlarge	2560	0	NA
+15	prep	2015-12-01 15:50 (UTC-5)	2015-12-02 00:12 (UTC-5)	21	m3.xlarge	80	0	NA
+15	align	2015-12-02 01:32 (UTC-5)	2015-12-02 12:44 (UTC-5)	81	c3.8xlarge	2560	0	NA
+16	prep	2015-12-01 15:52 (UTC-5)	2015-12-01 16:21 (UTC-5)	21	m3.xlarge	80	0	job flow failed due to instance failure
+16	prep	2015-12-01 17:29 (UTC-5)	2015-12-02 04:07 (UTC-5)	21	m3.xlarge	80	0	NA
+16	align	2015-12-02 06:48 (UTC-5)	2015-12-02 22:40 (UTC-5)	81	c3.8xlarge	2560	0	NA
+17	prep	2015-12-01 20:18 (UTC-5)	2015-12-02 06:00 (UTC-5)	21	m3.xlarge	80	0	NA
+17	align	2015-12-02 06:49 (UTC-5)	2015-12-03 01:21 (UTC-5)	81	c3.8xlarge	2560	0	NA
+18	prep	2015-12-02 01:50 (UTC-5)	2015-12-02 09:46 (UTC-5)	21	m3.xlarge	80	0	job flow terminated manually because it was accidentally restarted
+18	prep	2015-12-02 06:52 (UTC-5)	2015-12-02 07:14 (UTC-5)	21	m3.xlarge	80	0	job flow failed because it detected output from redundant job flow
+18	prep	2015-12-02 09:45 (UTC-5)	2015-12-02 21:08 (UTC-5)	21	m3.xlarge	80	0	NA
+18	align	2015-12-03 00:07 (UTC-5)	2015-12-03 13:51 (UTC-5)	81	c3.8xlarge	2560	0	NA
+19	prep	2015-12-02 01:52 (UTC-5)	2015-12-02 09:45 (UTC-5)	21	m3.xlarge	80	0	NA
+19	align	2015-12-02 13:41 (UTC-5)	2015-12-03 05:05 (UTC-5)	81	c3.8xlarge	2560	0	NA
+20	prep	2015-12-02 09:25 (UTC-5)	2015-12-02 22:49 (UTC-5)	21	m3.xlarge	80	0	NA
+20	align	2015-12-03 00:08 (UTC-5)	2015-12-03 18:14 (UTC-5)	81	c3.8xlarge	2560	0	NA
+21	prep	2015-12-02 13:43 (UTC-5)	2015-12-03 01:18 (UTC-5)	21	m3.xlarge	80	0	NA
+21	align	2015-12-03 01:26 (UTC-5)	2015-12-03 15:03 (UTC-5)	81	c3.8xlarge	2560	0	NA
+22	prep	2015-12-02 19:52 (UTC-5)	2015-12-03 07:57 (UTC-5)	21	m3.xlarge	80	0	NA
+22	align	2015-12-03 17:56 (UTC-5)	2015-12-04 10:28 (UTC-5)	81	c3.8xlarge	2560	0	job flow failed due to benign error where history wasn't uploaded; resumed
+22	align	2015-12-04 10:59 (UTC-5)	2015-12-04 15:20 (UTC-5)	81	c3.8xlarge	2560	0	resumed job flow
+23	prep	2015-12-02 19:52 (UTC-5)	2015-12-03 06:27 (UTC-5)	21	m3.xlarge	80	0	NA
+23	align	2015-12-03 06:33 (UTC-5)	2015-12-04 00:20 (UTC-5)	81	c3.8xlarge	2560	0	NA
+24	prep	2015-12-03 00:00 (UTC-5)	2015-12-03 11:28 (UTC-5)	21	m3.xlarge	80	0	NA
+24	align	2015-12-03 12:20 (UTC-5)	2015-12-04 04:00 (UTC-5)	81	c3.8xlarge	2560	0	NA
+25	prep	2015-12-03 06:28 (UTC-5)	2015-12-03 16:25 (UTC-5)	21	m3.xlarge	80	0	NA
+25	align	2015-12-03 16:25 (UTC-5)	2015-12-04 06:13 (UTC-5)	81	c3.8xlarge	2560	0	NA
+26	prep	2015-12-03 06:42 (UTC-5)	2015-12-03 14:32 (UTC-5)	21	m3.xlarge	80	0	NA
+26	align	2015-12-03 16:01 (UTC-5)	2015-12-04 03:43 (UTC-5)	81	c3.8xlarge	2560	0	NA
+27	prep	2015-12-03 09:48 (UTC-5)	2015-12-03 19:55 (UTC-5)	21	m3.xlarge	80	0	NA
+27	align	2015-12-03 20:02 (UTC-5)	2015-12-04 13:09 (UTC-5)	81	c3.8xlarge	2560	0	NA
+28	prep	2015-12-03 15:11 (UTC-5)	2015-12-04 00:17 (UTC-5)	21	m3.xlarge	80	0	NA
+28	align	2015-12-04 00:44 (UTC-5)	2015-12-04 16:08 (UTC-5)	81	c3.8xlarge	2560	0	NA
+29	prep	2015-12-03 15:11 (UTC-5)	2015-12-04 00:34 (UTC-5)	21	m3.xlarge	80	0	NA
+29	align	2015-12-04 00:45 (UTC-5)	2015-12-04 18:23 (UTC-5)	81	c3.8xlarge	2560	0	NA
