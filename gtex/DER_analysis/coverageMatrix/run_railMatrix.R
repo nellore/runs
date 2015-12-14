@@ -34,6 +34,7 @@ load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less
 summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
+sampleFiles <- head(sampleFiles, 100)
 
 ## Find count files
 counts_files <- file.path(dir('/dcl01/leek/data/gtex', pattern = 'batch', full.names = TRUE), 'cross_sample_results', 'counts.tsv.gz')
