@@ -34,7 +34,7 @@ load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less
 summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
-sampleFiles <- head(sampleFiles, 100)
+sampleFiles <- head(sampleFiles, 500)
 
 ## Find count files
 counts_files <- file.path(dir('/dcl01/leek/data/gtex', pattern = 'batch', full.names = TRUE), 'cross_sample_results', 'counts.tsv.gz')
@@ -52,7 +52,7 @@ map <- match(gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', ''
 counts <- counts[map, ]
 
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = head(pheno$avgLength / 2, 100), cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 1L, chunksize = 500, verbose.load = FALSE, chrlens = chrlens)
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = head(pheno$avgLength / 2, 500), cutoff = cutoff, targetSize = 40e6, totalMapped = counts$totalMapped, file.cores = 1L, chunksize = 500, verbose.load = FALSE, chrlens = chrlens)
 
 ## Save results
 save(regionMat, file=paste0('regionMat-cut', cutoff, '-', opt$chr, '.Rdata'))
