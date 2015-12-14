@@ -13,5 +13,5 @@ RUNINFO=$4
 DUMP=$5
 for bw in $(find $GTEX -name "SRR*.bw" | grep -v unique)
 do
-	echo "sh ${DIR}/mean.sh $BWTOOL $BED $GTEX $RUNINFO $DUMP"
+	echo "sh ${DIR}/mean.sh $BWTOOL $BED $bw $RUNINFO $DUMP"
 done
