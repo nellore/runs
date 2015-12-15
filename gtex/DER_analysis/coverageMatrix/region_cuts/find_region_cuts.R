@@ -8,8 +8,6 @@ library('devtools')
 chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header = FALSE, stringsAsFactors = FALSE, col.names = c('chr', 'length'))
 cuts <- seq(from = 0.2, to = 7, by = 0.1)
 
-chrInfo <- subset(chrInfo, chr %in% c('chrUn_KI270748v1', 'chrUn_KI270337v1'))
-
 ## Parallel environment to use
 bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
