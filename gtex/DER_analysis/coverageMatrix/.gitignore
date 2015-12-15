@@ -1,2 +1,8 @@
 ## Ignore shell files
 .*sh
+
+## Ignore output files
+*Rdata
+
+## Ignore logs
+logs
