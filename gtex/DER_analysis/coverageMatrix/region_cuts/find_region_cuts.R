@@ -8,6 +8,8 @@ library('devtools')
 chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header = FALSE, stringsAsFactors = FALSE, col.names = c('chr', 'length'))
 cuts <- seq(from = 0.2, to = 7, by = 0.1)
 
+chrInfo <- subset(chrInfo, chr %in% c('chrUn_KI270748v1', 'chrUn_KI270337v1'))
+
 ## Parallel environment to use
 bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
@@ -36,7 +38,7 @@ getRegs <- function(chr, chrlen, cutoffs, param) {
     return(res)
 }
 
-region_cuts_raw <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoffs = cuts, param = bp))
+region_cuts_raw <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoffs = cuts, param = bp), SIMPLIFY = FALSE)
 names(region_cuts_raw) <- chrInfo$chr
 
 message(paste(Sys.time(), 'saving region_cuts_raw'))
@@ -47,6 +49,11 @@ region_cuts <- lapply(as.character(cuts), function(cutoff, chromosomes = chrInfo
     regs <- lapply(chromosomes, function(chr) { region_cuts_raw[[chr]][[cutoff]] })
     names(regs) <- chromosomes
     regs <- unlist(GRangesList(regs))
+    
+    seqlen <- chrInfo$length[match(names(seqlengths(regs)), chrInfo$chr)]
+    names(seqlen) <- names(seqlengths(regs))
+    seqlengths(regs) <- seqlen
+    
     return(regs)
 })
 names(region_cuts) <- as.character(cuts)
