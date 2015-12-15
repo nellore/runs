@@ -39,6 +39,24 @@ coverageMatrix <- lapply(regionMat, function(x) { x$coverageMatrix})
 coverageMatrix <- do.call(rbind, coverageMatrix)
 save(coverageMatrix, file = paste0('coverageMatrix-cut', cutoff, '.Rdata'))
 
+
+## Rename the big matrix since we want all the small ones (by chr) to be called 'coverageMatrix'
+covMat <- coverageMatrix
+
+## Export coverage matrices by chr
+s <- split(seq_len(length(regions)), seqnames(regions))
+for(chr in names(s)) {
+    message(paste(Sys.time(), 'creating coverage matrix for', chr))
+    coverageMatrix <- covMat[s[[chr]], ]
+    size <- as.vector(object.size(coverageMatrix)) / (1024^2)
+    if(size < 1024) {
+        message(paste(Sys.time(), 'coverage matrix for', chr, 'uses', round(size, 2), 'Mb in RAM'))
+    } else {
+        message(paste(Sys.time(), 'coverage matrix for', chr, 'uses', round(size / 1024, 2), 'Gb in RAM'))
+    }
+    save(coverageMatrix, file = paste0('coverageMatrix-cut', cutoff, '-', chr, '.Rdata'))
+}
+
 ## Reproducibility info
 proc.time()
 Sys.time()
