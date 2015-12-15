@@ -29,6 +29,10 @@ regions <- mapply(getRegs, chrInfo$chr, chrInfo$length, MoreArgs = list(cutoff =
 
 regions <- unlist(GRangesList(regions))
 
+seqlen <- chrInfo$length[match(names(seqlengths(regions)), chrInfo$chr)]
+names(seqlen) <- names(seqlengths(regions))
+seqlengths(regions) <- seqlen
+
 ## Save regions for the given cutoff
 save(regions, file = paste0('regions-cut', cutoff, '.Rdata'))
 export(regions, con = paste0('regions-cut', cutoff, '.bed'), format='BED')

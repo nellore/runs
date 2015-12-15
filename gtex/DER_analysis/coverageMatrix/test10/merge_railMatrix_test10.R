@@ -22,6 +22,11 @@ save(regionMat, file=paste0('regionMat-cut', cutoff, '.Rdata'))
 ## Extract regions
 regions <- lapply(regionMat, function(x) { x$regions})
 regions <- unlist(GRangesList(regions))
+
+seqlen <- chrInfo$length[match(names(seqlengths(regions)), chrInfo$chr)]
+names(seqlen) <- names(seqlengths(regions))
+seqlengths(regions) <- seqlen
+
 save(regions, file = paste0('regions-cut', cutoff, '.Rdata'))
 
 ## Extract coverage matrix
