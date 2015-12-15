@@ -22,12 +22,12 @@ save(regionMat, file=paste0('regionMat-cut', cutoff, '.Rdata'))
 ## Extract regions
 regions <- lapply(regionMat, function(x) { x$regions})
 regions <- unlist(GRangesList(regions))
-save(regions, file = 'regions.Rdata')
+save(regions, file = paste0('regions-cut', cutoff, '.Rdata'))
 
 ## Extract coverage matrix
 coverageMatrix <- lapply(regionMat, function(x) { x$coverageMatrix})
 coverageMatrix <- do.call(rbind, coverageMatrix)
-save(coverageMatrix, file = 'coverageMatrix.Rdata')
+save(coverageMatrix, file = paste0('coverageMatrix-cut', cutoff, '.Rdata'))
 
 ## Reproducibility info
 proc.time()
