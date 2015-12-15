@@ -20,10 +20,12 @@ getRegChr <- function(cutoff, chr, meanCov) {
     if(is.null(regs)) {
         message(paste(Sys.time(), 'found no regions for', chr, 'with cutoff', cutoff))
         regs <- GRanges()
+        return(regs)
     }
     else if(!is(regs, 'GRanges')) {
         message(paste(Sys.time(), 'processing failed for', chr, 'with cutoff', cutoff))
         regs <- GRanges()
+        return(regs)
     }
     names(regs) <- NULL
     return(regs)
