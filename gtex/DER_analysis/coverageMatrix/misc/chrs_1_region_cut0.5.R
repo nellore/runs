@@ -7,6 +7,7 @@ chrs <- c("chrUn_KI270749v1"     ,   "chrUn_KI270435v1"
 , "chr14_GL000225v1_random" ,"chrM"
 , "chr22_KI270735v1_random")
 
+setwd('..')
 for(chr in chrs) {
     system(paste0('rm logs/*', chr, '*'))
     system(paste0('qsub .gtex-railMat-', chr, '.sh'))
