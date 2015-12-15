@@ -39,3 +39,33 @@ EOF
 	echo $call
 	$call
 done
+
+sname="gtex-merge-bwtool"
+## Create script
+cat > ${WDIR}/.${sname}.sh <<EOF
+#!/bin/bash
+#$ -cwd
+#$ -m e
+#$ -l mem_free=10G,h_vmem=15G,h_fsize=100G
+#$ -N ${sname}
+#$ -pe local 25
+#$ -hold_jid SRR*bwtool
+
+echo '**** Job starts ****'
+date
+
+# Merge bwtool results
+module load R/3.2.x
+Rscript merge_bwtool.R
+
+## Move log files into the logs directory
+mv ${sname}.* logs/
+
+echo '**** Job ends ****'
+date
+
+EOF
+
+call="qsub ${WDIR}/.${sname}.sh"
+echo $call
+$call
