@@ -46,7 +46,7 @@ EOF
 done
 
 
-sname="gtex-railMat-merge"
+sname="test10-merge"
 ## Create script
 cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
