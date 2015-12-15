@@ -29,6 +29,8 @@ date
 ## Run bwtool
 ${bwtoolcmd}
 
+mv ${WDIR}/${sname}.* ${WDIR}/logs/
+
 echo "**** Job ends ****"
 date
 EOF
