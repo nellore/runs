@@ -1,2 +1,8 @@
 ## Individual sample scripts
 .*sh
+
+## Output files
+*.Rdata
+
+## Log files
+logs
