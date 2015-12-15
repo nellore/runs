@@ -19,7 +19,7 @@ sh /dcl01/leek/data/gtex_work/runs/gtex/generate_sums.sh /dcl01/leek/data/bwtool
 	cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
-#$ -m e
+#$ -m a
 #$ -l mem_free=1G,h_vmem=2G,h_fsize=100G
 #$ -N ${sname}
 #$ -hold_jid region-bed
