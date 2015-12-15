@@ -20,7 +20,7 @@ sh /dcl01/leek/data/gtex_work/runs/gtex/generate_means.sh /dcl01/leek/data/bwtoo
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=15G,h_vmem=25G,h_fsize=100G
+#$ -l mem_free=1G,h_vmem=2G,h_fsize=100G
 #$ -N ${sname}
 #$ -hold_jid region-bed
 echo "**** Job starts ****"
