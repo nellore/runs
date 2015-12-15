@@ -27,7 +27,7 @@ coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
 }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE)
 coverageMatrix <- do.call(cbind, coverageMatrix)
 
-save(coverageMatrix, file = 'coverageMatrix.Rdata')
+save(coverageMatrix, file = 'coverageMatrix-cut0.5.Rdata')
 
 
 ## Load regions
@@ -43,7 +43,7 @@ names(chr_n) <- names(table(regs_raw$chr))
 chr_n <- chr_n[match(unique(regs_raw$chr), names(chr_n))]
 names(regions) <- paste(regs_raw$chr, unlist(sapply(chr_n, seq_len)), sep = '.')
 
-save(regions, file = 'regions.Rdata')
+save(regions, file = 'regions-cut0.5.Rdata')
 
 ## Reproducibility info
 proc.time()
