@@ -16,4 +16,4 @@ SRR=$(echo $SAMPLENAME | cut -d'_' -f1)
 export COUNTS=$(dirname $(dirname $BW))/cross_sample_results/counts.tsv.gz
 READLENGTH=$(grep $SRR $RUNINFO | cut -d',' -f9)
 READCOUNT=$(gzip -cd $COUNTS | grep $SAMPLENAME | rev | cut -f2 | rev | cut -d',' -f1)
-$BWTOOL summary $BED $BW /dev/stdout -fill=0 -with-sum | cut -f1-3,10 | awk -v rcount=$READCOUNT -v rlength=$READLENGTH '{print $1 "\t" $2 "\t" $3 "\t" $4*40000000*2/(rcount*rlength)}' >$DUMP/$SRR.sum.tsv
+$BWTOOL summary $BED $BW /dev/stdout -fill=0 -with-sum | cut -f1-3,10 | awk -v rcount=$READCOUNT -v rlength=$READLENGTH -v CONVFMT=%.17g '{print $1 "\t" $2 "\t" $3 "\t" $4*40000000*2/(rcount*rlength)}' >$DUMP/$SRR.sum.tsv
