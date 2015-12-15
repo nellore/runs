@@ -9,7 +9,7 @@ mkdir -p ${WDIR}
 mkdir -p ${WDIR}/logs
 
 # Construct shell files
-sh /dcl01/leek/data/gtex_work/runs/gtex/generate_means.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/region_bed/regions-cut0.5.bed /dcl01/leek/data/gtex /dcl01/leek/data/gtex_work/runs/gtex/SraRunInfo.csv /dcl01/leek/data/gtex_work/mean_cov | head -n 10 | while read bwtoolcmd
+sh /dcl01/leek/data/gtex_work/runs/gtex/generate_means.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/region_bed/regions-cut0.5.bed /dcl01/leek/data/gtex /dcl01/leek/data/gtex_work/runs/gtex/SraRunInfo.csv /dcl01/leek/data/gtex_work/mean_cov | while read bwtoolcmd
     do
     bwfile=$(echo "${bwtoolcmd}" | cut -f5 -d " ")
     bwsample=$(basename ${bwfile} .bw)
