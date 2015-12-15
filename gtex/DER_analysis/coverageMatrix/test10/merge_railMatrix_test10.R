@@ -8,7 +8,12 @@ chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/hg38.sizes', header 
 chrs <- chrInfo$chr
 
 regionMat <- lapply(chrs, function(chr) {
-    load(paste0('regionMat-cut', cutoff, '-', chr, '.Rdata'))
+    f <- paste0('regionMat-cut', cutoff, '-', chr, '.Rdata')
+    if(!file.exists(f)) {
+        message(paste(Sys.time(), 'failed to find', f))
+        return(NULL)
+    }
+    load(f)
     res <- regionMat
     return(res)
 })
