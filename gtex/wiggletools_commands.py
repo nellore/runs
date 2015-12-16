@@ -7,6 +7,7 @@ Outputs wiggletools commands for computing mean bigwigs by tissue.
 """
 import gzip
 from collections import defaultdict
+import os
 
 if __name__ == '__main__':
     import argparse
@@ -75,6 +76,7 @@ if __name__ == '__main__':
         tissue_to_sample_names[
                 sample_name_to_tissue[sample_name]
             ].append(sample_name)
+    os.makedirs(args.out)
     for tissue in tissue_to_sample_names:
         print ' '.join([args.wiggletools, 'sum'] + [
                     'scale {} {}'.format(
