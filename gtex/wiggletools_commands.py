@@ -77,7 +77,11 @@ if __name__ == '__main__':
         tissue_to_sample_names[
                 sample_name_to_tissue[sample_name]
             ].append(sample_name)
-    os.makedirs(args.out)
+    try:
+        os.makedirs(args.out)
+    except OSError as e:
+        if 'File exists' not in e:
+            raise
     for tissue in tissue_to_sample_names:
         print ' '.join([args.wiggletools, 'sum'] + [
                     'scale {} {}'.format(
