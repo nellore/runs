@@ -81,7 +81,8 @@ if __name__ == '__main__':
     for tissue in tissue_to_sample_names:
         print ' '.join([args.wiggletools, 'sum'] + [
                     'scale {} {}'.format(
-                            sample_name_to_mapped_reads[sample_name],
+                            40000000
+                                / sample_name_to_mapped_reads[sample_name],
                             sample_name_to_bw[sample_name]
                         ) for sample_name in sample_name_to_mapped_reads
                 ]) + '>{}'.format(os.path.join(args.out, tissue + '.mean.wig'))
