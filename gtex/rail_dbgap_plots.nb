@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     53259,       1292]
-NotebookOptionsPosition[     51655,       1235]
-NotebookOutlinePosition[     52013,       1251]
-CellTagsIndexPosition[     51970,       1248]
+NotebookDataLength[     54379,       1312]
+NotebookOptionsPosition[     52661,       1251]
+NotebookOutlinePosition[     53019,       1267]
+CellTagsIndexPosition[     52976,       1264]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -119,7 +119,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.659123496125392*^9, 3.659123585230338*^9}, {
    3.659124231795425*^9, 3.65912425829318*^9}, 3.659128477125111*^9, 
    3.659128610008832*^9, {3.659129719351214*^9, 3.659129793860969*^9}, 
-   3.659130025438962*^9, 3.659260419228258*^9}]
+   3.659130025438962*^9, 3.659260419228258*^9, 3.659279036832676*^9, 
+   3.659289732170802*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -153,7 +154,7 @@ Cell[BoxData[
  CellChangeTimes->{
   3.6591242862999897`*^9, 3.659128477162229*^9, 3.659128610050146*^9, {
    3.6591297194067907`*^9, 3.6591297939049273`*^9}, 3.659130025482627*^9, 
-   3.659260419251939*^9}]
+   3.659260419251939*^9, 3.659279036857747*^9, 3.6592897322402763`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -346,11 +347,11 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{
         "\"\<days after start time\>\"", ",", 
-         "\"\<a) number of active processing cores during \
+         "\"\<a) number of rented worker processing cores during \
 preprocessing\>\""}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.659129461330554*^9, 3.659129525524994*^9}, {
   3.659129990120564*^9, 3.6591300172711487`*^9}, {3.659130147225721*^9, 
-  3.659130152087226*^9}}],
+  3.659130152087226*^9}, {3.659289719756735*^9, 3.659289721647052*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, GraphicsComplexBox[CompressedData["
@@ -442,7 +443,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
      FormBox["\"\"", TraditionalForm]}, {
      FormBox["\"days after start time\"", TraditionalForm], 
      FormBox[
-     "\"a) number of active processing cores during preprocessing\"", 
+     "\"a) number of rented worker processing cores during preprocessing\"", 
       TraditionalForm]}},
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
@@ -464,7 +465,8 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
    3.6591295055138597`*^9, 3.6591295259401407`*^9}, 3.659129569575552*^9, {
    3.659129720123499*^9, 3.6591297945108843`*^9}, {3.659130008925338*^9, 
    3.659130026065712*^9}, {3.659130148900565*^9, 3.65913018726324*^9}, 
-   3.659130234983387*^9, 3.659260421351211*^9}]
+   3.659130234983387*^9, 3.659260421351211*^9, 3.659279037585616*^9, 
+   3.659289732964663*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -506,13 +508,13 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{
         "\"\<days after start time\>\"", ",", 
-         "\"\<b) number of active processing cores during alignment\>\""}], 
-        "}"}]}], "}"}]}]}], "]"}]}]], "Input",
+         "\"\<b) number of rented worker processing cores during \
+alignment\>\""}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.659128945472205*^9, 3.659128981365004*^9}, {
   3.659129587649362*^9, 3.65912958789795*^9}, {3.659129620303687*^9, 
   3.659129621917804*^9}, {3.65912968409445*^9, 3.659129688759378*^9}, {
   3.6591298273218813`*^9, 3.659129958437209*^9}, {3.659130214706986*^9, 
-  3.659130219068535*^9}}],
+  3.659130219068535*^9}, {3.659289701606599*^9, 3.659289703656304*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, GraphicsComplexBox[CompressedData["
@@ -606,7 +608,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
      FormBox["\"\"", TraditionalForm]}, {
      FormBox["\"days after start time\"", TraditionalForm], 
      FormBox[
-     "\"b) number of active processing cores during alignment\"", 
+     "\"b) number of rented worker processing cores during alignment\"", 
       TraditionalForm]}},
   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
   GridLines->{None, None},
@@ -628,7 +630,8 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
    3.65912962221918*^9, 3.659129689301355*^9, {3.659129720241499*^9, 
    3.6591297946652927`*^9}, {3.6591298411498537`*^9, 3.659129901306809*^9}, 
    3.659129963892666*^9, 3.659130026232868*^9, {3.659130215427759*^9, 
-   3.659130236628817*^9}, 3.659260421468795*^9}]
+   3.659130236628817*^9}, 3.659260421468795*^9, 3.659279037719225*^9, 
+   3.659289733085206*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -736,8 +739,8 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
          FormBox["\"\"", TraditionalForm]}, {
          FormBox["\"days after start time\"", TraditionalForm], 
          FormBox[
-         "\"a) number of active processing cores during preprocessing\"", 
-          TraditionalForm]}},
+         "\"a) number of rented worker processing cores during \
+preprocessing\"", TraditionalForm]}},
       FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
       GridLines->{None, None},
       GridLinesStyle->Directive[
@@ -845,7 +848,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
          FormBox["\"\"", TraditionalForm]}, {
          FormBox["\"days after start time\"", TraditionalForm], 
          FormBox[
-         "\"b) number of active processing cores during alignment\"", 
+         "\"b) number of rented worker processing cores during alignment\"", 
           TraditionalForm]}},
       FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
       GridLines->{None, None},
@@ -868,7 +871,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
   PlotRangePadding->{6, 5}]], "Output",
  CellChangeTimes->{
   3.659130121880365*^9, {3.6591302236310596`*^9, 3.659130258392531*^9}, 
-   3.659260421517768*^9}]
+   3.659260421517768*^9, 3.659279037775791*^9, 3.65928973317417*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -886,7 +889,7 @@ Cell[BoxData["\<\"cores.pdf\"\>"], "Output",
   3.65912942956083*^9, 3.6591295960351067`*^9, 3.659129626673594*^9, {
    3.6591296919332943`*^9, 3.659129794837817*^9}, {3.6591300264043493`*^9, 
    3.659130088791066*^9}, 3.659130129926938*^9, 3.659130263394054*^9, 
-   3.65926042280834*^9}]
+   3.65926042280834*^9, 3.659279038203149*^9, 3.659289733670381*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -931,7 +934,8 @@ Cell[BoxData[
     RowBox[{"\<\"2015-11-30\"\>", ",", "2256.5954725`", ",", "1338.27`", ",", 
      "40.22796957`", ",", "0.02341277`", ",", "0.00008345`", ",", 
      "3635.11693829`"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.659260918627334*^9}]
+ CellChangeTimes->{3.659260918627334*^9, 3.659279038273912*^9, 
+  3.659289733736978*^9}]
 }, Open  ]],
 
 Cell[BoxData[{
@@ -965,81 +969,82 @@ Cell[BoxData[{
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Show", "[", 
-  RowBox[{
-   RowBox[{"BarChart", "[", 
-    RowBox[{"data", ",", 
-     RowBox[{"ChartLabels", "\[Rule]", 
-      RowBox[{"Placed", "[", 
-       RowBox[{"labels", ",", "Below", ",", 
-        RowBox[{
-         RowBox[{"Rotate", "[", 
-          RowBox[{"#", ",", 
-           RowBox[{"Pi", "/", "2.9"}]}], "]"}], "&"}]}], "]"}]}], ",", 
-     RowBox[{"BaseStyle", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"FontName", "\[Rule]", "\"\<Helvetica\>\""}], ",", " ", 
-        RowBox[{"FontSize", "\[Rule]", "15"}], ",", " ", "Black"}], "}"}]}], 
-     ",", " ", 
-     RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", " ", 
-     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
-     RowBox[{"FrameLabel", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"\"\<Cost (USD)\>\"", ",", " ", "\"\<\>\""}], "}"}], ",", 
-        RowBox[{"{", 
+ RowBox[{"costPlot", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"BarChart", "[", 
+     RowBox[{"data", ",", 
+      RowBox[{"ChartLabels", "\[Rule]", 
+       RowBox[{"Placed", "[", 
+        RowBox[{"labels", ",", "Below", ",", 
          RowBox[{
-         "\"\<\>\"", ",", " ", 
-          "\"\<Total costs of aligning GTEx RNA-seq data by Amazon \
-service\>\""}], "}"}]}], "}"}]}], ",", " ", 
-     RowBox[{"FrameTicks", "\[Rule]", 
-      RowBox[{"{", 
-       RowBox[{"None", ",", " ", "True"}], "}"}]}]}], "]"}], ",", " ", 
-   RowBox[{"Graphics", "[", 
-    RowBox[{"Text", "[", 
-     RowBox[{
-      RowBox[{"Style", "[", 
-       RowBox[{
-       "\"\<$16,438.80\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
-        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
-      RowBox[{"{", 
-       RowBox[{"1", ",", "17200"}], "}"}]}], "]"}], "]"}], ",", 
-   RowBox[{"Graphics", "[", 
-    RowBox[{"Text", "[", 
-     RowBox[{
-      RowBox[{"Style", "[", 
-       RowBox[{
-       "\"\<$10,988.00\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
-        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
-      RowBox[{"{", 
-       RowBox[{"2", ",", "11800"}], "}"}]}], "]"}], "]"}], ",", 
-   "\[IndentingNewLine]", 
-   RowBox[{"Graphics", "[", 
-    RowBox[{"Text", "[", 
-     RowBox[{
-      RowBox[{"Style", "[", 
-       RowBox[{
-       "\"\<$941.15\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
-        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
-      RowBox[{"{", 
-       RowBox[{"3", ",", "1700"}], "}"}]}], "]"}], "]"}], ",", 
-   "\[IndentingNewLine]", 
-   RowBox[{"Graphics", "[", 
-    RowBox[{"Text", "[", 
-     RowBox[{
-      RowBox[{"Style", "[", 
-       RowBox[{
-       "\"\<$0.19\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
-        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
-      RowBox[{"{", 
-       RowBox[{"4", ",", "800"}], "}"}]}], "]"}], "]"}]}], "]"}]], "Input",
+          RowBox[{"Rotate", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{"Pi", "/", "2.9"}]}], "]"}], "&"}]}], "]"}]}], ",", 
+      RowBox[{"BaseStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"FontName", "\[Rule]", "\"\<Helvetica\>\""}], ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "15"}], ",", " ", "Black"}], "}"}]}], 
+      ",", " ", 
+      RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", " ", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<Cost (USD)\>\"", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<\>\"", ",", " ", 
+           "\"\<Total costs of aligning GTEx RNA-seq data by Amazon service\>\
+\""}], "}"}]}], "}"}]}], ",", " ", 
+      RowBox[{"FrameTicks", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"None", ",", " ", "True"}], "}"}]}]}], "]"}], ",", " ", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<$16,438.80\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "17200"}], "}"}]}], "]"}], "]"}], ",", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<$10,988.00\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "11800"}], "}"}]}], "]"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{
+        "\"\<$941.15\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "1700"}], "}"}]}], "]"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<$0.19\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+         RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "800"}], "}"}]}], "]"}], "]"}], ",", " ", 
+    RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.65926420432946*^9, 3.659264363528015*^9}, {
   3.659275319638179*^9, 3.6592754679604797`*^9}, {3.659275756563218*^9, 
   3.6592757737313833`*^9}, {3.6592761094850807`*^9, 3.659276136866035*^9}, {
   3.659276209428748*^9, 3.6592762530286617`*^9}, {3.659276292645719*^9, 
-  3.6592768121706133`*^9}}],
+  3.6592768121706133`*^9}, {3.659279011252717*^9, 3.659279031977028*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{
@@ -1225,12 +1230,23 @@ Cell[BoxData[
      Scaled[0.05]}},
   Ticks->{None, Automatic}]], "Output",
  CellChangeTimes->{{3.6592753837131*^9, 3.659275468280035*^9}, {
-  3.659275765164843*^9, 3.659275774050256*^9}, {3.659276128385365*^9, 
-  3.659276137184712*^9}, {3.6592762110480537`*^9, 3.65927625337393*^9}, {
-  3.6592763018459873`*^9, 3.659276391341827*^9}, {3.659276435268565*^9, 
-  3.659276586108199*^9}, {3.659276630605733*^9, 3.65927663810637*^9}, {
-  3.659276686276862*^9, 3.659276723444186*^9}, {3.6592767704285927`*^9, 
-  3.659276812561842*^9}}]
+   3.659275765164843*^9, 3.659275774050256*^9}, {3.659276128385365*^9, 
+   3.659276137184712*^9}, {3.6592762110480537`*^9, 3.65927625337393*^9}, {
+   3.6592763018459873`*^9, 3.659276391341827*^9}, {3.659276435268565*^9, 
+   3.659276586108199*^9}, {3.659276630605733*^9, 3.65927663810637*^9}, {
+   3.659276686276862*^9, 3.659276723444186*^9}, {3.6592767704285927`*^9, 
+   3.659276812561842*^9}, 3.6592790383663177`*^9, 3.659289733851878*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<costs.pdf\>\"", ",", "costPlot"}], "]"}]], "Input",
+ CellChangeTimes->{{3.659279016015751*^9, 3.659279019290661*^9}}],
+
+Cell[BoxData["\<\"costs.pdf\"\>"], "Output",
+ CellChangeTimes->{3.659279038622381*^9, 3.659289734086507*^9}]
 }, Open  ]]
 },
 WindowSize->{1168, 723},
@@ -1255,44 +1271,48 @@ Cell[775, 27, 305, 7, 28, "Input"],
 Cell[1083, 36, 1719, 51, 97, "Input"],
 Cell[CellGroupData[{
 Cell[2827, 91, 530, 14, 28, "Input"],
-Cell[3360, 107, 632, 14, 41, "Output"]
+Cell[3360, 107, 680, 15, 41, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4029, 126, 470, 13, 28, "Input"],
-Cell[4502, 141, 566, 14, 41, "Output"]
+Cell[4077, 127, 470, 13, 28, "Input"],
+Cell[4550, 142, 612, 14, 41, "Output"]
 }, Open  ]],
-Cell[5083, 158, 271, 6, 28, "Input"],
-Cell[5357, 166, 683, 21, 28, "Input"],
-Cell[6043, 189, 734, 22, 28, "Input"],
-Cell[6780, 213, 943, 25, 28, "Input"],
-Cell[7726, 240, 990, 25, 46, "Input"],
-Cell[8719, 267, 555, 11, 46, "Input"],
-Cell[9277, 280, 985, 18, 28, "Input"],
-Cell[10265, 300, 504, 12, 28, "Input"],
+Cell[5177, 159, 271, 6, 28, "Input"],
+Cell[5451, 167, 683, 21, 28, "Input"],
+Cell[6137, 190, 734, 22, 28, "Input"],
+Cell[6874, 214, 943, 25, 28, "Input"],
+Cell[7820, 241, 990, 25, 46, "Input"],
+Cell[8813, 268, 555, 11, 46, "Input"],
+Cell[9371, 281, 985, 18, 28, "Input"],
+Cell[10359, 301, 504, 12, 28, "Input"],
 Cell[CellGroupData[{
-Cell[10794, 316, 1432, 36, 80, "Input"],
-Cell[12229, 354, 5824, 112, 389, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[18090, 471, 1762, 43, 80, "Input"],
-Cell[19855, 516, 5901, 114, 389, "Output"]
+Cell[10888, 317, 1485, 36, 80, "Input"],
+Cell[12376, 355, 5879, 113, 389, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25793, 635, 404, 10, 28, "Input"],
-Cell[26200, 647, 11709, 223, 702, "Output"]
+Cell[18292, 473, 1808, 43, 97, "Input"],
+Cell[20103, 518, 5956, 115, 389, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37946, 875, 349, 6, 28, "Input"],
-Cell[38298, 883, 307, 5, 28, "Output"]
+Cell[26096, 638, 404, 10, 28, "Input"],
+Cell[26503, 650, 11757, 223, 702, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38642, 893, 243, 5, 28, "Input"],
-Cell[38888, 900, 1629, 33, 114, "Output"]
+Cell[38297, 878, 349, 6, 28, "Input"],
+Cell[38649, 886, 351, 5, 28, "Output"]
 }, Open  ]],
-Cell[40532, 936, 924, 26, 46, "Input"],
 Cell[CellGroupData[{
-Cell[41481, 966, 2948, 75, 131, "Input"],
-Cell[44432, 1043, 7207, 189, 420, "Output"]
+Cell[39037, 896, 243, 5, 28, "Input"],
+Cell[39283, 903, 1676, 34, 114, "Output"]
+}, Open  ]],
+Cell[40974, 940, 924, 26, 46, "Input"],
+Cell[CellGroupData[{
+Cell[41923, 970, 3141, 76, 148, "Input"],
+Cell[45067, 1048, 7259, 189, 386, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52363, 1242, 171, 3, 28, "Input"],
+Cell[52537, 1247, 108, 1, 28, "Output"]
 }, Open  ]]
 }
 ]
