@@ -88,7 +88,7 @@ if __name__ == '__main__':
                             float(40000000)
                                 / sample_name_to_mapped_reads[sample_name],
                             sample_name_to_bw[sample_name]
-                        ) for sample_name in sample_name_to_mapped_reads
+                        ) for sample_name in tissue_to_sample_names[tissue]
                 ]) + ' >{}'.format(
                                 os.path.join(args.out, tissue + '.mean.wig')
                             )
