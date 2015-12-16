@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39807,        936]
-NotebookOptionsPosition[     38478,        888]
-NotebookOutlinePosition[     38836,        904]
-CellTagsIndexPosition[     38793,        901]
+NotebookDataLength[     53259,       1292]
+NotebookOptionsPosition[     51655,       1235]
+NotebookOutlinePosition[     52013,       1251]
+CellTagsIndexPosition[     51970,       1248]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -119,7 +119,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.659123496125392*^9, 3.659123585230338*^9}, {
    3.659124231795425*^9, 3.65912425829318*^9}, 3.659128477125111*^9, 
    3.659128610008832*^9, {3.659129719351214*^9, 3.659129793860969*^9}, 
-   3.659130025438962*^9}]
+   3.659130025438962*^9, 3.659260419228258*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -152,7 +152,8 @@ Cell[BoxData[
   Editable->False]], "Output",
  CellChangeTimes->{
   3.6591242862999897`*^9, 3.659128477162229*^9, 3.659128610050146*^9, {
-   3.6591297194067907`*^9, 3.6591297939049273`*^9}, 3.659130025482627*^9}]
+   3.6591297194067907`*^9, 3.6591297939049273`*^9}, 3.659130025482627*^9, 
+   3.659260419251939*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -463,7 +464,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
    3.6591295055138597`*^9, 3.6591295259401407`*^9}, 3.659129569575552*^9, {
    3.659129720123499*^9, 3.6591297945108843`*^9}, {3.659130008925338*^9, 
    3.659130026065712*^9}, {3.659130148900565*^9, 3.65913018726324*^9}, 
-   3.659130234983387*^9}]
+   3.659130234983387*^9, 3.659260421351211*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -627,7 +628,7 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
    3.65912962221918*^9, 3.659129689301355*^9, {3.659129720241499*^9, 
    3.6591297946652927`*^9}, {3.6591298411498537`*^9, 3.659129901306809*^9}, 
    3.659129963892666*^9, 3.659130026232868*^9, {3.659130215427759*^9, 
-   3.659130236628817*^9}}]
+   3.659130236628817*^9}, 3.659260421468795*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -866,7 +867,8 @@ F4GHPwhBCUZwQhCSUIQmDGGD/v8r/Af4/AIq
   ImageSize->Large,
   PlotRangePadding->{6, 5}]], "Output",
  CellChangeTimes->{
-  3.659130121880365*^9, {3.6591302236310596`*^9, 3.659130258392531*^9}}]
+  3.659130121880365*^9, {3.6591302236310596`*^9, 3.659130258392531*^9}, 
+   3.659260421517768*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -883,11 +885,356 @@ Cell[BoxData["\<\"cores.pdf\"\>"], "Output",
  CellChangeTimes->{
   3.65912942956083*^9, 3.6591295960351067`*^9, 3.659129626673594*^9, {
    3.6591296919332943`*^9, 3.659129794837817*^9}, {3.6591300264043493`*^9, 
-   3.659130088791066*^9}, 3.659130129926938*^9, 3.659130263394054*^9}]
+   3.659130088791066*^9}, 3.659130129926938*^9, 3.659130263394054*^9, 
+   3.65926042280834*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"costs", " ", "=", " ", 
+  RowBox[{"Import", "[", 
+   RowBox[{"\"\<costs.csv\>\"", ",", " ", "\"\<CSV\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.659260514827639*^9, 3.659260522241867*^9}, 
+   3.659260918205875*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Service\"\>", ",", "\<\"Amazon Elastic Compute Cloud\"\>", 
+     ",", "\<\"Amazon Elastic MapReduce\"\>", 
+     ",", "\<\"Amazon Simple Storage Service\"\>", 
+     ",", "\<\"Amazon Simple Queue Service\"\>", 
+     ",", "\<\"Amazon SimpleDB\"\>", ",", "\<\"Daily Total\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Service Total\"\>", ",", "16438.8237689`", ",", "10987.99`", 
+     ",", "941.14695784`", ",", "0.18841365`", ",", "0.00032373`", ",", 
+     "28368.14946412`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2015-12-04\"\>", ",", "3540.00754333`", ",", "2447.88`", ",",
+      "259.37955904`", ",", "0.05848917`", ",", "0.00007988`", ",", 
+     "6247.32567142`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2015-12-03\"\>", ",", "2978.2435914`", ",", "2070.72`", ",", 
+     "269.75589528`", ",", "0.04401182`", ",", "0.00008047`", ",", 
+     "5318.76357897`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2015-12-02\"\>", ",", "3543.7409611`", ",", "2617.14`", ",", 
+     "182.31436251`", ",", "0.05769252`", ",", "0.00007993`", ",", 
+     "6343.25309606`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2015-12-01\"\>", ",", "4120.23620057`", ",", "2513.98`", ",",
+      "189.46917144`", ",", "0.00480737`", ",", "0.`", ",", 
+     "6823.69017938`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"2015-11-30\"\>", ",", "2256.5954725`", ",", "1338.27`", ",", 
+     "40.22796957`", ",", "0.02341277`", ",", "0.00008345`", ",", 
+     "3635.11693829`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.659260918627334*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"costs", "[", 
+    RowBox[{"[", 
+     RowBox[{"2", ",", 
+      RowBox[{"Range", "[", 
+       RowBox[{"2", ",", "4"}], "]"}]}], "]"}], "]"}]}], ";", 
+  RowBox[{"data", "=", 
+   RowBox[{"Append", "[", 
+    RowBox[{"data", ",", " ", 
+     RowBox[{
+      RowBox[{"costs", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "5"}], "]"}], "]"}], "+", 
+      RowBox[{"costs", "[", 
+       RowBox[{"[", 
+        RowBox[{"2", ",", "6"}], "]"}], "]"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"labels", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<EC2\>\"", ",", "\"\<EMR\>\"", ",", "\"\<S3\>\"", ",", 
+     "\"\<Other\>\""}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.659260902800334*^9, 3.659260902814495*^9}, {
+  3.659260933559043*^9, 3.659260960543681*^9}, {3.659261099993167*^9, 
+  3.659261160809044*^9}, {3.659264090658957*^9, 3.6592640949136047`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"BarChart", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"ChartLabels", "\[Rule]", 
+      RowBox[{"Placed", "[", 
+       RowBox[{"labels", ",", "Below", ",", 
+        RowBox[{
+         RowBox[{"Rotate", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"Pi", "/", "2.9"}]}], "]"}], "&"}]}], "]"}]}], ",", 
+     RowBox[{"BaseStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FontName", "\[Rule]", "\"\<Helvetica\>\""}], ",", " ", 
+        RowBox[{"FontSize", "\[Rule]", "15"}], ",", " ", "Black"}], "}"}]}], 
+     ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", " ", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"FrameLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\"\<Cost (USD)\>\"", ",", " ", "\"\<\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<\>\"", ",", " ", 
+          "\"\<Total costs of aligning GTEx RNA-seq data by Amazon \
+service\>\""}], "}"}]}], "}"}]}], ",", " ", 
+     RowBox[{"FrameTicks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"None", ",", " ", "True"}], "}"}]}]}], "]"}], ",", " ", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Text", "[", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<$16,438.80\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "17200"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Text", "[", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<$10,988.00\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "11800"}], "}"}]}], "]"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Text", "[", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<$941.15\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "1700"}], "}"}]}], "]"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Text", "[", 
+     RowBox[{
+      RowBox[{"Style", "[", 
+       RowBox[{
+       "\"\<$0.19\>\"", ",", " ", "Bold", ",", " ", "Blue", ",", " ", 
+        RowBox[{"FontSize", "\[Rule]", "18"}]}], "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "800"}], "}"}]}], "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.65926420432946*^9, 3.659264363528015*^9}, {
+  3.659275319638179*^9, 3.6592754679604797`*^9}, {3.659275756563218*^9, 
+  3.6592757737313833`*^9}, {3.6592761094850807`*^9, 3.659276136866035*^9}, {
+  3.659276209428748*^9, 3.6592762530286617`*^9}, {3.659276292645719*^9, 
+  3.6592768121706133`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {Opacity[0], PointBox[{0.4655474452554744, 0.}]}, {{}, 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+      0.6719999999999999], Thickness[Small]}], 
+      {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+       0.6719999999999999], Thickness[Small]}], 
+       TagBox[
+        TooltipBox[
+         TagBox[
+          DynamicBox[{
+            FEPrivate`If[
+             CurrentValue["MouseOver"], 
+             EdgeForm[{
+               GrayLevel[0.5], 
+               AbsoluteThickness[1.5], 
+               Opacity[0.66]}], {}, {}], 
+            
+            RectangleBox[{0.5437956204379562, 0.}, {1.4562043795620436`, 
+             16438.8237689}, "RoundingRadius" -> 0]},
+           
+           ImageSizeCache->{{88.46294117647058, 
+            194.75749780509213`}, {-135.83147558092304`, 
+            135.14238257744933`}}],
+          StatusArea[#, 16438.8237689]& ,
+          TagBoxNote->"16438.8237689"],
+         StyleBox["16438.8237689`", {}, StripOnInput -> False]],
+        Annotation[#, 
+         Style[16438.8237689, {}], "Tooltip"]& ]}, 
+      {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+       0.6719999999999999], Thickness[Small]}], 
+       TagBox[
+        TooltipBox[
+         TagBox[
+          DynamicBox[{
+            FEPrivate`If[
+             CurrentValue["MouseOver"], 
+             EdgeForm[{
+               GrayLevel[0.5], 
+               AbsoluteThickness[1.5], 
+               Opacity[0.66]}], {}, {}], 
+            
+            RectangleBox[{1.543795620437956, 0.}, {2.4562043795620436`, 
+             10987.99}, "RoundingRadius" -> 0]},
+           
+           ImageSizeCache->{{204.4137752414398, 
+            310.7083318700614}, {-46.14695432925578, 135.14238257744933`}}],
+          StatusArea[#, 10987.99]& ,
+          TagBoxNote->"10987.99"],
+         StyleBox["10987.99`", {}, StripOnInput -> False]],
+        Annotation[#, 
+         Style[10987.99, {}], "Tooltip"]& ]}, 
+      {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+       0.6719999999999999], Thickness[Small]}], 
+       TagBox[
+        TooltipBox[
+         TagBox[
+          DynamicBox[{
+            FEPrivate`If[
+             CurrentValue["MouseOver"], 
+             EdgeForm[{
+               GrayLevel[0.5], 
+               AbsoluteThickness[1.5], 
+               Opacity[0.66]}], {}, {}], 
+            
+            RectangleBox[{2.543795620437956, 0.}, {3.4562043795620436`, 
+             941.14695784}, "RoundingRadius" -> 0]},
+           
+           ImageSizeCache->{{320.3646093064091, 426.65916593503067`}, {
+            119.15735442947536`, 135.14238257744933`}}],
+          StatusArea[#, 941.14695784]& ,
+          TagBoxNote->"941.14695784"],
+         StyleBox["941.14695784`", {}, StripOnInput -> False]],
+        Annotation[#, 
+         Style[941.14695784, {}], "Tooltip"]& ]}, 
+      {RGBColor[0.982864, 0.7431472, 0.3262672], EdgeForm[{Opacity[
+       0.6719999999999999], Thickness[Small]}], 
+       TagBox[
+        TooltipBox[
+         TagBox[
+          DynamicBox[{
+            FEPrivate`If[
+             CurrentValue["MouseOver"], 
+             EdgeForm[{
+               GrayLevel[0.5], 
+               AbsoluteThickness[1.5], 
+               Opacity[0.66]}], {}, {}], 
+            
+            RectangleBox[{3.543795620437956, 0.}, {4.456204379562044, 
+             0.18873737999999998`}, "RoundingRadius" -> 0]},
+           
+           ImageSizeCache->{{436.3154433713783, 542.61}, {134.63927721370402`,
+             135.14238257744933`}}],
+          StatusArea[#, 0.18873737999999998`]& ,
+          TagBoxNote->"0.18873737999999998"],
+         StyleBox["0.18873737999999998`", {}, StripOnInput -> False]],
+        Annotation[#, 
+         Style[0.18873737999999998`, {}], "Tooltip"]& ]}}, {}, {}}, {}, {
+     InsetBox[
+      RotationBox["\<\"EC2\"\>",
+       BoxRotation->1.0833078115826873`], 
+      Offset[{0, -4}, {0.9999999999999999, 0.}], ImageScaled[{0.5, 1}]], 
+     InsetBox[
+      RotationBox["\<\"EMR\"\>",
+       BoxRotation->1.0833078115826873`], 
+      Offset[{0, -4}, {1.9999999999999998`, 0.}], ImageScaled[{0.5, 1}]], 
+     InsetBox[
+      RotationBox["\<\"S3\"\>",
+       BoxRotation->1.0833078115826873`], Offset[{0, -4}, {3., 0.}], 
+      ImageScaled[{0.5, 1}]], InsetBox[
+      RotationBox["\<\"Other\"\>",
+       BoxRotation->1.0833078115826873`], Offset[{0, -4}, {4., 0.}], 
+      ImageScaled[{0.5, 1}]]}, {}}, InsetBox[
+    StyleBox["\<\"$16,438.80\"\>",
+     StripOnInput->False,
+     LineColor->RGBColor[0, 0, 1],
+     FrontFaceColor->RGBColor[0, 0, 1],
+     BackFaceColor->RGBColor[0, 0, 1],
+     GraphicsColor->RGBColor[0, 0, 1],
+     FontSize->18,
+     FontWeight->Bold,
+     FontColor->RGBColor[0, 0, 1]], {1, 17200}], InsetBox[
+    StyleBox["\<\"$10,988.00\"\>",
+     StripOnInput->False,
+     LineColor->RGBColor[0, 0, 1],
+     FrontFaceColor->RGBColor[0, 0, 1],
+     BackFaceColor->RGBColor[0, 0, 1],
+     GraphicsColor->RGBColor[0, 0, 1],
+     FontSize->18,
+     FontWeight->Bold,
+     FontColor->RGBColor[0, 0, 1]], {2, 11800}], InsetBox[
+    StyleBox["\<\"$941.15\"\>",
+     StripOnInput->False,
+     LineColor->RGBColor[0, 0, 1],
+     FrontFaceColor->RGBColor[0, 0, 1],
+     BackFaceColor->RGBColor[0, 0, 1],
+     GraphicsColor->RGBColor[0, 0, 1],
+     FontSize->18,
+     FontWeight->Bold,
+     FontColor->RGBColor[0, 0, 1]], {3, 1700}], InsetBox[
+    StyleBox["\<\"$0.19\"\>",
+     StripOnInput->False,
+     LineColor->RGBColor[0, 0, 1],
+     FrontFaceColor->RGBColor[0, 0, 1],
+     BackFaceColor->RGBColor[0, 0, 1],
+     GraphicsColor->RGBColor[0, 0, 1],
+     FontSize->18,
+     FontWeight->Bold,
+     FontColor->RGBColor[0, 0, 1]], {4, 800}]},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.4655474452554744, 0.},
+  BaseStyle->{FontName -> "Helvetica", FontSize -> 15, 
+    GrayLevel[0]},
+  CoordinatesToolOptions:>{"DisplayFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+      Identity[
+       Part[#, 1]], 
+      Identity[
+       Part[#, 2]]}& )},
+  Frame->True,
+  FrameLabel->{{
+     FormBox["\"Cost (USD)\"", TraditionalForm], 
+     FormBox["\"\"", TraditionalForm]}, {
+     FormBox["\"\"", TraditionalForm], 
+     FormBox[
+     "\"Total costs of aligning GTEx RNA-seq data by Amazon service\"", 
+      TraditionalForm]}},
+  FrameTicks->{{True, True}, {None, None}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  PlotRange->{{All, All}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {None, 
+     Scaled[0.05]}},
+  Ticks->{None, Automatic}]], "Output",
+ CellChangeTimes->{{3.6592753837131*^9, 3.659275468280035*^9}, {
+  3.659275765164843*^9, 3.659275774050256*^9}, {3.659276128385365*^9, 
+  3.659276137184712*^9}, {3.6592762110480537`*^9, 3.65927625337393*^9}, {
+  3.6592763018459873`*^9, 3.659276391341827*^9}, {3.659276435268565*^9, 
+  3.659276586108199*^9}, {3.659276630605733*^9, 3.65927663810637*^9}, {
+  3.659276686276862*^9, 3.659276723444186*^9}, {3.6592767704285927`*^9, 
+  3.659276812561842*^9}}]
 }, Open  ]]
 },
 WindowSize->{1168, 723},
-WindowMargins->{{89, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 95}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -908,35 +1255,44 @@ Cell[775, 27, 305, 7, 28, "Input"],
 Cell[1083, 36, 1719, 51, 97, "Input"],
 Cell[CellGroupData[{
 Cell[2827, 91, 530, 14, 28, "Input"],
-Cell[3360, 107, 610, 14, 41, "Output"]
+Cell[3360, 107, 632, 14, 41, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4007, 126, 470, 13, 28, "Input"],
-Cell[4480, 141, 540, 13, 41, "Output"]
+Cell[4029, 126, 470, 13, 28, "Input"],
+Cell[4502, 141, 566, 14, 41, "Output"]
 }, Open  ]],
-Cell[5035, 157, 271, 6, 28, "Input"],
-Cell[5309, 165, 683, 21, 28, "Input"],
-Cell[5995, 188, 734, 22, 28, "Input"],
-Cell[6732, 212, 943, 25, 28, "Input"],
-Cell[7678, 239, 990, 25, 46, "Input"],
-Cell[8671, 266, 555, 11, 46, "Input"],
-Cell[9229, 279, 985, 18, 28, "Input"],
-Cell[10217, 299, 504, 12, 28, "Input"],
+Cell[5083, 158, 271, 6, 28, "Input"],
+Cell[5357, 166, 683, 21, 28, "Input"],
+Cell[6043, 189, 734, 22, 28, "Input"],
+Cell[6780, 213, 943, 25, 28, "Input"],
+Cell[7726, 240, 990, 25, 46, "Input"],
+Cell[8719, 267, 555, 11, 46, "Input"],
+Cell[9277, 280, 985, 18, 28, "Input"],
+Cell[10265, 300, 504, 12, 28, "Input"],
 Cell[CellGroupData[{
-Cell[10746, 315, 1432, 36, 80, "Input"],
-Cell[12181, 353, 5802, 112, 389, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[18020, 470, 1762, 43, 80, "Input"],
-Cell[19785, 515, 5879, 114, 389, "Output"]
+Cell[10794, 316, 1432, 36, 80, "Input"],
+Cell[12229, 354, 5824, 112, 389, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25701, 634, 404, 10, 28, "Input"],
-Cell[26108, 646, 11683, 222, 702, "Output"]
+Cell[18090, 471, 1762, 43, 80, "Input"],
+Cell[19855, 516, 5901, 114, 389, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37828, 873, 349, 6, 28, "Input"],
-Cell[38180, 881, 282, 4, 86, "Output"]
+Cell[25793, 635, 404, 10, 28, "Input"],
+Cell[26200, 647, 11709, 223, 702, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37946, 875, 349, 6, 28, "Input"],
+Cell[38298, 883, 307, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38642, 893, 243, 5, 28, "Input"],
+Cell[38888, 900, 1629, 33, 114, "Output"]
+}, Open  ]],
+Cell[40532, 936, 924, 26, 46, "Input"],
+Cell[CellGroupData[{
+Cell[41481, 966, 2948, 75, 131, "Input"],
+Cell[44432, 1043, 7207, 189, 420, "Output"]
 }, Open  ]]
 }
 ]
