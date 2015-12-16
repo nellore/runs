@@ -83,7 +83,7 @@ if __name__ == '__main__':
         if 'File exists' not in e:
             raise
     for tissue in tissue_to_sample_names:
-        print ' '.join([args.wiggletools, 'sum'] + [
+        print ' '.join([args.wiggletools, 'mean'] + [
                     'scale {} {}'.format(
                             float(40000000)
                                 / sample_name_to_mapped_reads[sample_name],
