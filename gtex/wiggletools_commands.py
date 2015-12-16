@@ -90,5 +90,6 @@ if __name__ == '__main__':
                             sample_name_to_bw[sample_name]
                         ) for sample_name in tissue_to_sample_names[tissue]
                 ]) + ' >{}'.format(
-                                os.path.join(args.out, tissue + '.mean.wig')
+                                os.path.join(args.out,
+                                    tissue.replace(' ', '_') + '.mean.wig')
                             )
