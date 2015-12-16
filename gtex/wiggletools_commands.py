@@ -89,4 +89,6 @@ if __name__ == '__main__':
                                 / sample_name_to_mapped_reads[sample_name],
                             sample_name_to_bw[sample_name]
                         ) for sample_name in sample_name_to_mapped_reads
-                ]) + '>{}'.format(os.path.join(args.out, tissue + '.mean.wig'))
+                ]) + ' >{}'.format(
+                                os.path.join(args.out, tissue + '.mean.wig')
+                            )
