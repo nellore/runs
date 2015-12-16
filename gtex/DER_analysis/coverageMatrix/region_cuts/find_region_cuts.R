@@ -14,7 +14,7 @@ bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
 ## Find the regions for all the chromosomes given a specific cutoff
 getRegChr <- function(cutoff, chr, meanCov) {
     suppressPackageStartupMessages(library('derfinder'))
-    suppressPackageStartupMessages(library('IRanges'))
+    suppressPackageStartupMessages(library('GenomicRanges'))
     message(paste(Sys.time(), 'processing', chr, 'with cutoff', cutoff))
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
     if(is.null(regs)) {
