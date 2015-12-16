@@ -8,6 +8,7 @@ Outputs wiggletools commands for computing mean bigwigs by tissue.
 import gzip
 from collections import defaultdict
 import os
+import glob
 
 if __name__ == '__main__':
     import argparse
