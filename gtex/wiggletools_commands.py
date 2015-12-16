@@ -40,7 +40,7 @@ if __name__ == '__main__':
                         args.gtex_dir,
                         'batch_{}'.format(batch_number),
                         'coverage_bigwigs',
-                        line.rpartition('\t')[2],
+                        line.rpartition('\t')[2] + 
                         '.bw'
                     )
     sample_name_to_mapped_reads = {}
