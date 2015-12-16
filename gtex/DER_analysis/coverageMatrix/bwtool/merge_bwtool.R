@@ -11,7 +11,7 @@ load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less
 
 ## Load bwtool results
 tsv <- dir('/dcl01/leek/data/gtex_work/mean_cov', pattern = 'tsv', full.names = TRUE)
-names(tsv) <- gsub('.mean.tsv', '', dir('/dcl01/leek/data/gtex_work/mean_cov/', pattern = 'tsv'))
+names(tsv) <- gsub('.sum.tsv', '', dir('/dcl01/leek/data/gtex_work/mean_cov/', pattern = 'tsv'))
 
 ## Find which samples have tsv files and match them that way
 i <- match(as.character(pheno$Run), names(tsv))
