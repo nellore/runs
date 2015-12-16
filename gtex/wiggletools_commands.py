@@ -64,7 +64,7 @@ if __name__ == '__main__':
             line = line.strip()
             if not line: continue
             if '_rep1' in line or '_rep2' in line: continue
-            tokens = line.split('\t')
+            tokens = line.split(',')
             sample_name_to_tissue[tokens[0]] = tokens[41]
     # Handle exceptions: some samples in SraRunInfo don't have tissues labeled
     sample_name_to_tissue['SRR1325138'] = 'Skin'
