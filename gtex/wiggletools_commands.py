@@ -85,7 +85,7 @@ if __name__ == '__main__':
     for tissue in tissue_to_sample_names:
         print ' '.join([args.wiggletools, 'sum'] + [
                     'scale {} {}'.format(
-                            40000000
+                            float(40000000)
                                 / sample_name_to_mapped_reads[sample_name],
                             sample_name_to_bw[sample_name]
                         ) for sample_name in sample_name_to_mapped_reads
