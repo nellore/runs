@@ -32,10 +32,13 @@ chrInfo$gencode[!is.na(gen_195)] <- chrMapGen$gencode[gen_194]
 
 write.table(chrInfo, file = 'hg38.ucsc.sizes.ensembl.gencode', quote = FALSE, sep = '\t', row.names = FALSE)
 
-message(paste(Sys.time(), 'm5sum for GRCh38_UCSC2ensembl.txt'))
+message(paste(Sys.time(), 'md5sum for GRCh38_UCSC2ensembl.txt'))
 system('md5sum GRCh38_UCSC2ensembl.txt')
-message(paste(Sys.time(), 'm5sum for GRCh38_ensembl2gencode.txt'))
+message(paste(Sys.time(), 'md5sum for GRCh38_ensembl2gencode.txt'))
 system('md5sum GRCh38_ensembl2gencode.txt')
+
+file.remove('GRCh38_UCSC2ensembl.txt')
+file.remove('GRCh38_ensembl2gencode.txt')
 
 ## Reproducibility info
 proc.time()
