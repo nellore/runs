@@ -1,3 +1,5 @@
+# mkdir -p logs
+# Rscript complete_chr_map.R > logs/complete_chr_map_log.txt 2>&1
 library('devtools')
 
 ## Get chr info
@@ -28,12 +30,12 @@ chrInfo[is.na(gen_195), ]
 gen_194 <- gen_195[!is.na(gen_195)]
 chrInfo$gencode[!is.na(gen_195)] <- chrMapGen$gencode[gen_194]
 
-write.table(chrInfo, file = 'hg38.ucsc.sizes.ensembl.gencode', header = TRUE, quote = FALSE)
+write.table(chrInfo, file = 'hg38.ucsc.sizes.ensembl.gencode', quote = FALSE, sep = '\t', row.names = FALSE)
 
-if(FALSE) {
-    file.remove('GRCh38_UCSC2ensembl.txt')
-    file.remove('GRCh38_ensembl2gencode.txt')
-}
+message(paste(Sys.time(), 'm5sum for GRCh38_UCSC2ensembl.txt'))
+system('md5sum GRCh38_UCSC2ensembl.txt')
+message(paste(Sys.time(), 'm5sum for GRCh38_ensembl2gencode.txt'))
+system('md5sum GRCh38_ensembl2gencode.txt')
 
 ## Reproducibility info
 proc.time()
