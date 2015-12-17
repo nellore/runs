@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=50G,h_vmem=60G,h_fsize=10G
+#$ -l mem_free=4G,h_vmem=5G,h_fsize=10G
 #$ -N gtex-annoRegs
 
 echo '**** Job starts ****'
