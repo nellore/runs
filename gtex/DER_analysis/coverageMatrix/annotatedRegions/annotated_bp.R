@@ -60,6 +60,8 @@ annotation_bp$none_per <- annotation_bp$none / annotation_bp$total_bp * 100
 
 print(annotation_bp[, 9:ncol(annotation_bp)], digits = 4)
 
+## Save results
+save(annotation_bp, file = 'annotation_bp.Rdata')
 
 ## Reproducibility info
 proc.time()
