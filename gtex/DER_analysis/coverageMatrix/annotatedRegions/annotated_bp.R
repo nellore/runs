@@ -17,11 +17,6 @@ annotated <- list(
     'ucsc' = list('1bp' = annotated_ucsc, '8bp' = annotated_ucsc_8, '20bp' = annotated_ucsc_20)
 )
 
-db <- 'ucsc'
-minov <- '20bp'
-minlen <- 0
-type <- 'intergenic'
-
 annotation_bp <- lapply(names(annotated), function(db) {
     resov <- lapply(c('1bp', '8bp', '20bp'), function(minov) {
         reslen <- lapply(c(0, 7, 19), function(minlen) {
