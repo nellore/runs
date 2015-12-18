@@ -16,7 +16,7 @@ The junction input file is read from stdin and takes the following form:
 7. comma-separated list of sample indexes
 8. comma-separated list of coverages
 
-The input is SORTED by fields 1 and 2. It is obtained from the output of
+The input is SORTED by fields 1, 2, and 4. It is obtained from the output of
 combine_gtex.py by running the following commands.
 gzip -cd first_pass_gtex_junctions.tsv.gz
 | awk '$4 == "-" {holder=$3; $3=$2; $2=$holder; printf $1;
