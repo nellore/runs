@@ -21,7 +21,7 @@ combine_gtex.py by running the following commands.
 gzip -cd first_pass_gtex_junctions.tsv.gz
 | awk '$4 == "-" {holder=$3; $3=$2; $2=$holder; printf $1;
     for(i=2;i<=NF;i++){printf "\t" $i}} $4 == "+" {print $0}'
-| sort -k1,1 -k2,2n 
+| sort -k1,1 -k2,2n -k4,4
 
 Output files are written to some output directory --out in the same format,
 but preceded by two fields:
@@ -117,7 +117,7 @@ if __name__ == '__main__':
     from bisect import bisect_left
     for key, group \
         in itertools.groupby(split_iterator(sys.stdin),
-                                    lambda x: (x[0], x[1])):
+                                    lambda x: (x[0], x[1], x[3])):
         total_coverages = defaultdict(int)
         write_data = []
         for junction_index, tokens in enumerate(group):
