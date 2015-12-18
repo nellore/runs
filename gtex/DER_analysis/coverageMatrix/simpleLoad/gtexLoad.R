@@ -26,6 +26,7 @@ gtexLoad <- function(chr = NULL, minoverlap = 1, chr_db = 'ucsc', db = 'ucsc', p
     ## If chr is null, just return the info and the paths to the files
     if(is.null(chr)) {
         res <- list(chrInfo = gtexChr, regionsFile = regsFile, phenoFile = phenoFile, annotatedRegionsFile = annoFile)
+        message(paste(Sys.time(), "Specify 'chr' (by default with the USC naming scheme) to load the data for that chromosome. The input naming scheme is determined by 'chr_db' and the output format by 'db'; each one has options 'ucsc', 'ensembl' and 'gencode'. 'phenoSize' == 'small' loads the pheno table where all variables have less than 10% missing, otherwise it loads the full pheno table. 'minoverlap' (1, 8 or 20) determines which output of annotateRegions() to load."))
         return(res)
     }
     
