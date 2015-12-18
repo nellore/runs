@@ -65,6 +65,8 @@ gtexLoad <- function(chr = NULL, minoverlap = 1, chr_db = 'ucsc', db = 'ucsc', p
             countTable = annoRegions$countTable[as.vector(seqnames(regs_noEBV) == chr_ucsc), ],
             annotationList = annoRegions$annotationList[gs_present %in% as.character(which(seqnames(regs_noEBV) == chr_ucsc))]
         )
+        
+        names(annoRegs$annotationList) <- as.integer(names(annoRegs$annotationList)) - (which(seqnames(regs_noEBV) == chr_ucsc)[1] - 1)
     }
     
     ## Load coverage matrix if it's available
