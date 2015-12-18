@@ -1,24 +1,29 @@
-gtexLoad <- function(chr = NULL, minoverlap = 1, chr_db = 'ucsc', db = 'ucsc', phenoSize = 'small', help = TRUE) {
+gtexLoad <- function(chr = NULL, minoverlap = 1, chr_db = 'ucsc', db = 'ucsc', phenoSize = 'small', help = TRUE, disk = 'dcl') {
     stopifnot(db %in% c('ucsc', 'ensembl', 'gencode'))
     stopifnot(chr_db %in% c('ucsc', 'ensembl', 'gencode'))
     stopifnot(minoverlap %in% c(1, 8, 20))
+    stopifnot(disk %in% c('dcl', 'dcs'))
     
-    regsFile <- '/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/regions-cut0.5.Rdata'
+    diskPath <- ifelse(disk == 'dcl', '/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis', '/dcs01/ajaffe/GTEX/Leek')
+    
+    regsFile <- paste0(diskPath, '/coverageMatrix/regions-cut0.5.Rdata')
     
     ## Select pheno file
-    phenoFile <- ifelse(phenoSize == 'small', '/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata', '/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_complete.Rdata')
+    phenoFile <- paste0(diskPath, ifelse(phenoSize == 'small', '/pheno/pheno_missing_less_10.Rdata', '/pheno/pheno_complete.Rdata'))
     
     ## Read chr info
-    gtexChr <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/simpleLoad/gtexChr.txt', header = TRUE, colClasses = c('character', 'numeric', 'character', 'character', 'numeric', 'character', 'character', 'numeric'))
+    gtexChr <- read.table(paste0(diskPath, '/coverageMatrix/simpleLoad/gtexChr.txt'), header = TRUE, colClasses = c('character', 'numeric', 'character', 'character', 'numeric', 'character', 'character', 'numeric'))
+    
+    if(disk == 'dcs') gtexChr$matrixFile <- gsub('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis', '/dcs01/ajaffe/GTEX/Leek', gtexChr$matrixFile)
     
     ## Select annotated regions file
     if(db == 'gencode') {
         annoFile <- NA
     } else {
         if(minoverlap != 1) {
-            annoFile <- paste0('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/annotatedRegions/annotated_', db, '_', minoverlap, '.Rdata')
+            annoFile <- paste0(diskPath, '/coverageMatrix/annotatedRegions/annotated_', db, '_', minoverlap, '.Rdata')
         } else {
-            annoFile <- paste0('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/annotatedRegions/annotated_', db, '.Rdata')
+            annoFile <- paste0(diskPath, '/coverageMatrix/annotatedRegions/annotated_', db, '.Rdata')
         }
         
     }
@@ -26,7 +31,7 @@ gtexLoad <- function(chr = NULL, minoverlap = 1, chr_db = 'ucsc', db = 'ucsc', p
     ## If chr is null, just return the info and the paths to the files
     if(is.null(chr)) {
         res <- list(chrInfo = gtexChr, regionsFile = regsFile, phenoFile = phenoFile, annotatedRegionsFile = annoFile)
-        if(help) message(paste(Sys.time(), "Specify 'chr' (by default with the UCSC naming scheme) to load the data for that chromosome. The input naming scheme is determined by 'chr_db' and the output format by 'db'; each one has options 'ucsc', 'ensembl' and 'gencode'. 'phenoSize' == 'small' loads the pheno table where all variables have less than 10% missing, otherwise it loads the full pheno table. 'minoverlap' (1, 8 or 20) determines which output of annotateRegions() to load. Using 'help' = FALSE disables printing this message when 'chr' is 'NULL'."))
+        if(help) message(paste(Sys.time(), "Specify 'chr' (by default with the UCSC naming scheme) to load the data for that chromosome. The input naming scheme is determined by 'chr_db' and the output format by 'db'; each one has options 'ucsc', 'ensembl' and 'gencode'. 'phenoSize' == 'small' loads the pheno table where all variables have less than 10% missing, otherwise it loads the full pheno table. 'minoverlap' (1, 8 or 20) determines which output of annotateRegions() to load. 'disk' has to be either 'dcl' or 'dcs'. Using 'help' = FALSE disables printing this message when 'chr' is 'NULL'."))
         return(res)
     }
     
@@ -94,5 +99,8 @@ if(FALSE) {
     stopifnot(identical(test, test2))
     nrow(test$coverageMatrix) == test$chrInfo$nRegions
     ncol(test$coverageMatrix) == nrow(test$pheno)
+    testDCS <- gtexLoad('Y', db = 'ensembl', chr_db = 'ensembl', disk = 'dcs')
+    stopifnot(identical(test2$coverageMatrix, testDCS$coverageMatrix))
+    stopifnot(identical(test2$annotatedRegions, testDCS$annotatedRegions))
 }
 
