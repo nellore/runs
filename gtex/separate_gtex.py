@@ -118,9 +118,13 @@ if __name__ == '__main__':
     for key, group \
         in itertools.groupby(split_iterator(sys.stdin),
                                     lambda x: (x[0], x[1])):
+        total_coverages = defaultdict(int)
+        write_data = []
         for junction_index, tokens in enumerate(group):
             samples_and_coverages = zip(tokens[-2].split(','),
                                         tokens[-1].split(','))
+            for sample, coverage in samples_and_coverages:
+                total_coverages[sample] += int(coverage)
             junction = tokens[:6]
             start = int(junction[1])
             end = int(junction[2])
@@ -141,6 +145,8 @@ if __name__ == '__main__':
             sites = defaultdict(list)
             for sample, coverage in samples_and_coverages:
                 sites[index_to_site[sample]].append((sample, coverage))
+            write_data.append([junction, sites, start_gene, end_gene])
+        for junction, sites, start_gene, end_gene in write_data:
             for site in sites:
                 line_to_write = '\t'.join(
                                     [start_gene + ',' + end_gene,
@@ -151,7 +157,12 @@ if __name__ == '__main__':
                                             ), ','.join(
                                                 [el[1] for el
                                                     in sites[site]]
-                                            )]
+                                            ), ','.join(
+                                                [str(
+                                                    float(el[1])
+                                                    / total_coverages[el[0]]
+                                                    ) for el in sites[site]]
+                                                )]
                                 )
                 try:
                     print >>output_handles[site], line_to_write
