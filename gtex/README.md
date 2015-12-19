@@ -1,4 +1,4 @@
-## Reproducing GTEx Rail-RNA runs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/)
+## Redoing GTEx Rail-RNA runs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/)
 
 1. Install Rail-RNA v0.2.1, which is available for download [here](https://github.com/nellore/rail/raw/master/releases/install_rail-rna-0.2.1).
 2. Follow the instructions [here](http://docs.rail.bio/dbgap/) to set up an [Amazon Web Services (AWS)](https://aws.amazon.com/) account with an [Identity and Access Management (IAM)](https://aws.amazon.com/iam/) user configured to analyze dbGaP data securely. Name the  CloudFormation stack `dbgap-1` rather than `dbgap`, as those instructions recommend.  The secure bucket name created with the CloudFormation template is referenced as `s3://gtex-bucket` here.
