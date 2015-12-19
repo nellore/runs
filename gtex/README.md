@@ -16,3 +16,11 @@
 6. Run the scripts generated in the previous step to submit job flows to Elastic MapReduce. Each `prep_gtex_batch_k.sh` file for `k` between `0` and `29` inclusive should be run and its job flow completed before the corresponding `align_gtex_batch_k.sh` is run to align data preprocessed and uploaded to S3. It is recommended that only three preprocessing job flows are submitted at a time. Tweak shell scripts to change the argument of `--stack-name` in the `rail-rna` command as necessary if Elastic MapReduce complains that there aren't enough IPs in the subnet of a VPC in a given availability zone to launch more job flows.
 7. Use [this](https://github.com/nellore/runs/blob/master/gtex/download.sh) script to download all results from S3 to local storage. Command-line parameters are described in its comments.
 8. Compute total number of reads across samples with the script `total.sh`. Its only command-line parameter is the local GTEx output directory specified in the previous step, which is where all analysis results should have been dumped. The figure we obtained was `896,466,227,499`. Here, "read" refers to a mate for paired-end samples.
+
+## Reproducing figures from the Rail-dbGaP paper
+
+### Figure 1: security architecture
+This figure was generated using Keynote; see `security_figure.key`.
+
+### Figures 2 and 3: core activity and costs
+Run the Mathematica 10 notebook `rail_dbgap_plots.nb`. It uses `costs.csv`, costs downloaded from the AWS Cost Explorer, as well as `activity.tsv`, which has start and end times of all GTEx preprocess and align job flows. The file `activity.tsv` was generated with `reconstruct_activity.py` from the saved Elastic MapReduce web interface HTML files in the `logs/` subdirectory.
