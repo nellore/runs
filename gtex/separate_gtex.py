@@ -175,3 +175,5 @@ if __name__ == '__main__':
                         ) + '_gtex_junctions.tsv.gz', 'w'
                     )
         overlap_group += 1
+    for key in output_handles:
+        output_handles[key].close()
