@@ -53,6 +53,9 @@ pheno$RailRnaBatchNumber <- as.factor(pheno$RailRnaBatchNumber)
 ## BigWig file paths are characters
 pheno$BigWigPath <- as.character(pheno$BigWigPath)
 
+## Format coverage sum
+pheno$SumCoverage <- as.numeric(pheno$SumCoverage)
+
 
 ## Find which variables are all NA
 number_NA <- sapply(pheno, function(x) { sum(is.na(x))})
