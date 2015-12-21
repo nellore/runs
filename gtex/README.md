@@ -23,4 +23,4 @@
 This figure was generated using Keynote; see [`security_figure.key`](security_figure.key).
 
 ### Figures 2 and 3: core activity and costs
-Run the Mathematica 10 notebook [`rail_dbgap_plots.nb`](rail_dbgap_plots.nb). It uses [`costs.csv`](costs.csv), costs downloaded from the AWS Cost Explorer, as well as [`activity.tsv`](activity.tsv), which has start and end times of all GTEx preprocess and align job flows. The file `activity.tsv` was generated with [`reconstruct_activity.py`](reconstruct_activity.py) from the saved Elastic MapReduce web interface HTML files in [`logs/`](logs/).
+Run the Mathematica 10 notebook [`rail_dbgap_plots.nb`](rail_dbgap_plots.nb). It uses [`costs.csv`](costs.csv), costs downloaded from the AWS Cost Explorer, as well as [`activity.tsv`](activity.tsv), which has start and end times of all GTEx preprocess and align job flows. The file `activity.tsv` was generated with [`reconstruct_activity.py`](reconstruct_activity.py) from the saved Elastic MapReduce web interface HTML files in [`logs/`](logs/). If you don't have Mathematica, check ['rail_dbgap_plots.pdf'](rail_dbgap_plots.pdf) for its output.
