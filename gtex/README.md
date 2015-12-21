@@ -1,3 +1,5 @@
+If anything below doesn't make sense, ask us questions: [![Join the chat at https://gitter.im/nellore/runs](https://badges.gitter.im/nellore/runs.svg)](https://gitter.im/nellore/runs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) .
+
 ## Redoing GTEx Rail-RNA runs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/)
 
 1. Install Rail-RNA v0.2.1, which is available for download [here](https://github.com/nellore/rail/raw/master/releases/install_rail-rna-0.2.1).
