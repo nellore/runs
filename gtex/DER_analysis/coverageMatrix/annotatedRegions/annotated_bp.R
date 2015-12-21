@@ -1,5 +1,3 @@
-# mkdir -p logs
-# Rscript annotated_bp.R > logs/annotated_bp_log.txt 2>&1
 library('GenomicRanges')
 library('devtools')
 
