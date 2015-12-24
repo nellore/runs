@@ -31,7 +31,7 @@ do
 done
 wait
 
-for auc in *.auc
+for auc in SRR*
 do
 	echo -e $auc "\t" $(cat $auc) >>../auc.tsv
 done
