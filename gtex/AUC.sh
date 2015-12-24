@@ -26,7 +26,7 @@ mkdir -p $OUT/tempaucs
 cd $OUT/tempaucs
 for bigwig in $(for i in $INPUT/*; do find $i/coverage_bigwigs -name \*.bw | grep -Ev 'mean|median|unique'; done)
 do
-	echo $($WIGGLETOOLS AUC $bigwig) >$bigwig.auc &
+	$WIGGLETOOLS AUC $bigwig >$bigwig.auc &
 	nrwait $PROCESSES
 done
 wait
