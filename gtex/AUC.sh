@@ -36,3 +36,4 @@ do
 	echo -e $(echo $auc | cut -d'_' -f1) "\t" $(cat $auc) >>../auc.tsv
 done
 
+rm -rf $OUT/tempaucs
