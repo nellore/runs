@@ -26,7 +26,7 @@ if __name__ == '__main__':
     parser.add_argument('--wiggletools', required=True,
         help='path to wiggletools')
     parser.add_argument('--max-bw', required=False,
-        default=800,
+        default=500,
         help='max number of bigwig files to process at a time')
     parser.add_argument('--out', required=True,
         help='path to output directory')
