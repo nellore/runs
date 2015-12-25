@@ -126,11 +126,11 @@ if __name__ == '__main__':
     import glob
     for tissue in tissue_to_sample_names:
         print >>file_handles[-1], ' '.join([args.wiggletools, 'scale',
-                                1./len(tissue_to_sample_names[tissue]),
+                                str(1./len(tissue_to_sample_names[tissue])),
                                 ('sum ' + os.path.join(args.out,
                                  tissue.replace(' ', '_') + '.sum.wig_*'))
-                                if len(os.path.join(args.out,
-                                 tissue.replace(' ', '_') + '.sum.wig_*'))
+                                if len(glob.glob(os.path.join(args.out,
+                                 tissue.replace(' ', '_') + '.sum.wig_*')))
                                 >= 2 else os.path.join(args.out,
                                  tissue.replace(' ', '_') + '.sum.wig_*'),
                                 '>' + os.path.join(args.out,
