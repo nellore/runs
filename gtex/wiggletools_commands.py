@@ -3,9 +3,9 @@
 wiggletools_commands.py
 Abhi Nellore / December 15, 2015
 
-Writes wiggletools commands for computing mean bigwigs by tissue
-to stdout and wiggletools command for computing overall mean
-bigwig from tissue mean bigwigs to stderr.
+Writes wiggletools commands for computing mean bigwigs by tissue. Each set
+of commands is numbered. They should be executed in order; some commands
+in successive files depend on commands from previous files.
 """
 import gzip
 from collections import defaultdict
@@ -25,6 +25,9 @@ if __name__ == '__main__':
              'this script normalizes to library size 40 million 100-bp reads')
     parser.add_argument('--wiggletools', required=True,
         help='path to wiggletools')
+    parser.add_argument('--max-bw', required=False,
+        default=800,
+        help='max number of bigwig files to process at a time')
     parser.add_argument('--out', required=True,
         help='path to output directory')
     args = parser.parse_args()
@@ -79,8 +82,23 @@ if __name__ == '__main__':
     except OSError as e:
         if 'File exists' not in e:
             raise
+    file_handles = [
+            open(os.path.join(args.out, 'wiggletools_commands_0'), 'w')
+        ]
     for tissue in tissue_to_sample_names:
-        print ' '.join([args.wiggletools, 'mean'] + [
+        file_index = 0
+        divided_sample_names = [
+                tissue_to_sample_names[tissue][i:i+args.max_bw]
+                for i in xrange(0, len(tissue_to_sample_names[tissue]),
+                                args.max_bw)
+            ]
+    # Remove a lonely sample
+    if (len(divided_sample_names) >= 2
+        and len(divided_sample_names[-1]) == 1):
+        divided_sample_names[-2].append(divided_sample_names[-1][0])
+        divided_sample_names = divided_sample_names[:-1]
+    for i, sample_group in enumerate(divided_sample_names):
+        command_to_print = ' '.join([args.wiggletools, 'sum'] + [
                     'scale {} {}'.format(
                             float(40000000) * 100
                                 / sample_name_to_auc[sample_name],
@@ -88,10 +106,42 @@ if __name__ == '__main__':
                         ) for sample_name in tissue_to_sample_names[tissue]
                 ]) + ' >{}'.format(
                                 os.path.join(args.out,
-                                    tissue.replace(' ', '_') + '.mean.wig')
+                                    tissue.replace(' ', '_') + '.sum.wig_'
+                                    + str(i))
                             )
+        try:
+            print >>file_handles[i], command_to_print
+        except IndexError:
+            file_handles.append(
+                open(os.path.join(args.out,
+                                    'wiggletools_commands_' + str(i)), 'w')
+            )
+            print >>file_handles[i], command_to_print
+    next_index = len(file_handles)
+    file_handles.append(
+                open(os.path.join(args.out,
+                                    'wiggletools_commands_'
+                                    + str(next_index)), 'w')
+            )
+    import glob
+    for tissue in tissue_to_sample_names:
+        print >>file_handles[-1], ' '.join([args.wiggletools, 'scale',
+                                1./len(tissue_to_sample_names[tissue]),
+                                ('sum ' + os.path.join(args.out,
+                                 tissue.replace(' ', '_') + '.sum.wig_*'))
+                                if len(os.path.join(args.out,
+                                 tissue.replace(' ', '_') + '.sum.wig_*'))
+                                >= 2 else os.path.join(args.out,
+                                 tissue.replace(' ', '_') + '.sum.wig_*'),
+                                '>' + os.path.join(args.out,
+                                    tissue.replace(' ', '_') + '.mean.wig')])
+    file_handles.append(
+                open(os.path.join(args.out,
+                                    'wiggletools_commands_'
+                                    + str(next_index+1)), 'w')
+            )
     sample_count = len(sample_name_to_auc)
-    print >>sys.stderr, ' '.join([args.wiggletools, 'sum']
+    print >>file_handles[-1], ' '.join([args.wiggletools, 'sum']
                                     + ['scale {} {}'.format(
                                     float(
                                         len(tissue_to_sample_names[tissue])
