@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rail-rna align elastic -m sra_batch_42_sample_size_506.txt -i s3://rail-eu-west-1/sra_batch_42_sample_size_506_prep -o s3://rail-eu-west-1/sra_batch_42_sample_size_506_itn -a hg19 --region eu-west-1 -c 60 --core-instance-type c3.8xlarge --master-instance-type c3.8xlarge --core-instance-bid-price 0.60 --master-instance-bid-price 0.60 --no-consistent-view --deliverables itn --max-task-attempts 6 --ec2-key-name raileuw1
