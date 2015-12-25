@@ -85,7 +85,9 @@ if __name__ == '__main__':
     file_handles = [
             open(os.path.join(args.out, 'wiggletools_commands_0'), 'w')
         ]
+    more_than_one_batch = {}
     for tissue in tissue_to_sample_names:
+        more_than_one_batch[tissue] = False
         file_index = 0
         divided_sample_names = [
                 tissue_to_sample_names[tissue][i:i+args.max_bw]
@@ -109,6 +111,8 @@ if __name__ == '__main__':
                                         tissue.replace(' ', '_') + '.sum.wig_'
                                         + str(i))
                                 )
+            if i >= 1:
+                more_than_one_batch[tissue] = True
             try:
                 print >>file_handles[i], command_to_print
             except IndexError:
@@ -129,9 +133,8 @@ if __name__ == '__main__':
                                 str(1./len(tissue_to_sample_names[tissue])),
                                 ('sum ' + os.path.join(args.out,
                                  tissue.replace(' ', '_') + '.sum.wig_*'))
-                                if len(glob.glob(os.path.join(args.out,
-                                 tissue.replace(' ', '_') + '.sum.wig_*')))
-                                >= 2 else os.path.join(args.out,
+                                if more_than_one_batch[tissue]
+                                else os.path.join(args.out,
                                  tissue.replace(' ', '_') + '.sum.wig_*'),
                                 '>' + os.path.join(args.out,
                                     tissue.replace(' ', '_') + '.mean.wig')])
@@ -156,4 +159,3 @@ if __name__ == '__main__':
                                     )
     for file_handle in file_handles:
         file_handle.close()
-
