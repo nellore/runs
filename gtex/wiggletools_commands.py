@@ -100,7 +100,7 @@ if __name__ == '__main__':
                                     tissue.replace(' ', '_') + '.mean.wig')
                                 ) for tissue in tissue_to_sample_names]) + (
                                         ' >{}'.format(
-                                                os.path.join(args.out),
-                                                'mean.wig'
+                                                os.path.join(args.out,
+                                                'mean.wig')
                                             )
                                     )
