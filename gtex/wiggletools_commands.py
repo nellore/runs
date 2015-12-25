@@ -92,31 +92,31 @@ if __name__ == '__main__':
                 for i in xrange(0, len(tissue_to_sample_names[tissue]),
                                 args.max_bw)
             ]
-    # Remove a lonely sample
-    if (len(divided_sample_names) >= 2
-        and len(divided_sample_names[-1]) == 1):
-        divided_sample_names[-2].append(divided_sample_names[-1][0])
-        divided_sample_names = divided_sample_names[:-1]
-    for i, sample_group in enumerate(divided_sample_names):
-        command_to_print = ' '.join([args.wiggletools, 'sum'] + [
-                    'scale {} {}'.format(
-                            float(40000000) * 100
-                                / sample_name_to_auc[sample_name],
-                            sample_name_to_bw[sample_name]
-                        ) for sample_name in tissue_to_sample_names[tissue]
-                ]) + ' >{}'.format(
-                                os.path.join(args.out,
-                                    tissue.replace(' ', '_') + '.sum.wig_'
-                                    + str(i))
-                            )
-        try:
-            print >>file_handles[i], command_to_print
-        except IndexError:
-            file_handles.append(
-                open(os.path.join(args.out,
-                                    'wiggletools_commands_' + str(i)), 'w')
-            )
-            print >>file_handles[i], command_to_print
+        # Remove a lonely sample
+        if (len(divided_sample_names) >= 2
+            and len(divided_sample_names[-1]) == 1):
+            divided_sample_names[-2].append(divided_sample_names[-1][0])
+            divided_sample_names = divided_sample_names[:-1]
+        for i, sample_group in enumerate(divided_sample_names):
+            command_to_print = ' '.join([args.wiggletools, 'sum'] + [
+                        'scale {} {}'.format(
+                                float(40000000) * 100
+                                    / sample_name_to_auc[sample_name],
+                                sample_name_to_bw[sample_name]
+                            ) for sample_name in tissue_to_sample_names[tissue]
+                    ]) + ' >{}'.format(
+                                    os.path.join(args.out,
+                                        tissue.replace(' ', '_') + '.sum.wig_'
+                                        + str(i))
+                                )
+            try:
+                print >>file_handles[i], command_to_print
+            except IndexError:
+                file_handles.append(
+                    open(os.path.join(args.out,
+                                        'wiggletools_commands_' + str(i)), 'w')
+                )
+                print >>file_handles[i], command_to_print
     next_index = len(file_handles)
     file_handles.append(
                 open(os.path.join(args.out,
@@ -154,3 +154,6 @@ if __name__ == '__main__':
                                                 'mean.wig')
                                             )
                                     )
+    for file_handle in file_handles:
+        file_handle.close()
+
