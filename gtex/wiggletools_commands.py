@@ -70,7 +70,7 @@ if __name__ == '__main__':
     sample_name_to_tissue['SRR1405266'] = 'Esophagus'
     sample_name_to_tissue['SRR1467633'] = 'Skin'
     tissue_to_sample_names = defaultdict(list)
-    for sample_name in sample_name_to_mapped_reads:
+    for sample_name in sample_name_to_auc:
         tissue_to_sample_names[
                 sample_name_to_tissue[sample_name]
             ].append(sample_name)
