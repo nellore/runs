@@ -53,7 +53,7 @@ if __name__ == '__main__':
     with open(args.auc) as auc_stream:
         for line in auc_stream:
             tokens = line.strip().split('\t')
-            sample_name_to_auc[tokens[0]] = float(tokens[1])
+            sample_name_to_auc[tokens[0].strip()] = float(tokens[1])
     sample_name_to_tissue = {}
     with open(os.path.join(containing_dir, 'SraRunInfo.csv')) as sra_stream:
         sra_stream.readline()
