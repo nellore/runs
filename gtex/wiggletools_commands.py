@@ -3,12 +3,15 @@
 wiggletools_commands.py
 Abhi Nellore / December 15, 2015
 
-Outputs wiggletools commands for computing mean bigwigs by tissue.
+Writes wiggletools commands for computing mean bigwigs by tissue
+to stdout and wiggletools command for computing overall mean
+bigwig from tissue mean bigwigs to stderr.
 """
 import gzip
 from collections import defaultdict
 import os
 import glob
+import sys
 
 if __name__ == '__main__':
     import argparse
@@ -17,6 +20,9 @@ if __name__ == '__main__':
     parser.add_argument('--gtex-dir', required=True,
         help='path to GTEx output files; this is where the batch_* '
              'subdirectories are')
+    parser.add_argument('--auc', required=True,
+        help='path to file with bigwig AUCs for normalization; '
+             'this script normalizes to library size 40 million 100-bp reads')
     parser.add_argument('--wiggletools', required=True,
         help='path to wiggletools')
     parser.add_argument('--out', required=True,
@@ -43,20 +49,11 @@ if __name__ == '__main__':
                         line.rpartition('\t')[2] + 
                         '.bw'
                     )
-    sample_name_to_mapped_reads = {}
-    for batch_number in batch_numbers:
-        with gzip.open(os.path.join(
-                            args.gtex_dir,
-                            'batch_{}'.format(batch_number),
-                            'cross_sample_results',
-                            'counts.tsv.gz'
-                        )) as count_stream:
-            count_stream.readline()
-            for line in count_stream:
-                tokens = line.strip().split('\t')
-                sample_name_to_mapped_reads[
-                        big_name_to_sample_name[tokens[0]]
-                    ] = int(tokens[-2].split(',')[0])
+    sample_name_to_auc = {}
+    with open(args.auc) as auc_stream:
+        for line in auc_stream:
+            tokens = line.strip().split('\t')
+            sample_name_to_auc[tokens[0]] = tokens[1]
     sample_name_to_tissue = {}
     with open(os.path.join(containing_dir, 'SraRunInfo.csv')) as sra_stream:
         sra_stream.readline()
@@ -85,11 +82,25 @@ if __name__ == '__main__':
     for tissue in tissue_to_sample_names:
         print ' '.join([args.wiggletools, 'mean'] + [
                     'scale {} {}'.format(
-                            float(40000000)
-                                / sample_name_to_mapped_reads[sample_name],
+                            float(40000000) * 100
+                                / sample_name_to_auc[sample_name],
                             sample_name_to_bw[sample_name]
                         ) for sample_name in tissue_to_sample_names[tissue]
                 ]) + ' >{}'.format(
                                 os.path.join(args.out,
                                     tissue.replace(' ', '_') + '.mean.wig')
                             )
+    sample_count = len(sample_name_to_auc)
+    print >>sys.stderr, ' '.join([args.wiggletools, 'sum']
+                                    + ['scale {} {}'.format(
+                                    float(
+                                        len(tissue_to_sample_names[tissue])
+                                ) / sample_count,
+                                    os.path.join(args.out,
+                                    tissue.replace(' ', '_') + '.mean.wig')
+                                ) for tissue in tissue_to_sample_names]) + (
+                                        ' >{}'.format(
+                                                os.path.join(args.out),
+                                                'mean.wig'
+                                            )
+                                    )
