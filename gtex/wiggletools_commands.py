@@ -105,7 +105,7 @@ if __name__ == '__main__':
                                 float(40000000) * 100
                                     / sample_name_to_auc[sample_name],
                                 sample_name_to_bw[sample_name]
-                            ) for sample_name in tissue_to_sample_names[tissue]
+                            ) for sample_name in sample_group
                     ]) + ' >{}'.format(
                                     os.path.join(args.out,
                                         tissue.replace(' ', '_') + '.sum.wig_'
