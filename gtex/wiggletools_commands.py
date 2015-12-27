@@ -108,8 +108,8 @@ if __name__ == '__main__':
                             ) for sample_name in sample_group
                     ]) + ' >{}'.format(
                                     os.path.join(args.out,
-                                        tissue.replace(' ', '_') + '.sum.wig_'
-                                        + str(i))
+                                        tissue.replace(' ', '_')
+                                        + '.sum_{}.wig'.format(i))
                                 )
             if i >= 1:
                 more_than_one_batch[tissue] = True
@@ -132,10 +132,10 @@ if __name__ == '__main__':
         print >>file_handles[-1], ' '.join([args.wiggletools, 'scale',
                                 str(1./len(tissue_to_sample_names[tissue])),
                                 ('sum ' + os.path.join(args.out,
-                                 tissue.replace(' ', '_') + '.sum.wig_*'))
+                                 tissue.replace(' ', '_') + '.sum_*.wig'))
                                 if more_than_one_batch[tissue]
                                 else os.path.join(args.out,
-                                 tissue.replace(' ', '_') + '.sum.wig_*'),
+                                 tissue.replace(' ', '_') + '.sum_*.wig'),
                                 '>' + os.path.join(args.out,
                                     tissue.replace(' ', '_') + '.mean.wig')])
     file_handles.append(
