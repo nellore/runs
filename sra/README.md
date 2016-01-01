@@ -56,7 +56,7 @@ Above, each junction is covered by at least 20 reads per sample.
 
 Mathematica 10 was used to make all plots. See the notebook `figures.nb`.
 
-## Recovering the junction list `all_SRA_introns.tsv.gz` used by `tables.py`
+## Recovering the junction list `all_SRA_junctions.tsv.gz` used by `tables.py`
 
 1. An account with Amazon Web Services is required to recover our results. Get one [here](http://aws.amazon.com/).
 2. [Download](https://github.com/nellore/rail/raw/master/releases/install_rail-rna-0.1.7a) Rail-RNA v0.1.7a and follow the instructions at http://docs.rail.bio/installation/ to install it. Make sure to install and set up the Amazon Web Services (AWS) CLI as described there.
@@ -80,4 +80,4 @@ Mathematica 10 was used to make all plots. See the notebook `figures.nb`.
 10. Run
 
         sh retrieve_and_combine_results.sh [output] [bowtie1 idx] [bucket]
-, where `[output]` is some output directory on your local filesystem (20 GB required), `[bowtie1 idx]` is the basename of the Bowtie index you just downloaded, and `[bucket]` is the S3 bucket you specified in step 4. The file `all_SRA_introns.tsv.gz`, which is used by `tables.py`, will be written to `[output]`.
+, where `[output]` is some output directory on your local filesystem (20 GB required), `[bowtie1 idx]` is the basename of the Bowtie index you just downloaded, and `[bucket]` is the S3 bucket you specified in step 4. The file `all_SRA_junctions.tsv.gz`, which is used by `tables.py`, will be written to `[output]`.

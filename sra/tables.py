@@ -14,32 +14,53 @@ extract_splice_sites.py that comes with it to obtain splice sites from
 annotation.
 
 File requirements:
-1. all_SRA_introns.tsv.gz: database of introns found across ~21,500 SRA samples
-    NOT PROVIDED IN THIS REPO BUT CAN BE REPRODUCED. See README.md for
-    instructions.
-2. index_to_SRA_accession.tsv: maps sample indexes from all_SRA_introns.tsv.gz
-    to SRA run accession numbers (regex: [SED]RR\d+) . (In this repo.)
-3. Homo_sapiens.GRCh37.75.gtf.gz
-    (from ftp://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/)
-4. http://www.nature.com/nbt/journal/v32/n9/extref/nbt.2957-S4.zip, which
+1. all_SRA_junctions.tsv.gz: database of exon-exon junctions found across
+    ~21,500 SRA samples NOT PROVIDED IN THIS REPO BUT CAN BE REPRODUCED. See
+    README.md for instructions.
+2. index_to_SRA_accession.tsv: maps sample indexes from
+    all_SRA_junctions.tsv.gz to SRA run accession numbers (regex: [SED]RR\d+) .
+    (In this repo.)
+3. All GENCODE gene annotations for GRCh37, which may be obtained by executing
+    the following command.
+
+    for i in 3c 3d 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19;
+    do curl -o gencode.$i.gtf.gz
+    ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
+    gencode.v$i.annotation.gtf.gz; if [ $? -eq 78 ];
+    then curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
+    Gencode_human/release_$i/gencode.v$i.annotation.GRCh37.gtf.gz;
+    fi; if [ $? -eq 78 ]; then curl -o gencode.$i.gtf.gz ftp://
+    ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
+    gencode_v$i.annotation.GRCh37.gtf.gz; fi; if [ $? -eq 78 ]; then
+    curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
+    release_$i/gencode.v$i.gtf.gz; fi; done
+
+    The GENCODE GTF filenames must have the format gencode.[VERSION].gtf.gz .
+    The directory containing GENCODE GTFs is specified at the command line.
+4. RefSeq genes, which may be obtained by visiting the URL
+    https://genome.ucsc.edu/cgi-bin/hgTables?
+    hgsid=466185261_bOoa3eDIrhCkaOY4EOcXWhxm7JAj
+    and downloading the refGene table of the RefSeq Genes track for hg19 
+    in gzip compressed format. Output filename refGene.gtf.gz is preferred.
+5. http://www.nature.com/nbt/journal/v32/n9/extref/nbt.2957-S4.zip, which
     is Supplementary Data 3 from the paper "A comprehensive assessment of
     RNA-seq accuracy, reproducibility and information content by the
     Sequencing Quality Control Consortium" by SEQC/MAQC-III Consortium
     in Nature Biotech. The junctions on this list are used to make a
     Venn Diagram.
-5. The file
+6. The file
     http://verve.webfactional.com/misc/all_illumina_sra_for_human.tsv.gz,
     which has metadata grabbed from the SRA.
-6. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
+7. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
     generated using hg19/get_biosample_data.sh . It contains metadata from the
     NCBI Biosample database, including sample submission dates.
 
-all_SRA_introns.tsv.gz is specified as argument of --junctions. Annotations
+all_SRA_junctions.tsv.gz is specified as argument of --junctions. Annotations
 are read from arguments of command-line parameter --annotations that specify
 paths to the GTFs above.
 
-Each line of all_SRA_introns.tsv.gz specifies a different junction and has the
-following tab-separated fields.
+Each line of all_SRA_junctions.tsv.gz specifies a different junction and has
+the following tab-separated fields.
 1. chromosome
 2. start position (1-based inclusive)
 3. end position (1-based inclusive)
@@ -64,8 +85,9 @@ Each line of index_to_SRA_accession.tsv specifies a different sample
 We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and ran:
 pypy tables.py
     --hisat2-dir /path/to/hisat2-2.0.0-beta
-    --annotations /path/to/Homo_sapiens.GRCh37.75.gtf
-    --junctions /path/to/all_SRA_introns.tsv.gz
+    --gencode-dir /path/to/directory/with/gencode/gtf.gzs
+    --refgene /path/to/refGene.gtf.gz
+    --junctions /path/to/all_SRA_junctions.tsv.gz
     --index-to-sra /path/to/index_to_SRA_accession.tsv
     --tmp /path/to/temp_dir_with_200_GB_free_space
     --seqc /path/to/nbt.2957-S4.zip
@@ -73,11 +95,11 @@ pypy tables.py
     --biosample-metadata /path/to/biosample_tags.tsv
 
 Note that the argument of --hisat2-dir is the directory containing the HISAT 2
-binary, but the argument of --STAR is precisely the STAR binary.
+binary and extract_splice_sites.py.
 
 The following output was obtained. It is included in this repo because this 
 script cannot easily be rerun to obtain results; the input file
-all_SRA_introns.tsv.gz must be provided, and this requires following the
+all_SRA_junctions.tsv.gz must be provided, and this requires following the
 instructions in README.md for its reproduction. Note that an "overlap" below
 is an instance where a junction is overlapped by a read. A read that overlaps
 two exon-exon junctions contributes two overlaps (or overlap instances).
@@ -137,225 +159,6 @@ import os
 import subprocess
 from contextlib import contextmanager
 
-def parsed_md(md):
-    """ Divides an MD string up by boundaries between ^, letters, and numbers
-
-        md: an MD string (example: 33A^CC).
-
-        Return value: MD string split by boundaries described above.
-    """
-    md_to_parse = []
-    md_group = [md[0]]
-    for i, char in enumerate(md):
-        if i == 0: continue
-        if (re.match('[A-Za-z]', char) is not None) \
-            != (re.match('[A-Za-z]', md[i-1]) is not None) or \
-            (re.match('[0-9]', char) is not None) \
-            != (re.match('[0-9]', md[i-1]) is not None):
-            if md_group:
-                md_to_parse.append(''.join(md_group))
-            md_group = [char]
-        else:
-            md_group.append(char)
-    if md_group:
-        md_to_parse.append(''.join(md_group))
-    return [char for char in md_to_parse if char != '0']
-
-def indels_introns_and_exons(cigar, md, pos, seq):
-    """ Computes indels, introns, and exons from CIGAR, MD string,
-        and POS of a given alignment.
-
-        cigar: CIGAR string
-        md: MD:Z string
-        pos: position of first aligned base
-        seq: read sequence
-
-        Return value: tuple (insertions, deletions, introns, exons). Insertions
-            is a list of tuples (last genomic position before insertion, 
-                                 string of inserted bases). Deletions
-            is a list of tuples (first genomic position of deletion,
-                                 string of deleted bases). Introns is a list
-            of tuples (intron start position (inclusive),
-                       intron end position (exclusive),
-                       left_diplacement, right_displacement). Exons is a list
-            of tuples (exon start position (inclusive),
-                       exon end position (exclusive)).
-    """
-    if cigar == '*':
-        return ([], [], [], [])
-    insertions, deletions, introns, exons = [], [], [], []
-    cigar = re.split(r'([MINDS])', cigar)[:-1]
-    md = parsed_md(md)
-    seq_size = len(seq)
-    cigar_chars, cigar_sizes = [], []
-    cigar_index, md_index, seq_index = 0, 0, 0
-    max_cigar_index = len(cigar)
-    while cigar_index != max_cigar_index:
-        if cigar[cigar_index] == 0:
-            cigar_index += 2
-            continue
-        if cigar[cigar_index+1] == 'M':
-            aligned_base_cap = int(cigar[cigar_index])
-            aligned_bases = 0
-            while True:
-                try:
-                    aligned_bases += int(md[md_index])
-                    if aligned_bases <= aligned_base_cap:
-                        md_index += 1
-                except ValueError:
-                    # Not an int, but should not have reached a deletion
-                    assert md[md_index] != '^', '\n'.join(
-                                                ['cigar and md:',
-                                                 ''.join(cigar), ''.join(md)]
-                                            )
-                    if aligned_bases + len(md[md_index]) > aligned_base_cap:
-                        md[md_index] = md[md_index][
-                                            :aligned_base_cap-aligned_bases
-                                        ]
-                        aligned_bases = aligned_base_cap
-                    else:
-                        aligned_bases += len(md[md_index])
-                        md_index += 1
-                if aligned_bases > aligned_base_cap:
-                    md[md_index] = aligned_bases - aligned_base_cap
-                    break
-                elif aligned_bases == aligned_base_cap:
-                    break
-            # Add exon
-            exons.append((pos, pos + aligned_base_cap))
-            pos += aligned_base_cap
-            seq_index += aligned_base_cap
-        elif cigar[cigar_index+1] == 'N':
-            skip_increment = int(cigar[cigar_index])
-            # Add intron
-            introns.append((pos, pos + skip_increment,
-                            seq_index, seq_size - seq_index))
-            # Skip region of reference
-            pos += skip_increment
-        elif cigar[cigar_index+1] == 'I':
-            # Insertion
-            insert_size = int(cigar[cigar_index])
-            insertions.append(
-                    (pos - 1, seq[seq_index:seq_index+insert_size])
-                )
-            seq_index += insert_size
-        elif cigar[cigar_index+1] == 'D':
-            assert md[md_index] == '^', '\n'.join(
-                                                ['cigar and md:',
-                                                 ''.join(cigar), ''.join(md)]
-                                            )
-            # Deletion
-            delete_size = int(cigar[cigar_index])
-            md_delete_size = len(md[md_index+1])
-            assert md_delete_size >= delete_size
-            deletions.append((pos, md[md_index+1][:delete_size]))
-            if md_delete_size > delete_size:
-                # Deletion contains an intron
-                md[md_index+1] = md[md_index+1][delete_size:]
-            else:
-                md_index += 2
-            # Skip deleted part of reference
-            pos += delete_size
-        else:
-            # Soft clip
-            assert cigar[cigar_index+1] == 'S'
-            # Advance seq_index
-            seq_index += int(cigar[cigar_index])
-        cigar_index += 2
-    '''Merge exonic chunks/deletions; insertions/introns could have chopped
-    them up.'''
-    new_exons = []
-    last_exon = exons[0]
-    for exon in exons[1:]:
-        if exon[0] == last_exon[1]:
-            # Merge ECs
-            last_exon = (last_exon[0], exon[1])
-        else:
-            # Push last exon to new exon list
-            new_exons.append(last_exon)
-            last_exon = exon
-    new_exons.append(last_exon)
-    return insertions, deletions, introns, new_exons
-
-def dummy_md_index(cigar):
-    """ Creates dummy MD string from CIGAR in case of missing MD.
-
-        cigar: cigar string
-
-        Return value: dummy MD string
-    """
-    cigar = re.split(r'([MINDS])', cigar)[:-1]
-    cigar_index = 0
-    max_cigar_index = len(cigar)
-    md = []
-    while cigar_index != max_cigar_index:
-        if cigar[cigar_index] == 0:
-            cigar_index += 2
-            continue
-        if cigar[cigar_index+1] == 'M':
-            try:
-                if type(md[-1]) is int:
-                    md[-1] += int(cigar[cigar_index])
-                else:
-                    md.append(int(cigar[cigar_index]))
-            except IndexError:
-                md.append(int(cigar[cigar_index]))
-            cigar_index += 2
-        elif cigar[cigar_index+1] in 'SIN':
-            cigar_index += 2
-        elif cigar[cigar_index+1] == 'D':
-            md.extend(['^', 'A'*int(cigar[cigar_index])])
-            cigar_index += 2
-        else:
-            raise RuntimeError(
-                        'Accepted CIGAR characters are only in [MINDS].'
-                    )
-    return ''.join(str(el) for el in md)
-
-def junctions_from_sam_stream(sam_stream, include_strand=False):
-    """ Obtains set of junctions from SAM file
-
-        ONLY PRIMARY ALIGNMENTS ARE CONSIDERED.
-
-        sam_stream: where to find retrieved alignments in SAM form
-        include_strand: True iff strand should be included in returned set
-
-        Return value: set of tuples (chromosome, 1-based junction start
-            position (inclusive), 1-based junction end position (exclusive),
-            strand (+ or -) iff strand is True)
-    """
-    junctions_to_return = set()
-    for line in sam_stream:
-        if line[0] == '@': continue
-        try:
-            tokens = line.strip().split('\t')
-            flag = int(tokens[1])
-            if flag & 4:
-                continue
-            cigar = tokens[5]
-            if 'N' not in cigar or flag & 256:
-                continue
-            rname = tokens[2]
-            pos = int(tokens[3])
-            seq = tokens[9]
-            _, _, junctions, _ = indels_introns_and_exons(
-                                        cigar,
-                                        dummy_md_index(cigar), pos, seq
-                                    )
-            if include_strand:
-                strand = [
-                        field for field in tokens if field[:5] == 'XS:A:'
-                    ][0][-1]
-                junctions_to_return.update([(rname,) + junction[:2] + (strand,)
-                                            for junction in junctions])
-            else:
-                junctions_to_return.update([(rname,) + junction[:2]
-                                            for junction in junctions])
-        except IndexError:
-            print >>sys.stderr, ('Error found on line: ' + line)
-            raise
-    return junctions_to_return
-
 def is_gzipped(filename):
     """ Uses gzip magic number to determine whether a file is compressed.
 
@@ -398,11 +201,15 @@ if __name__ == '__main__':
                   'unpacked ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/'
                   'downloads/hisat2-2.0.0-beta-Linux_x86_64.zip to get this')
         )
-    parser.add_argument('--annotations', type=str, required=True, nargs='+',
-            help='space-separated paths to GTF files encoding known junctions'
+    parser.add_argument('--refgene', type=str, required=True, nargs='+',
+            help='path to GTF file with RefSeq genes'
+        )
+    parser.add_argument('--gencode-dir', type=str, required=True, nargs='+',
+            help='path to directory containing all GENCODE GTFs for hg19, '
+                 'which includes 3c, 3d, and 4 through 19'
         )
     parser.add_argument('--junctions', type=str, required=True,
-            help='junctions file; this should be all_SRA_introns.tsv.gz'
+            help='junctions file; this should be all_SRA_junctions.tsv.gz'
         )
     parser.add_argument('--index-to-sra', type=str, required=True,
             help='index to SRA accession numbers file; this should be '
@@ -470,42 +277,20 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Done grabbing submission dates from Biosample DB.'
 
     # Grab all annotated junctions
+    gencodes = defaultdict(set)
     annotated_junctions = set()
-    annotated_junctions_for_star = set()
-    annotated_junctions_for_hisat = set()
     annotated_5p = set()
     annotated_3p = set()
     refs = set(
             ['chr' + str(i) for i in xrange(1, 23)] + ['chrM', 'chrX', 'chrY']
         )
-    extended_refs = refs | set([
-            'chr6_ssto_hap7', 'chr6_mcf_hap5', 'chr6_cox_hap2',
-            'chr6_mann_hap4', 'chr6_apd_hap1', 'chr6_qbl_hap6'
-            'chr6_dbb_hap3', 'chr17_ctg5_hap1', 'chr4_ctg9_hap1',
-            'chr1_gl000192_random', 'chrUn_gl000225', 'chr4_gl000194_random',
-            'chr4_gl000193_random', 'chr9_gl000200_random', 'chrUn_gl000222',
-            'chrUn_gl000212', 'chr7_gl000195_random', 'chrUn_gl000223',
-            'chrUn_gl000224', 'chrUn_gl000219', 'chr17_gl000205_random',
-            'chrUn_gl000215', 'chrUn_gl000216', 'chrUn_gl000217',
-            'chr9_gl000199_random', 'chrUn_gl000211', 'chrUn_gl000213',
-            'chrUn_gl000220', 'chrUn_gl000218', 'chr19_gl000209_random',
-            'chrUn_gl000221', 'chrUn_gl000214', 'chrUn_gl000228',
-            'chrUn_gl000227', 'chr1_gl000191_random', 'chr19_gl000208_random',
-            'chr9_gl000198_random', 'chr17_gl000204_random', 'chrUn_gl000233',
-            'chrUn_gl000237', 'chrUn_gl000230', 'chrUn_gl000242',
-            'chrUn_gl000243', 'chrUn_gl000241', 'chrUn_gl000236',
-            'chrUn_gl000240', 'chr17_gl000206_random', 'chrUn_gl000232',
-            'chrUn_gl000234', 'chr11_gl000202_random', 'chrUn_gl000238',
-            'chrUn_gl000244', 'chrUn_gl000248', 'chr8_gl000196_random',
-            'chrUn_gl000249', 'chrUn_gl000246', 'chr17_gl000203_random',
-            'chr8_gl000197_random', 'chrUn_gl000245', 'chrUn_gl000247',
-            'chr9_gl000201_random', 'chrUn_gl000235', 'chrUn_gl000239',
-            'chr21_gl000210_random', 'chrUn_gl000231', 'chrUn_gl000229',
-            'chrUn_gl000226', 'chr18_gl000207_random'
-        ])
     extract_splice_sites_path = os.path.join(args.hisat2_dir,
                                                 'extract_splice_sites.py')
-    for annotation in args.annotations:
+    import glob
+    for annotation in glob.glob(os.path.join(args.gencode_dir,
+                                                'gencode.*.gtf.gz')) + [
+                                                                args.refgene
+                                                            ]:
         extract_process = subprocess.Popen(' '.join([
                                             sys.executable,
                                             extract_splice_sites_path,
@@ -520,26 +305,31 @@ if __name__ == '__main__':
                                         executable='/bin/bash',
                                         stdout=subprocess.PIPE
                                     )
-        for line in extract_process.stdout:
-            tokens = line.strip().split('\t')
-            tokens[1] = int(tokens[1]) + 2
-            tokens[2] = int(tokens[2])
-            if not tokens[0].startswith('chr'):
-                tokens[0] = 'chr' + tokens[0]
-            if tokens[0] in refs:
-                annotated_junctions.add(tuple(tokens[:-1]))
-                if tokens[3] == '+':
-                    annotated_5p.add((tokens[0], tokens[1]))
-                    annotated_3p.add((tokens[0], tokens[2]))
-                else:
-                    assert tokens[3] == '-'
-                    annotated_3p.add((tokens[0], tokens[1]))
-                    annotated_5p.add((tokens[0], tokens[2]))
-            if tokens[0] in extended_refs:
-                annotated_junctions_for_hisat.add(
-                        (tokens[0], tokens[1] - 2, tokens[2], tokens[3])
-                    )
-                annotated_junctions_for_star.add(tuple(tokens))
+        if annotation in [args.refgene, 'gencode.19.gtf.gz']:
+            for line in extract_process.stdout:
+                tokens = line.strip().split('\t')
+                tokens[1] = int(tokens[1]) + 2
+                tokens[2] = int(tokens[2])
+                if tokens[0] in refs:
+                    junction_to_add = tuple(tokens[:-1])
+                    annotated_junctions.add(junction_to_add)
+                    if annotation == 'gencode.19.gtf.gz':
+                        gencodes['19'].add(junction_to_add)
+                    if tokens[3] == '+':
+                        annotated_5p.add((tokens[0], tokens[1]))
+                        annotated_3p.add((tokens[0], tokens[2]))
+                    else:
+                        assert tokens[3] == '-'
+                        annotated_3p.add((tokens[0], tokens[1]))
+                        annotated_5p.add((tokens[0], tokens[2]))
+        else:
+            gencode_version = annotation.split('.')[1]
+            for line in extract_process.stdout:
+                tokens = line.strip().split('\t')
+                tokens[1] = int(tokens[1]) + 2
+                tokens[2] = int(tokens[2])
+                if tokens[0] in refs:
+                    gencodes[gencode_version].add(tuple(tokens[:-1]))
         extract_process.stdout.close()
         exit_code = extract_process.wait()
         if exit_code != 0:
@@ -548,9 +338,13 @@ if __name__ == '__main__':
                                                                     exit_code
                                                                 )
             )
-    print >>sys.stderr, 'Found %d annotated junctions.' % (
-            len(annotated_junctions)
-        )
+    print >>sys.stderr, ('Found {} annotated junctions between GENCODE v19 '
+                         'and refGene. Found {} annotated junctions across '
+                         'GENCODE versions.'.format(
+                                len(annotated_junctions),
+                                { version : len(gencodes[version])
+                                    for version in gencodes }
+                            )
 
     '''Grab SEQC junctions. Three protocols were used: Subread, r-make, and
     NCBI Magic.''' 
@@ -616,13 +410,15 @@ if __name__ == '__main__':
     # Neither 5' nor 3' is in annotation
     sample_count_to_novel_junction_count = defaultdict(int)
     project_count_to_novel_junction_count = defaultdict(int)
+    # For comparison wth SEQC
     rail_seqc_junctions = set()
-    rail_seqc_junctions_geq_5_samples = set()
-    rail_seqc_junctions_geq_10_samples = set()
-    rail_seqc_junctions_geq_15_samples = set()
-    rail_seqc_junctions_geq_20_samples = set()
-    rail_seqc_junctions_geq_25_samples = set()
-    rail_seqc_junctions_geq_30_samples = set()
+    seqc_sample_count_to_junction_count = defaultdict(int)
+    seqc_sample_count_to_magic = defaultdict(int)
+    seqc_sample_count_to_rmake = defaultdict(int)
+    seqc_sample_count_to_subread = defaultdict(int)
+    seqc_sample_count_to_ones = defaultdict(int)
+    seqc_sample_count_to_twos = defaultdict(int)
+    seqc_sample_count_to_threes = defaultdict(int)
     # For junction-date analyses
     date_to_junction_count = defaultdict(int)
     date_to_junction_count_overlap_geq_20 = defaultdict(int)
@@ -729,26 +525,25 @@ if __name__ == '__main__':
                 project_count_to_novel_junction_count[project_count] += 1
             seqc_intersect = set(samples).intersection(seqc_indexes)
             if seqc_intersect:
-                in_seqc_sample_count = len(seqc_intersect)
                 rail_seqc_junctions.add(junction)
-                if in_seqc_sample_count >= 5:
-                    rail_seqc_junctions_geq_5_samples.add(junction)
-                    if in_seqc_sample_count >= 10:
-                        rail_seqc_junctions_geq_10_samples.add(junction)
-                        if in_seqc_sample_count >= 15:
-                            rail_seqc_junctions_geq_15_samples.add(junction)
-                            if in_seqc_sample_count >= 20:
-                                rail_seqc_junctions_geq_20_samples.add(
-                                        junction
-                                    )
-                                if in_seqc_sample_count >= 25:
-                                    rail_seqc_junctions_geq_25_samples.add(
-                                        junction
-                                    )
-                                    if in_seqc_sample_count >= 30:
-                                        rail_seqc_junctions_geq_30_samples.add(
-                                            junction
-                                        )
+                seqc_sample_count = len(seqc_intersect)
+                seqc_sample_count_to_junction_count[seqc_sample_count] += 1
+                intersect_count = 0
+                if junction in magic_junctions:
+                    seqc_sample_count_to_magic[seqc_sample_count] += 1
+                    intersect_count += 1
+                if junction in rmake_junctions:
+                    seqc_sample_count_to_rmake[seqc_sample_count] += 1
+                    intersect_count += 1
+                if junction in subread_junctions:
+                    seqc_sample_count_to_subread[seqc_sample_count] += 1
+                    intersect_count += 1
+                if intersect_count == 1:
+                    seqc_sample_count_to_ones[seqc_sample_count] += 1
+                elif intersect_count == 2:
+                    seqc_sample_count_to_twos[seqc_sample_count] += 1
+                elif intersect_count == 3:
+                    seqc_sample_count_to_threes[seqc_sample_count] += 1
             for sample, coverage in samples_and_coverages:
                 junction_counts[sample] += 1
                 overlap_counts[sample] += coverage
@@ -757,7 +552,7 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Done reading junction file.'
 
     '''Aggregate junction stats: how many junctions/overlaps of given type
-    are found in >= K samples/projects?'''
+    are found in >= K samples/projects/seqc samples?'''
     sample_stats_to_aggregate = [sample_count_to_junction_count,
                                  sample_count_to_annotated_junction_count,
                                  sample_count_to_exonskip_junction_count,
@@ -780,8 +575,38 @@ if __name__ == '__main__':
                                   project_count_to_GCAG_ann_count,
                                   project_count_to_ATAC_junction_count,
                                   project_count_to_ATAC_ann_count]
-    for stats, descriptor in [(sample_stats_to_aggregate, 'sample'),
-                                (project_stats_to_aggregate, 'project')]:
+    seqc_stats_to_aggregate = [seqc_sample_count_to_junction_count,
+                                seqc_sample_count_to_magic,
+                                seqc_sample_count_to_rmake,
+                                seqc_sample_count_to_subread,
+                                seqc_sample_count_to_ones,
+                                seqc_sample_count_to_twos,
+                                seqc_sample_count_to_threes]
+    header_prototype = ('min {descriptor}s\t'
+                          'junctions\t'
+                          'annotated\t'
+                          'exonskips\t'
+                          'altstartend\t'
+                          'novel\t'
+                          'GTAG\t'
+                          'annotated GTAG\t'
+                          'GCAG\t'
+                          'annotated GCAG\t'
+                          'ATAC\t'
+                          'annotated ATAC')
+    seqc_header = ('min {descriptor}s\t'
+                      'magic junctions\t'
+                      'rmake junctions\t'
+                      'subread junctions\t'
+                      'at least one of {magic, rmake, subread} junctions\t'
+                      'at least two of {magic, rmake, subread} junctions\t'
+                      'all three of {magic, rmake, subread} junctions')
+    for stats, header in [(sample_stats_to_aggregate,
+                                header_prototype.format('sample')),
+                          (project_stats_to_aggregate,
+                                header_prototype.format('project')),
+                          (seqc_stats_to_aggregate,
+                                seqc_header)]:
         max_count, min_count = 0, 1000000000 # way larger than max # samples
         for stat in stats:
             max_count = max(stat.keys() + [max_count])
@@ -790,20 +615,7 @@ if __name__ == '__main__':
         stat_aggregators = [0 for _ in xrange(stat_count)]
         with open(args.basename + '.' + descriptor + '.stats.tsv', 'w') \
             as stat_stream:
-            print >>stat_stream, ('min {descriptor}s\t'
-                                  'junctions\t'
-                                  'annotated\t'
-                                  'exonskips\t'
-                                  'altstartend\t'
-                                  'novel\t'
-                                  'GTAG\t'
-                                  'annotated GTAG\t'
-                                  'GCAG\t'
-                                  'annotated GCAG\t'
-                                  'ATAC\t'
-                                  'annotated ATAC').format(
-                                            descriptor=descriptor
-                                        )
+            print >>stat_stream, header
             for descriptor_count in xrange(max_count, min_count - 1, -1):
                 for i in xrange(stat_count):
                     stat_aggregators[i] += stats[i][descriptor_count]
@@ -812,7 +624,8 @@ if __name__ == '__main__':
                                     + [str(el) for el in stat_aggregators]
                                 )
 
-    print >>sys.stderr, 'Dumped sample/project-level aggregate junction stats.'
+    print >>sys.stderr, ('Dumped sample/project-level and SEQC '
+                         'aggregate junction stats.')
 
     # Dump junction information by sample
     with open(args.basename + '.stats_by_sample.tsv', 'w') as stat_stream:
@@ -865,69 +678,5 @@ if __name__ == '__main__':
         print >>venn_stream, (
                 'junctions found by Rail: %d' % len(rail_seqc_junctions)
             )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 5 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_5_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 10 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_10_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 15 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_15_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 20 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_20_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 25 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_25_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail in at least 30 SEQC samples: %d'
-                    % len(rail_seqc_junctions_geq_30_samples)
-            )
-        print >>venn_stream, (
-                'junctions found by Rail and all of '
-                '[magic, rmake, subread]: %d'
-            ) % len(in_all.intersection(rail_seqc_junctions))
-        print >>venn_stream, (
-                'junctions found by Rail and none of '
-                '[magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 5 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_5_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 10 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_10_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 15 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_15_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 20 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_20_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 25 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_25_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail in at least 30 SEQC samples '
-                'and none of [magic, rmake, subread]: %d'
-            ) % len(rail_seqc_junctions_geq_30_samples - seqc_junctions)
-        print >>venn_stream, (
-                'junctions found by Rail and one of '
-                '[magic, rmake, subread]: %d'
-            ) % len(in_one.intersection(rail_seqc_junctions))
-        print >>venn_stream, (
-                'junctions found by Rail and at least two of '
-                '[magic, rmake, subread]: %d'
-            ) % len(in_two.intersection(rail_seqc_junctions))
 
     print >>sys.stderr, 'Dumped Venn info.'

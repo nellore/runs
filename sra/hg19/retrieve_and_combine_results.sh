@@ -24,4 +24,4 @@ eval "$cmd" | gzip >unmerged_intron_lines.tsv.gz
 # Note the --fix-batch-9 command-line parameter below! Batch 9 was preprocessed with the manifest file sra_batch_9_sample_size_500.txt
 # but aligned with the manifest file sra_batch_9_sample_size_500_old.txt, which has an extra sample that wasn't found on the server.
 # The --fix-batch-9 command-line parameter uses the old manifest file to extract the proper sample indexes.
-gzip -cd unmerged_intron_lines.tsv.gz | pypy ${MANIFESTS}/combine.py --bowtie-idx ${BOWTIEIDX} --fix-batch-9 | sort -k1,1 -k2,2n -k3,3n | gzip >all_SRA_introns.tsv.gz
+gzip -cd unmerged_intron_lines.tsv.gz | pypy ${MANIFESTS}/combine.py --bowtie-idx ${BOWTIEIDX} --fix-batch-9 | sort -k1,1 -k2,2n -k3,3n | gzip >all_SRA_junctions.tsv.gz
