@@ -104,10 +104,9 @@ instructions in README.md for its reproduction. Note that an "overlap" below
 is an instance where a junction is overlapped by a read. A read that overlaps
 two exon-exon junctions contributes two overlaps (or overlap instances).
 
-[basename].venn.txt
-Intersections between junctions obtained from SEQC protocol and junctions
-obtained from Rail for the 1720 samples studied by both SEQC and Rail. See
-file for details.
+[basename].seqc.txt
+Junction counts from SEQC protocol and Rail for the 1720 samples studied by
+with both. See file for details.
 
 [basename].sample_count_submission_date_overlap_geq_20.tsv
 Tab-separated fields
@@ -236,7 +235,7 @@ if __name__ == '__main__':
     # Map sample indexes to accession number lines
     index_to_sra, index_to_srp, srr_to_index = {}, {}, {}
     srs_to_srr = defaultdict(list)
-    # Get sample indexes for all Illumina RNA-seq from SEQC for Venn diagram
+    # Get sample indexes for all Illumina RNA-seq from SEQC for comparison
     seqc_indexes = set()
     with xopen(args.index_to_sra) as index_stream:
         for line in index_stream:
@@ -423,19 +422,23 @@ if __name__ == '__main__':
     date_to_junction_count = defaultdict(int)
     date_to_junction_count_overlap_geq_20 = defaultdict(int)
 
+    gencode_versions = ['3a', '3b'] + [str(ver) for ver in range(4, 20)]
     with xopen(args.junctions) as junction_stream, open(
             args.basename
             + '.sample_count_submission_date_overlap_geq_20.tsv', 'w'
         ) as junction_date_stream:
-        print >>junction_date_stream, (
+        print >>junction_date_stream, ((
                                '# samples in which junction was found'
                                '\t# projects in which junction was found'
                                '\tearliest known discovery date in '
-                               'days after %s; format Y-M-D') % (
+                               'days after %s; format Y-M-D\t') % (
                                         earliest_date.strftime(
                                             '%Y-%m-%d'
                                         )
-                                    )
+                                    )) + '\t'.join(
+                                        ['present in GENCODE v' + ver
+                                            for ver in gencode_versions]
+                                    ) + '\tearliest GENCODE version'
         for line in junction_stream:
             tokens = line.strip().split('\t')
             junction = (tokens[0], int(tokens[1]), int(tokens[2]))
@@ -464,11 +467,19 @@ if __name__ == '__main__':
                 date_to_junction_count[discovery_date] += 1
                 if sum(coverages) >= 20:
                     date_to_junction_count_overlap_geq_20[discovery_date] += 1
-                    print >>junction_date_stream, '%d\t%d\t%d' % (
-                                                            sample_count,
-                                                            project_count,
-                                                            discovery_date
-                                                        )
+                    gencode_bools_to_print = [
+                            '1' if junction in gencodes[ver]
+                            else '0' for ver in gencode_versions
+                        ]
+                    earliest_gencode_version = gencode_versions[
+                            gencode_bools_to_print.index('1')
+                        ]
+                    print >>junction_date_stream, (
+                            '%d\t%d\t%d\t' % (sample_count, project_count,
+                                                discovery_date)
+                        ) + '\t'.join(gencode_bools_to_print) + (
+                            '\t' + earliest_gencode_version
+                        ) 
             samples_and_coverages = zip(samples, coverages)
             sample_count_to_junction_count[sample_count] += 1
             project_count_to_junction_count[project_count] += 1
@@ -601,12 +612,17 @@ if __name__ == '__main__':
                       'at least one of {magic, rmake, subread} junctions\t'
                       'at least two of {magic, rmake, subread} junctions\t'
                       'all three of {magic, rmake, subread} junctions')
-    for stats, header in [(sample_stats_to_aggregate,
-                                header_prototype.format('sample')),
+    for stats, header, descriptor in [
+                          (sample_stats_to_aggregate,
+                                header_prototype.format('sample'),
+                                'sample'),
                           (project_stats_to_aggregate,
-                                header_prototype.format('project')),
+                                header_prototype.format('project'),
+                                'project'),
                           (seqc_stats_to_aggregate,
-                                seqc_header)]:
+                                seqc_header,
+                                'seqc_sample')
+                        ]:
         max_count, min_count = 0, 1000000000 # way larger than max # samples
         for stat in stats:
             max_count = max(stat.keys() + [max_count])
@@ -646,8 +662,8 @@ if __name__ == '__main__':
                     )
     print >>sys.stderr, 'Dumped junction info by sample.'
 
-    # Dump overlap info for Venn diagram
-    with open(args.basename + '.venn.txt', 'w') as venn_stream:
+    # SEQC summary
+    with open(args.basename + '.seqc.txt', 'w') as seqc_stream:
         in_all = set.intersection(
                         magic_junctions, rmake_junctions, subread_junctions
                     )
@@ -659,24 +675,24 @@ if __name__ == '__main__':
                     set.intersection(magic_junctions, subread_junctions),
                     set.intersection(rmake_junctions, subread_junctions)
                 )
-        print >>venn_stream, (
+        print >>seqc_stream, (
                 'total samples studied by SEQC consortium and Rail: %d'
                     % len(seqc_indexes)
             )
-        print >>venn_stream, (
+        print >>seqc_stream, (
                 'junctions found by magic, rmake, and subread: %d'
                     % len(in_all)
             )
-        print >>venn_stream, (
+        print >>seqc_stream, (
                 'junctions found by magic, rmake, or subread: %d'
                     % len(in_one)
             )
-        print >>venn_stream, (
+        print >>seqc_stream, (
                 'junctions found by at least two of '
                 '[magic, rmake, subread]: %d'
             ) % len(in_two)
-        print >>venn_stream, (
+        print >>seqc_stream, (
                 'junctions found by Rail: %d' % len(rail_seqc_junctions)
             )
 
-    print >>sys.stderr, 'Dumped Venn info.'
+    print >>sys.stderr, 'Dumped SEQC summary.'
