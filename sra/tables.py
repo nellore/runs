@@ -8,7 +8,7 @@ splicing diversity across the Sequence Read Archive. Based on Nellore's talk at
 Genome Informatics 2015; see the related repo
 https://github.com/nellore/gi2015.
 
-Get and unpack HISAT 2.0.0-beta from
+Get and unpack HISAT 2.0.1-beta from
 https://ccb.jhu.edu/software/hisat2/index.shtml; we use the tool
 extract_splice_sites.py that comes with it to obtain splice sites from
 annotation.
@@ -339,7 +339,7 @@ if __name__ == '__main__':
             )
     print >>sys.stderr, ('Found {} annotated junctions between GENCODE v19 '
                          'and refGene. Found {} annotated junctions across '
-                         'GENCODE versions.'.format(
+                         'GENCODE versions.').format(
                                 len(annotated_junctions),
                                 { version : len(gencodes[version])
                                     for version in gencodes }
