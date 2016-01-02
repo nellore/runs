@@ -104,7 +104,16 @@ instructions in README.md for its reproduction. Note that an "overlap" below
 is an instance where a junction is overlapped by a read. A read that overlaps
 two exon-exon junctions contributes two overlaps (or overlap instances).
 
-[basename].seqc.txt
+[basename].annotation_diffint.tsv
+Matrix where each row is a GENCODE version i and each column is a GENCODE
+version i. Each element is in the format
+
+(|junctions in i - junctions in j|, |junctions in i and j|,
+    |junctions in j - junctions in i|)
+
+, where - is a set difference.
+
+[basename].seqc_summary.txt
 Junction counts from SEQC protocol and Rail for the 1720 samples studied by
 with both. See file for details.
 
@@ -135,6 +144,20 @@ Tab-separated fields
 10. Number of annotated GC-AG junctions found in >= field 1 [type]s
 11. Number of AT-AC junctions found in >= field 1 [type]s
 12. Number of annotated AT-AC junctions found in >= field 1 [type]s
+
+[basename].seqc.stats.tsv
+Tab-separated fields
+1. SEQC sample count
+2. Number of junctions found in >= field 1 SEQC samples
+3. Number of junctions found by magic and Rail in >= field 1 SEQC samples
+4. Number of junctions found by rmake and Rail in >= field 1 SEQC samples
+5. Number of junctions found by subread and Rail in >= field 1 SEQC samples
+6. Number of junctions found by Rail and exactly one of
+    {magic, rmake, subread} in >= field 1 samples
+7. Number of junctions found by Rail and exactly two of
+    {magic, rmake, subread} in >= field 1 samples
+8. Number of junctions found by Rail and all of {magic, rmake, subread} in
+    >= field 1 samples
 
 [basename].stats_by_sample.tsv
 Tab-separated fields
@@ -200,10 +223,10 @@ if __name__ == '__main__':
                   'unpacked ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/'
                   'downloads/hisat2-2.0.0-beta-Linux_x86_64.zip to get this')
         )
-    parser.add_argument('--refgene', type=str, required=True, nargs='+',
+    parser.add_argument('--refgene', type=str, required=True,
             help='path to GTF file with RefSeq genes'
         )
-    parser.add_argument('--gencode-dir', type=str, required=True, nargs='+',
+    parser.add_argument('--gencode-dir', type=str, required=True,
             help='path to directory containing all GENCODE GTFs for hg19, '
                  'which includes 3c, 3d, and 4 through 19'
         )
@@ -337,6 +360,22 @@ if __name__ == '__main__':
                                                                     exit_code
                                                                 )
             )
+
+    gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 20)]
+    # Write some differences/intersections
+    with open(
+            args.basename + '.annotation_diffint.tsv', 'w'
+        ) as intersect_stream:
+        print >>intersect_stream, '\t'.join([''] + gencode_versions)
+        for i in gencode_versions:
+            intersect_stream.write(i)
+            print '\t'.join([
+                    ','.join([str(gencodes[i] - gencodes[j]),
+                                str(gencodes[i].intersection(gencodes[j])),
+                                str(gencodes[j] - gencodes[i])])
+                                for j in gencode_versions
+                ])
+
     print >>sys.stderr, ('Found {} annotated junctions between GENCODE v19 '
                          'and refGene. Found {} annotated junctions across '
                          'GENCODE versions.').format(
@@ -422,7 +461,6 @@ if __name__ == '__main__':
     date_to_junction_count = defaultdict(int)
     date_to_junction_count_overlap_geq_20 = defaultdict(int)
 
-    gencode_versions = ['3a', '3b'] + [str(ver) for ver in range(4, 20)]
     with xopen(args.junctions) as junction_stream, open(
             args.basename
             + '.sample_count_submission_date_overlap_geq_20.tsv', 'w'
@@ -471,9 +509,12 @@ if __name__ == '__main__':
                             '1' if junction in gencodes[ver]
                             else '0' for ver in gencode_versions
                         ]
-                    earliest_gencode_version = gencode_versions[
-                            gencode_bools_to_print.index('1')
-                        ]
+                    try:
+                        earliest_gencode_version = gencode_versions[
+                                gencode_bools_to_print.index('1')
+                            ]
+                    except ValueError:
+                        earliest_gencode_version = 'NA'
                     print >>junction_date_stream, (
                             '%d\t%d\t%d\t' % (sample_count, project_count,
                                                 discovery_date)
@@ -606,6 +647,7 @@ if __name__ == '__main__':
                           'ATAC\t'
                           'annotated ATAC')
     seqc_header = ('min {descriptor}s\t'
+                      'junctions\t'
                       'magic junctions\t'
                       'rmake junctions\t'
                       'subread junctions\t'
@@ -663,7 +705,7 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Dumped junction info by sample.'
 
     # SEQC summary
-    with open(args.basename + '.seqc.txt', 'w') as seqc_stream:
+    with open(args.basename + '.seqc_summary.txt', 'w') as seqc_stream:
         in_all = set.intersection(
                         magic_junctions, rmake_junctions, subread_junctions
                     )
