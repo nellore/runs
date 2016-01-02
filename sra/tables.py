@@ -369,7 +369,7 @@ if __name__ == '__main__':
         print >>intersect_stream, '\t'.join([''] + gencode_versions)
         for i in gencode_versions:
             intersect_stream.write(i)
-            print '\t'.join([
+            print >>intersect_stream, '\t'.join([
                     ','.join([str(gencodes[i] - gencodes[j]),
                                 str(gencodes[i].intersection(gencodes[j])),
                                 str(gencodes[j] - gencodes[i])])
