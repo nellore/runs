@@ -1,0 +1,5 @@
+total samples studied by SEQC consortium and Rail: 1720
+junctions found by magic, rmake, and subread: 1741049
+junctions found by magic, rmake, or subread: 3578354
+junctions found by at least two of [magic, rmake, subread]: 2285542
+junctions found by Rail: 4552435

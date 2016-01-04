@@ -368,12 +368,13 @@ if __name__ == '__main__':
         ) as intersect_stream:
         print >>intersect_stream, '\t'.join([''] + gencode_versions)
         for i in gencode_versions:
-            intersect_stream.write(i)
+            intersect_stream.write(i + '\t')
             print >>intersect_stream, '\t'.join([
-                    ','.join([str(gencodes[i] - gencodes[j]),
-                                str(gencodes[i].intersection(gencodes[j])),
-                                str(gencodes[j] - gencodes[i])])
-                                for j in gencode_versions
+                    ','.join([
+                            str(len(gencodes[i] - gencodes[j])),
+                            str(len(gencodes[i].intersection(gencodes[j]))),
+                            str(len(gencodes[j] - gencodes[i]))])
+                        for j in gencode_versions
                 ])
 
     print >>sys.stderr, ('Found {} annotated junctions between GENCODE v19 '
@@ -461,9 +462,9 @@ if __name__ == '__main__':
     date_to_junction_count = defaultdict(int)
     date_to_junction_count_overlap_geq_20 = defaultdict(int)
 
-    with xopen(args.junctions) as junction_stream, open(
+    with xopen(args.junctions) as junction_stream, gzip.open(
             args.basename
-            + '.sample_count_submission_date_overlap_geq_20.tsv', 'w'
+            + '.sample_count_submission_date_overlap_geq_20.tsv.gz', 'w'
         ) as junction_date_stream:
         print >>junction_date_stream, ((
                                '# samples in which junction was found'
@@ -656,10 +657,10 @@ if __name__ == '__main__':
                       'all three of {magic, rmake, subread} junctions')
     for stats, header, descriptor in [
                           (sample_stats_to_aggregate,
-                                header_prototype.format('sample'),
+                                header_prototype.format(descriptor='sample'),
                                 'sample'),
                           (project_stats_to_aggregate,
-                                header_prototype.format('project'),
+                                header_prototype.format(descriptor='project'),
                                 'project'),
                           (seqc_stats_to_aggregate,
                                 seqc_header,
