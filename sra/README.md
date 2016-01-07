@@ -2,7 +2,7 @@
 
 This repo contains scripts and processed data for reproducing results from (insert preprint here), an analysis of human splicing diversity across 21,504 RNA-seq samples on SRA. The scripts here draw heavily from the scripts used to generate Abhi Nellore's Genome Informatics 2015 talk, available [here](https://github.com/nellore/gi2015).
 
-The Python script `tables.py` generates all the data used to create the paper's figures in the Mathematica 10 notebook `figures.nb`. It depends on a master list of junctions contained in the file `all_SRA_junctions.tsv.gz`. The junction list may itself be reproduced by following the instructions at the end of this document. Results from running `tables.py` are contained in the following files whose formats are described below. See `tables.py`'s docstring for still more information.
+The Python script `tables.py` generates all the data used to create the paper's figures in the Mathematica 10 notebook `preprint_figures.nb`. It depends on a master list of junctions contained in the file `all_SRA_junctions.tsv.gz`. The junction list may itself be reproduced by following the instructions at the end of this document. Results from running `tables.py` are contained in the following files whose formats are described below. See `tables.py`'s docstring for still more information.
 
 ### hg19.venn.txt
 Intersections between junctions obtained from SEQC protocol and junctions

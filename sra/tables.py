@@ -308,11 +308,14 @@ if __name__ == '__main__':
         )
     extract_splice_sites_path = os.path.join(args.hisat2_dir,
                                                 'extract_splice_sites.py')
-    import glob
-    for annotation in glob.glob(os.path.join(args.gencode_dir,
-                                                'gencode.*.gtf.gz')) + [
+    from glob import glob
+    annotations = glob(os.path.join(args.gencode_dir, 'gencode.*.gtf.gz')) + [
                                                                 args.refgene
-                                                            ]:
+                                                            ]
+    annotations = [(os.path.basename(annotation_path), annotation_path)
+                    for annotation_path in annotations]
+    refgene_base = annotations[-1][0]
+    for annotation_base, annotation in annotations:
         extract_process = subprocess.Popen(' '.join([
                                             sys.executable,
                                             extract_splice_sites_path,
@@ -327,7 +330,7 @@ if __name__ == '__main__':
                                         executable='/bin/bash',
                                         stdout=subprocess.PIPE
                                     )
-        if annotation in [args.refgene, 'gencode.19.gtf.gz']:
+        if annotation_base in [refgene_base, 'gencode.19.gtf.gz']:
             for line in extract_process.stdout:
                 tokens = line.strip().split('\t')
                 tokens[1] = int(tokens[1]) + 2
@@ -335,7 +338,7 @@ if __name__ == '__main__':
                 if tokens[0] in refs:
                     junction_to_add = tuple(tokens[:-1])
                     annotated_junctions.add(junction_to_add)
-                    if annotation == 'gencode.19.gtf.gz':
+                    if annotation_base == 'gencode.19.gtf.gz':
                         gencodes['19'].add(junction_to_add)
                     if tokens[3] == '+':
                         annotated_5p.add((tokens[0], tokens[1]))
@@ -467,6 +470,8 @@ if __name__ == '__main__':
             + '.sample_count_submission_date_overlap_geq_20.tsv.gz', 'w'
         ) as junction_date_stream:
         print >>junction_date_stream, ((
+                               '# reads across samples in which junction '
+                               'was found\t'
                                '# samples in which junction was found'
                                '\t# projects in which junction was found'
                                '\tearliest known discovery date in '
@@ -504,7 +509,8 @@ if __name__ == '__main__':
                 pass
             else:
                 date_to_junction_count[discovery_date] += 1
-                if sum(coverages) >= 20:
+                cov_sum = sum(coverages)
+                if cov_sum >= 20:
                     date_to_junction_count_overlap_geq_20[discovery_date] += 1
                     gencode_bools_to_print = [
                             '1' if junction in gencodes[ver]
@@ -516,10 +522,12 @@ if __name__ == '__main__':
                             ]
                     except ValueError:
                         earliest_gencode_version = 'NA'
-                    print >>junction_date_stream, (
-                            '%d\t%d\t%d\t' % (sample_count, project_count,
-                                                discovery_date)
-                        ) + '\t'.join(gencode_bools_to_print) + (
+                    print >>junction_date_stream, ('%d\t%d\t%d\t%d\t' % (
+                                cov_sum,
+                                sample_count,
+                                project_count,
+                                discovery_date
+                        )) + '\t'.join(gencode_bools_to_print) + (
                             '\t' + earliest_gencode_version
                         ) 
             samples_and_coverages = zip(samples, coverages)
