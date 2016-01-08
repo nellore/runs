@@ -655,13 +655,13 @@ if __name__ == '__main__':
                           'annotated GCAG\t'
                           'ATAC\t'
                           'annotated ATAC')
-    seqc_header = ('min {descriptor}s\t'
+    seqc_header = ('min seqc samples\t'
                       'junctions\t'
                       'magic junctions\t'
                       'rmake junctions\t'
                       'subread junctions\t'
-                      'at least one of {magic, rmake, subread} junctions\t'
-                      'at least two of {magic, rmake, subread} junctions\t'
+                      'exactly one of {magic, rmake, subread} junctions\t'
+                      'exactly two of {magic, rmake, subread} junctions\t'
                       'all three of {magic, rmake, subread} junctions')
     for stats, header, descriptor in [
                           (sample_stats_to_aggregate,

@@ -1,4 +1,4 @@
-min {descriptor}s	junctions	magic junctions	rmake junctions	subread junctions	at least one of {magic, rmake, subread} junctions	at least two of {magic, rmake, subread} junctions	all three of {magic, rmake, subread} junctions
+min seqc samples	junctions	magic junctions	rmake junctions	subread junctions	exactly one of {magic, rmake, subread} junctions	exactly two of {magic, rmake, subread} junctions	all three of {magic, rmake, subread} junctions
 1710	1	1	1	1	0	0	1
 1709	2	2	2	2	0	0	2
 1708	4	4	4	4	0	0	4
