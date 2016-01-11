@@ -14,11 +14,12 @@ extract_splice_sites.py that comes with it to obtain splice sites from
 annotation.
 
 File requirements:
-1. all_SRA_junctions.tsv.gz: database of exon-exon junctions found across
-    ~21,500 SRA samples NOT PROVIDED IN THIS REPO BUT CAN BE REPRODUCED. See
-    README.md for instructions.
-2. index_to_SRA_accession.tsv: maps sample indexes from
-    all_SRA_junctions.tsv.gz to SRA run accession numbers (regex: [SED]RR\d+) .
+1. intropolis.v1.hg19.tsv.gz: database of exon-exon junctions found across
+    ~21,500 SRA samples NOT PROVIDED IN THIS REPO BUT CAN BE REPRODUCED. 
+    See README.md for instructions. The file is also available for download
+    at http://intropolis.rail.bio .
+2. intropolis.idmap.v1.hg19.tsv: maps sample indexes from
+    intropolis.v1.hg19.tsv.gz to SRA run accession numbers (regex: [SED]RR\d+)
     (In this repo.)
 3. All GENCODE gene annotations for GRCh37, which may be obtained by executing
     the following command.
@@ -55,11 +56,11 @@ File requirements:
     generated using hg19/get_biosample_data.sh . It contains metadata from the
     NCBI Biosample database, including sample submission dates.
 
-all_SRA_junctions.tsv.gz is specified as argument of --junctions. Annotations
+intropolis.v1.hg19.tsv.gz is specified as argument of --junctions. Annotations
 are read from arguments of command-line parameter --annotations that specify
 paths to the GTFs above.
 
-Each line of all_SRA_junctions.tsv.gz specifies a different junction and has
+Each line of intropolis.v1.hg19.tsv.gz specifies a different junction and has
 the following tab-separated fields.
 1. chromosome
 2. start position (1-based inclusive)
@@ -74,7 +75,7 @@ the following tab-separated fields.
     index 4, 10 reads overlapping the junction in the sample with index 5, and
     11 reads overlapping the junction in the sample with index 6.
 
-Each line of index_to_SRA_accession.tsv specifies a different sample
+Each line of intropolis.idmap.v1.hg19.tsv specifies a different sample
 (specifically, run) on SRA and has the following tab-separated fields.
 1. sample index
 2. project accession number (regex: [SED]RP\d+)
@@ -87,8 +88,8 @@ pypy tables.py
     --hisat2-dir /path/to/hisat2-2.0.0-beta
     --gencode-dir /path/to/directory/with/gencode/gtf.gzs
     --refgene /path/to/refGene.gtf.gz
-    --junctions /path/to/all_SRA_junctions.tsv.gz
-    --index-to-sra /path/to/index_to_SRA_accession.tsv
+    --junctions /path/to/intropolis.v1.hg19.tsv.gz
+    --index-to-sra /path/to/intropolis.idmap.v1.hg19.tsv
     --tmp /path/to/temp_dir_with_200_GB_free_space
     --seqc /path/to/nbt.2957-S4.zip
     --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
@@ -99,7 +100,7 @@ binary and extract_splice_sites.py.
 
 The following output was obtained. It is included in this repo because this 
 script cannot easily be rerun to obtain results; the input file
-all_SRA_junctions.tsv.gz must be provided, and this requires following the
+intropolis.v1.hg19.tsv.gz must be provided, and this requires following the
 instructions in README.md for its reproduction. Note that an "overlap" below
 is an instance where a junction is overlapped by a read. A read that overlaps
 two exon-exon junctions contributes two overlaps (or overlap instances).
@@ -231,11 +232,11 @@ if __name__ == '__main__':
                  'which includes 3c, 3d, and 4 through 19'
         )
     parser.add_argument('--junctions', type=str, required=True,
-            help='junctions file; this should be all_SRA_junctions.tsv.gz'
+            help='junctions file; this should be intropolis.v1.hg19.tsv.gz'
         )
     parser.add_argument('--index-to-sra', type=str, required=True,
             help='index to SRA accession numbers file; this should be '
-                 'index_to_SRA_accession.tsv'
+                 'intropolis.idmap.v1.hg19.tsv'
         )
     parser.add_argument('--sra-metadata', type=str, required=True,
             help='path to SRA metadata file; this should be '
