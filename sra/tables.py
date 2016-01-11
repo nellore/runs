@@ -51,7 +51,13 @@ File requirements:
     Venn Diagram.
 6. The file
     http://verve.webfactional.com/misc/all_illumina_sra_for_human.tsv.gz,
-    which has metadata grabbed from the SRA.
+    which has metadata grabbed from the SRA. This file may be
+    reproduced by following these instructions:
+     a) Download the sqlite database for SRA from
+        http://gbnci.abcc.ncifcrf.gov/backup/SRAmetadb.sqlite.gz
+     b) Use define_and_get_fields_SRA.R to create:
+        all_illumina_sra_for_human.tsv.gz
+        manifest_file_illumina_sra_human, which is in the hg19 subdirectory
 7. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
     generated using hg19/get_biosample_data.sh . It contains metadata from the
     NCBI Biosample database, including sample submission dates.
