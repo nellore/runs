@@ -55,8 +55,10 @@ File requirements:
     reproduced by following these instructions:
      a) Download the sqlite database for SRA from
         http://gbnci.abcc.ncifcrf.gov/backup/SRAmetadb.sqlite.gz
-     b) Use define_and_get_fields_SRA.R to create:
-        all_illumina_sra_for_human.tsv.gz
+     b) Unpack the file and make sure SRAmetadb.sqlite is in the same 
+        directory as define_and_get_fields_SRA.R .
+     C) Use define_and_get_fields_SRA.R to create:
+        all_illumina_sra_for_human.tsv (which we then compressed with gzip)
         manifest_file_illumina_sra_human, which is in the hg19 subdirectory
 7. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
     generated using hg19/get_biosample_data.sh . It contains metadata from the
@@ -322,6 +324,7 @@ if __name__ == '__main__':
     annotations = [(os.path.basename(annotation_path), annotation_path)
                     for annotation_path in annotations]
     refgene_base = annotations[-1][0]
+    refseq = set()
     for annotation_base, annotation in annotations:
         extract_process = subprocess.Popen(' '.join([
                                             sys.executable,
@@ -347,6 +350,8 @@ if __name__ == '__main__':
                     annotated_junctions.add(junction_to_add)
                     if annotation_base == 'gencode.19.gtf.gz':
                         gencodes['19'].add(junction_to_add)
+                    else:
+                        refseq.add(junction_to_add)
                     if tokens[3] == '+':
                         annotated_5p.add((tokens[0], tokens[1]))
                         annotated_3p.add((tokens[0], tokens[2]))
@@ -369,6 +374,20 @@ if __name__ == '__main__':
                 'extract_splice_sites.py had nonzero exit code {}.'.format(
                                                                     exit_code
                                                                 )
+            )
+
+    with open(args.basename + '.annotations_venn.txt', 'w') as venn_stream:
+        print >>venn_stream, (
+                'Number of junctions in RefSeq but not Gencode v19: '
+                + str(len(refseq - gencodes['19']))
+            )
+        print >>venn_stream, (
+                'Number of junctions in Gencode v19 but not RefSeq: '
+                + str(len(gencodes['19'] - refseq))
+            )
+        print >>venn_stream, (
+                'Number of junctions in Gencode v19 and RefSeq: '
+                + str(len(gencodes['19'].intersection(refseq)))
             )
 
     gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 20)]

@@ -1,0 +1,3 @@
+Number of junctions in RefSeq but not Gencode v19: 16304
+Number of junctions in Gencode v19 but not RefSeq: 123780
+Number of junctions in Gencode v19 and RefSeq: 220093

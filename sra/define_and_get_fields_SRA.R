@@ -404,7 +404,7 @@ metadata <- lapply(metadata, convert_mis_to_na) %>%
     lapply(str_trim) %>% as.data.frame()
 
 # Write table with all Illumina data
-write.table(metadata[match(order_list, rownames(metadata)),], "all_illumina_sra_for_human.txt", 
+write.table(metadata[match(order_list, rownames(metadata)),], "all_illumina_sra_for_human.tsv", 
             sep = "\t", quote = FALSE, row.names = FALSE)
 
 write.table(paired, "manifest_file_illumina_sra_human", sep = "\t", quote = FALSE,
