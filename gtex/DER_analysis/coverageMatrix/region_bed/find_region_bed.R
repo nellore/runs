@@ -10,7 +10,7 @@ cutoff <- 0.5
 ## Find the regions for all the chromosomes given a specific cutoff
 getRegs <- function(chr, chrlen, cutoff) {
     message(paste(Sys.time(), 'loading meanCov for', chr))
-    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', chr, chrlen = chrlen)
+    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/means/mean.bw', chr, chrlen = chrlen)
     
     regs <- findRegions(position = Rle(TRUE, length(meanCov$coverage[[1]])), fstats = meanCov$coverage[[1]], chr = chr, maxClusterGap = 300L, cutoff = cutoff, verbose = FALSE)
     if(is.null(regs)) {

@@ -32,7 +32,7 @@ getRegChr <- function(cutoff, chr, meanCov) {
 }
 getRegs <- function(chr, chrlen, cutoffs, param) {
     message(paste(Sys.time(), 'loading meanCov for', chr))
-    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw', chr, chrlen = chrlen)
+    meanCov <- loadCoverage('/dcl01/leek/data/gtex_work/means/mean.bw', chr, chrlen = chrlen)
     res <- bplapply(cutoffs, getRegChr, chr = chr, meanCov = meanCov, BPPARAM = param)
     names(res) <- as.character(cutoffs)
     return(res)

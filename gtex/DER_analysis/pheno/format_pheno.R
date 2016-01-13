@@ -53,8 +53,13 @@ pheno$RailRnaBatchNumber <- as.factor(pheno$RailRnaBatchNumber)
 ## BigWig file paths are characters
 pheno$BigWigPath <- as.character(pheno$BigWigPath)
 
+## Format pheno Run
+pheno$Run <- as.character(pheno$Run)
+
 ## Format coverage sum
-pheno$SumCoverage <- as.numeric(pheno$SumCoverage)
+auc <- read.table('/dcl01/leek/data/gtex_work/auc.tsv', header = FALSE, col.names = c('Run', 'SumCoverage'), colClasses = c('character', 'numeric'), sep = '\t', quote = '')
+auc$Run <- gsub(' ', '', auc$Run)
+pheno$SumCoverage <- auc$SumCoverage[match(pheno$Run, auc$Run)]
 
 
 ## Find which variables are all NA

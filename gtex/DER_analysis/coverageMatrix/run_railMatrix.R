@@ -29,7 +29,7 @@ chrlens <- chrInfo$length[chrInfo$chr %in% chrs]
 
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 
-summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
+summaryFiles <- '/dcl01/leek/data/gtex_work/means/mean.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
 sampleFiles <- head(sampleFiles, 500)

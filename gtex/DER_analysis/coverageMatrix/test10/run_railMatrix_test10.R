@@ -32,7 +32,7 @@ load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less
 pheno <- subset(pheno, Run %in% c('SRR1088982', 'SRR1090119', 'SRR1308734', 'SRR1331944', 'SRR1401552', 'SRR1417632', 'SRR1445789', 'SRR1452143', 'SRR598452', 'SRR811491'))
 
 
-summaryFiles <- '/dcl01/leek/data/gtex_work/gtex_mean_coverage.bw'
+summaryFiles <- '/dcl01/leek/data/gtex_work/means/mean.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
 
