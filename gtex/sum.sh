@@ -3,12 +3,12 @@
 # $1: path to bwtool 1.0; download it from https://github.com/CRG-Barcelona/bwtool/releases/tag/1.0
 # $2: path to BED file with regions
 # $3: path to bigWig file in GTEx output directory; assumes directory structure of output directory in download.sh
-# $4: path to SraRunInfo.csv from GTEx repository
+# $4: path to AUC file
 # $5: path to directory in which to dump coverage sums
 BWTOOL=$1
 BED=$2
 export BW=$3
-export RUNINFO=$4
+export AUC=$4
 DUMP=$5
 mkdir -p $DUMP
 export SAMPLENAME=$(echo $(basename $BW) | rev | awk '{print substr($0, 4)}' | rev)
