@@ -51,20 +51,20 @@ File requirements:
     Sequencing Quality Control Consortium" by SEQC/MAQC-III Consortium
     in Nature Biotech. The junctions on this list are used to make a
     Venn Diagram.
-6. The file
-    http://verve.webfactional.com/misc/all_illumina_sra_for_human.tsv.gz,
-    which has metadata grabbed from the SRA. This file may be
-    reproduced by following these instructions:
-     a) Download the sqlite database for SRA from
-        http://gbnci.abcc.ncifcrf.gov/backup/SRAmetadb.sqlite.gz
-     b) Unpack the file and make sure SRAmetadb.sqlite is in the same 
-        directory as define_and_get_fields_SRA.R .
-     C) Use define_and_get_fields_SRA.R to create:
-        all_illumina_sra_for_human.tsv (which we then compressed with gzip)
-        manifest_file_illumina_sra_human, which is in the hg19 subdirectory
-7. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
+6. biosample_tags.tsv, which is in the hg19 subdirectory of this repo and was
     generated using hg19/get_biosample_data.sh . It contains metadata from the
     NCBI Biosample database, including sample submission dates.
+
+The file http://verve.webfactional.com/misc/all_illumina_sra_for_human.tsv.gz,
+which has metadata grabbed from the SRA, is used by other scripts. This file
+may be reproduced by following these instructions:
+ a) Download the sqlite database for SRA from
+    http://gbnci.abcc.ncifcrf.gov/backup/SRAmetadb.sqlite.gz
+ b) Unpack the file and make sure SRAmetadb.sqlite is in the same 
+    directory as define_and_get_fields_SRA.R .
+ C) Use define_and_get_fields_SRA.R to create:
+    all_illumina_sra_for_human.tsv (which we then compressed with gzip)
+    manifest_file_illumina_sra_human, which is in the hg19 subdirectory
 
 
 intropolis.v1.hg19.tsv.gz is specified as argument of --junctions. Annotations
@@ -250,10 +250,6 @@ if __name__ == '__main__':
             help='index to SRA accession numbers file; this should be '
                  'intropolis.idmap.v1.hg19.tsv'
         )
-    parser.add_argument('--sra-metadata', type=str, required=True,
-            help='path to SRA metadata file; this should be '
-                 'all_illumina_sra_for_human.tsv.gz'
-        )
     parser.add_argument('--biosample-metadata', type=str, required=True,
             help='path to Biosample metadata file; this should be '
                  'biosample_tags.tsv'
@@ -277,11 +273,11 @@ if __name__ == '__main__':
             chrom, start, end, strand = line.strip().split('\t')
             annotated_junctions.add((chrom, int(start), int(end), strand))
             if strand == '+':
-                annotated_5p.add((chrom, start, strand))
-                annotated_3p.add((chrom, end, strand))
+                annotated_5p.add((chrom, int(start), strand))
+                annotated_3p.add((chrom, int(end), strand))
             elif strand == '-':
-                annotated_5p.add((chrom, end, strand))
-                annotated_3p.add((chrom, start, strand))
+                annotated_5p.add((chrom, int(end), strand))
+                annotated_3p.add((chrom, int(start), strand))
 
     print >>sys.stderr, 'Read {} annotated junctions.'.format(i+1)
 
