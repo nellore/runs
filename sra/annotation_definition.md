@@ -21,8 +21,11 @@ GENCODE v24 -- `ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_24/genc
 ### hg38 exceptions
 
 Augustus (ab initio)
+
 Geneid (ab initio)
+
 Genscan (ab initio)
+
 SGP (ab initio)
 
 ### hg19 annotations
@@ -48,8 +51,13 @@ GENCODE v19 -- `ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_19/genc
 ### hg19 exceptions
 
 Augustus (ab initio)
+
 Ensembl (contained in GENCODE)
+
 Geneid (ab initio)
+
 TransMap (cross-species)
+
 Genscan (ab initio)
+
 N-SCAN (ab initio)
