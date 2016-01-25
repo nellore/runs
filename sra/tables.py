@@ -230,7 +230,7 @@ if __name__ == '__main__':
     parser.add_argument('--hisat2-dir', type=str, required=True,
             help=('path to directory containing contents of HISAT2; we '
                   'unpacked ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/'
-                  'downloads/hisat2-2.0.0-beta-Linux_x86_64.zip to get this')
+                  'downloads/hisat2-2.0.1-beta-Linux_x86_64.zip to get this')
         )
     parser.add_argument('--refgene', type=str, required=True,
             help='path to GTF file with RefSeq genes'
