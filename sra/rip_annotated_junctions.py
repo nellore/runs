@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
 """
 rip_annotated_junctions.py
 
@@ -47,7 +47,6 @@ import glob
 import os
 import gzip
 import sys
-from pyliftover import LiftOver
 
 if __name__ == '__main__':
     # Print file's docstring if -h is invoked
@@ -163,6 +162,9 @@ if __name__ == '__main__':
                                         executable='/bin/bash'
                                     )
     # Add all new junctions to hg19 set
+    before_liftover = len([junction for junction
+                            in annotated_junctions_hg19
+                            if junction[0] in refs])
     print >>sys.stderr, ('Below, if an RNAME is not in the chromosomal '
                          'assembly, it\'s ignored.')
     with open(temp_hg19) as hg19_stream:
@@ -178,5 +180,15 @@ if __name__ == '__main__':
                 print >>sys.stderr, '({}, {}, {}) not recorded.'.format(
                                             chrom, start, end
                                         )
+    after_liftover = len([junction for junction
+                            in annotated_junctions_hg19
+                            if junction[0] in refs])
+    print >>sys.stderr, ('hg19 annotations contributed {} junctions, and '
+                         'liftover of hg38 annotations contributed an '
+                         'additional {} junctions.').format(
+                                before_liftover,
+                                after_liftover - before_liftover
+                            )
     for junction in annotated_junctions_hg19:
-        print '\t'.join(map(str, junction))
+        if junction[0] in refs:
+            print '\t'.join(map(str, junction))
