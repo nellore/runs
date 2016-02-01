@@ -58,8 +58,32 @@ annotation_bp$none_per <- annotation_bp$none / annotation_bp$total_bp * 100
 
 print(annotation_bp[, 9:ncol(annotation_bp)], digits = 4)
 
+
+## Compute the summary of the width of the regions by annotation
+width_regions <- lapply(names(annotated), function(db) {
+    resov <- lapply(c('1bp', '8bp', '20bp'), function(minov) {
+        reslen <- lapply(c(0, 7, 19), function(minlen) {
+            s <- width(regs) > minlen
+            res <- sapply(names(cases), function(type, subsetIndex = s) {
+                count <- annotated[[db]][[minov]]$countTable[s, ] > 0
+                case <- matrix(rep(cases[[type]] > 0, each = nrow(count)), ncol = 3)
+                case_true <- apply(count == case, 1, all)
+                summary(width(regs)[which(s)[case_true]])
+            })
+            data.frame(t(res), 'minlen' = minlen, 'minov' = minov, db = db, stringsAsFactors = FALSE, check.names = FALSE)
+        })
+        do.call(rbind, reslen)
+    })
+    do.call(rbind, resov)
+})
+width_regions <- do.call(rbind, width_regions)
+width_regions$type <- rep(names(cases), 2 * 3 * 3)
+rownames(width_regions) <- NULL
+width_regions
+
 ## Save results
 save(annotation_bp, file = 'annotation_bp.Rdata')
+save(width_regions, file = 'width_regions.Rdata')
 
 ## Reproducibility info
 proc.time()
