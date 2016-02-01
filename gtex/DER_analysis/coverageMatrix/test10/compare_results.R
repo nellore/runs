@@ -7,7 +7,7 @@ load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/test10/co
 
 ## Load bwtool results
 tsv <- dir('/dcl01/leek/data/gtex_work/mean_cov', pattern = 'tsv', full.names = TRUE)
-names(tsv) <- gsub('.mean.tsv', '', dir('/dcl01/leek/data/gtex_work/mean_cov/', pattern = 'tsv'))
+names(tsv) <- gsub('.sum.tsv', '', dir('/dcl01/leek/data/gtex_work/mean_cov/', pattern = 'tsv'))
 load('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/pheno/pheno_missing_less_10.Rdata')
 i <- match(names(tsv), as.character(pheno$Run))
 
