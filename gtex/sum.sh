@@ -15,4 +15,6 @@ export SAMPLENAME=$(echo $(basename $BW) | rev | awk '{print substr($0, 4)}' | r
 SRR=$(echo $SAMPLENAME | cut -d'_' -f1)
 export COUNTS=$(dirname $(dirname $BW))/cross_sample_results/counts.tsv.gz
 CURRENTAUC=$(grep $SRR $AUC | cut -f2)
+# Remove white space
+CURRENTAUC="$(echo -e "${CURRENTAUC}" | sed -e 's/^[[:space:]]*//')"
 $BWTOOL summary $BED $BW /dev/stdout -fill=0 -with-sum | cut -f1-3,10 | awk -v currauc=$CURRENTAUC -v CONVFMT=%.17g '{print $1 "\t" $2 "\t" $3 "\t" $4*4000000000/currauc}' >$DUMP/$SRR.sum.tsv
