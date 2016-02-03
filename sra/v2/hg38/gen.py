@@ -120,11 +120,13 @@ if __name__ == '__main__':
                     '-o {s3_bucket}/sra_prep_batch_{batch_number} '
                     '-c 20 --core-instance-bid-price {core_price} '
                     '--master-instance-bid-price {core_price} -f '
-                    '--max-task-attempts 6'
+                    '--max-task-attempts 6 '
+                    '--region {region}'
                 ).format(manifest_file='sra_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
-                            core_price=args.m3_xlarge_bid_price)
+                            core_price=args.m3_xlarge_bid_price,
+                            region=args.region)
         with open('align_sra_batch_{}.sh'.format(i), 'w') as align_stream:
             print >>align_stream, '#!/usr/bin/env bash'
             print >>align_stream, (
@@ -139,8 +141,10 @@ if __name__ == '__main__':
                     '-i {s3_bucket}/sra_prep_batch_{batch_number} '
                     '-o {s3_bucket}/sra_align_batch_{batch_number} '
                     '-a hg38 -f -d jx,tsv,bed,bw,idx '
-                    '--max-task-attempts 6'
+                    '--max-task-attempts 6 '
+                    '--region {region}'
                 ).format(manifest_file='sra_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
-                            core_price=args.c3_8xlarge_bid_price)
+                            core_price=args.c3_8xlarge_bid_price,
+                            region=args.region)
