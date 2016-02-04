@@ -75,16 +75,18 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     manifest_lines = []
+    import csv
     with open(args.run_info_path) as run_info_stream:
         run_info_stream.readline() # header line
-        for line in run_info_stream:
-            if "http://sra-download.ncbi.nlm.nih.gov/srapub" not in line:
+        reader = csv.reader(run_info_stream)
+        for tokens in reader:
+            if not any(["http://sra-download.ncbi.nlm.nih.gov/srapub" in token
+                        for token in tokens]):
                 # no URL specified; ignore
                 continue
-            tokens = line.strip().split(',')
             if tokens == ['']: break
-            mb = int(tokens[5])
-            manifest_lines.append((mb, '\t'.join(
+            bases = int(tokens[4])
+            manifest_lines.append((bases, '\t'.join(
                     ['sra:' + tokens[0], '0', tokens[0]]
                 )))
     random.seed(args.seed)
