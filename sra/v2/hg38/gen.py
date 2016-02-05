@@ -18,7 +18,7 @@ We ran
 
 python gen.py --s3-bucket s3://rail-sra-hg38 --region us-east-1
 
-and used Rail-RNA v0.2.1 . We executed each prep_gtex_batch_<index>.sh script
+and used Rail-RNA v0.2.2 . We executed each prep_gtex_batch_<index>.sh script
 and waited for the job flow to finish before executing the corresponding
 align_gtex_batch_<index>.sh script.
 """
