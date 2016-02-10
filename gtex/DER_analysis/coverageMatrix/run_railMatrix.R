@@ -33,9 +33,10 @@ summaryFiles <- '/dcl01/leek/data/gtex_work/means/mean.bw'
 sampleFiles <- pheno$BigWigPath
 names(sampleFiles) <- gsub('/dcl01/leek/data/gtex/batch_[0-9]*/coverage_bigwigs/|.bw', '', sampleFiles)
 sampleFiles <- head(sampleFiles, 500)
+SumCoverage <- head(pheno$SumCoverage, 500)
 
 ## Run railMatrix
-regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = 1, cutoff = cutoff, targetSize = 40e6 * 100, totalMapped = pheno$SumCoverage, file.cores = 1L, chunksize = 10000, verbose.load = FALSE, chrlens = chrlens)
+regionMat <- railMatrix(chrs, summaryFiles, sampleFiles, L = 1, cutoff = cutoff, targetSize = 40e6 * 100, totalMapped = SumCoverage, file.cores = 1L, chunksize = 10000, verbose.load = FALSE, chrlens = chrlens)
 
 ## Save results
 save(regionMat, file=paste0('regionMat-cut', cutoff, '-', opt$chr, '.Rdata'))
