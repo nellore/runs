@@ -8,7 +8,7 @@ chrInfo <- read.table('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverag
 
 
 ## Process memory used
-mergeLog <- readLines('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/bwtool/logs/gtex-merge-bwtool.e8877097')
+mergeLog <- readLines('/dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/bwtool/logs/gtex-merge-bwtool.e9567080')
 
 mem <- mergeLog[grep('coverage matrix for.*uses', mergeLog)]
 
