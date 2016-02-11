@@ -117,6 +117,7 @@ if __name__ == '__main__':
             print >>prep_stream, (
                     'rail-rna prep elastic -m $DIR/{manifest_file} '
                     '--skip-bad-records ' # precaution: bad records last run
+                    '--ignore-missing-sra-samples '
                     '--core-instance-type m3.xlarge '
                     '--master-instance-type m3.xlarge '
                     '-o {s3_bucket}/sra_prep_batch_{batch_number} '
@@ -138,7 +139,7 @@ if __name__ == '__main__':
                     'rail-rna align elastic -m $DIR/{manifest_file} '
                     '--core-instance-type c3.8xlarge '
                     '--master-instance-type c3.8xlarge '
-                    '-c 80 --core-instance-bid-price {core_price} '
+                    '-c 80 -e --core-instance-bid-price {core_price} '
                     '--master-instance-bid-price {core_price} '
                     '-i {s3_bucket}/sra_prep_batch_{batch_number} '
                     '-o {s3_bucket}/sra_align_batch_{batch_number} '
