@@ -1,3 +1,6 @@
 From SRP046754, SRR1572047, SRR1572048, SRR1572145, and SRR1572146 were commented out because the FASTQ files appear to be invalid. (Sequences are numbers?)
 
 ERR313171 eliminated from batch 20 because fastq-dump was unpacking it really slowly.
+ERR313177 eliminated from batch 29 because fastq-dump was unpacking it really slowly.
+ERR731442 eliminated from batch 30 because fastq-dump was unpacking it really slowly.
+ERR910012 eliminated from batch 32 because fastq-dump was unpacking it really slowly.
