@@ -50,19 +50,26 @@ if __name__ == '__main__':
     batch_count = len(args.sra_junctions)
     index_to_index = [defaultdict(int) for _ in xrange(batch_count)]
     index_counter = 0
-    for i in xrange(batch_count):
-        old_index_counter = 0
-        with open(os.path.join(
-                        args.manifest_path,
-                        'sra_batch_{}.manifest'.format(i)
-                    )) as manifest_stream:
-            for line in manifest_stream:
-                line = line.strip()
-                if not line or line[0] == '#':
-                    continue
-                index_to_index[i][str(old_index_counter)] = str(index_counter)
-                index_counter += 1
-                old_index_counter += 1
+    with open('sra_map.tsv', 'w') as map_stream:
+        for i in xrange(batch_count):
+            old_index_counter = 0
+            with open(os.path.join(
+                            args.manifest_path,
+                            'sra_batch_{}.manifest'.format(i)
+                        )) as manifest_stream:
+                for line in manifest_stream:
+                    line = line.strip()
+                    if not line or line[0] == '#':
+                        continue
+                    index_to_index[i][str(old_index_counter)] \
+                        = str(index_counter)
+                    print >>map_stream, '\t'.join([
+                            str(index_counter), line.partition('\t')[0].split(
+                                                    ':'
+                                                )[1]
+                        ])
+                    index_counter += 1
+                    old_index_counter += 1
     with gzip.open(all_junctions, 'w') as temp_stream:
         for i, sra_file in enumerate(args.sra_junctions):
             with gzip.open(sra_file) as sra_stream:
