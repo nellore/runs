@@ -6,6 +6,7 @@ Combines GTEx and SRA junctions.
 """
 import gzip
 import os
+from collections import defaultdict
 
 def stream_to_list(stream):
     """ Converts each line in a stream to a list and yields it.
