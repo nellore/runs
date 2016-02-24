@@ -61,7 +61,7 @@ if __name__ == '__main__':
                 index_counter += 1
                 old_index_counter += 1
     with gzip.open(all_junctions, 'w') as temp_stream:
-        for i, sra_file in enumerate(sra_junctions):
+        for i, sra_file in enumerate(args.sra_junctions):
             with gzip.open(sra_file) as sra_stream:
                 for line in sra_file:
                     tokens = line.strip().split('\t')
