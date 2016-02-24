@@ -79,7 +79,6 @@ if __name__ == '__main__':
             for line in gtex_stream:
                 tokens = line.strip().split('\t')
                 print >>temp_stream, '\t'.join(tokens[:4] + tokens[6:] + ['g'])
-    print 'here'
     import subprocess
     sorted_file = os.path.join(temp_junction_path,
                                 'all_junctions.sorted.tsv.gz')
