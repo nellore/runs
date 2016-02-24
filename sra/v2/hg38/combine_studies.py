@@ -53,7 +53,7 @@ if __name__ == '__main__':
                         args.manifest_path,
                         'sra_batch_{}.manifest'.format(i)
                     )) as manifest_stream:
-            for line in enumerate(manifest_stream):
+            for line in manifest_stream:
                 line = line.strip()
                 if not line or line[0] == '#':
                     continue
