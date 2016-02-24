@@ -36,9 +36,12 @@ if __name__ == '__main__':
             default=os.path.dirname(os.path.abspath(__file__)),
             help='path to manifest files for all of SRA job flow'
         )
+    parser.add_argument('--temp-dir', type=str, required=True,
+            help='path to some temporary directory'
+        )
     args = parser.parse_args()
     import tempfile
-    temp_junction_path = tempfile.mkdtemp()
+    temp_junction_path = tempfile.mkdtemp(dir=args.temp_dir)
     import atexit
     import shutil
     atexit.register(shutil.rmtree, temp_junction_path)
@@ -63,10 +66,10 @@ if __name__ == '__main__':
     with gzip.open(all_junctions, 'w') as temp_stream:
         for i, sra_file in enumerate(args.sra_junctions):
             with gzip.open(sra_file) as sra_stream:
-                for line in sra_file:
+                for line in sra_stream:
                     tokens = line.strip().split('\t')
-                    tokens[-2] = [index_to_index[i][j]
-                                    for j in tokens[-2].split(',')]
+                    tokens[-2] = ','.join([index_to_index[i][j]
+                                            for j in tokens[-2].split(',')])
                     if int(tokens[2]) > int(tokens[1]):
                         print >>temp_stream, '\t'.join(
                                 [tokens[0][:-1], tokens[1], tokens[2],
@@ -76,10 +79,13 @@ if __name__ == '__main__':
             for line in gtex_stream:
                 tokens = line.strip().split('\t')
                 print >>temp_stream, '\t'.join(tokens[:4] + tokens[6:] + ['g'])
+    print 'here'
     import subprocess
     sorted_file = os.path.join(temp_junction_path,
                                 'all_junctions.sorted.tsv.gz')
-    subprocess.check_call('sort -k1,1 -k2,2n -k3,3n -T {} | gzip >{}'.format(
+    subprocess.check_call(
+        'gzip -cd {} | sort -k1,1 -k2,2n -k3,3n -T {} | gzip >{}'.format(
+                                all_junctions,
                                 temp_junction_path,
                                 sorted_file
                             ), shell=True, bufsize=-1)
@@ -98,7 +104,11 @@ if __name__ == '__main__':
                 else:
                     sra_samples.append(tokens[-3])
                     sra_coverages.append(tokens[-2])
-            print '\t'.join(key + [','.join(gtex_samples),
-                                   ','.join(gtex_coverages),
-                                   ','.join(sra_samples),
-                                   ','.join(sra_coverages)])
+            print '\t'.join(key + [','.join(gtex_samples)
+                                        if gtex_samples else 'NA',
+                                   ','.join(gtex_coverages)
+                                        if gtex_samples else 'NA',
+                                   ','.join(sra_samples)
+                                        if sra_samples else 'NA',
+                                   ','.join(sra_coverages)
+                                        if sra_samples else 'NA'])
