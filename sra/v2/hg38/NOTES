@@ -4,3 +4,5 @@ ERR313171 eliminated from batch 20 because fastq-dump was unpacking it really sl
 ERR313177 eliminated from batch 29 because fastq-dump was unpacking it really slowly.
 ERR731442 eliminated from batch 30 because fastq-dump was unpacking it really slowly.
 ERR910012 eliminated from batch 32 because fastq-dump was unpacking it really slowly.
+ERR313179 eliminated from batch 33 because fastq-dump was unpacking it really slowly.
+
