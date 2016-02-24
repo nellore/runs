@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     all_junctions = os.path.join(temp_junction_path, 'all_junctions.tsv.gz')
     batch_count = len(args.sra_junctions)
-    index_to_index = { defaultdict(int) for _ in xrange(batch_count) }
+    index_to_index = [defaultdict(int) for _ in xrange(batch_count)]
     index_counter = 0
     for i in xrange(batch_count):
         old_index_counter = 0
