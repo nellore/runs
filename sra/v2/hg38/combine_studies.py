@@ -66,10 +66,11 @@ if __name__ == '__main__':
                     tokens = line.strip().split('\t')
                     tokens[-2] = [index_to_index[i][j]
                                     for j in tokens[-2].split(',')]
-                    print >>temp_stream, '\t'.join(
-                            [tokens[0][:-1], tokens[1], tokens[2],
-                                tokens[0][-1], tokens[-2], tokens[-1], 's']
-                        )
+                    if int(tokens[2]) > int(tokens[1]):
+                        print >>temp_stream, '\t'.join(
+                                [tokens[0][:-1], tokens[1], tokens[2],
+                                    tokens[0][-1], tokens[-2], tokens[-1], 's']
+                            )
         with gzip.open(args.gtex_junctions) as gtex_stream:
             for line in gtex_stream:
                 tokens = line.strip().split('\t')
