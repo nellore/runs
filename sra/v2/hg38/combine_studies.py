@@ -5,6 +5,7 @@ combine_studies.py
 Combines GTEx and SRA junctions.
 """
 import gzip
+import os
 
 def stream_to_list(stream):
     """ Converts each line in a stream to a list and yields it.
@@ -34,7 +35,7 @@ if __name__ == '__main__':
             default=os.path.dirname(os.path.abspath(__file__)),
             help='path to manifest files for all of SRA job flow'
         )
-
+    args = parser.parse_args()
     import tempfile
     temp_junction_path = tempfile.mkdtemp()
     import atexit
