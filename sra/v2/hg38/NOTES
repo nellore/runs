@@ -11,3 +11,9 @@ ERR313172 eliminated from batch 52 because fastq-dump was unpacking it really sl
 ERR455334 eliminated from batch 55 because fastq-dump kept crashing trying to unpack it.
 SRR1792678 eliminated from batch 60 because fastq-dump was unpacking it really slowly.
 Batch 53 was failing on bigwig output step because reduce was timing out, so it was restarted at that step with longer mapreduce.task.timeout. We narrowed the issue to bedGraphToBigWig hanging on a particular bed file. We SSHed to the cluster and used gdb to exit the bedGraphToBigWig process to advance the job flow; we also saved the offending BED file. The destination BW was SRR191419.T.bw.
+SRR1792708 eliminated from batch 62 because fastq-dump was unpacking it really slowly.
+ERR313163 eliminated from batch 62 because fastq-dump was unpacking it really slowly.
+ERR313181 eliminated from batch 64 because fastq-dump failed to unpack it. (2016-02-28T06:08:30 fastq-dump.2.5.2 err: file insufficient while reading binary large object within database module - failed ERR313181)
+ERR661170 eliminated from batch 64 because fastq-dump failed to unpack it. (2016-02-27T21:50:13 fastq-dump.2.5.2 err: transfer incomplete while selecting index within database module - failed ERR661170)
+ERR661168 eliminated from batch 64 because fastq-dump failed to unpack it. (2016-02-27T21:50:13 fastq-dump.2.5.2 err: data corrupt while executing function within transform module - failed ERR661168)
+ERR519519 eliminated from batch 70 because fastq-dump failed to unpack it. (2016-02-28T16:23:37 fastq-dump.2.5.2 err: unsupported while parsing within network system module - failed ERR519519)
