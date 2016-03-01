@@ -20,3 +20,5 @@ ERR519519 eliminated from batch 70 because fastq-dump failed to unpack it. (2016
 ERR313164 eliminated from batch 80 because fastq-dump was unpacking it really slowly.
 ERR661169 eliminated from batch 83 because fastq-dump was unpacking it really slowly.
 SRR1513813 eliminated from batch 85 because fastq-dump was unpacking it really slowly.
+ERR313175 eliminated from batch 87 because of fastq-dump error: 2016-03-01T10:48:53 fastq-dump.2.5.2 err: buffer insufficient while executing function within transform module - failed ERR313175.
+SRR1792704 eliminated from batch 87 because fastq-dump was unpacking it really slowly.
