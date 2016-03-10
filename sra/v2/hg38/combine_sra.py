@@ -375,7 +375,7 @@ if __name__ == '__main__':
                             'intropolis.2pass.v2.hg38.tsv.gz'), 'w'
         ) as second_pass_stream, gzip.open(
             os.path.join(args.output_dir,
-                            'intropolis.allpass.v2.hg38.tsv.gz'), 'w'
+                            'intropolis.allpasses.v2.hg38.tsv.gz'), 'w'
         ) as consolidated_stream:
         for key, group in itertools.groupby(temp_stream,
                                             key=lambda x: x.split('\t')[:4]):
