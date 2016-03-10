@@ -268,7 +268,8 @@ if __name__ == '__main__':
         batch_number = int(manifest.partition('.')[0].rpartition('_')[2])
         batch_numbers.append(batch_number)
         with open(manifest) as manifest_stream:
-            for j, line in enumerate(manifest_stream):
+            j = 0
+            for line in manifest_stream:
                 line = line.strip()
                 if line[0] == '#' or not line: continue
                 sample_name = line.partition('\t')[0].partition(':')[2]
@@ -276,6 +277,7 @@ if __name__ == '__main__':
                 final_index_to_sample_name[i] = sample_name
                 sample_name_to_final_index[sample_name] = i
                 i += 1
+                j += 1
     with open(
             os.path.join(args.output_dir, 'intropolis.idmap.v2.hg38.tsv'), 'w'
         ) as sample_stream:
