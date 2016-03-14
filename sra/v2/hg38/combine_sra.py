@@ -278,12 +278,19 @@ if __name__ == '__main__':
                 sample_name_to_final_index[sample_name] = i
                 i += 1
                 j += 1
+    sample_name_to_line = {}
+    with open(os.path.join(containing_dir, 'SraRunInfo.csv')) as run_stream:
+        for line in run_stream:
+            tokens = line.strip().split(',')
+            sample_name_to_line[tokens[0]] = '\t'.join(
+                    [tokens[20], tokens[24], tokens[10], tokens[0]]
+                )
     with open(
             os.path.join(args.output_dir, 'intropolis.idmap.v2.hg38.tsv'), 'w'
         ) as sample_stream:
         for i in sorted(final_index_to_sample_name.keys()):
             print >>sample_stream, '{}\t{}'.format(
-                    i, final_index_to_sample_name[i]
+                    i, sample_name_to_line[final_index_to_sample_name[i]]
                 )
     # Junction are already sorted, so we can advance counters and print
     first_pass_handles = [
