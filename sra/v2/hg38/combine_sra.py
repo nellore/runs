@@ -280,7 +280,10 @@ if __name__ == '__main__':
                 j += 1
     sample_name_to_line = {}
     with open(os.path.join(containing_dir, 'SraRunInfo.csv')) as run_stream:
+        run_stream.readline()
         for line in run_stream:
+            line = line.strip()
+            if not line: continue
             tokens = line.strip().split(',')
             sample_name_to_line[tokens[0]] = '\t'.join(
                     [tokens[20], tokens[24], tokens[10], tokens[0]]
