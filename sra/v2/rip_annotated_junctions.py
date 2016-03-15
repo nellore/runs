@@ -16,7 +16,7 @@ required by tables.py. The format of annotated_junctions.tsv.gz is
 
 Must have
 
-http://hgdownload.cse.ucsc.edu/goldenPath/hg38/liftOver/
+http://hgdownload.cse.ucsc.edu/goldenPath/hg19/liftOver/
     hg19ToHg38.over.chain.gz
 
 and liftOver executable available from
