@@ -1,0 +1,529 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18540,        520]
+NotebookOptionsPosition[     16909,        462]
+NotebookOutlinePosition[     17320,        480]
+CellTagsIndexPosition[     17277,        477]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.66184793424986*^9, 3.661847946271558*^9}, 
+   3.661866838419682*^9, {3.6620701025635767`*^9, 3.662070103560864*^9}}],
+
+Cell[BoxData["\<\"/Users/eterna/runs/sra\"\>"], "Output",
+ CellChangeTimes->{3.6618668386544228`*^9, 3.6618723680630836`*^9, 
+  3.662002384865429*^9, 3.662070104063876*^9, 3.662070288699657*^9, 
+  3.662124354905723*^9, 3.6621382714314957`*^9, 3.6623815250704*^9, 
+  3.662382635936363*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "We investigate whether ALK with an alternative transcript initation site in \
+intron 19 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    SuperscriptBox["ALK", "ATI"], ")"}], TraditionalForm]]],
+ " is potentially expressed on SRA. This notebook requires that the script \
+alk.sh in the \[OpenCurlyDoubleQuote]sra\[CloseCurlyDoubleQuote] subdirectory \
+of the \[OpenCurlyDoubleQuote]runs\[CloseCurlyDoubleQuote] repo has been \
+executed. This, in turn, requires the intropolis database of junctions across \
+SRA (intropolis.v1.hg19.tsv.gz). See alk.sh for further information.\n\n",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["ALK", "ATI"], TraditionalForm]]],
+ " should see exons 1-19 largely unexpressed and exons 20-29 expressed. We \
+compare the coverage A of junctions across exons 1-19 with the coverage B of \
+junctions across exons 20-29 by ranking samples in order of decreasing \
+D=(B-A) / (A+B).\n\nalk.sh writes two files: one with junctions from the \
+region spanning exons 1-19 of ALK across SRA, and the other with junctions \
+from the region spannign exons 20-29. These are loaded below."
+}], "Text",
+ CellChangeTimes->{{3.662107068374387*^9, 3.662107383615985*^9}, {
+  3.6623821948822327`*^9, 3.66238223920477*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ALKStartJunctions", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<!gzip -cd alk_start_junctions.tsv.gz\>\"", ",", " ", "\"\<TSV\>\""}],
+     "]"}]}], ";", " ", 
+  RowBox[{"ALKEndJunctions", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<!gzip -cd alk_end_junctions.tsv.gz\>\"", ",", " ", "\"\<TSV\>\""}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661889576615439*^9, 3.6618895982520514`*^9}, {
+  3.6618896391626787`*^9, 3.661889661296646*^9}}],
+
+Cell["\<\
+startCoverageTotals sums coverage of junctions in exons 1-19, and \
+endCoverageTotals does the same for exons 20-29.\
+\>", "Text",
+ CellChangeTimes->{{3.66238218765594*^9, 3.662382188990686*^9}, {
+  3.6623822461205597`*^9, 3.662382276179599*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"startCoverageTotals", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SparseArray", "[", 
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"ToExpression", "/@", 
+             RowBox[{"StringSplit", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "7", "]"}], "]"}], "]"}], ",", "\"\<,\>\""}], 
+              "]"}]}], ")"}], "+", "1"}], ",", "21507"}], "]"}], "\[Rule]", 
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{"ToExpression", "/@", 
+           RowBox[{"StringSplit", "[", 
+            RowBox[{
+             RowBox[{"ToString", "[", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "8", "]"}], "]"}], "]"}], ",", "\"\<,\>\""}], 
+            "]"}]}], ",", "0"}], "]"}]}], "]"}], "&"}], "/@", 
+     "ALKStartJunctions"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661889815322554*^9, 3.661889939637331*^9}, {
+  3.6618899800020113`*^9, 3.6618900997514544`*^9}, {3.661890163926346*^9, 
+  3.661890300649254*^9}, {3.661890409712799*^9, 3.661890411391968*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"endCoverageTotals", "=", 
+   RowBox[{"Total", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"SparseArray", "[", 
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"ToExpression", "/@", 
+             RowBox[{"StringSplit", "[", 
+              RowBox[{
+               RowBox[{"ToString", "[", 
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "7", "]"}], "]"}], "]"}], ",", "\"\<,\>\""}], 
+              "]"}]}], ")"}], "+", "1"}], ",", "21507"}], "]"}], "\[Rule]", 
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{"ToExpression", "/@", 
+           RowBox[{"StringSplit", "[", 
+            RowBox[{
+             RowBox[{"ToString", "[", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", "8", "]"}], "]"}], "]"}], ",", "\"\<,\>\""}], 
+            "]"}]}], ",", "0"}], "]"}]}], "]"}], "&"}], "/@", 
+     "ALKEndJunctions"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661890449041038*^9, 3.661890453135832*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"startVsEnd", "=", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"1", ",", "21507"}], "]"}], ",", "startCoverageTotals", ",", 
+      "endCoverageTotals"}], "}"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.661890515414401*^9, 3.661890576922267*^9}, {
+  3.661890706453125*^9, 3.661890711525391*^9}}],
+
+Cell["Map sample indexes to SRA accession numbers.", "Text",
+ CellChangeTimes->{{3.6623822836409187`*^9, 3.6623822905101433`*^9}, {
+  3.66238232172865*^9, 3.662382334173018*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"indexes", "=", 
+   RowBox[{"Import", "[", "\"\<intropolis.idmap.v1.hg19.tsv\>\"", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6618668751815987`*^9, 3.661866894714826*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"indexToSrr", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "\[Rule]", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "&"}], "/@", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", " ", 
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "5"}], "]"}], "]"}]}], "}"}], "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6618675464500647`*^9, 3.6618675919558287`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"indexToSrp", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "\[Rule]", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "&"}], "/@", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", " ", 
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "}"}], "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6621152066862917`*^9, 3.662115210146696*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"srrToIndex", "=", 
+   RowBox[{"Association", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "\[Rule]", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "&"}], "/@", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "5"}], "]"}], "]"}], ",", " ", 
+        RowBox[{"indexes", "[", 
+         RowBox[{"[", 
+          RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "}"}], "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.662106859823488*^9, 3.662106869583763*^9}}],
+
+Cell["Find top ten sample hits in order of decreasing D:", "Text",
+ CellChangeTimes->{{3.662107068374387*^9, 3.662107120936111*^9}, {
+  3.662107393253194*^9, 3.662107394021377*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ranks", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"indexToSrp", "[", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", " ", 
+      RowBox[{"indexToSrr", "[", 
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], ",", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], ",", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "4", "]"}], "]"}]}], "}"}], "&"}], "/@", 
+   RowBox[{
+    RowBox[{"Reverse", "[", 
+     RowBox[{"SortBy", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "-", "1"}], ",", " ", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], ",", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "3", "]"}], "]"}], ",", 
+           RowBox[{"N", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                RowBox[{"[", "3", "]"}], "]"}], "-", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                RowBox[{"[", "3", "]"}], "]"}], "+", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], "]"}]}], "}"}], 
+         "&"}], "/@", 
+        RowBox[{"Select", "[", 
+         RowBox[{"startVsEnd", ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "+", 
+             RowBox[{"#", "[", 
+              RowBox[{"[", "3", "]"}], "]"}]}], "\[GreaterEqual]", "50"}], 
+           "&"}]}], "]"}]}], ",", " ", "Last"}], "]"}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "10"}], "]"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.661890578585416*^9, 3.661890617706191*^9}, {
+   3.661890670180443*^9, 3.6618906839561462`*^9}, {3.6618907175076437`*^9, 
+   3.661890719034506*^9}, {3.661890796160376*^9, 3.6618907962465067`*^9}, {
+   3.661890928035149*^9, 3.661891002589075*^9}, {3.6618910412836523`*^9, 
+   3.661891047344932*^9}, {3.6618910801148643`*^9, 3.661891098830707*^9}, {
+   3.661891162999072*^9, 3.661891163081019*^9}, {3.661933101898809*^9, 
+   3.6619331301449223`*^9}, {3.661933322204475*^9, 3.6619333339692593`*^9}, {
+   3.6619355438979197`*^9, 3.661935544746908*^9}, {3.662013023672286*^9, 
+   3.662013024579411*^9}, {3.662013193425426*^9, 3.66201319360293*^9}, {
+   3.6620137092028008`*^9, 3.662013709288499*^9}, {3.662014712790144*^9, 
+   3.662014712852744*^9}, {3.662017505879107*^9, 3.662017557999106*^9}, 
+   3.662018011472999*^9, {3.662043037354518*^9, 3.662043038161366*^9}, {
+   3.662043121092895*^9, 3.662043125706029*^9}, {3.6620449593775463`*^9, 
+   3.662044961559721*^9}, {3.662067879297946*^9, 3.662067916177269*^9}, {
+   3.662107398054509*^9, 3.662107401908169*^9}, {3.662115215525702*^9, 
+   3.662115218384801*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP007461\"\>", ",", "\<\"SRR545713\"\>", ",", "0", ",", 
+     "139", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP010166\"\>", ",", "\<\"SRR396804\"\>", ",", "0", ",", 
+     "172", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP017262\"\>", ",", "\<\"SRR620100\"\>", ",", "0", ",", 
+     "108", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP042031\"\>", ",", "\<\"SRR1289650\"\>", ",", "1", ",", 
+     "85", ",", "0.9767441860465116`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP042031\"\>", ",", "\<\"SRR1289651\"\>", ",", "1", ",", 
+     "77", ",", "0.9743589743589743`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP007461\"\>", ",", "\<\"SRR545716\"\>", ",", "2", ",", 
+     "94", ",", "0.9583333333333334`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP017413\"\>", ",", "\<\"SRR628586\"\>", ",", "12", ",", 
+     "111", ",", "0.8048780487804879`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DRP001919\"\>", ",", "\<\"DRR016705\"\>", ",", "38", ",", 
+     "285", ",", "0.7647058823529411`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SRP007461\"\>", ",", "\<\"SRR545714\"\>", ",", "14", ",", 
+     "63", ",", "0.6363636363636364`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ERP006077\"\>", ",", "\<\"ERR532612\"\>", ",", "16", ",", 
+     "53", ",", "0.5362318840579711`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6620449621232243`*^9, {3.6620678965478487`*^9, 3.662067917249982*^9}, 
+   3.662070290211988*^9, 3.662107402755774*^9, 3.6621152197135277`*^9, 
+   3.662124357102784*^9, 3.662138272960516*^9, 3.662381528161023*^9, 
+   3.6623826374946957`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Cross-referencing with SRA at http://www.ncbi.nlm.nih.gov/sra, we find that \
+these samples are:
+
+1) NHEM.f_M2: normal human melanocyte cell line sequenced by CSHL for ENCODE
+1) non-small cell lung adenocarcinoma
+1) leukemia
+4) macrophage, part of SRP042031
+5) macrophage + fibroblast, part of SRP042031 
+6) NHEM_M2: normal human melanocyte cell line sequenced by CSHL for ENCODE
+7) uveal melanoma
+8) H2228, an EML4-ALK-expressing lung adenocarcinoma cell line
+9) NHEM.f_M2: normal human melanocyte cell line sequenced by CSHL for ENCODE
+10) primary prostate tumor\
+\>", "Text",
+ CellChangeTimes->{{3.662107407631323*^9, 3.662107545059203*^9}, {
+  3.662107588509385*^9, 3.662107595826791*^9}, {3.6621076313559303`*^9, 
+  3.66210763892635*^9}, {3.662108667876129*^9, 3.66210881897482*^9}, {
+  3.66210887427068*^9, 3.662108988524395*^9}}],
+
+Cell["\<\
+Find the ALK coverages of other SRA samples associated with the macrophage \
+study SRP042031:\
+\>", "Text",
+ CellChangeTimes->{{3.6621068747834997`*^9, 3.662106903772346*^9}, {
+  3.6621069643315*^9, 3.6621069685736732`*^9}, {3.662382359958582*^9, 
+  3.6623823602905617`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"startCoverageTotals", "[", 
+  RowBox[{"[", 
+   RowBox[{"srrToIndex", "[", "\"\<SRR1289652\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6621069057857437`*^9, 3.662107000922234*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{{3.6621069403718033`*^9, 3.662106953648279*^9}, {
+   3.662106987092698*^9, 3.662107001666452*^9}, 3.662124357137377*^9, 
+   3.6621382729954443`*^9, 3.662381528175187*^9, 3.6623826375089493`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"endCoverageTotals", "[", 
+  RowBox[{"[", 
+   RowBox[{"srrToIndex", "[", "\"\<SRR1289652\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.662107005863044*^9, 3.6621070068296957`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.662107007173244*^9, 3.662124357170858*^9, 
+  3.662138273029031*^9, 3.662381528190135*^9, 3.662382637522284*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"startCoverageTotals", "[", 
+  RowBox[{"[", 
+   RowBox[{"srrToIndex", "[", "\"\<SRR1289653\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.662107014175824*^9, 3.662107019977913*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.662107020204096*^9, 3.662124357204391*^9, 
+  3.662138273061952*^9, 3.6623815282208014`*^9, 3.6623826375530987`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"endCoverageTotals", "[", 
+  RowBox[{"[", 
+   RowBox[{"srrToIndex", "[", "\"\<SRR1289653\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.662107024764814*^9, 3.662107028721068*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.662107030567892*^9, 3.662124357237391*^9, 
+  3.662138273095914*^9, 3.662381528238142*^9, 3.6623826375858088`*^9}]
+}, Open  ]],
+
+Cell["Looks like ALK isn\[CloseCurlyQuote]t expressed in these samples!", \
+"Text",
+ CellChangeTimes->{{3.662107036392045*^9, 3.662107053317836*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"indexToSrr", "[", "19513", "]"}]], "Input",
+ CellChangeTimes->{{3.66211287297514*^9, 3.662112876529707*^9}}],
+
+Cell[BoxData["\<\"SRR1274169\"\>"], "Output",
+ CellChangeTimes->{3.662112876922195*^9, 3.662124357260557*^9, 
+  3.662138273128386*^9, 3.6623815282702*^9, 3.662382637619318*^9}]
+}, Open  ]]
+},
+WindowSize->{570, 631},
+WindowMargins->{{18, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 243, 4, 28, "Input"],
+Cell[826, 28, 288, 4, 28, "Output"]
+}, Open  ]],
+Cell[1129, 35, 1250, 23, 271, "Text"],
+Cell[2382, 60, 506, 13, 80, "Input"],
+Cell[2891, 75, 256, 5, 47, "Text"],
+Cell[3150, 82, 1228, 31, 165, "Input"],
+Cell[4381, 115, 1076, 29, 165, "Input"],
+Cell[5460, 146, 398, 10, 63, "Input"],
+Cell[5861, 158, 178, 2, 29, "Text"],
+Cell[6042, 162, 213, 5, 28, "Input"],
+Cell[6258, 169, 697, 21, 63, "Input"],
+Cell[6958, 192, 695, 21, 63, "Input"],
+Cell[7656, 215, 693, 21, 63, "Input"],
+Cell[8352, 238, 181, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[8558, 244, 3187, 76, 165, "Input"],
+Cell[11748, 322, 1741, 37, 182, "Output"]
+}, Open  ]],
+Cell[13504, 362, 846, 18, 299, "Text"],
+Cell[14353, 382, 285, 6, 47, "Text"],
+Cell[CellGroupData[{
+Cell[14663, 392, 221, 5, 28, "Input"],
+Cell[14887, 399, 242, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15166, 407, 219, 5, 28, "Input"],
+Cell[15388, 414, 161, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15586, 421, 219, 5, 28, "Input"],
+Cell[15808, 428, 165, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16010, 435, 217, 5, 28, "Input"],
+Cell[16230, 442, 163, 2, 28, "Output"]
+}, Open  ]],
+Cell[16408, 447, 149, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[16582, 453, 132, 2, 28, "Input"],
+Cell[16717, 457, 176, 2, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

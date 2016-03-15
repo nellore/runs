@@ -1,0 +1,5998 @@
+#Partially deleted in new
+chr1	2634164	2694523	dummy_1336	1	+
+#Deleted in new
+chr1	8928111	8928111	dummy_2333	1	-
+#Split in new
+chr1	13001396	13002061	dummy_3456	1	-
+#Split in new
+chr1	13036801	13037807	dummy_3459	1	+
+#Split in new
+chr1	13109400	13111145	dummy_3460	1	-
+#Split in new
+chr1	13111728	13112393	dummy_3461	1	-
+#Split in new
+chr1	13112703	13117673	dummy_3462	1	-
+#Split in new
+chr1	13329407	13330413	dummy_3468	1	-
+#Split in new
+chr1	13642051	13644783	dummy_3494	1	+
+#Split in new
+chr1	13645093	13645763	dummy_3495	1	+
+#Split in new
+chr1	13646346	13648094	dummy_3496	1	+
+#Deleted in new
+chr1	38077350	38077420	dummy_9480	1	-
+#Deleted in new
+chr1	53378443	53378443	dummy_13121	1	-
+#Split in new
+chr1	143119120	143161882	dummy_21357	1	+
+#Split in new
+chr1	143196804	143207726	dummy_21368	1	-
+#Split in new
+chr1	143207877	143209429	dummy_21369	1	-
+#Split in new
+chr1	143205545	143231293	dummy_21370	1	+
+#Split in new
+chr1	143226396	143230341	dummy_21372	1	-
+#Split in new
+chr1	143233122	143267351	dummy_21374	1	-
+#Split in new
+chr1	143267489	143272621	dummy_21375	1	-
+#Split in new
+chr1	143226396	143227880	dummy_21378	1	-
+#Split in new
+chr1	143237716	143240288	dummy_21381	1	-
+#Split in new
+chr1	143226399	143230341	dummy_21382	1	-
+#Split in new
+chr1	143233122	143240288	dummy_21385	1	-
+#Split in new
+chr1	143240981	143267351	dummy_21387	1	-
+#Split in new
+chr1	143267489	143274726	dummy_21388	1	-
+#Split in new
+chr1	143283313	143355261	dummy_21390	1	+
+#Split in new
+chr1	143648031	143713466	dummy_21414	1	-
+#Split in new
+chr1	143719834	143744200	dummy_21416	1	-
+#Split in new
+chr1	143664197	143744200	dummy_21417	1	-
+#Split in new
+chr1	143719956	143744200	dummy_21442	1	-
+#Split in new
+chr1	143721166	143744200	dummy_21445	1	-
+#Split in new
+chr1	143718173	143731704	dummy_21446	1	+
+#Split in new
+chr1	143719956	143743239	dummy_21449	1	-
+#Split in new
+chr1	143729351	143729701	dummy_21450	1	-
+#Split in new
+chr1	143729862	143743239	dummy_21451	1	-
+#Split in new
+chr1	143743294	143744200	dummy_21452	1	-
+#Split in new
+chr1	143740101	143743239	dummy_21455	1	-
+#Split in new
+chr1	143743291	143743827	dummy_21456	1	-
+#Split in new
+chr1	143740159	143744200	dummy_21457	1	-
+#Split in new
+chr1	143747121	143747987	dummy_21458	1	-
+#Split in new
+chr1	143916309	144013900	dummy_21471	1	+
+#Split in new
+chr1	143924872	144007450	dummy_21477	1	+
+#Split in new
+chr1	144149942	144150981	dummy_21480	1	+
+#Split in new
+chr1	144151055	144151518	dummy_21481	1	+
+#Split in new
+chr1	144151725	144153012	dummy_21482	1	+
+#Split in new
+chr1	144153065	144156971	dummy_21483	1	+
+#Split in new
+chr1	144157136	144158177	dummy_21484	1	+
+#Split in new
+chr1	144158230	144158870	dummy_21485	1	+
+#Split in new
+chr1	144159044	144159762	dummy_21486	1	+
+#Split in new
+chr1	144159815	144160414	dummy_21487	1	+
+#Split in new
+chr1	144163800	144164518	dummy_21488	1	+
+#Split in new
+chr1	144164571	144165170	dummy_21489	1	+
+#Split in new
+chr1	144182060	144184251	dummy_21490	1	+
+#Split in new
+chr1	144193150	144193759	dummy_21493	1	+
+#Split in new
+chr1	144195517	144196230	dummy_21496	1	+
+#Split in new
+chr1	144197149	144197867	dummy_21498	1	+
+#Split in new
+chr1	144200279	144200992	dummy_21502	1	+
+#Partially deleted in new
+chr1	144280630	144280729	dummy_21503	1	-
+#Split in new
+chr1	144281191	144284621	dummy_21505	1	-
+#Split in new
+chr1	144284858	144289796	dummy_21506	1	-
+#Split in new
+chr1	144301537	144339563	dummy_21508	1	-
+#Split in new
+chr1	144301537	144340525	dummy_21511	1	-
+#Split in new
+chr1	144300756	144340525	dummy_21513	1	-
+#Split in new
+chr1	144301537	144311425	dummy_21514	1	-
+#Split in new
+chr1	144340624	144341669	dummy_21515	1	-
+#Split in new
+chr1	144308434	144311629	dummy_21517	1	-
+#Split in new
+chr1	144325674	144326025	dummy_21518	1	-
+#Split in new
+chr1	144339619	144340525	dummy_21520	1	-
+#Split in new
+chr1	144339619	144340156	dummy_21524	1	-
+#Split in new
+chr1	144463408	144464533	dummy_21528	1	-
+#Split in new
+chr1	144481766	144520773	dummy_21535	1	-
+#Split in new
+chr1	144481766	144519812	dummy_21537	1	-
+#Split in new
+chr1	144481766	144483138	dummy_21539	1	-
+#Split in new
+chr1	144520872	144521883	dummy_21541	1	-
+#Split in new
+chr1	144480985	144520773	dummy_21542	1	-
+#Split in new
+chr1	144481766	144491654	dummy_21543	1	-
+#Split in new
+chr1	144505926	144506276	dummy_21546	1	-
+#Split in new
+chr1	144506437	144519812	dummy_21547	1	-
+#Split in new
+chr1	144519868	144520773	dummy_21548	1	-
+#Split in new
+chr1	144506437	144516477	dummy_21549	1	-
+#Split in new
+chr1	144515965	144516477	dummy_21551	1	-
+#Split in new
+chr1	144519868	144520404	dummy_21553	1	-
+#Split in new
+chr1	144572683	144575360	dummy_21556	1	+
+#Split in new
+chr1	144576401	144583516	dummy_21558	1	+
+#Split in new
+chr1	144593966	144604477	dummy_21561	1	+
+#Split in new
+chr1	144593937	144595834	dummy_21564	1	+
+#Split in new
+chr1	144595953	144598511	dummy_21565	1	+
+#Split in new
+chr1	144595953	144596287	dummy_21567	1	+
+#Split in new
+chr1	144596474	144598511	dummy_21568	1	+
+#Split in new
+chr1	144593937	144595853	dummy_21569	1	+
+#Split in new
+chr1	144595953	144596283	dummy_21570	1	+
+#Split in new
+chr1	144593966	144598511	dummy_21571	1	+
+#Split in new
+chr1	144593966	144595834	dummy_21572	1	+
+#Split in new
+chr1	144593966	144595853	dummy_21581	1	+
+#Split in new
+chr1	144620095	144621446	dummy_21585	1	+
+#Split in new
+chr1	144679970	144994590	dummy_21589	1	-
+#Split in new
+chr1	144677363	144679892	dummy_21593	1	-
+#Split in new
+chr1	144825526	144826234	dummy_21609	1	+
+#Split in new
+chr1	144826287	144826932	dummy_21610	1	+
+#Split in new
+chr1	145351276	145362978	dummy_21613	1	+
+#Split in new
+chr1	145363852	145367713	dummy_21615	1	+
+#Split in new
+chr1	145318988	145319623	dummy_21620	1	+
+#Split in new
+chr1	145319797	145339403	dummy_21621	1	+
+#Split in new
+chr1	145042562	145103907	dummy_21716	1	+
+#Split in new
+chr1	145096622	145103907	dummy_21721	1	+
+#Split in new
+chr1	145096622	145100205	dummy_21725	1	+
+#Split in new
+chr1	145311155	145335388	dummy_21754	1	+
+#Partially deleted in new
+chr1	145336333	145336928	dummy_21756	1	+
+#Split in new
+chr1	145317458	145318053	dummy_21769	1	+
+#Split in new
+chr1	145319797	145320510	dummy_21770	1	+
+#Partially deleted in new
+chr1	145320620	145321229	dummy_21771	1	+
+#Split in new
+chr1	145322176	145322771	dummy_21773	1	+
+#Split in new
+chr1	145322945	145323653	dummy_21774	1	+
+#Split in new
+chr1	145326898	145327492	dummy_21779	1	+
+#Split in new
+chr1	145327666	145328374	dummy_21780	1	+
+#Split in new
+chr1	145328433	145329078	dummy_21781	1	+
+#Split in new
+chr1	145331627	145332222	dummy_21785	1	+
+#Split in new
+chr1	145342583	145343240	dummy_21793	1	+
+#Split in new
+chr1	145345006	145345724	dummy_21796	1	+
+#Split in new
+chr1	145347307	145347964	dummy_21799	1	+
+#Split in new
+chr1	145352037	145352684	dummy_21805	1	+
+#Split in new
+chr1	145356010	145356718	dummy_21810	1	+
+#Split in new
+chr1	145358413	145359014	dummy_21813	1	+
+#Split in new
+chr1	145359188	145359906	dummy_21814	1	+
+#Split in new
+chr1	145360728	145361448	dummy_21816	1	+
+#Split in new
+chr1	145364675	145365286	dummy_21820	1	+
+#Split in new
+chr1	145366231	145366826	dummy_21822	1	+
+#Split in new
+chr1	145311155	145330682	dummy_21833	1	+
+#Split in new
+chr1	145351276	145356718	dummy_21835	1	+
+#Split in new
+chr1	145357590	145364565	dummy_21836	1	+
+#Split in new
+chr1	145364675	145368440	dummy_21837	1	+
+#Split in new
+chr1	145322945	145328374	dummy_21840	1	+
+#Split in new
+chr1	145328433	145352684	dummy_21841	1	+
+#Split in new
+chr1	145311155	145349562	dummy_21844	1	+
+#Split in new
+chr1	145355917	145356718	dummy_21846	1	+
+#Split in new
+chr1	145319797	145325234	dummy_21849	1	+
+#Split in new
+chr1	145326898	145332222	dummy_21850	1	+
+#Split in new
+chr1	145356010	145362978	dummy_21852	1	+
+#Split in new
+chr1	145315900	145330682	dummy_21853	1	+
+#Split in new
+chr1	145317458	145321229	dummy_21857	1	+
+#Split in new
+chr1	145319797	145329965	dummy_21858	1	+
+#Split in new
+chr1	145351276	145367713	dummy_21859	1	+
+#Split in new
+chr1	145331627	145336928	dummy_21861	1	+
+#Split in new
+chr1	145319797	145334683	dummy_21862	1	+
+#Split in new
+chr1	145322945	145333104	dummy_21864	1	+
+#Split in new
+chr1	145342567	145345760	dummy_21866	1	+
+#Split in new
+chr1	145353681	145368440	dummy_21868	1	+
+#Split in new
+chr1	145324521	145329965	dummy_21869	1	+
+#Split in new
+chr1	145332396	145367713	dummy_21870	1	+
+#Split in new
+chr1	145326125	145331574	dummy_21871	1	+
+#Split in new
+chr1	145326898	145330682	dummy_21872	1	+
+#Split in new
+chr1	145341822	145367713	dummy_21876	1	+
+#Split in new
+chr1	145331627	145335388	dummy_21877	1	+
+#Split in new
+chr1	145356010	145364565	dummy_21879	1	+
+#Split in new
+chr1	145356010	145367713	dummy_21880	1	+
+#Split in new
+chr1	145350507	145366826	dummy_21881	1	+
+#Split in new
+chr1	145941140	145945366	dummy_22189	1	-
+#Split in new
+chr1	145976275	145979061	dummy_22192	1	-
+#Split in new
+chr1	146031820	146033826	dummy_22197	1	-
+#Split in new
+chr1	146034409	146038218	dummy_22198	1	-
+#Split in new
+chr1	146038271	146038989	dummy_22199	1	-
+#Split in new
+chr1	146035148	146035861	dummy_22201	1	-
+#Split in new
+chr1	146036031	146036688	dummy_22202	1	-
+#Split in new
+chr1	146036741	146037449	dummy_22203	1	-
+#Split in new
+chr1	146037623	146038218	dummy_22204	1	-
+#Split in new
+chr1	146039163	146039795	dummy_22205	1	-
+#Split in new
+chr1	146039848	146040889	dummy_22206	1	-
+#Split in new
+chr1	146041054	146044948	dummy_22207	1	-
+#Split in new
+chr1	146047033	146048068	dummy_22210	1	-
+#Split in new
+chr1	146053299	146054298	dummy_22215	1	-
+#Split in new
+chr1	146054514	146057274	dummy_22216	1	-
+#Split in new
+chr1	146057485	146057586	dummy_22217	1	-
+#Split in new
+chr1	146039848	146040969	dummy_22221	1	-
+#Split in new
+chr1	146054514	146055344	dummy_22222	1	-
+#Split in new
+chr1	146055448	146057274	dummy_22223	1	-
+#Split in new
+chr1	146039924	146040889	dummy_22227	1	-
+#Split in new
+chr1	146057485	146066114	dummy_22230	1	-
+#Split in new
+chr1	146052764	146054298	dummy_22231	1	-
+#Split in new
+chr1	146215319	146215942	dummy_22246	1	-
+#Split in new
+chr1	146216052	146216765	dummy_22247	1	-
+#Split in new
+chr1	146217650	146218358	dummy_22249	1	-
+#Split in new
+chr1	146218532	146219126	dummy_22250	1	-
+#Split in new
+chr1	146219179	146221437	dummy_22251	1	-
+#Split in new
+chr1	146221586	146223206	dummy_22252	1	-
+#Split in new
+chr1	146223232	146233289	dummy_22253	1	-
+#Split in new
+chr1	146233342	146234383	dummy_22254	1	-
+#Split in new
+chr1	146234548	146238462	dummy_22255	1	-
+#Split in new
+chr1	146238515	146239816	dummy_22256	1	-
+#Split in new
+chr1	146240023	146240486	dummy_22257	1	-
+#Split in new
+chr1	146240560	146241596	dummy_22258	1	-
+#Split in new
+chr1	146241812	146242646	dummy_22259	1	-
+#Split in new
+chr1	146242750	146244507	dummy_22260	1	-
+#Split in new
+chr1	146244718	146246071	dummy_22261	1	-
+#Split in new
+chr1	146246284	146246746	dummy_22262	1	-
+#Split in new
+chr1	146246820	146247869	dummy_22263	1	-
+#Split in new
+chr1	146248085	146248915	dummy_22264	1	-
+#Split in new
+chr1	146216052	146229351	dummy_22266	1	-
+#Split in new
+chr1	146218532	146220666	dummy_22267	1	-
+#Split in new
+chr1	146220719	146221437	dummy_22268	1	-
+#Split in new
+chr1	146221611	146222235	dummy_22269	1	-
+#Split in new
+chr1	146222345	146223058	dummy_22270	1	-
+#Split in new
+chr1	146220071	146220666	dummy_22272	1	-
+#Split in new
+chr1	146221611	146225431	dummy_22273	1	-
+#Split in new
+chr1	146225484	146227742	dummy_22274	1	-
+#Split in new
+chr1	146228638	146229351	dummy_22276	1	-
+#Split in new
+chr1	146229525	146230192	dummy_22277	1	-
+#Split in new
+chr1	146230245	146230953	dummy_22278	1	-
+#Split in new
+chr1	146231127	146231722	dummy_22279	1	-
+#Split in new
+chr1	146231775	146232493	dummy_22280	1	-
+#Split in new
+chr1	146232676	146233289	dummy_22281	1	-
+#Split in new
+chr1	146233342	146234463	dummy_22282	1	-
+#Split in new
+chr1	146225484	146226202	dummy_22283	1	-
+#Split in new
+chr1	146226376	146226971	dummy_22284	1	-
+#Split in new
+chr1	146227024	146227742	dummy_22285	1	-
+#Split in new
+chr1	146223232	146223901	dummy_22286	1	-
+#Split in new
+chr1	146223949	146224662	dummy_22287	1	-
+#Split in new
+chr1	146224836	146228528	dummy_22288	1	-
+#Split in new
+chr1	146223954	146224662	dummy_22289	1	-
+#Split in new
+chr1	146224836	146226971	dummy_22290	1	-
+#Split in new
+chr1	146227916	146233289	dummy_22291	1	-
+#Split in new
+chr1	146233342	146238462	dummy_22292	1	-
+#Split in new
+chr1	146233342	146234494	dummy_22293	1	-
+#Split in new
+chr1	146420192	146420910	dummy_22321	1	+
+#Split in new
+chr1	146420963	146421558	dummy_22322	1	+
+#Split in new
+chr1	146422493	146423162	dummy_22324	1	+
+#Split in new
+chr1	146423336	146424049	dummy_22325	1	+
+#Split in new
+chr1	146424159	146424783	dummy_22326	1	+
+#Split in new
+chr1	146425728	146426323	dummy_22328	1	+
+#Split in new
+chr1	146426497	146427205	dummy_22329	1	+
+#Split in new
+chr1	146427258	146427927	dummy_22330	1	+
+#Split in new
+chr1	146428101	146428814	dummy_22331	1	+
+#Split in new
+chr1	146430493	146434313	dummy_22334	1	+
+#Split in new
+chr1	146435258	146435853	dummy_22336	1	+
+#Split in new
+chr1	146436788	146437457	dummy_22338	1	+
+#Split in new
+chr1	146437631	146438344	dummy_22339	1	+
+#Split in new
+chr1	146438454	146439078	dummy_22340	1	+
+#Split in new
+chr1	146439252	146441505	dummy_22341	1	+
+#Split in new
+chr1	146441558	146442153	dummy_22342	1	+
+#Split in new
+chr1	146444627	146445298	dummy_22346	1	+
+#Split in new
+chr1	146445472	146450864	dummy_22347	1	+
+#Split in new
+chr1	146373816	146373903	dummy_22350	1	+
+#Split in new
+chr1	146420192	146425675	dummy_22358	1	+
+#Split in new
+chr1	146425728	146443692	dummy_22359	1	+
+#Split in new
+chr1	146450974	146465877	dummy_22360	1	+
+#Split in new
+chr1	146420192	146439970	dummy_22362	1	+
+#Split in new
+chr1	146440023	146443692	dummy_22363	1	+
+#Split in new
+chr1	146422493	146427927	dummy_22367	1	+
+#Split in new
+chr1	146420963	146424783	dummy_22368	1	+
+#Split in new
+chr1	146420192	146435205	dummy_22369	1	+
+#Split in new
+chr1	146421732	146436735	dummy_22370	1	+
+#Split in new
+chr1	146441558	146443692	dummy_22371	1	+
+#Split in new
+chr1	146450974	146456379	dummy_22372	1	+
+#Split in new
+chr1	146429722	146435205	dummy_22373	1	+
+#Split in new
+chr1	146435258	146443692	dummy_22374	1	+
+#Split in new
+chr1	146432023	146432692	dummy_22375	1	+
+#Split in new
+chr1	146432866	146433579	dummy_22376	1	+
+#Split in new
+chr1	146433689	146434313	dummy_22377	1	+
+#Split in new
+chr1	146435258	146439078	dummy_22378	1	+
+#Split in new
+chr1	146439252	146439970	dummy_22379	1	+
+#Split in new
+chr1	146440023	146440618	dummy_22380	1	+
+#Split in new
+chr1	146434487	146441505	dummy_22381	1	+
+#Split in new
+chr1	146445472	146455624	dummy_22382	1	+
+#Split in new
+chr1	146455734	146465877	dummy_22383	1	+
+#Split in new
+chr1	146441558	146448373	dummy_22384	1	+
+#Split in new
+chr1	146448547	146449255	dummy_22385	1	+
+#Split in new
+chr1	146449308	146449977	dummy_22386	1	+
+#Split in new
+chr1	146450151	146455624	dummy_22387	1	+
+#Split in new
+chr1	146438454	146448373	dummy_22389	1	+
+#Split in new
+chr1	146454763	146461143	dummy_22392	1	+
+#Split in new
+chr1	146443098	146448373	dummy_22394	1	+
+#Split in new
+chr1	146443866	146449255	dummy_22395	1	+
+#Split in new
+chr1	146449308	146459497	dummy_22396	1	+
+#Split in new
+chr1	146459671	146465150	dummy_22397	1	+
+#Split in new
+chr1	146465260	146465877	dummy_22398	1	+
+#Split in new
+chr1	146446238	146448373	dummy_22399	1	+
+#Split in new
+chr1	146449308	146454737	dummy_22400	1	+
+#Split in new
+chr1	146454911	146455624	dummy_22401	1	+
+#Split in new
+chr1	146454911	146465150	dummy_22404	1	+
+#Split in new
+chr1	146457303	146457897	dummy_22409	1	+
+#Split in new
+chr1	146458832	146459497	dummy_22411	1	+
+#Partially deleted in new
+chr1	147124353	147126308	dummy_22530	1	-
+#Partially deleted in new
+chr1	147124451	147126308	dummy_22538	1	-
+#Partially deleted in new
+chr1	147124451	147126391	dummy_22543	1	-
+#Split in new
+chr1	147580940	148005402	dummy_22644	1	-
+#Split in new
+chr1	148005512	148006225	dummy_22645	1	-
+#Split in new
+chr1	148007091	148007799	dummy_22647	1	-
+#Split in new
+chr1	148007973	148010112	dummy_22648	1	-
+#Split in new
+chr1	148011057	148011679	dummy_22650	1	-
+#Split in new
+chr1	147930817	147931723	dummy_22741	1	-
+#Split in new
+chr1	147930817	147931354	dummy_22745	1	-
+#Split in new
+chr1	148004792	148005402	dummy_22750	1	-
+#Split in new
+chr1	148007973	148008572	dummy_22751	1	-
+#Split in new
+chr1	148008625	148010883	dummy_22752	1	-
+#Split in new
+chr1	148011057	148016408	dummy_22753	1	-
+#Split in new
+chr1	148024926	148025760	dummy_22759	1	-
+#Split in new
+chr1	148008625	148009343	dummy_22763	1	-
+#Split in new
+chr1	148009517	148010112	dummy_22764	1	-
+#Split in new
+chr1	148005512	148007823	dummy_22767	1	-
+#Split in new
+chr1	148007091	148007916	dummy_22768	1	-
+#Split in new
+chr1	148007091	148007892	dummy_22769	1	-
+#Split in new
+chr1	148011057	148014853	dummy_22771	1	-
+#Split in new
+chr1	148009517	148013319	dummy_22772	1	-
+#Split in new
+chr1	148178901	148179767	dummy_22773	1	-
+#Split in new
+chr1	148179923	148217804	dummy_22774	1	-
+#Split in new
+chr1	148242545	148243798	dummy_22776	1	+
+#Split in new
+chr1	148241654	148247534	dummy_22777	1	+
+#Split in new
+chr1	148252119	148252729	dummy_22778	1	-
+#Split in new
+chr1	148253726	148259143	dummy_22780	1	-
+#Split in new
+chr1	148259196	148264664	dummy_22781	1	-
+#Split in new
+chr1	148264838	148265445	dummy_22782	1	-
+#Split in new
+chr1	148265498	148270988	dummy_22783	1	-
+#Split in new
+chr1	148271162	148329029	dummy_22784	1	-
+#Split in new
+chr1	148329082	148330123	dummy_22785	1	-
+#Split in new
+chr1	148330288	148334194	dummy_22786	1	-
+#Split in new
+chr1	148334247	148335534	dummy_22787	1	-
+#Split in new
+chr1	148335741	148336204	dummy_22788	1	-
+#Split in new
+chr1	148336278	148337317	dummy_22789	1	-
+#Split in new
+chr1	148337533	148338366	dummy_22790	1	-
+#Split in new
+chr1	148338470	148340237	dummy_22791	1	-
+#Split in new
+chr1	148340448	148341794	dummy_22792	1	-
+#Split in new
+chr1	148343809	148344639	dummy_22795	1	-
+#Split in new
+chr1	148252839	148258316	dummy_22797	1	-
+#Split in new
+chr1	148258490	148263903	dummy_22798	1	-
+#Split in new
+chr1	148263956	148264664	dummy_22799	1	-
+#Split in new
+chr1	148265498	148266216	dummy_22800	1	-
+#Split in new
+chr1	148266390	148329029	dummy_22801	1	-
+#Split in new
+chr1	148253726	148254379	dummy_22802	1	-
+#Split in new
+chr1	148256866	148257493	dummy_22806	1	-
+#Split in new
+chr1	148257603	148263080	dummy_22807	1	-
+#Partially deleted in new
+chr1	148266390	148267017	dummy_22809	1	-
+#Split in new
+chr1	148267127	148267840	dummy_22810	1	-
+#Split in new
+chr1	148268728	148269436	dummy_22812	1	-
+#Split in new
+chr1	148269610	148270217	dummy_22813	1	-
+#Split in new
+chr1	148270270	148270988	dummy_22814	1	-
+#Split in new
+chr1	148271162	148276555	dummy_22815	1	-
+#Split in new
+chr1	148276665	148296495	dummy_22816	1	-
+#Split in new
+chr1	148296669	148297328	dummy_22817	1	-
+#Split in new
+chr1	148297381	148298089	dummy_22818	1	-
+#Split in new
+chr1	148250912	148274237	dummy_22819	1	-
+#Split in new
+chr1	148274382	148274981	dummy_22820	1	-
+#Split in new
+chr1	148275034	148275752	dummy_22821	1	-
+#Split in new
+chr1	148275926	148276555	dummy_22822	1	-
+#Split in new
+chr1	148276665	148291725	dummy_22823	1	-
+#Split in new
+chr1	148291899	148292558	dummy_22824	1	-
+#Split in new
+chr1	148292611	148293319	dummy_22825	1	-
+#Split in new
+chr1	148252119	148257493	dummy_22826	1	-
+#Split in new
+chr1	148257603	148258316	dummy_22827	1	-
+#Split in new
+chr1	148259196	148259904	dummy_22829	1	-
+#Split in new
+chr1	148254432	148259904	dummy_22830	1	-
+#Split in new
+chr1	148252119	148267017	dummy_22831	1	-
+#Split in new
+chr1	148271162	148286132	dummy_22832	1	-
+#Split in new
+chr1	148286242	148286955	dummy_22833	1	-
+#Split in new
+chr1	148258490	148273447	dummy_22834	1	-
+#Split in new
+chr1	148275926	148329029	dummy_22836	1	-
+#Split in new
+chr1	148329082	148334194	dummy_22837	1	-
+#Split in new
+chr1	148338470	148346581	dummy_22838	1	-
+#Split in new
+chr1	148260078	148260685	dummy_22840	1	-
+#Partially deleted in new
+chr1	148260738	148261456	dummy_22841	1	-
+#Split in new
+chr1	148261630	148329029	dummy_22842	1	-
+#Split in new
+chr1	148264838	148270217	dummy_22843	1	-
+#Split in new
+chr1	148347049	148353678	dummy_22845	1	-
+#Split in new
+chr1	148252119	148271791	dummy_22846	1	-
+#Split in new
+chr1	148272788	148273447	dummy_22848	1	-
+#Split in new
+chr1	148273500	148285356	dummy_22849	1	-
+#Split in new
+chr1	148285530	148289330	dummy_22850	1	-
+#Split in new
+chr1	148289383	148309175	dummy_22851	1	-
+#Split in new
+chr1	148309349	148329029	dummy_22852	1	-
+#Split in new
+chr1	148257603	148291725	dummy_22854	1	-
+#Split in new
+chr1	148293493	148294100	dummy_22855	1	-
+#Split in new
+chr1	148294153	148294871	dummy_22856	1	-
+#Split in new
+chr1	148295045	148300442	dummy_22857	1	-
+#Split in new
+chr1	148300552	148315561	dummy_22858	1	-
+#Split in new
+chr1	148263254	148273447	dummy_22859	1	-
+#Split in new
+chr1	148277552	148278209	dummy_22861	1	-
+#Split in new
+chr1	148278262	148278970	dummy_22862	1	-
+#Split in new
+chr1	148279144	148289330	dummy_22863	1	-
+#Split in new
+chr1	148264838	148274981	dummy_22865	1	-
+#Split in new
+chr1	148275034	148290101	dummy_22866	1	-
+#Split in new
+chr1	148290275	148305202	dummy_22867	1	-
+#Split in new
+chr1	148263254	148278209	dummy_22868	1	-
+#Split in new
+chr1	148263254	148268675	dummy_22869	1	-
+#Split in new
+chr1	148347049	148354225	dummy_22870	1	-
+#Split in new
+chr1	148276665	148286955	dummy_22872	1	-
+#Split in new
+chr1	148287129	148287788	dummy_22873	1	-
+#Split in new
+chr1	148287841	148288549	dummy_22874	1	-
+#Split in new
+chr1	148288723	148289330	dummy_22875	1	-
+#Split in new
+chr1	148278262	148288549	dummy_22876	1	-
+#Split in new
+chr1	148288723	148290902	dummy_22877	1	-
+#Split in new
+chr1	148291012	148291725	dummy_22878	1	-
+#Split in new
+chr1	148289383	148299641	dummy_22879	1	-
+#Split in new
+chr1	148299815	148300442	dummy_22880	1	-
+#Split in new
+chr1	148289383	148328219	dummy_22881	1	-
+#Split in new
+chr1	148328393	148329029	dummy_22882	1	-
+#Split in new
+chr1	148336278	148343593	dummy_22883	1	-
+#Split in new
+chr1	148300552	148301265	dummy_22884	1	-
+#Split in new
+chr1	148301439	148302088	dummy_22885	1	-
+#Split in new
+chr1	148302141	148302849	dummy_22886	1	-
+#Split in new
+chr1	148294153	148304401	dummy_22887	1	-
+#Split in new
+chr1	148304575	148305202	dummy_22888	1	-
+#Split in new
+chr1	148305312	148315561	dummy_22889	1	-
+#Split in new
+chr1	148315735	148316392	dummy_22890	1	-
+#Split in new
+chr1	148305312	148310799	dummy_22892	1	-
+#Split in new
+chr1	148310973	148311624	dummy_22893	1	-
+#Split in new
+chr1	148311677	148312385	dummy_22894	1	-
+#Split in new
+chr1	148318883	148329029	dummy_22895	1	-
+#Split in new
+chr1	148340448	148346888	dummy_22896	1	-
+#Split in new
+chr1	148577513	148577614	dummy_22916	1	+
+#Split in new
+chr1	148577252	148577357	dummy_22919	1	+
+#Split in new
+chr1	148577825	148579605	dummy_22920	1	+
+#Split in new
+chr1	148579709	148580539	dummy_22921	1	+
+#Split in new
+chr1	148580755	148581795	dummy_22922	1	+
+#Split in new
+chr1	148581869	148582332	dummy_22923	1	+
+#Split in new
+chr1	148582539	148583825	dummy_22924	1	+
+#Split in new
+chr1	148583878	148587787	dummy_22925	1	+
+#Split in new
+chr1	148587952	148588993	dummy_22926	1	+
+#Split in new
+chr1	148589046	148589660	dummy_22927	1	+
+#Split in new
+chr1	148589834	148590552	dummy_22928	1	+
+#Split in new
+chr1	148590605	148591200	dummy_22929	1	+
+#Split in new
+chr1	148591374	148592082	dummy_22930	1	+
+#Split in new
+chr1	148592135	148592790	dummy_22931	1	+
+#Split in new
+chr1	148592964	148593677	dummy_22932	1	+
+#Split in new
+chr1	148593784	148594396	dummy_22933	1	+
+#Split in new
+chr1	148583878	148588993	dummy_22944	1	+
+#Split in new
+chr1	148576825	148589769	dummy_22945	1	+
+#Split in new
+chr1	148589039	148589740	dummy_22946	1	+
+#Split in new
+chr1	148735551	148736520	dummy_22949	1	+
+#Split in new
+chr1	148739598	148739699	dummy_22950	1	+
+#Split in new
+chr1	148739910	148741689	dummy_22951	1	+
+#Split in new
+chr1	148741793	148742626	dummy_22952	1	+
+#Split in new
+chr1	148742842	148743882	dummy_22953	1	+
+#Split in new
+chr1	148743956	148744419	dummy_22954	1	+
+#Split in new
+chr1	148744626	148745912	dummy_22955	1	+
+#Split in new
+chr1	148745965	148749831	dummy_22956	1	+
+#Split in new
+chr1	148749996	148751037	dummy_22957	1	+
+#Split in new
+chr1	148751090	148751708	dummy_22958	1	+
+#Split in new
+chr1	148751882	148752600	dummy_22959	1	+
+#Split in new
+chr1	148752653	148753248	dummy_22960	1	+
+#Split in new
+chr1	148753422	148754130	dummy_22961	1	+
+#Partially deleted in new
+chr1	148754183	148754834	dummy_22962	1	+
+#Split in new
+chr1	148755008	148755721	dummy_22963	1	+
+#Split in new
+chr1	148755828	148756440	dummy_22964	1	+
+#Split in new
+chr1	148745965	148751037	dummy_22965	1	+
+#Split in new
+chr1	148751083	148751788	dummy_22966	1	+
+#Split in new
+chr1	148760560	148761325	dummy_22967	1	+
+#Split in new
+chr1	148760560	148761328	dummy_22968	1	+
+#Partially deleted in new
+chr1	148888226	148888471	dummy_22973	1	+
+#Split in new
+chr1	149537223	149572763	dummy_23029	1	+
+#Split in new
+chr1	149576701	149615764	dummy_23032	1	+
+#Split in new
+chr1	149577663	149676745	dummy_23035	1	+
+#Split in new
+chr1	149576701	149670208	dummy_23036	1	+
+#Split in new
+chr1	149670453	149672300	dummy_23037	1	+
+#Split in new
+chr1	149576701	149664467	dummy_23038	1	+
+#Split in new
+chr1	149577663	149615764	dummy_23041	1	+
+#Split in new
+chr1	149670453	149671721	dummy_23042	1	+
+#Split in new
+chr1	149577663	149670208	dummy_23043	1	+
+#Split in new
+chr1	149670453	149671771	dummy_23044	1	+
+#Split in new
+chr1	149671861	149672300	dummy_23045	1	+
+#Split in new
+chr1	149576701	149672300	dummy_23046	1	+
+#Split in new
+chr1	149576701	149664366	dummy_23049	1	+
+#Split in new
+chr1	149576701	149616545	dummy_23051	1	+
+#Split in new
+chr1	149605868	149615764	dummy_23054	1	+
+#Split in new
+chr1	149693082	149698418	dummy_23067	1	-
+#Split in new
+chr1	149706082	149707582	dummy_23069	1	+
+#Deleted in new
+chr1	211487567	211487567	dummy_34711	1	+
+#Split in new
+chr1	223724389	223803663	dummy_35996	1	-
+#Split in new
+chr10	17875839	17882691	dummy_41643	1	+
+#Split in new
+chr10	18041519	18060291	dummy_41677	1	+
+#Split in new
+chr10	18065160	18084906	dummy_41679	1	+
+#Split in new
+chr10	18086361	18088502	dummy_41680	1	-
+#Split in new
+chr10	18098516	18112043	dummy_41681	1	+
+#Split in new
+chr10	18112446	18116494	dummy_41682	1	+
+#Split in new
+chr10	18116669	18122627	dummy_41683	1	+
+#Split in new
+chr10	18122793	18129621	dummy_41684	1	+
+#Split in new
+chr10	46798701	46799335	dummy_44428	1	-
+#Split in new
+chr10	47013077	47072856	dummy_44464	1	-
+#Split in new
+chr10	47169878	47179573	dummy_44503	1	-
+#Partially deleted in new
+chr10	47188900	47189445	dummy_44510	1	-
+#Split in new
+chr10	47191004	47193302	dummy_44511	1	-
+#Split in new
+chr10	47193534	47194178	dummy_44512	1	-
+#Split in new
+chr10	47194231	47197537	dummy_44513	1	-
+#Split in new
+chr10	47200262	47207811	dummy_44515	1	-
+#Split in new
+chr10	47207847	47210486	dummy_44516	1	-
+#Split in new
+chr10	47210556	47212853	dummy_44517	1	-
+#Split in new
+chr10	47212923	47213291	dummy_44518	1	-
+#Split in new
+chr10	47213480	47219701	dummy_44519	1	-
+#Split in new
+chr10	47193741	47194178	dummy_44520	1	-
+#Split in new
+chr10	47213480	47232155	dummy_44521	1	-
+#Split in new
+chr10	47235610	47239292	dummy_44525	1	-
+#Split in new
+chr10	47239373	47240645	dummy_44526	1	-
+#Split in new
+chr10	47240836	47241731	dummy_44527	1	-
+#Split in new
+chr10	47197574	47207811	dummy_44529	1	-
+#Split in new
+chr10	47261565	47271222	dummy_44535	1	-
+#Partially deleted in new
+chr10	47741718	47742395	dummy_44591	1	+
+#Split in new
+chr10	47747133	47751144	dummy_44593	1	+
+#Split in new
+chr10	47759773	47761867	dummy_44618	1	+
+#Split in new
+chr10	47903207	47906677	dummy_44628	1	+
+#Split in new
+chr10	47906789	47907332	dummy_44629	1	+
+#Split in new
+chr10	47907421	47908063	dummy_44630	1	+
+#Split in new
+chr10	47908136	47909169	dummy_44631	1	+
+#Split in new
+chr10	47909289	47909761	dummy_44632	1	+
+#Split in new
+chr10	47913704	47915877	dummy_44636	1	+
+#Split in new
+chr10	47915965	47919941	dummy_44637	1	+
+#Split in new
+chr10	47920044	47922234	dummy_44638	1	+
+#Split in new
+chr10	47922367	47926002	dummy_44639	1	+
+#Partially deleted in new
+chr10	47929898	47933806	dummy_44641	1	+
+#Split in new
+chr10	47943701	47945323	dummy_44648	1	+
+#Split in new
+chr10	47945945	47946808	dummy_44649	1	+
+#Split in new
+chr10	47896830	47898538	dummy_44651	1	+
+#Split in new
+chr10	47913704	47919941	dummy_44653	1	+
+#Split in new
+chr10	48197196	48215870	dummy_44693	1	+
+#Partially deleted in new
+chr10	48216059	48216427	dummy_44695	1	+
+#Split in new
+chr10	48216497	48218794	dummy_44696	1	+
+#Split in new
+chr10	48218864	48221504	dummy_44697	1	+
+#Split in new
+chr10	48221540	48229090	dummy_44698	1	+
+#Split in new
+chr10	48229192	48231778	dummy_44699	1	+
+#Split in new
+chr10	48231815	48235121	dummy_44700	1	+
+#Split in new
+chr10	48197196	48200200	dummy_44702	1	+
+#Split in new
+chr10	48209649	48215870	dummy_44705	1	+
+#Split in new
+chr10	48235174	48235818	dummy_44706	1	+
+#Split in new
+chr10	48221540	48231778	dummy_44707	1	+
+#Split in new
+chr10	48236050	48238348	dummy_44708	1	+
+#Split in new
+chr10	48902891	48903538	dummy_44804	1	-
+#Split in new
+chr10	48903591	48906885	dummy_44805	1	-
+#Split in new
+chr10	48906922	48917149	dummy_44806	1	-
+#Split in new
+chr10	48917185	48919825	dummy_44807	1	-
+#Split in new
+chr10	48919895	48922186	dummy_44808	1	-
+#Split in new
+chr10	48922256	48922623	dummy_44809	1	-
+#Split in new
+chr10	48906922	48909507	dummy_44810	1	-
+#Split in new
+chr10	48909609	48917149	dummy_44811	1	-
+#Split in new
+chr10	48922812	48930273	dummy_44813	1	-
+#Split in new
+chr10	48930367	48941193	dummy_44814	1	-
+#Split in new
+chr10	48941334	48942568	dummy_44815	1	-
+#Split in new
+chr10	48942691	48943408	dummy_44816	1	-
+#Split in new
+chr10	48943557	48944446	dummy_44817	1	-
+#Split in new
+chr10	48944636	48948320	dummy_44818	1	-
+#Split in new
+chr10	48948401	48949675	dummy_44819	1	-
+#Split in new
+chr10	48949866	48950761	dummy_44820	1	-
+#Split in new
+chr10	48950971	48952466	dummy_44821	1	-
+#Split in new
+chr10	48940193	48941193	dummy_44822	1	-
+#Split in new
+chr10	48953722	48966877	dummy_44823	1	+
+#Split in new
+chr10	48952655	48960645	dummy_44827	1	+
+#Split in new
+chr10	48962610	48966877	dummy_44829	1	+
+#Split in new
+chr10	48952669	48966877	dummy_44830	1	+
+#Split in new
+chr10	48952655	48962528	dummy_44832	1	+
+#Split in new
+chr10	51051679	51370853	dummy_45209	1	-
+#Split in new
+chr10	51069710	51370853	dummy_45222	1	-
+#Split in new
+chr10	51188559	51189422	dummy_45223	1	+
+#Split in new
+chr10	51189601	51191328	dummy_45224	1	+
+#Split in new
+chr10	51223769	51253628	dummy_45226	1	-
+#Split in new
+chr10	51253701	51253875	dummy_45227	1	-
+#Split in new
+chr10	51253969	51262048	dummy_45228	1	-
+#Split in new
+chr10	51262178	51287080	dummy_45229	1	-
+#Split in new
+chr10	51287229	51291357	dummy_45230	1	-
+#Split in new
+chr10	51291434	51295109	dummy_45231	1	-
+#Split in new
+chr10	51295171	51299247	dummy_45232	1	-
+#Split in new
+chr10	51299328	51309448	dummy_45233	1	-
+#Split in new
+chr10	51309607	51314979	dummy_45234	1	-
+#Split in new
+chr10	51315073	51371132	dummy_45235	1	-
+#Split in new
+chr10	51230495	51233080	dummy_45238	1	-
+#Split in new
+chr10	51233182	51240709	dummy_45239	1	-
+#Split in new
+chr10	51240745	51243387	dummy_45240	1	-
+#Split in new
+chr10	51243457	51245748	dummy_45241	1	-
+#Split in new
+chr10	51246375	51370853	dummy_45243	1	-
+#Split in new
+chr10	51240745	51245748	dummy_45244	1	-
+#Split in new
+chr10	51233182	51262048	dummy_45245	1	-
+#Split in new
+chr10	51249724	51250295	dummy_45247	1	-
+#Split in new
+chr10	51253533	51253628	dummy_45248	1	-
+#Split in new
+chr10	51253533	51253875	dummy_45249	1	-
+#Split in new
+chr10	51315073	51370853	dummy_45250	1	-
+#Split in new
+chr10	51315073	51338276	dummy_45251	1	-
+#Split in new
+chr10	51352123	51361726	dummy_45254	1	-
+#Split in new
+chr10	51361911	51371132	dummy_45255	1	-
+#Split in new
+chr10	51260722	51260841	dummy_45256	1	-
+#Split in new
+chr10	51299328	51307787	dummy_45257	1	-
+#Split in new
+chr10	51315073	51345752	dummy_45259	1	-
+#Split in new
+chr10	51291434	51370853	dummy_45260	1	-
+#Split in new
+chr10	51352373	51361726	dummy_45261	1	-
+#Split in new
+chr10	51363788	51371284	dummy_45263	1	-
+#Split in new
+chr10	51364772	51370853	dummy_45265	1	-
+#Split in new
+chr10	51364772	51371280	dummy_45266	1	-
+#Split in new
+chr10	51363788	51370853	dummy_45268	1	-
+#Split in new
+chr10	51364772	51370605	dummy_45269	1	-
+#Split in new
+chr10	51364772	51371132	dummy_45270	1	-
+#Split in new
+chr10	51387764	51732771	dummy_45276	1	+
+#Split in new
+chr10	51371647	51381438	dummy_45277	1	+
+#Split in new
+chr10	51387764	51729801	dummy_45278	1	+
+#Split in new
+chr10	51384358	51732771	dummy_45284	1	+
+#Split in new
+chr10	51708207	51733837	dummy_45380	1	+
+#Deleted in new
+chr11	250681	250681	dummy_56531	1	+
+#Split in new
+chr11	1075922	1077597	dummy_57272	1	+
+#Partially deleted in new
+chr11	1082382	1082587	dummy_57284	1	+
+#Split in new
+chr11	1084870	1085743	dummy_57290	1	+
+#Split in new
+chr11	1086487	1087444	dummy_57293	1	+
+#Split in new
+chr11	1158150	1158951	dummy_57330	1	+
+#Partially deleted in new
+chr11	69059991	69156277	dummy_69072	1	+
+#Partially deleted in new
+chr11	69062044	69156277	dummy_69079	1	+
+#Partially deleted in new
+chr11	69066896	69156277	dummy_69084	1	+
+#Partially deleted in new
+chr11	69084393	69156277	dummy_69085	1	+
+#Deleted in new
+chr11	93916587	93916587	dummy_72120	1	+
+#Partially deleted in new
+chr12	147383	149051	dummy_77624	1	-
+#Deleted in new
+chr12	148510	148611	dummy_77625	1	-
+#Deleted in new
+chr12	148815	149051	dummy_77626	1	-
+#Split in new
+chr12	80839506	80862479	dummy_91112	1	+
+#Split in new
+chr12	132811580	132824462	dummy_98850	1	-
+#Partially deleted in new
+chr13	86912538	86924974	dummy_104784	1	+
+#Split in new
+chr14	20085542	20086296	dummy_107212	1	+
+#Split in new
+chr14	106330467	106552278	dummy_119473	1	-
+#Split in new
+chr14	106552593	106573634	dummy_119474	1	-
+#Split in new
+chr14	106330467	107038874	dummy_119479	1	-
+#Split in new
+chr14	106330849	106805208	dummy_119485	1	-
+#Split in new
+chr14	106518705	106552683	dummy_119514	1	-
+#Partially deleted in new
+chr14	106539384	106539469	dummy_119516	1	-
+#Deleted in new
+chr14	106552593	106552683	dummy_119517	1	-
+#Split in new
+chr14	106805517	106811971	dummy_119548	1	-
+#Split in new
+chr14	106808124	106811971	dummy_119550	1	-
+#Partially deleted in new
+chr14	107283097	107283180	dummy_119609	1	-
+#Partially deleted in new
+chr15	20876598	20961258	dummy_119727	1	-
+#Split in new
+chr15	22709240	22709627	dummy_119867	1	-
+#Split in new
+chr15	22709716	22709911	dummy_119868	1	-
+#Split in new
+chr15	22738310	22739394	dummy_119883	1	+
+#Split in new
+chr15	22741739	22742395	dummy_119888	1	+
+#Split in new
+chr15	22741739	22742398	dummy_119891	1	+
+#Split in new
+chr15	22742569	22743192	dummy_119892	1	+
+#Split in new
+chr15	23409256	23410627	dummy_120163	1	-
+#Split in new
+chr15	23411063	23412147	dummy_120166	1	-
+#Split in new
+chr15	23437970	23438824	dummy_120170	1	+
+#Split in new
+chr15	23440887	23441081	dummy_120176	1	+
+#Split in new
+chr15	23441170	23441538	dummy_120177	1	+
+#Split in new
+chr15	23444768	23444849	dummy_120182	1	+
+#Deleted in new
+chr15	34438890	34438890	dummy_121858	1	-
+#Deleted in new
+chr15	48427368	48427368	dummy_124908	1	-
+#Partially deleted in new
+chr15	65242194	65249441	dummy_127625	1	+
+#Partially deleted in new
+chr15	65243449	65249441	dummy_127629	1	+
+#Split in new
+chr15	82722369	82724030	dummy_131316	1	+
+#Split in new
+chr15	82767757	82768926	dummy_131330	1	-
+#Split in new
+chr15	82767779	82768926	dummy_131345	1	-
+#Split in new
+chr15	82934687	82934980	dummy_131384	1	-
+#Split in new
+chr15	82937351	83010975	dummy_131385	1	-
+#Split in new
+chr15	82945080	82970154	dummy_131392	1	+
+#Split in new
+chr15	82945080	82969810	dummy_131397	1	+
+#Split in new
+chr15	82945030	82970154	dummy_131404	1	+
+#Split in new
+chr15	82945030	82969810	dummy_131405	1	+
+#Split in new
+chr15	83024030	83069395	dummy_131421	1	+
+#Split in new
+chr15	83024080	83069395	dummy_131426	1	+
+#Split in new
+chr15	83024080	83050952	dummy_131427	1	+
+#Split in new
+chr15	83024080	83100555	dummy_131432	1	+
+#Split in new
+chr15	83024080	83069368	dummy_131436	1	+
+#Split in new
+chr15	83098894	83100555	dummy_131454	1	+
+#Partially deleted in new
+chr15	83112486	83112753	dummy_131456	1	-
+#Split in new
+chr15	83112879	83113563	dummy_131457	1	-
+#Split in new
+chr15	83144341	83145510	dummy_131470	1	-
+#Split in new
+chr15	83144363	83145510	dummy_131483	1	-
+#Split in new
+chr17	21517798	21535939	dummy_157412	1	+
+#Split in new
+chr17	21536118	21544413	dummy_157413	1	+
+#Split in new
+chr17	34493944	34494905	dummy_159649	1	-
+#Split in new
+chr17	34495059	34495424	dummy_159650	1	-
+#Split in new
+chr17	34583103	34583468	dummy_159685	1	-
+#Split in new
+chr17	34586006	34587257	dummy_159689	1	-
+#Split in new
+chr17	34587805	34588248	dummy_159691	1	-
+#Split in new
+chr17	34583569	34584031	dummy_159696	1	-
+#Split in new
+chr17	34583103	34584481	dummy_159697	1	-
+#Split in new
+chr17	34591770	34592598	dummy_159701	1	+
+#Split in new
+chr17	34747003	34747965	dummy_159716	1	-
+#Split in new
+chr17	34750431	34750973	dummy_159721	1	-
+#Split in new
+chr17	34747003	34748488	dummy_159729	1	-
+#Split in new
+chr17	34750555	34750973	dummy_159733	1	-
+#Split in new
+chr17	34799170	34799539	dummy_159737	1	-
+#Partially deleted in new
+chr17	34806284	34806446	dummy_159747	1	-
+#Partially deleted in new
+chr17	34806302	34806446	dummy_159755	1	-
+#Split in new
+chr17	34807834	34808662	dummy_159757	1	+
+#Partially deleted in new
+chr17	34891065	34891085	dummy_159798	1	-
+#Split in new
+chr17	34923616	34934412	dummy_159830	1	+
+#Split in new
+chr17	35726431	35766351	dummy_159958	1	-
+#Split in new
+chr17	35717335	35766351	dummy_159977	1	-
+#Split in new
+chr17	35745619	35766351	dummy_159986	1	-
+#Partially deleted in new
+chr17	36358159	36358298	dummy_160166	1	-
+#Deleted in new
+chr18	39667217	39667217	dummy_176261	1	+
+#Partially deleted in new
+chr18	72265174	72342922	dummy_178767	1	+
+#Split in new
+chr18	77831088	77833834	dummy_179186	1	+
+#Partially deleted in new
+chr19	4499527	4499649	dummy_181323	1	+
+#Partially deleted in new
+chr19	11534699	11536963	dummy_184434	1	-
+#Split in new
+chr19	20486819	20607591	dummy_188173	1	-
+#Split in new
+chr19	20451911	20591749	dummy_188174	1	-
+#Split in new
+chr19	20591846	20607591	dummy_188175	1	-
+#Split in new
+chr19	20575335	20576666	dummy_188178	1	-
+#Split in new
+chr19	20579007	20588831	dummy_188179	1	-
+#Split in new
+chr19	20579007	20591749	dummy_188181	1	-
+#Split in new
+chr19	20591825	20607591	dummy_188182	1	-
+#Split in new
+chr19	20591846	20614661	dummy_188183	1	-
+#Split in new
+chr19	20591846	20600471	dummy_188184	1	-
+#Split in new
+chr19	40386784	40389651	dummy_192035	1	-
+#Split in new
+chr19	40389794	40391997	dummy_192036	1	-
+#Split in new
+chr19	40396397	40397966	dummy_192039	1	-
+#Split in new
+chr19	40402472	40405918	dummy_192043	1	-
+#Split in new
+chr19	40406061	40407935	dummy_192044	1	-
+#Split in new
+chr19	40408849	40411637	dummy_192046	1	-
+#Partially deleted in new
+chr19	42400556	42401463	dummy_192950	1	+
+#Split in new
+chr19	54599419	54600148	dummy_198311	1	-
+#Split in new
+chr19	54672407	54673249	dummy_198415	1	-
+#Split in new
+chr19	54675853	54676408	dummy_198422	1	-
+#Split in new
+chr19	54684851	54687403	dummy_198427	1	-
+#Partially deleted in new
+chr19	54746187	54746370	dummy_198482	1	-
+#Partially deleted in new
+chr19	54746095	54746394	dummy_198502	1	-
+#Partially deleted in new
+chr19	54746151	54746370	dummy_198503	1	-
+#Partially deleted in new
+chr19	54781452	54781742	dummy_198531	1	-
+#Partially deleted in new
+chr19	54781455	54781742	dummy_198539	1	-
+#Split in new
+chr19	54800105	54801926	dummy_198549	1	-
+#Split in new
+chr19	54804722	54809191	dummy_198556	1	-
+#Split in new
+chr19	54804969	54809191	dummy_198561	1	-
+#Partially deleted in new
+chr19	54872342	54872522	dummy_198606	1	-
+#Split in new
+chr2	1204917	1241659	dummy_200569	1	+
+#Split in new
+chr2	1204917	1243509	dummy_200589	1	+
+#Split in new
+chr2	19176639	19222093	dummy_202180	1	-
+#Split in new
+chr2	19222248	19226395	dummy_202181	1	-
+#Partially deleted in new
+chr2	90198771	90198894	dummy_211292	1	+
+#Split in new
+chr2	90528206	90531660	dummy_211300	1	+
+#Split in new
+chr2	91657310	91685408	dummy_211302	1	-
+#Split in new
+chr2	91657310	91692938	dummy_211303	1	-
+#Split in new
+chr2	91735935	91736256	dummy_211305	1	-
+#Split in new
+chr2	91751038	91766535	dummy_211307	1	+
+#Split in new
+chr2	91751038	91754431	dummy_211309	1	+
+#Deleted in new
+chr2	99206062	99206062	dummy_212563	1	+
+#Partially deleted in new
+chr2	172749769	172864585	dummy_219997	1	-
+#Partially deleted in new
+chr2	172749769	172856256	dummy_220004	1	-
+#Partially deleted in new
+chr2	172777742	172864585	dummy_220007	1	-
+#Partially deleted in new
+chr2	172823471	172841095	dummy_220023	1	+
+#Partially deleted in new
+chr2	172823035	172841095	dummy_220028	1	+
+#Partially deleted in new
+chr2	172813124	172841226	dummy_220031	1	+
+#Split in new
+chr2	242756345	242757376	dummy_229816	1	+
+#Split in new
+chr2	242755883	242757376	dummy_229818	1	+
+#Split in new
+chr2	242756345	242756866	dummy_229819	1	+
+#Split in new
+chr2	242754652	242755678	dummy_229825	1	+
+#Split in new
+chr2	242754808	242755678	dummy_229828	1	+
+#Split in new
+chr2	242754652	242755675	dummy_229829	1	+
+#Split in new
+chr2	242759414	242763364	dummy_229832	1	+
+#Partially deleted in new
+chr20	34894435	34995447	dummy_235043	1	+
+#Partially deleted in new
+chr21	43224775	43230509	dummy_242813	1	-
+#Partially deleted in new
+chr21	43248690	43255545	dummy_242823	1	-
+#Partially deleted in new
+chr21	43248638	43254613	dummy_242837	1	-
+#Partially deleted in new
+chr21	43248638	43255545	dummy_242839	1	-
+#Partially deleted in new
+chr21	43248690	43254613	dummy_242841	1	-
+#Partially deleted in new
+chr21	43245416	43259816	dummy_242853	1	-
+#Split in new
+chr22	18003298	18016791	dummy_244724	1	+
+#Split in new
+chr22	18043403	18049988	dummy_244743	1	+
+#Split in new
+chr22	18050052	18062510	dummy_244744	1	+
+#Split in new
+chr22	18043414	18049988	dummy_244745	1	+
+#Split in new
+chr22	18043414	18062510	dummy_244754	1	+
+#Split in new
+chr22	18043403	18062510	dummy_244755	1	+
+#Split in new
+chr22	18043416	18062510	dummy_244756	1	+
+#Split in new
+chr22	20332104	20337005	dummy_245545	1	+
+#Split in new
+chr22	20332104	20335629	dummy_245550	1	+
+#Split in new
+chr22	20697799	20698515	dummy_245630	1	-
+#Split in new
+chr22	24331410	24345652	dummy_246805	1	-
+#Split in new
+chr22	24342446	24345652	dummy_246841	1	-
+#Split in new
+chr22	24396376	24400205	dummy_246869	1	-
+#Split in new
+chr22	24396583	24400205	dummy_246871	1	-
+#Split in new
+chr22	42517518	42519500	dummy_251454	1	-
+#Split in new
+chr22	42526226	42526568	dummy_251484	1	+
+#Deleted in new
+chr3	9983494	9983494	dummy_254525	1	+
+#Split in new
+chr3	57386254	57388118	dummy_262941	1	-
+#Partially deleted in new
+chr4	125179	126731	dummy_277034	1	+
+#Partially deleted in new
+chr4	124556	126731	dummy_277036	1	+
+#Deleted in new
+chr4	126806	126891	dummy_277039	1	+
+#Deleted in new
+chr4	126806	126894	dummy_277041	1	+
+#Split in new
+chr4	75480900	75482005	dummy_283717	1	+
+#Deleted in new
+chr4	90158159	90158159	dummy_285701	1	-
+#Deleted in new
+chr5	44825965	44825965	dummy_296654	1	+
+#Split in new
+chr6	906511	906707	dummy_311071	1	-
+#Partially deleted in new
+chr7	208977	286380	dummy_330723	1	+
+#Split in new
+chr7	72267538	72285958	dummy_338246	1	-
+#Split in new
+chr7	72267538	72277658	dummy_338250	1	-
+#Partially deleted in new
+chr7	72334527	72334648	dummy_338275	1	-
+#Split in new
+chr7	74223511	74225429	dummy_339014	1	-
+#Split in new
+chr7	74239582	74247927	dummy_339021	1	-
+#Split in new
+chr7	74251506	74267662	dummy_339023	1	-
+#Split in new
+chr7	74251506	74265431	dummy_339026	1	-
+#Partially deleted in new
+chr7	74312629	74313767	dummy_339054	1	+
+#Partially deleted in new
+chr7	74471724	74474399	dummy_339086	1	-
+#Partially deleted in new
+chr7	74641461	74641753	dummy_339178	1	+
+#Split in new
+chr7	74710937	74712251	dummy_339194	1	-
+#Split in new
+chr7	74712618	74714507	dummy_339196	1	-
+#Partially deleted in new
+chr7	74772016	74774691	dummy_339200	1	+
+#Split in new
+chr7	74855618	74855977	dummy_339219	1	+
+#Split in new
+chr7	74925202	74926531	dummy_339231	1	-
+#Split in new
+chr7	74926898	74928781	dummy_339233	1	-
+#Split in new
+chr7	74938459	74939461	dummy_339235	1	+
+#Split in new
+chr7	74953224	74954556	dummy_339245	1	-
+#Split in new
+chr7	74953399	74954835	dummy_339257	1	-
+#Split in new
+chr7	74984930	74987693	dummy_339277	1	-
+#Split in new
+chr7	74984930	74987565	dummy_339281	1	-
+#Partially deleted in new
+chr7	100555096	100555514	dummy_343226	1	+
+#Split in new
+chr7	100555580	100607745	dummy_343227	1	+
+#Deleted in new
+chr7	100607895	100608306	dummy_343228	1	+
+#Deleted in new
+chr7	100608373	100608728	dummy_343229	1	+
+#Deleted in new
+chr7	100608892	100609538	dummy_343230	1	+
+#Deleted in new
+chr7	100609713	100609804	dummy_343231	1	+
+#Deleted in new
+chr7	100609897	100610051	dummy_343232	1	+
+#Deleted in new
+chr7	100610105	100610273	dummy_343233	1	+
+#Split in new
+chr7	100553067	100606737	dummy_343234	1	+
+#Partially deleted in new
+chr7	100606803	100607745	dummy_343235	1	+
+#Deleted in new
+chr7	100607314	100607770	dummy_343236	1	-
+#Deleted in new
+chr7	100609838	100610493	dummy_343237	1	-
+#Deleted in new
+chr7	100610571	100611325	dummy_343238	1	-
+#Split in new
+chr7	100612971	100633911	dummy_343239	1	+
+#Split in new
+chr7	142334909	142498724	dummy_348379	1	+
+#Split in new
+chr7	142423693	142494524	dummy_348392	1	+
+#Partially deleted in new
+chr7	142428553	142428689	dummy_348396	1	+
+#Split in new
+chr7	142428989	142498724	dummy_348397	1	+
+#Split in new
+chr7	142448748	142494051	dummy_348399	1	+
+#Split in new
+chr7	142448746	142494037	dummy_348402	1	+
+#Split in new
+chr7	142448734	142493728	dummy_348404	1	+
+#Split in new
+chr7	142460740	142481126	dummy_348415	1	+
+#Partially deleted in new
+chr7	143318114	143400073	dummy_348682	1	+
+#Partially deleted in new
+chr7	143318597	143400073	dummy_348696	1	+
+#Partially deleted in new
+chr7	143344740	143530339	dummy_348702	1	-
+#Partially deleted in new
+chr7	143344740	143517952	dummy_348705	1	-
+#Split in new
+chr8	2033523	2037830	dummy_350967	1	+
+#Split in new
+chr8	2147866	2149127	dummy_351007	1	+
+#Split in new
+chr8	48206620	48308935	dummy_355967	1	+
+#Split in new
+chr8	48203727	48243368	dummy_355984	1	+
+#Split in new
+chr8	48206620	48352884	dummy_355987	1	+
+#Split in new
+chr8	48206620	48320422	dummy_355988	1	+
+#Split in new
+chr8	48203727	48308935	dummy_355992	1	+
+#Split in new
+chr8	48206620	48300904	dummy_355996	1	+
+#Split in new
+chr8	48203727	48352884	dummy_356001	1	+
+#Split in new
+chr8	48203727	48320422	dummy_356007	1	+
+#Split in new
+chr8	48206620	48243368	dummy_356010	1	+
+#Split in new
+chr8	145319975	145331099	dummy_364475	1	-
+#Split in new
+chr8	145319975	145328802	dummy_364479	1	-
+#Split in new
+chr8	145462820	145462990	dummy_364488	1	+
+#Split in new
+chr8	145471393	145472832	dummy_364502	1	+
+#Split in new
+chr8	145479662	145482732	dummy_364506	1	+
+#Split in new
+chr8	145471636	145472832	dummy_364516	1	+
+#Split in new
+chr8	145472234	145472832	dummy_364519	1	+
+#Partially deleted in new
+chr8	145486629	145486841	dummy_364527	1	-
+#Split in new
+chr8	145489061	145500211	dummy_364537	1	-
+#Partially deleted in new
+chr8	145486745	145486841	dummy_364540	1	-
+#Split in new
+chr8	145486979	145505144	dummy_364542	1	-
+#Split in new
+chr8	145489061	145497879	dummy_364546	1	-
+#Partially deleted in new
+chr8	145537303	145537508	dummy_364557	1	+
+#Partially deleted in new
+chr8	145537303	145537647	dummy_364567	1	+
+#Split in new
+chr8	145603180	145608281	dummy_364634	1	+
+#Partially deleted in new
+chr8	145617371	145617659	dummy_364644	1	+
+#Partially deleted in new
+chr8	145617546	145617659	dummy_364648	1	+
+#Split in new
+chr8	145623348	145623691	dummy_364678	1	-
+#Partially deleted in new
+chr8	145625476	145625559	dummy_364688	1	-
+#Split in new
+chr9	39722575	39768207	dummy_369172	1	-
+#Split in new
+chr9	39768402	39796151	dummy_369173	1	-
+#Split in new
+chr9	39796263	39817223	dummy_369174	1	-
+#Split in new
+chr9	39868879	39870040	dummy_369177	1	+
+#Split in new
+chr9	39886438	39887005	dummy_369180	1	+
+#Split in new
+chr9	39887067	39887321	dummy_369181	1	+
+#Split in new
+chr9	39886681	39887005	dummy_369182	1	+
+#Split in new
+chr9	40308764	40322667	dummy_369191	1	+
+#Partially deleted in new
+chr9	40322893	40324466	dummy_369192	1	+
+#Split in new
+chr9	40324601	40325170	dummy_369193	1	+
+#Partially deleted in new
+chr9	40325270	40325494	dummy_369194	1	+
+#Split in new
+chr9	40308764	40311120	dummy_369197	1	+
+#Split in new
+chr9	40325583	40332428	dummy_369198	1	+
+#Split in new
+chr9	40332660	40332890	dummy_369199	1	+
+#Split in new
+chr9	40332963	40337308	dummy_369200	1	+
+#Split in new
+chr9	41278001	41286243	dummy_369234	1	+
+#Split in new
+chr9	41286368	41305026	dummy_369235	1	+
+#Split in new
+chr9	41306210	41311439	dummy_369236	1	-
+#Split in new
+chr9	41323570	41324933	dummy_369237	1	-
+#Partially deleted in new
+chr9	41325312	41325544	dummy_369239	1	-
+#Partially deleted in new
+chr9	41325312	41325879	dummy_369240	1	-
+#Split in new
+chr9	41325938	41327146	dummy_369241	1	-
+#Split in new
+chr9	41341978	41343137	dummy_369242	1	-
+#Split in new
+chr9	41343220	41343791	dummy_369243	1	-
+#Split in new
+chr9	41341978	41346135	dummy_369244	1	-
+#Split in new
+chr9	41343220	41346135	dummy_369245	1	-
+#Split in new
+chr9	42675965	42679434	dummy_369376	1	+
+#Split in new
+chr9	42673529	42679434	dummy_369386	1	+
+#Split in new
+chr9	42674394	42679434	dummy_369388	1	+
+#Split in new
+chr9	42883295	42892898	dummy_369419	1	+
+#Split in new
+chr9	42883295	42892812	dummy_369432	1	+
+#Split in new
+chr9	43003641	43004173	dummy_369442	1	-
+#Split in new
+chr9	43027966	43064964	dummy_369452	1	-
+#Split in new
+chr9	43629321	43630512	dummy_369482	1	-
+#Split in new
+chr9	43626965	43628316	dummy_369483	1	-
+#Partially deleted in new
+chr9	43628695	43628927	dummy_369484	1	-
+#Split in new
+chr9	43629321	43630370	dummy_369486	1	-
+#Split in new
+chr9	43645355	43649176	dummy_369487	1	-
+#Split in new
+chr9	43649261	43649964	dummy_369488	1	-
+#Split in new
+chr9	43685380	43709649	dummy_369489	1	+
+#Split in new
+chr9	43828222	43853496	dummy_369497	1	+
+#Split in new
+chr9	43853617	43861002	dummy_369498	1	+
+#Split in new
+chr9	43861207	43875988	dummy_369499	1	+
+#Split in new
+chr9	43876008	43884944	dummy_369500	1	+
+#Split in new
+chr9	43890497	43891493	dummy_369502	1	+
+#Split in new
+chr9	43891713	43894065	dummy_369503	1	+
+#Split in new
+chr9	43828222	43861002	dummy_369504	1	+
+#Split in new
+chr9	43876146	43884944	dummy_369505	1	+
+#Split in new
+chr9	43876146	43890293	dummy_369508	1	+
+#Split in new
+chr9	43861207	43884944	dummy_369509	1	+
+#Partially deleted in new
+chr9	43905829	43907403	dummy_369510	1	+
+#Split in new
+chr9	43908524	43915359	dummy_369512	1	+
+#Split in new
+chr9	43908524	43915825	dummy_369515	1	+
+#Partially deleted in new
+chr9	43908211	43908435	dummy_369517	1	+
+#Split in new
+chr9	44239908	44245503	dummy_369535	1	-
+#Split in new
+chr9	44245634	44245748	dummy_369536	1	-
+#Split in new
+chr9	44246064	44302232	dummy_369537	1	+
+#Split in new
+chr9	44336860	44387387	dummy_369542	1	+
+#Split in new
+chr9	44387484	44387767	dummy_369543	1	+
+#Split in new
+chr9	44387484	44387791	dummy_369544	1	+
+#Split in new
+chr9	44387854	44391076	dummy_369545	1	+
+#Split in new
+chr9	44391426	44392762	dummy_369546	1	+
+#Split in new
+chr9	44345690	44401775	dummy_369549	1	-
+#Split in new
+chr9	44402091	44433204	dummy_369552	1	+
+#Split in new
+chr9	45442176	45558788	dummy_369595	1	+
+#Split in new
+chr9	45442176	45585510	dummy_369597	1	+
+#Split in new
+chr9	45585599	45587966	dummy_369598	1	+
+#Split in new
+chr9	45442176	45537774	dummy_369599	1	+
+#Split in new
+chr9	45537869	45680534	dummy_369600	1	+
+#Split in new
+chr9	45442176	45562967	dummy_369601	1	+
+#Split in new
+chr9	45442176	45556773	dummy_369602	1	+
+#Split in new
+chr9	45442176	45680534	dummy_369606	1	+
+#Split in new
+chr9	45442176	45557900	dummy_369607	1	+
+#Split in new
+chr9	45442176	45574351	dummy_369609	1	+
+#Split in new
+chr9	45585599	45614643	dummy_369611	1	+
+#Split in new
+chr9	45484679	45487872	dummy_369614	1	+
+#Split in new
+chr9	45727322	45727873	dummy_369617	1	+
+#Split in new
+chr9	45727322	45727934	dummy_369618	1	+
+#Split in new
+chr9	45727322	45774617	dummy_369619	1	+
+#Split in new
+chr9	45733567	45734079	dummy_369620	1	-
+#Split in new
+chr9	45737655	45738432	dummy_369621	1	-
+#Split in new
+chr9	45777458	45781771	dummy_369622	1	-
+#Split in new
+chr9	45777466	45781771	dummy_369623	1	-
+#Partially deleted in new
+chr9	46271164	46271253	dummy_369629	1	-
+#Split in new
+chr9	46271376	46274497	dummy_369630	1	-
+#Split in new
+chr9	46271376	46321016	dummy_369631	1	-
+#Split in new
+chr9	46321092	46326570	dummy_369632	1	-
+#Split in new
+chr9	46326725	46329395	dummy_369633	1	-
+#Split in new
+chr9	46273666	46274497	dummy_369634	1	-
+#Split in new
+chr9	47166045	47166876	dummy_369671	1	+
+#Split in new
+chr9	65485225	65488700	dummy_369683	1	-
+#Split in new
+chr9	65524226	65528383	dummy_369693	1	-
+#Split in new
+chr9	65525469	65528383	dummy_369694	1	-
+#Split in new
+chr9	65602811	65617599	dummy_369695	1	+
+#Split in new
+chr9	65617757	65626529	dummy_369696	1	+
+#Split in new
+chr9	65626658	65631902	dummy_369697	1	+
+#Split in new
+chr9	65626658	65629216	dummy_369698	1	+
+#Split in new
+chr9	65629340	65631902	dummy_369699	1	+
+#Split in new
+chr9	65632104	65633093	dummy_369700	1	+
+#Split in new
+chr9	65633313	65635640	dummy_369701	1	+
+#Split in new
+chr9	65649782	65650006	dummy_369702	1	+
+#Split in new
+chr9	65650095	65656962	dummy_369703	1	+
+#Split in new
+chr9	65650095	65657428	dummy_369705	1	+
+#Split in new
+chr9	67652837	67791454	dummy_369835	1	-
+#Partially deleted in new
+chr9	67680077	67680167	dummy_369836	1	-
+#Split in new
+chr9	67680290	67683414	dummy_369837	1	-
+#Split in new
+chr9	67744903	67791454	dummy_369840	1	-
+#Split in new
+chr9	67744903	67793896	dummy_369841	1	-
+#Split in new
+chr9	67780070	67781048	dummy_369842	1	-
+#Split in new
+chr9	67780411	67781296	dummy_369843	1	+
+#Split in new
+chr9	67781412	67782181	dummy_369844	1	+
+#Split in new
+chr9	67786421	67786595	dummy_369845	1	-
+#Split in new
+chr9	67785761	67786275	dummy_369846	1	+
+#Split in new
+chr9	67786421	67791454	dummy_369847	1	-
+#Split in new
+chr9	67793339	67793896	dummy_369848	1	-
+#Split in new
+chr9	67793278	67793896	dummy_369849	1	-
+#Split in new
+chr9	67852401	67872571	dummy_369850	1	+
+#Split in new
+chr9	67900468	67908306	dummy_369851	1	+
+#Split in new
+chr9	67908460	67912412	dummy_369852	1	+
+#Split in new
+chr9	67912474	67914745	dummy_369853	1	+
+#Split in new
+chr9	67915170	67915294	dummy_369854	1	+
+#Split in new
+chr9	67915441	67916848	dummy_369855	1	+
+#Split in new
+chr9	67916924	67917533	dummy_369856	1	+
+#Split in new
+chr9	67917686	67919494	dummy_369857	1	+
+#Split in new
+chr9	67900423	67908306	dummy_369858	1	+
+#Split in new
+chr9	67908460	67910201	dummy_369859	1	+
+#Split in new
+chr9	67914778	67922734	dummy_369861	1	+
+#Split in new
+chr9	67908531	67910159	dummy_369862	1	+
+#Split in new
+chr9	68728907	68743104	dummy_369919	1	+
+#Partially deleted in new
+chr9	68767312	68768227	dummy_369922	1	+
+#Partially deleted in new
+chr9	68741833	68743104	dummy_369926	1	+
+#Split in new
+chr9	68728907	68743143	dummy_369935	1	+
+#Split in new
+chr9	68767312	68792074	dummy_369944	1	+
+#Split in new
+chr9	68798916	68800466	dummy_369947	1	+
+#Split in new
+chr9	68809135	68811261	dummy_369948	1	+
+#Split in new
+chr9	68837869	68838063	dummy_369950	1	-
+#Split in new
+chr9	68836632	68838063	dummy_369951	1	-
+#Split in new
+chr9	69206972	69218509	dummy_370019	1	-
+#Split in new
+chr9	69218562	69229611	dummy_370020	1	-
+#Split in new
+chr9	69229669	69231417	dummy_370021	1	-
+#Split in new
+chr9	69231559	69235561	dummy_370022	1	-
+#Split in new
+chr9	69235607	69240012	dummy_370023	1	-
+#Split in new
+chr9	69240060	69245075	dummy_370024	1	-
+#Split in new
+chr9	69245164	69245940	dummy_370025	1	-
+#Split in new
+chr9	69245979	69255603	dummy_370026	1	-
+#Split in new
+chr9	69229669	69235561	dummy_370030	1	-
+#Split in new
+chr9	69235607	69238229	dummy_370031	1	-
+#Split in new
+chr9	69238317	69240012	dummy_370032	1	-
+#Split in new
+chr9	69240060	69245940	dummy_370033	1	-
+#Split in new
+chr9	69245979	69247521	dummy_370034	1	-
+#Split in new
+chr9	69247582	69255603	dummy_370035	1	-
+#Split in new
+chr9	69229669	69234829	dummy_370036	1	-
+#Split in new
+chr9	69234953	69235561	dummy_370037	1	-
+#Split in new
+chr9	69243653	69245075	dummy_370039	1	-
+#Split in new
+chr9	69245979	69247946	dummy_370040	1	-
+#Split in new
+chr9	69247993	69255603	dummy_370041	1	-
+#Split in new
+chr9	69218562	69235561	dummy_370043	1	-
+#Split in new
+chr9	69218562	69224145	dummy_370045	1	-
+#Split in new
+chr9	69206972	69215474	dummy_370046	1	-
+#Split in new
+chr9	69218562	69255603	dummy_370047	1	-
+#Split in new
+chr9	69218562	69240012	dummy_370048	1	-
+#Split in new
+chr9	70611675	70611989	dummy_370244	1	-
+#Deleted in new
+chr9	130454441	130454441	dummy_377436	1	+
+#Partially deleted in new
+chr9	136223176	136223275	dummy_379587	1	-
+#Partially deleted in new
+chr9	136223176	136223334	dummy_379590	1	-
+#Split in new
+chrX	1315015	1317418	dummy_381609	1	-
+#Split in new
+chrX	1315015	1317663	dummy_381613	1	-
+#Partially deleted in new
+chrX	7596570	7701032	dummy_382060	1	+
+#Partially deleted in new
+chrX	10535644	10851672	dummy_382256	1	-
+#Partially deleted in new
+chrX	10727519	10969178	dummy_382299	1	+
+#Split in new
+chrX	46771776	46844284	dummy_384708	1	+
+#Split in new
+chrX	46772155	46844284	dummy_384718	1	+
+#Split in new
+chrX	46772368	46844284	dummy_384719	1	+
+#Split in new
+chrX	49019277	49020120	dummy_385560	1	+
+#Partially deleted in new
+chrX	49021700	49022412	dummy_385562	1	+
+#Split in new
+chrX	49179757	49180221	dummy_385705	1	+
+#Split in new
+chrX	49192819	49195252	dummy_385711	1	+
+#Split in new
+chrX	49202345	49204806	dummy_385715	1	+
+#Split in new
+chrX	49207224	49208263	dummy_385716	1	+
+#Split in new
+chrX	49208353	49208816	dummy_385717	1	+
+#Split in new
+chrX	49208938	49211737	dummy_385718	1	+
+#Split in new
+chrX	49211864	49214303	dummy_385719	1	+
+#Split in new
+chrX	49218441	49221260	dummy_385722	1	+
+#Split in new
+chrX	49221387	49223826	dummy_385723	1	+
+#Split in new
+chrX	49226246	49227285	dummy_385724	1	+
+#Split in new
+chrX	49227961	49230798	dummy_385726	1	+
+#Split in new
+chrX	49230925	49233364	dummy_385727	1	+
+#Split in new
+chrX	49235783	49236822	dummy_385728	1	+
+#Split in new
+chrX	49237498	49240333	dummy_385730	1	+
+#Split in new
+chrX	49240460	49242899	dummy_385731	1	+
+#Split in new
+chrX	52531656	52541016	dummy_386003	1	-
+#Deleted in new
+chrX	71370734	71370734	dummy_387621	1	+
+#Deleted in new
+chrX	73423027	73423027	dummy_387833	1	-
+#Deleted in new
+chrX	102932697	102932697	dummy_389355	1	-
+#Split in new
+chrX	134852871	134854789	dummy_391699	1	+
+#Split in new
+chrX	134870133	134872055	dummy_391706	1	+
+#Split in new
+chrX	134872778	134873997	dummy_391708	1	+
+#Split in new
+chrX	134887402	134889320	dummy_391713	1	+
+#Split in new
+chrX	134947529	134947906	dummy_391725	1	-
+#Split in new
+chrX	140079815	140085595	dummy_392121	1	+
+#Split in new
+chrX	140335872	140336518	dummy_392125	1	-
+#Split in new
+chrX	149531154	149638016	dummy_392477	1	+
+#Split in new
+chrX	149531154	149631037	dummy_392480	1	+
+#Split in new
+chrX	149531154	149613719	dummy_392482	1	+
+#Split in new
+chrX	149531798	149613719	dummy_392484	1	+
+#Split in new
+chrX	152206129	152350235	dummy_392848	1	+
+#Split in new
+chrX	152201232	152350235	dummy_392851	1	+
+#Split in new
+chrX	154596025	154603513	dummy_393866	1	-
+#Split in new
+chrY	1265015	1267418	dummy_394019	1	-
+#Split in new
+chrY	1265015	1267663	dummy_394023	1	-
+#Partially deleted in new
+chr1	2577003	2700153	dummy_395413	1	-
+#Deleted in new
+chr1	151739700	151739700	dummy_395440	1	+
+#Deleted in new
+chr15	64983714	64983714	dummy_395694	1	-
+#Deleted in new
+chr19	2271442	2271442	dummy_395749	1	+
+#Partially deleted in new
+chr7	50367354	50444230	dummy_396036	1	+
+#Split in new
+chr1	1581410	1586822	dummy_396264	1	-
+#Split in new
+chr1	1581505	1586822	dummy_396265	1	-
+#Split in new
+chr1	1581540	1586822	dummy_396266	1	-
+#Split in new
+chr1	12999067	13111145	dummy_396379	1	-
+#Split in new
+chr1	13013474	13014496	dummy_396381	1	-
+#Split in new
+chr1	13112703	13115514	dummy_396383	1	-
+#Split in new
+chr1	13141708	13144438	dummy_396387	1	+
+#Partially deleted in new
+chr1	17066893	17256780	dummy_396471	1	+
+#Partially deleted in new
+chr1	38077356	38077427	dummy_396768	1	-
+#Split in new
+chr1	143119120	143156464	dummy_397470	1	+
+#Split in new
+chr1	143119120	143220633	dummy_397471	1	+
+#Split in new
+chr1	143119120	143231278	dummy_397472	1	+
+#Split in new
+chr1	143135856	143189433	dummy_397476	1	-
+#Split in new
+chr1	143154872	143169491	dummy_397477	1	+
+#Split in new
+chr1	143156668	143157109	dummy_397478	1	+
+#Split in new
+chr1	143211706	143213092	dummy_397488	1	-
+#Split in new
+chr1	143213257	143217309	dummy_397489	1	-
+#Split in new
+chr1	143216137	143217309	dummy_397490	1	-
+#Split in new
+chr1	143220722	143231293	dummy_397494	1	+
+#Split in new
+chr1	143226404	143231293	dummy_397495	1	+
+#Split in new
+chr1	143237081	143240288	dummy_397498	1	-
+#Split in new
+chr1	143744299	143744510	dummy_397558	1	-
+#Split in new
+chr1	143744299	143745330	dummy_397559	1	-
+#Split in new
+chr1	144147022	144148789	dummy_397562	1	+
+#Split in new
+chr1	144148893	144149726	dummy_397563	1	+
+#Split in new
+chr1	144157056	144158177	dummy_397564	1	+
+#Split in new
+chr1	144158230	144163626	dummy_397565	1	+
+#Split in new
+chr1	144158230	144204924	dummy_397566	1	+
+#Partially deleted in new
+chr1	144160588	144161296	dummy_397567	1	+
+#Split in new
+chr1	144161349	144162000	dummy_397568	1	+
+#Split in new
+chr1	144162997	144163626	dummy_397570	1	+
+#Split in new
+chr1	144163800	144169251	dummy_397571	1	+
+#Split in new
+chr1	144165344	144166052	dummy_397572	1	+
+#Split in new
+chr1	144166105	144166760	dummy_397573	1	+
+#Split in new
+chr1	144167757	144168359	dummy_397575	1	+
+#Split in new
+chr1	144168533	144169251	dummy_397576	1	+
+#Split in new
+chr1	144169304	144169908	dummy_397577	1	+
+#Split in new
+chr1	144169304	144176290	dummy_397578	1	+
+#Split in new
+chr1	144170082	144170790	dummy_397579	1	+
+#Split in new
+chr1	144170843	144171500	dummy_397580	1	+
+#Split in new
+chr1	144172497	144173099	dummy_397582	1	+
+#Split in new
+chr1	144173273	144173981	dummy_397583	1	+
+#Split in new
+chr1	144173273	144185133	dummy_397584	1	+
+#Split in new
+chr1	144174034	144174691	dummy_397585	1	+
+#Split in new
+chr1	144174865	144175578	dummy_397586	1	+
+#Split in new
+chr1	144175688	144176290	dummy_397587	1	+
+#Split in new
+chr1	144176464	144177172	dummy_397588	1	+
+#Split in new
+chr1	144177225	144177874	dummy_397589	1	+
+#Split in new
+chr1	144178048	144178761	dummy_397590	1	+
+#Split in new
+chr1	144178871	144179473	dummy_397591	1	+
+#Split in new
+chr1	144179647	144180355	dummy_397592	1	+
+#Split in new
+chr1	144182060	144182695	dummy_397595	1	+
+#Split in new
+chr1	144182869	144183587	dummy_397596	1	+
+#Split in new
+chr1	144183640	144184251	dummy_397597	1	+
+#Split in new
+chr1	144185186	144185827	dummy_397599	1	+
+#Split in new
+chr1	144187633	144188351	dummy_397602	1	+
+#Split in new
+chr1	144188404	144189011	dummy_397603	1	+
+#Split in new
+chr1	144189185	144189893	dummy_397604	1	+
+#Split in new
+chr1	144189946	144190581	dummy_397605	1	+
+#Split in new
+chr1	144190755	144196230	dummy_397607	1	+
+#Split in new
+chr1	144199454	144203298	dummy_397608	1	+
+#Split in new
+chr1	144201102	144201704	dummy_397609	1	+
+#Split in new
+chr1	144201878	144202586	dummy_397610	1	+
+#Split in new
+chr1	144203472	144204185	dummy_397612	1	+
+#Split in new
+chr1	144204295	144204924	dummy_397613	1	+
+#Split in new
+chr1	144205098	144205816	dummy_397614	1	+
+#Split in new
+chr1	144205869	144206476	dummy_397615	1	+
+#Split in new
+chr1	144206650	144207358	dummy_397616	1	+
+#Split in new
+chr1	144206650	144210541	dummy_397617	1	+
+#Split in new
+chr1	144209057	144209659	dummy_397620	1	+
+#Split in new
+chr1	144209833	144210541	dummy_397621	1	+
+#Split in new
+chr1	144213018	144213726	dummy_397625	1	+
+#Split in new
+chr1	144213779	144214428	dummy_397627	1	+
+#Split in new
+chr1	144214602	144215315	dummy_397628	1	+
+#Split in new
+chr1	144215425	144216027	dummy_397629	1	+
+#Split in new
+chr1	144216962	144217611	dummy_397631	1	+
+#Split in new
+chr1	144217785	144218498	dummy_397632	1	+
+#Split in new
+chr1	144219409	144220127	dummy_397634	1	+
+#Split in new
+chr1	144220180	144220786	dummy_397635	1	+
+#Split in new
+chr1	144221721	144222378	dummy_397637	1	+
+#Split in new
+chr1	144222552	144223265	dummy_397638	1	+
+#Split in new
+chr1	144223375	144224002	dummy_397639	1	+
+#Split in new
+chr1	144276502	144277287	dummy_397640	1	-
+#Split in new
+chr1	144276524	144277251	dummy_397641	1	-
+#Split in new
+chr1	144276524	144277302	dummy_397642	1	-
+#Split in new
+chr1	144276524	144280577	dummy_397643	1	-
+#Split in new
+chr1	144277411	144279586	dummy_397644	1	-
+#Split in new
+chr1	144277411	144284621	dummy_397645	1	-
+#Split in new
+chr1	144279907	144284621	dummy_397648	1	-
+#Split in new
+chr1	144280630	144284621	dummy_397651	1	-
+#Split in new
+chr1	144281191	144284291	dummy_397653	1	-
+#Split in new
+chr1	144283166	144284621	dummy_397654	1	-
+#Split in new
+chr1	144284858	144290207	dummy_397656	1	-
+#Split in new
+chr1	144284858	144311425	dummy_397657	1	-
+#Split in new
+chr1	144340399	144520646	dummy_397660	1	+
+#Partially deleted in new
+chr1	144340624	144340850	dummy_397661	1	-
+#Split in new
+chr1	144470245	144520773	dummy_397678	1	-
+#Split in new
+chr1	144506437	144520773	dummy_397680	1	-
+#Split in new
+chr1	144520872	144521065	dummy_397681	1	-
+#Split in new
+chr1	144593937	144594388	dummy_397682	1	+
+#Split in new
+chr1	144593937	144598511	dummy_397683	1	+
+#Split in new
+chr1	144593966	144594388	dummy_397684	1	+
+#Split in new
+chr1	144594484	144595834	dummy_397685	1	+
+#Split in new
+chr1	144594484	144598511	dummy_397686	1	+
+#Split in new
+chr1	144606511	144612348	dummy_397693	1	+
+#Partially deleted in new
+chr1	144618664	144619346	dummy_397699	1	+
+#Split in new
+chr1	144825789	144827897	dummy_397708	1	+
+#Split in new
+chr1	144826287	144828540	dummy_397709	1	+
+#Split in new
+chr1	145311155	145344832	dummy_397729	1	+
+#Split in new
+chr1	145311155	145354294	dummy_397730	1	+
+#Split in new
+chr1	145313507	145347254	dummy_397731	1	+
+#Split in new
+chr1	145320620	145322771	dummy_397732	1	+
+#Split in new
+chr1	145322852	145330762	dummy_397733	1	+
+#Split in new
+chr1	145341729	145344912	dummy_397736	1	+
+#Split in new
+chr1	145349736	145364565	dummy_397739	1	+
+#Split in new
+chr1	145354468	145359906	dummy_397741	1	+
+#Split in new
+chr1	145359959	145362096	dummy_397742	1	+
+#Split in new
+chr1	146020998	146022079	dummy_397778	1	+
+#Split in new
+chr1	146022571	146024234	dummy_397780	1	+
+#Split in new
+chr1	146033755	146214664	dummy_397781	1	-
+#Split in new
+chr1	146035148	146036688	dummy_397782	1	-
+#Split in new
+chr1	146037623	146039795	dummy_397783	1	-
+#Split in new
+chr1	146039848	146044948	dummy_397784	1	-
+#Split in new
+chr1	146047033	146054298	dummy_397785	1	-
+#Split in new
+chr1	146049220	146057274	dummy_397786	1	-
+#Split in new
+chr1	146057485	146057840	dummy_397787	1	-
+#Split in new
+chr1	146224836	146225431	dummy_397809	1	-
+#Split in new
+chr1	146373753	146373928	dummy_397820	1	+
+#Split in new
+chr1	146420192	146462010	dummy_397828	1	+
+#Split in new
+chr1	146420963	146443692	dummy_397829	1	+
+#Split in new
+chr1	146430493	146431088	dummy_397830	1	+
+#Deleted in new
+chr1	146440792	146441505	dummy_397832	1	+
+#Split in new
+chr1	146445472	146446185	dummy_397833	1	+
+#Split in new
+chr1	146446238	146446833	dummy_397834	1	+
+#Split in new
+chr1	146447007	146447725	dummy_397835	1	+
+#Split in new
+chr1	146447778	146448373	dummy_397836	1	+
+#Split in new
+chr1	146448547	146454019	dummy_397837	1	+
+#Split in new
+chr1	146459671	146460384	dummy_397840	1	+
+#Split in new
+chr1	146460494	146461118	dummy_397841	1	+
+#Split in new
+chr1	146462063	146462657	dummy_397842	1	+
+#Split in new
+chr1	146462831	146463539	dummy_397843	1	+
+#Split in new
+chr1	146463592	146464263	dummy_397844	1	+
+#Split in new
+chr1	146464437	146465150	dummy_397845	1	+
+#Split in new
+chr1	148005512	148012502	dummy_397911	1	-
+#Split in new
+chr1	148006399	148013319	dummy_397912	1	-
+#Split in new
+chr1	148007091	148014080	dummy_397913	1	-
+#Split in new
+chr1	148007973	148014853	dummy_397914	1	-
+#Split in new
+chr1	148008625	148015624	dummy_397915	1	-
+#Split in new
+chr1	148010165	148015624	dummy_397916	1	-
+#Split in new
+chr1	148247220	148247984	dummy_397917	1	-
+#Split in new
+chr1	148261630	148262257	dummy_397918	1	-
+#Split in new
+chr1	148271162	148271791	dummy_397919	1	-
+#Split in new
+chr1	148279144	148279746	dummy_397920	1	-
+#Split in new
+chr1	148279856	148280569	dummy_397921	1	-
+#Split in new
+chr1	148280743	148281402	dummy_397922	1	-
+#Split in new
+chr1	148281455	148282163	dummy_397923	1	-
+#Split in new
+chr1	148282337	148282939	dummy_397924	1	-
+#Split in new
+chr1	148283936	148284595	dummy_397926	1	-
+#Split in new
+chr1	148284648	148285356	dummy_397927	1	-
+#Split in new
+chr1	148285530	148286132	dummy_397928	1	-
+#Split in new
+chr1	148290275	148290902	dummy_397929	1	-
+#Split in new
+chr1	148295045	148295672	dummy_397930	1	-
+#Split in new
+chr1	148298263	148298870	dummy_397932	1	-
+#Split in new
+chr1	148298923	148299641	dummy_397933	1	-
+#Split in new
+chr1	148305312	148306025	dummy_397936	1	-
+#Split in new
+chr1	148307793	148308404	dummy_397939	1	-
+#Split in new
+chr1	148312559	148313166	dummy_397943	1	-
+#Split in new
+chr1	148314111	148314738	dummy_397945	1	-
+#Split in new
+chr1	148317991	148318709	dummy_397948	1	-
+#Split in new
+chr1	148318883	148319510	dummy_397949	1	-
+#Split in new
+chr1	148320507	148321144	dummy_397951	1	-
+#Split in new
+chr1	148322079	148322686	dummy_397953	1	-
+#Split in new
+chr1	148323631	148324258	dummy_397955	1	-
+#Split in new
+chr1	148324368	148325081	dummy_397956	1	-
+#Split in new
+chr1	148325255	148325914	dummy_397957	1	-
+#Split in new
+chr1	148325967	148326675	dummy_397958	1	-
+#Split in new
+chr1	148326849	148327448	dummy_397959	1	-
+#Split in new
+chr1	148327501	148328219	dummy_397960	1	-
+#Split in new
+chr1	149605845	149615764	dummy_398032	1	+
+#Split in new
+chr1	149605868	149632455	dummy_398033	1	+
+#Split in new
+chr1	149627108	149629754	dummy_398034	1	+
+#Partially deleted in new
+chr1	149636584	149636683	dummy_398039	1	+
+#Split in new
+chr1	149694634	149698418	dummy_398042	1	-
+#Split in new
+chr1	223722926	223803474	dummy_398757	1	-
+#Partially deleted in new
+chr10	11374592	11374627	dummy_399109	1	+
+#Split in new
+chr10	18086363	18088504	dummy_399170	1	+
+#Split in new
+chr10	46790771	46791387	dummy_399419	1	-
+#Split in new
+chr10	47186290	47192038	dummy_399431	1	+
+#Split in new
+chr10	47193534	47197537	dummy_399433	1	-
+#Split in new
+chr10	47207847	47213291	dummy_399434	1	-
+#Split in new
+chr10	48197196	48199178	dummy_399482	1	+
+#Split in new
+chr10	48216059	48221504	dummy_399483	1	+
+#Split in new
+chr10	48231815	48235818	dummy_399484	1	+
+#Split in new
+chr10	48902916	48906885	dummy_399499	1	-
+#Split in new
+chr10	48917185	48922623	dummy_399500	1	-
+#Split in new
+chr10	48919895	48922623	dummy_399501	1	-
+#Split in new
+chr10	48922812	48941193	dummy_399502	1	-
+#Split in new
+chr10	48941334	48944446	dummy_399503	1	-
+#Split in new
+chr10	48952669	48960645	dummy_399505	1	+
+#Split in new
+chr10	48953722	48960645	dummy_399506	1	+
+#Split in new
+chr10	48954798	48966877	dummy_399507	1	+
+#Split in new
+chr10	48954976	48966877	dummy_399508	1	+
+#Split in new
+chr10	48980529	48981147	dummy_399510	1	-
+#Split in new
+chr10	48988452	48989081	dummy_399511	1	-
+#Split in new
+chr10	48988452	48989108	dummy_399512	1	-
+#Split in new
+chr10	48989263	48998569	dummy_399513	1	-
+#Split in new
+chr10	49088921	49094407	dummy_399514	1	+
+#Split in new
+chr10	51230495	51240709	dummy_399539	1	-
+#Split in new
+chr10	51233182	51243387	dummy_399540	1	-
+#Split in new
+chr10	51243457	51246186	dummy_399541	1	-
+#Partially deleted in new
+chr10	51246375	51246921	dummy_399542	1	-
+#Split in new
+chr10	51247975	51252726	dummy_399544	1	-
+#Split in new
+chr10	51352369	51361722	dummy_399546	1	-
+#Split in new
+chr10	51707662	51732771	dummy_399551	1	+
+#Partially deleted in new
+chr10	128594133	128768965	dummy_400092	1	+
+#Partially deleted in new
+chr11	76751584	76751588	dummy_401095	1	+
+#Deleted in new
+chr12	147060	147256	dummy_401499	1	+
+#Deleted in new
+chr12	148817	149051	dummy_401500	1	-
+#Partially deleted in new
+chr12	7189411	7241048	dummy_401584	1	-
+#Split in new
+chr12	80839509	80855626	dummy_402372	1	+
+#Partially deleted in new
+chr12	80855705	80855762	dummy_402373	1	+
+#Partially deleted in new
+chr12	122517173	122611802	dummy_402706	1	+
+#Partially deleted in new
+chr12	132688236	132811357	dummy_402778	1	-
+#Split in new
+chr12	132688236	132824462	dummy_402779	1	-
+#Partially deleted in new
+chr13	114325972	114426046	dummy_403400	1	+
+#Split in new
+chr14	19742798	19758203	dummy_403436	1	+
+#Split in new
+chr14	19812248	19859456	dummy_403437	1	+
+#Split in new
+chr14	20085541	20086297	dummy_403465	1	+
+#Deleted in new
+chr14	22138558	22138562	dummy_403521	1	-
+#Deleted in new
+chr14	106559853	106559941	dummy_404219	1	-
+#Split in new
+chr15	22747355	22751743	dummy_404328	1	-
+#Split in new
+chr15	23408074	23408724	dummy_404352	1	-
+#Split in new
+chr15	23419027	23419688	dummy_404355	1	-
+#Split in new
+chr15	23438864	23439136	dummy_404357	1	+
+#Partially deleted in new
+chr15	23572574	23572727	dummy_404363	1	-
+#Partially deleted in new
+chr15	29129760	29213842	dummy_404455	1	+
+#Partially deleted in new
+chr15	29131425	29213842	dummy_404456	1	+
+#Partially deleted in new
+chr15	29140756	29213842	dummy_404457	1	+
+#Split in new
+chr17	21560624	21561868	dummy_407523	1	-
+#Split in new
+chr17	34581969	34747965	dummy_407788	1	-
+#Split in new
+chr17	34583569	34584481	dummy_407789	1	-
+#Split in new
+chr17	34590221	34755393	dummy_407791	1	-
+#Split in new
+chr17	34799170	34799346	dummy_407804	1	-
+#Split in new
+chr17	34806097	34806197	dummy_407807	1	-
+#Split in new
+chr17	77478681	77613356	dummy_408543	1	-
+#Split in new
+chr19	20519855	20607591	dummy_409767	1	-
+#Partially deleted in new
+chr19	20591847	20592630	dummy_409768	1	-
+#Split in new
+chr19	40389794	40407935	dummy_410063	1	-
+#Split in new
+chr19	54723786	54724397	dummy_410544	1	-
+#Split in new
+chr2	19203746	19226395	dummy_410887	1	-
+#Partially deleted in new
+chr2	110107393	110259079	dummy_411778	1	+
+#Partially deleted in new
+chr2	149686924	149793797	dummy_412157	1	+
+#Partially deleted in new
+chr2	233995536	234054784	dummy_412841	1	+
+#Partially deleted in new
+chr2	233998871	234054621	dummy_412843	1	+
+#Partially deleted in new
+chr20	34151777	34152663	dummy_413221	1	-
+#Split in new
+chr22	18003358	18016791	dummy_413887	1	+
+#Split in new
+chr22	20692650	20695278	dummy_413969	1	+
+#Split in new
+chr22	20695338	20695805	dummy_413970	1	+
+#Split in new
+chr22	20695831	20698776	dummy_413971	1	+
+#Split in new
+chr22	20698864	20703775	dummy_413972	1	+
+#Split in new
+chr22	24342425	24343410	dummy_414150	1	-
+#Split in new
+chr22	24342446	24343368	dummy_414151	1	-
+#Split in new
+chr22	42518893	42519530	dummy_414452	1	+
+#Split in new
+chr22	42518893	42520051	dummy_414453	1	+
+#Partially deleted in new
+chr3	53324736	53324825	dummy_414971	1	-
+#Partially deleted in new
+chr3	66119660	66271167	dummy_415052	1	+
+#Partially deleted in new
+chr4	59650427	59842731	dummy_416258	1	-
+#Partially deleted in new
+chr4	59727135	59842731	dummy_416259	1	-
+#Partially deleted in new
+chr4	59727135	59849723	dummy_416260	1	-
+#Split in new
+chr4	75421818	75509197	dummy_416396	1	-
+#Split in new
+chr4	75454828	75475793	dummy_416397	1	-
+#Partially deleted in new
+chr5	91500502	91751167	dummy_417371	1	+
+#Partially deleted in new
+chr5	91601453	91736624	dummy_417372	1	+
+#Partially deleted in new
+chr7	50367354	50435703	dummy_419539	1	+
+#Partially deleted in new
+chr7	50367354	50450237	dummy_419540	1	+
+#Partially deleted in new
+chr7	50367354	50467615	dummy_419541	1	+
+#Split in new
+chr7	74710937	74712530	dummy_419882	1	-
+#Split in new
+chr7	74855618	74862299	dummy_419885	1	+
+#Split in new
+chr7	74881027	74977921	dummy_419888	1	-
+#Split in new
+chr7	74925202	74926810	dummy_419896	1	-
+#Split in new
+chr7	74925208	74926537	dummy_419897	1	-
+#Split in new
+chr7	74926903	74928786	dummy_419899	1	-
+#Split in new
+chr7	74938456	74939460	dummy_419900	1	+
+#Split in new
+chr7	74953224	74954835	dummy_419908	1	-
+#Split in new
+chr7	74953226	74954564	dummy_419909	1	-
+#Split in new
+chr7	100553067	100606195	dummy_420168	1	+
+#Split in new
+chr7	100606312	100606737	dummy_420169	1	+
+#Deleted in new
+chr7	100607266	100607384	dummy_420170	1	-
+#Deleted in new
+chr7	100607507	100607770	dummy_420171	1	-
+#Deleted in new
+chr7	100608866	100609521	dummy_420172	1	-
+#Deleted in new
+chr7	100608892	100609804	dummy_420173	1	+
+#Split in new
+chr7	100612971	100615398	dummy_420174	1	+
+#Partially deleted in new
+chr7	139316472	139415730	dummy_420519	1	-
+#Partially deleted in new
+chr7	142389285	142389423	dummy_420580	1	+
+#Partially deleted in new
+chr7	143318114	143416775	dummy_420612	1	+
+#Partially deleted in new
+chr7	143333877	143507082	dummy_420613	1	+
+#Partially deleted in new
+chr7	143344740	143533732	dummy_420614	1	-
+#Partially deleted in new
+chr7	154264002	154378875	dummy_420717	1	+
+#Partially deleted in new
+chr7	154264002	154379359	dummy_420718	1	+
+#Partially deleted in new
+chr7	154264002	154429530	dummy_420719	1	+
+#Partially deleted in new
+chr7	154264002	154519476	dummy_420720	1	+
+#Split in new
+chr9	39722575	39768209	dummy_421972	1	-
+#Split in new
+chr9	39722577	39768209	dummy_421973	1	-
+#Split in new
+chr9	39768403	39796151	dummy_421974	1	-
+#Split in new
+chr9	39768403	39796152	dummy_421975	1	-
+#Split in new
+chr9	39796261	39817223	dummy_421976	1	-
+#Split in new
+chr9	39796262	39817226	dummy_421977	1	-
+#Split in new
+chr9	40064294	40073742	dummy_421980	1	-
+#Split in new
+chr9	40073869	40074393	dummy_421981	1	-
+#Split in new
+chr9	40074554	40075896	dummy_421982	1	-
+#Partially deleted in new
+chr9	40076056	40076186	dummy_421983	1	-
+#Split in new
+chr9	40076273	40085670	dummy_421984	1	-
+#Split in new
+chr9	40308764	40311134	dummy_421987	1	+
+#Split in new
+chr9	40311375	40322666	dummy_421988	1	+
+#Split in new
+chr9	40311375	40322667	dummy_421989	1	+
+#Partially deleted in new
+chr9	40322893	40324465	dummy_421990	1	+
+#Split in new
+chr9	40324601	40325494	dummy_421991	1	+
+#Split in new
+chr9	40325583	40332427	dummy_421992	1	+
+#Split in new
+chr9	40332660	40332889	dummy_421993	1	+
+#Split in new
+chr9	40333023	40337307	dummy_421994	1	+
+#Split in new
+chr9	40373014	40382480	dummy_421996	1	-
+#Split in new
+chr9	40382816	40383132	dummy_421997	1	-
+#Split in new
+chr9	40383290	40384632	dummy_421998	1	-
+#Partially deleted in new
+chr9	40384804	40384962	dummy_421999	1	-
+#Split in new
+chr9	40385011	40394391	dummy_422000	1	-
+#Split in new
+chr9	41214262	41214975	dummy_422005	1	-
+#Split in new
+chr9	41215170	41215958	dummy_422006	1	-
+#Split in new
+chr9	41216020	41217640	dummy_422007	1	-
+#Split in new
+chr9	41278001	41297524	dummy_422008	1	+
+#Split in new
+chr9	41285420	41286243	dummy_422009	1	+
+#Split in new
+chr9	41297632	41298437	dummy_422010	1	+
+#Split in new
+chr9	41314572	41321818	dummy_422011	1	+
+#Split in new
+chr9	41325938	41326617	dummy_422012	1	-
+#Split in new
+chr9	42675970	42679434	dummy_422040	1	+
+#Split in new
+chr9	43152009	43159863	dummy_422071	1	-
+#Split in new
+chr9	43318953	43319263	dummy_422079	1	-
+#Partially deleted in new
+chr9	43628695	43629019	dummy_422080	1	-
+#Split in new
+chr9	43828222	43844143	dummy_422082	1	+
+#Split in new
+chr9	43844316	43849744	dummy_422085	1	+
+#Split in new
+chr9	43849852	43853496	dummy_422086	1	+
+#Split in new
+chr9	43853617	43861005	dummy_422087	1	+
+#Split in new
+chr9	43887734	43890295	dummy_422089	1	+
+#Split in new
+chr9	43890467	43891493	dummy_422090	1	+
+#Split in new
+chr9	43891713	43894079	dummy_422091	1	+
+#Split in new
+chr9	43894320	43905603	dummy_422092	1	+
+#Split in new
+chr9	44256818	44260051	dummy_422116	1	-
+#Split in new
+chr9	44260140	44260421	dummy_422117	1	-
+#Split in new
+chr9	44672960	44673719	dummy_422122	1	-
+#Split in new
+chr9	44673890	44674677	dummy_422123	1	-
+#Split in new
+chr9	44674748	44676387	dummy_422124	1	-
+#Split in new
+chr9	45729785	45730299	dummy_422138	1	+
+#Split in new
+chr9	45733570	45734081	dummy_422139	1	-
+#Split in new
+chr9	46359722	46380209	dummy_422141	1	-
+#Split in new
+chr9	46390580	46390607	dummy_422142	1	+
+#Split in new
+chr9	65585864	65591319	dummy_422163	1	+
+#Split in new
+chr9	65591427	65595067	dummy_422164	1	+
+#Split in new
+chr9	65595188	65602606	dummy_422165	1	+
+#Split in new
+chr9	65632074	65633093	dummy_422166	1	+
+#Split in new
+chr9	65633313	65635654	dummy_422167	1	+
+#Split in new
+chr9	65635895	65647180	dummy_422168	1	+
+#Split in new
+chr9	65649109	65650006	dummy_422170	1	+
+#Split in new
+chr9	65697874	65705305	dummy_422173	1	-
+#Split in new
+chr9	65705432	65705958	dummy_422174	1	-
+#Split in new
+chr9	65706119	65707471	dummy_422175	1	-
+#Split in new
+chr9	65707646	65707796	dummy_422176	1	-
+#Split in new
+chr9	65707848	65725720	dummy_422177	1	-
+#Split in new
+chr9	68728898	68743101	dummy_422222	1	+
+#Split in new
+chr9	68781998	68788817	dummy_422230	1	-
+#Split in new
+chr9	68788981	68809468	dummy_422231	1	-
+#Split in new
+chr9	69229669	69234033	dummy_422239	1	-
+#Split in new
+chr9	69229669	69234166	dummy_422240	1	-
+#Split in new
+chr9	69230431	69233992	dummy_422241	1	-
+#Split in new
+chr9	69234251	69235561	dummy_422242	1	-
+#Split in new
+chr9	69243653	69245940	dummy_422244	1	-
+#Split in new
+chr9	69247582	69249520	dummy_422245	1	-
+#Split in new
+chr9	70728169	70731688	dummy_422281	1	-
+#Split in new
+chr9	70731990	70732493	dummy_422282	1	-
+#Split in new
+chr9	70732668	70733679	dummy_422283	1	-
+#Partially deleted in new
+chrX	10588460	10851672	dummy_422925	1	-
+#Partially deleted in new
+chrX	49969262	50027541	dummy_423158	1	+
+#Partially deleted in new
+chrX	49969602	50027541	dummy_423159	1	+
+#Partially deleted in new
+chrX	120011485	120064111	dummy_423557	1	-
+#Partially deleted in new
+chrX	120012779	120065154	dummy_423558	1	-
+#Split in new
+chrX	152240990	152338779	dummy_423757	1	+
+#Partially deleted in new
+chrY	9236313	9304828	dummy_424040	1	+
+#Partially deleted in new
+chrY	9237487	9306121	dummy_424041	1	+
+#Deleted in new
+chr1	17718673	17718673	dummy_424857	1	+
+#Deleted in new
+chr1	38077349	38077420	dummy_424873	1	-
+#Split in new
+chr1	142618980	143119060	dummy_424926	1	+
+#Split in new
+chr1	143235342	143253881	dummy_424929	1	+
+#Split in new
+chr1	144149942	144619346	dummy_424933	1	+
+#Split in new
+chr1	144621657	144813741	dummy_424934	1	+
+#Split in new
+chr1	144158230	144187459	dummy_424936	1	+
+#Split in new
+chr1	144191578	144220786	dummy_424937	1	+
+#Split in new
+chr1	144220960	144826234	dummy_424938	1	+
+#Split in new
+chr1	144158253	144158378	dummy_424939	1	+
+#Split in new
+chr1	144158392	144158870	dummy_424940	1	+
+#Split in new
+chr1	144159044	144164518	dummy_424941	1	+
+#Split in new
+chr1	144164571	144179473	dummy_424942	1	+
+#Split in new
+chr1	144197920	144201704	dummy_424943	1	+
+#Split in new
+chr1	144205869	144216027	dummy_424944	1	+
+#Split in new
+chr1	144224176	144824704	dummy_424945	1	+
+#Split in new
+chr1	145320620	145330682	dummy_424947	1	+
+#Split in new
+chr1	145364675	146420018	dummy_424948	1	+
+#Split in new
+chr1	146428924	146435853	dummy_424949	1	+
+#Split in new
+chr1	146438454	146443692	dummy_424950	1	+
+#Split in new
+chr1	146445389	146446833	dummy_424951	1	+
+#Partially deleted in new
+chr1	146446835	146446924	dummy_424952	1	+
+#Split in new
+chr1	146456532	146462010	dummy_424953	1	+
+#Split in new
+chr1	144190755	144223265	dummy_424954	1	+
+#Split in new
+chr1	144223375	144828540	dummy_424955	1	+
+#Split in new
+chr1	144158230	144182695	dummy_424956	1	+
+#Split in new
+chr1	144197920	144216027	dummy_424957	1	+
+#Split in new
+chr1	144218608	144828540	dummy_424958	1	+
+#Split in new
+chr1	144182869	144188351	dummy_424959	1	+
+#Split in new
+chr1	144164571	144181063	dummy_424960	1	+
+#Split in new
+chr1	144178048	144181950	dummy_424961	1	+
+#Split in new
+chr1	144187633	144193097	dummy_424962	1	+
+#Split in new
+chr1	144197149	144220127	dummy_424963	1	+
+#Split in new
+chr1	144221721	144826932	dummy_424964	1	+
+#Split in new
+chr1	144183640	144185827	dummy_424965	1	+
+#Split in new
+chr1	144186001	144191468	dummy_424966	1	+
+#Split in new
+chr1	144193150	144198519	dummy_424967	1	+
+#Split in new
+chr1	144200279	144223265	dummy_424968	1	+
+#Split in new
+chr1	145315077	145334683	dummy_424969	1	+
+#Split in new
+chr1	144193150	144216027	dummy_424970	1	+
+#Split in new
+chr1	144197149	144205816	dummy_424972	1	+
+#Split in new
+chr1	145315900	145368440	dummy_424975	1	+
+#Partially deleted in new
+chr1	144615245	144615248	dummy_424976	1	+
+#Partially deleted in new
+chr1	145116307	145116319	dummy_424979	1	+
+#Split in new
+chr1	145365460	146420910	dummy_424982	1	+
+#Split in new
+chr1	146420963	146448373	dummy_424983	1	+
+#Split in new
+chr1	146452543	146456358	dummy_424984	1	+
+#Split in new
+chr1	146462831	146465150	dummy_424985	1	+
+#Split in new
+chr1	145320620	145368440	dummy_424986	1	+
+#Split in new
+chr1	145319797	145348851	dummy_424988	1	+
+#Split in new
+chr1	145322945	145362978	dummy_424989	1	+
+#Split in new
+chr1	145324521	145348851	dummy_424990	1	+
+#Split in new
+chr1	146439252	146446185	dummy_424993	1	+
+#Split in new
+chr1	146420192	146447725	dummy_424994	1	+
+#Split in new
+chr1	147576929	148006225	dummy_424998	1	-
+#Split in new
+chr1	148025864	148346581	dummy_424999	1	-
+#Split in new
+chr1	148025864	148340237	dummy_425001	1	-
+#Split in new
+chr1	147931905	148176162	dummy_425002	1	-
+#Split in new
+chr1	148007091	148264664	dummy_425003	1	-
+#Split in new
+chr1	148011057	148270217	dummy_425004	1	-
+#Split in new
+chr1	148275926	148308404	dummy_425006	1	-
+#Split in new
+chr1	148006399	148010112	dummy_425007	1	-
+#Split in new
+chr1	148013372	148259904	dummy_425008	1	-
+#Split in new
+chr1	148261630	148276555	dummy_425009	1	-
+#Split in new
+chr1	148021629	148335534	dummy_425010	1	-
+#Split in new
+chr1	148013372	148255140	dummy_425011	1	-
+#Split in new
+chr1	148261630	148282939	dummy_425012	1	-
+#Split in new
+chr1	148283936	148287788	dummy_425013	1	-
+#Split in new
+chr1	148261630	148279746	dummy_425014	1	-
+#Split in new
+chr1	148280743	148302088	dummy_425015	1	-
+#Split in new
+chr1	148305312	148320333	dummy_425016	1	-
+#Split in new
+chr1	148256866	148305202	dummy_425017	1	-
+#Split in new
+chr1	148309349	148314738	dummy_425018	1	-
+#Split in new
+chr1	148256866	148329029	dummy_425019	1	-
+#Split in new
+chr1	148277552	148306858	dummy_425021	1	-
+#Split in new
+chr1	148252119	148324258	dummy_425022	1	-
+#Split in new
+chr1	148326849	148329029	dummy_425023	1	-
+#Split in new
+chr1	148260078	148267017	dummy_425025	1	-
+#Split in new
+chr1	148253726	148302088	dummy_425026	1	-
+#Split in new
+chr1	148258490	148265445	dummy_425027	1	-
+#Split in new
+chr1	148271162	148282939	dummy_425028	1	-
+#Split in new
+chr1	148263956	148269436	dummy_425029	1	-
+#Split in new
+chr1	148268014	148270217	dummy_425030	1	-
+#Split in new
+chr1	148272788	148297328	dummy_425031	1	-
+#Split in new
+chr1	148318883	148324258	dummy_425032	1	-
+#Split in new
+chr1	148277552	148292558	dummy_425033	1	-
+#Split in new
+chr1	148280743	148287788	dummy_425034	1	-
+#Split in new
+chr1	148280743	148297328	dummy_425035	1	-
+#Split in new
+chr1	148304575	148309976	dummy_425036	1	-
+#Split in new
+chr1	148314111	148319510	dummy_425037	1	-
+#Split in new
+chr1	148283936	148306858	dummy_425038	1	-
+#Split in new
+chr1	148283936	148308404	dummy_425039	1	-
+#Split in new
+chr1	149576701	149671771	dummy_425040	1	+
+#Split in new
+chr1	149640912	149646917	dummy_425047	1	+
+#Deleted in new
+chr1	156354350	156354350	dummy_425068	1	+
+#Deleted in new
+chr1	201337354	201337354	dummy_425091	1	-
+#Deleted in new
+chr1	223724381	223724381	dummy_425114	1	-
+#Split in new
+chr1	223724383	223803669	dummy_425115	1	-
+#Deleted in new
+chr10	7605078	7605078	dummy_425136	1	-
+#Partially deleted in new
+chr10	11374606	11374641	dummy_425139	1	+
+#Split in new
+chr10	17875839	18129621	dummy_425141	1	+
+#Split in new
+chr10	48950966	48952461	dummy_425153	1	-
+#Split in new
+chr10	51130466	51361726	dummy_425155	1	-
+#Split in new
+chr10	51361834	51371132	dummy_425156	1	-
+#Split in new
+chr10	51130712	51361722	dummy_425157	1	-
+#Split in new
+chr10	51130716	51370853	dummy_425158	1	-
+#Split in new
+chr10	51364772	51371284	dummy_425159	1	-
+#Split in new
+chr10	51371167	51729922	dummy_425160	1	-
+#Partially deleted in new
+chr11	1162362	1253679	dummy_425231	1	+
+#Deleted in new
+chr11	48367053	48367053	dummy_425264	1	-
+#Deleted in new
+chr11	71850157	71850157	dummy_425306	1	+
+#Partially deleted in new
+chr12	7189412	7241205	dummy_425359	1	-
+#Split in new
+chr12	80839500	80862486	dummy_425434	1	+
+#Deleted in new
+chr12	109372438	109372438	dummy_425448	1	-
+#Partially deleted in new
+chr12	109372440	109458638	dummy_425449	1	-
+#Deleted in new
+chr14	106092406	106092406	dummy_425611	1	-
+#Deleted in new
+chr14	106136185	106136185	dummy_425616	1	-
+#Deleted in new
+chr14	106144697	106144697	dummy_425618	1	-
+#Deleted in new
+chr14	106237746	106237746	dummy_425630	1	-
+#Deleted in new
+chr14	106318119	106318119	dummy_425639	1	-
+#Deleted in new
+chr14	106318226	106318226	dummy_425640	1	-
+#Partially deleted in new
+chr14	106318307	106318479	dummy_425642	1	-
+#Deleted in new
+chr14	106327606	106327606	dummy_425648	1	-
+#Deleted in new
+chr14	106327793	106327793	dummy_425649	1	-
+#Deleted in new
+chr14	106329480	106329480	dummy_425651	1	-
+#Deleted in new
+chr14	106329519	106329519	dummy_425653	1	-
+#Deleted in new
+chr14	106329569	106329569	dummy_425656	1	-
+#Deleted in new
+chr14	106329636	106329636	dummy_425660	1	-
+#Deleted in new
+chr14	106329688	106329688	dummy_425662	1	-
+#Deleted in new
+chr14	106329710	106329710	dummy_425664	1	-
+#Deleted in new
+chr14	106329842	106329842	dummy_425669	1	-
+#Deleted in new
+chr14	106329904	106329904	dummy_425672	1	-
+#Deleted in new
+chr14	106330104	106330104	dummy_425678	1	-
+#Partially deleted in new
+chr14	106330317	106330323	dummy_425690	1	-
+#Deleted in new
+chr14	106330366	106330366	dummy_425692	1	-
+#Deleted in new
+chr14	106330543	106330543	dummy_425695	1	-
+#Deleted in new
+chr14	106330702	106330702	dummy_425698	1	-
+#Deleted in new
+chr14	106330757	106330757	dummy_425700	1	-
+#Deleted in new
+chr14	106330856	106330856	dummy_425702	1	-
+#Deleted in new
+chr14	106331008	106331008	dummy_425708	1	-
+#Deleted in new
+chr14	106331053	106331053	dummy_425709	1	-
+#Deleted in new
+chr14	106331066	106331066	dummy_425710	1	-
+#Deleted in new
+chr14	106331101	106331101	dummy_425713	1	-
+#Deleted in new
+chr14	106331237	106331237	dummy_425722	1	-
+#Deleted in new
+chr14	106331329	106331329	dummy_425726	1	-
+#Deleted in new
+chr14	106331612	106331612	dummy_425740	1	-
+#Deleted in new
+chr14	106332854	106332854	dummy_425788	1	-
+#Partially deleted in new
+chr14	106334081	106334102	dummy_425824	1	-
+#Deleted in new
+chr14	106334621	106334621	dummy_425838	1	-
+#Deleted in new
+chr14	106336371	106336371	dummy_425879	1	-
+#Deleted in new
+chr14	106336566	106336566	dummy_425884	1	-
+#Deleted in new
+chr14	106343849	106343849	dummy_425979	1	-
+#Deleted in new
+chr14	106344237	106344237	dummy_425988	1	-
+#Deleted in new
+chr14	106346523	106346523	dummy_426029	1	-
+#Deleted in new
+chr14	106347126	106347126	dummy_426045	1	-
+#Partially deleted in new
+chr14	106348168	106348177	dummy_426072	1	-
+#Deleted in new
+chr14	106349756	106349756	dummy_426098	1	-
+#Deleted in new
+chr14	106351959	106351959	dummy_426141	1	-
+#Deleted in new
+chr14	106352003	106352003	dummy_426143	1	-
+#Deleted in new
+chr14	106352030	106352030	dummy_426145	1	-
+#Deleted in new
+chr14	106354496	106354496	dummy_426195	1	-
+#Deleted in new
+chr14	106356568	106356568	dummy_426231	1	-
+#Deleted in new
+chr14	106356693	106356693	dummy_426233	1	-
+#Deleted in new
+chr14	106357582	106357582	dummy_426247	1	-
+#Deleted in new
+chr14	106357600	106357600	dummy_426249	1	-
+#Deleted in new
+chr14	106357689	106357689	dummy_426256	1	-
+#Deleted in new
+chr14	106360632	106360632	dummy_426320	1	-
+#Deleted in new
+chr14	106361394	106361394	dummy_426332	1	-
+#Deleted in new
+chr14	106362195	106362195	dummy_426354	1	-
+#Deleted in new
+chr14	106365083	106365083	dummy_426406	1	-
+#Deleted in new
+chr14	106366831	106366831	dummy_426434	1	-
+#Deleted in new
+chr14	106367043	106367043	dummy_426437	1	-
+#Deleted in new
+chr14	106367069	106367069	dummy_426439	1	-
+#Deleted in new
+chr14	106367115	106367115	dummy_426443	1	-
+#Deleted in new
+chr14	106367750	106367750	dummy_426467	1	-
+#Deleted in new
+chr14	106367925	106367925	dummy_426471	1	-
+#Deleted in new
+chr14	106368541	106368541	dummy_426485	1	-
+#Deleted in new
+chr14	106370421	106370421	dummy_426515	1	-
+#Deleted in new
+chr14	106370719	106370719	dummy_426528	1	-
+#Deleted in new
+chr14	106371509	106371509	dummy_426550	1	-
+#Deleted in new
+chr14	106371522	106371522	dummy_426551	1	-
+#Deleted in new
+chr14	106374326	106374326	dummy_426601	1	-
+#Partially deleted in new
+chr14	106375314	106375339	dummy_426613	1	-
+#Deleted in new
+chr14	106375804	106375804	dummy_426620	1	-
+#Deleted in new
+chr14	106376292	106376292	dummy_426629	1	-
+#Deleted in new
+chr14	106376295	106376295	dummy_426630	1	-
+#Deleted in new
+chr14	106377094	106377094	dummy_426652	1	-
+#Deleted in new
+chr14	106377887	106377887	dummy_426667	1	-
+#Deleted in new
+chr14	106378779	106378779	dummy_426685	1	-
+#Deleted in new
+chr14	106379107	106379107	dummy_426690	1	-
+#Deleted in new
+chr14	106380288	106380288	dummy_426709	1	-
+#Deleted in new
+chr14	106380450	106380450	dummy_426722	1	-
+#Deleted in new
+chr14	106385685	106385685	dummy_426817	1	-
+#Deleted in new
+chr14	106386828	106386828	dummy_426841	1	-
+#Deleted in new
+chr14	106387254	106387254	dummy_426851	1	-
+#Deleted in new
+chr14	106392423	106392423	dummy_426920	1	-
+#Deleted in new
+chr14	106406817	106406817	dummy_427075	1	-
+#Deleted in new
+chr14	106411740	106411740	dummy_427138	1	-
+#Partially deleted in new
+chr14	106414646	106414829	dummy_427164	1	-
+#Partially deleted in new
+chr14	106415131	106415186	dummy_427170	1	-
+#Partially deleted in new
+chr14	106415203	106415242	dummy_427171	1	-
+#Partially deleted in new
+chr14	106418299	106418639	dummy_427196	1	-
+#Deleted in new
+chr14	106430814	106430814	dummy_427306	1	-
+#Partially deleted in new
+chr14	106433014	106433140	dummy_427324	1	-
+#Deleted in new
+chr14	106434515	106434515	dummy_427341	1	-
+#Deleted in new
+chr14	106437217	106437217	dummy_427367	1	-
+#Deleted in new
+chr14	106442685	106442685	dummy_427430	1	-
+#Deleted in new
+chr14	106445990	106445990	dummy_427468	1	-
+#Partially deleted in new
+chr14	106450938	106450957	dummy_427530	1	-
+#Partially deleted in new
+chr14	106461374	106461484	dummy_427598	1	-
+#Partially deleted in new
+chr14	106462509	106462720	dummy_427610	1	-
+#Split in new
+chr14	106465552	106465815	dummy_427625	1	-
+#Partially deleted in new
+chr14	106465827	106466062	dummy_427626	1	-
+#Partially deleted in new
+chr14	106466334	106466425	dummy_427631	1	-
+#Partially deleted in new
+chr14	106466437	106466594	dummy_427632	1	-
+#Deleted in new
+chr14	106466607	106466625	dummy_427633	1	-
+#Partially deleted in new
+chr14	106466634	106466660	dummy_427634	1	-
+#Split in new
+chr14	106466670	106466770	dummy_427635	1	-
+#Split in new
+chr14	106466782	106467410	dummy_427636	1	-
+#Split in new
+chr14	106467422	106467605	dummy_427637	1	-
+#Partially deleted in new
+chr14	106472485	106472530	dummy_427666	1	-
+#Partially deleted in new
+chr14	106472540	106472625	dummy_427667	1	-
+#Partially deleted in new
+chr14	106476554	106476558	dummy_427699	1	-
+#Partially deleted in new
+chr14	106476666	106476814	dummy_427701	1	-
+#Partially deleted in new
+chr14	106477640	106477798	dummy_427711	1	-
+#Partially deleted in new
+chr14	106479062	106479106	dummy_427727	1	-
+#Partially deleted in new
+chr14	106479929	106480105	dummy_427733	1	-
+#Partially deleted in new
+chr14	106482781	106483046	dummy_427748	1	-
+#Deleted in new
+chr14	106483059	106483131	dummy_427749	1	-
+#Deleted in new
+chr14	106483142	106483227	dummy_427750	1	-
+#Deleted in new
+chr14	106483238	106483265	dummy_427751	1	-
+#Deleted in new
+chr14	106483280	106483322	dummy_427752	1	-
+#Partially deleted in new
+chr14	106483327	106483523	dummy_427753	1	-
+#Split in new
+chr14	106483567	106483588	dummy_427755	1	-
+#Partially deleted in new
+chr14	106484770	106484958	dummy_427766	1	-
+#Split in new
+chr14	106485916	106486325	dummy_427776	1	-
+#Partially deleted in new
+chr14	106487493	106487626	dummy_427791	1	-
+#Partially deleted in new
+chr14	106487687	106487755	dummy_427793	1	-
+#Partially deleted in new
+chr14	106491915	106491970	dummy_427832	1	-
+#Deleted in new
+chr14	106492202	106492202	dummy_427836	1	-
+#Deleted in new
+chr14	106511784	106511784	dummy_427959	1	-
+#Partially deleted in new
+chr14	106514804	106514913	dummy_427983	1	-
+#Partially deleted in new
+chr14	106514927	106514963	dummy_427984	1	-
+#Partially deleted in new
+chr14	106515767	106515783	dummy_427991	1	-
+#Partially deleted in new
+chr14	106524045	106524066	dummy_428044	1	-
+#Partially deleted in new
+chr14	106525623	106525867	dummy_428050	1	-
+#Split in new
+chr14	106526752	106527308	dummy_428058	1	-
+#Partially deleted in new
+chr14	106528029	106528133	dummy_428066	1	-
+#Partially deleted in new
+chr14	106528481	106529183	dummy_428071	1	-
+#Deleted in new
+chr14	106529194	106529256	dummy_428072	1	-
+#Deleted in new
+chr14	106529262	106529349	dummy_428073	1	-
+#Deleted in new
+chr14	106529367	106529375	dummy_428074	1	-
+#Deleted in new
+chr14	106529387	106529477	dummy_428075	1	-
+#Deleted in new
+chr14	106529487	106529622	dummy_428076	1	-
+#Deleted in new
+chr14	106529636	106529748	dummy_428077	1	-
+#Deleted in new
+chr14	106529766	106529790	dummy_428078	1	-
+#Deleted in new
+chr14	106529805	106529978	dummy_428079	1	-
+#Deleted in new
+chr14	106529985	106530004	dummy_428080	1	-
+#Deleted in new
+chr14	106530016	106530220	dummy_428081	1	-
+#Deleted in new
+chr14	106530232	106530340	dummy_428082	1	-
+#Deleted in new
+chr14	106530350	106530443	dummy_428083	1	-
+#Deleted in new
+chr14	106530456	106530468	dummy_428084	1	-
+#Deleted in new
+chr14	106530480	106530589	dummy_428085	1	-
+#Deleted in new
+chr14	106530599	106530807	dummy_428086	1	-
+#Deleted in new
+chr14	106530819	106530834	dummy_428087	1	-
+#Deleted in new
+chr14	106530845	106531188	dummy_428088	1	-
+#Split in new
+chr14	106531202	106531803	dummy_428089	1	-
+#Split in new
+chr14	106531832	106531925	dummy_428091	1	-
+#Split in new
+chr14	106531937	106532032	dummy_428092	1	-
+#Deleted in new
+chr14	106532042	106532067	dummy_428093	1	-
+#Split in new
+chr14	106532079	106532254	dummy_428094	1	-
+#Partially deleted in new
+chr14	106532291	106532331	dummy_428096	1	-
+#Deleted in new
+chr14	106532343	106532495	dummy_428097	1	-
+#Deleted in new
+chr14	106532508	106532515	dummy_428098	1	-
+#Split in new
+chr14	106532526	106532653	dummy_428099	1	-
+#Partially deleted in new
+chr14	106532659	106532733	dummy_428100	1	-
+#Deleted in new
+chr14	106532743	106532754	dummy_428101	1	-
+#Split in new
+chr14	106532840	106533037	dummy_428103	1	-
+#Split in new
+chr14	106533079	106533601	dummy_428105	1	-
+#Split in new
+chr14	106533684	106534489	dummy_428108	1	-
+#Partially deleted in new
+chr14	106534501	106534608	dummy_428109	1	-
+#Split in new
+chr14	106534625	106534938	dummy_428110	1	-
+#Split in new
+chr14	106534958	106535250	dummy_428112	1	-
+#Partially deleted in new
+chr14	106535256	106535494	dummy_428113	1	-
+#Deleted in new
+chr14	106535567	106535773	dummy_428116	1	-
+#Deleted in new
+chr14	106535784	106535786	dummy_428117	1	-
+#Deleted in new
+chr14	106535790	106535827	dummy_428118	1	-
+#Deleted in new
+chr14	106535838	106535968	dummy_428119	1	-
+#Deleted in new
+chr14	106535980	106536015	dummy_428120	1	-
+#Partially deleted in new
+chr14	106536022	106536282	dummy_428121	1	-
+#Deleted in new
+chr14	106536294	106536453	dummy_428122	1	-
+#Deleted in new
+chr14	106536465	106536514	dummy_428123	1	-
+#Deleted in new
+chr14	106536522	106536524	dummy_428124	1	-
+#Deleted in new
+chr14	106536535	106536830	dummy_428125	1	-
+#Partially deleted in new
+chr14	106536842	106537187	dummy_428126	1	-
+#Deleted in new
+chr14	106537202	106537264	dummy_428127	1	-
+#Deleted in new
+chr14	106537277	106537340	dummy_428128	1	-
+#Partially deleted in new
+chr14	106537352	106537414	dummy_428129	1	-
+#Deleted in new
+chr14	106537424	106537544	dummy_428130	1	-
+#Deleted in new
+chr14	106537554	106537587	dummy_428131	1	-
+#Deleted in new
+chr14	106537592	106537656	dummy_428132	1	-
+#Deleted in new
+chr14	106537673	106537720	dummy_428133	1	-
+#Deleted in new
+chr14	106537726	106537744	dummy_428134	1	-
+#Deleted in new
+chr14	106537756	106537810	dummy_428135	1	-
+#Deleted in new
+chr14	106537814	106537814	dummy_428136	1	-
+#Deleted in new
+chr14	106537827	106537884	dummy_428137	1	-
+#Deleted in new
+chr14	106537888	106537888	dummy_428138	1	-
+#Deleted in new
+chr14	106537899	106538128	dummy_428139	1	-
+#Deleted in new
+chr14	106538139	106538143	dummy_428140	1	-
+#Deleted in new
+chr14	106538152	106538197	dummy_428141	1	-
+#Deleted in new
+chr14	106538200	106538255	dummy_428142	1	-
+#Deleted in new
+chr14	106538267	106538466	dummy_428143	1	-
+#Deleted in new
+chr14	106538480	106539065	dummy_428144	1	-
+#Partially deleted in new
+chr14	106539390	106539469	dummy_428145	1	-
+#Deleted in new
+chr14	106539534	106540431	dummy_428147	1	-
+#Deleted in new
+chr14	106540443	106540567	dummy_428148	1	-
+#Deleted in new
+chr14	106540581	106540755	dummy_428149	1	-
+#Deleted in new
+chr14	106540769	106540773	dummy_428150	1	-
+#Deleted in new
+chr14	106540775	106540801	dummy_428151	1	-
+#Partially deleted in new
+chr14	106540813	106541052	dummy_428152	1	-
+#Partially deleted in new
+chr14	106541062	106541257	dummy_428153	1	-
+#Deleted in new
+chr14	106541263	106541436	dummy_428154	1	-
+#Deleted in new
+chr14	106541447	106541481	dummy_428155	1	-
+#Deleted in new
+chr14	106541491	106541587	dummy_428156	1	-
+#Deleted in new
+chr14	106541595	106541648	dummy_428157	1	-
+#Partially deleted in new
+chr14	106541658	106541841	dummy_428158	1	-
+#Partially deleted in new
+chr14	106541868	106542037	dummy_428160	1	-
+#Partially deleted in new
+chr14	106542054	106542142	dummy_428161	1	-
+#Partially deleted in new
+chr14	106542150	106542193	dummy_428162	1	-
+#Deleted in new
+chr14	106542205	106542239	dummy_428163	1	-
+#Deleted in new
+chr14	106542243	106542284	dummy_428164	1	-
+#Deleted in new
+chr14	106542295	106542368	dummy_428165	1	-
+#Deleted in new
+chr14	106542382	106542419	dummy_428166	1	-
+#Deleted in new
+chr14	106542428	106542469	dummy_428167	1	-
+#Deleted in new
+chr14	106542481	106542481	dummy_428168	1	-
+#Deleted in new
+chr14	106542502	106542504	dummy_428169	1	-
+#Deleted in new
+chr14	106542521	106542563	dummy_428170	1	-
+#Deleted in new
+chr14	106542575	106542728	dummy_428171	1	-
+#Deleted in new
+chr14	106542741	106542821	dummy_428172	1	-
+#Deleted in new
+chr14	106542829	106542862	dummy_428173	1	-
+#Deleted in new
+chr14	106542875	106543050	dummy_428174	1	-
+#Deleted in new
+chr14	106543061	106543127	dummy_428175	1	-
+#Deleted in new
+chr14	106543139	106543191	dummy_428176	1	-
+#Deleted in new
+chr14	106543203	106543239	dummy_428177	1	-
+#Deleted in new
+chr14	106543252	106543596	dummy_428178	1	-
+#Deleted in new
+chr14	106543606	106543812	dummy_428179	1	-
+#Deleted in new
+chr14	106543818	106543951	dummy_428180	1	-
+#Deleted in new
+chr14	106543963	106544465	dummy_428181	1	-
+#Deleted in new
+chr14	106544476	106544705	dummy_428182	1	-
+#Deleted in new
+chr14	106544717	106545202	dummy_428183	1	-
+#Deleted in new
+chr14	106545217	106545235	dummy_428184	1	-
+#Deleted in new
+chr14	106545247	106545253	dummy_428185	1	-
+#Deleted in new
+chr14	106545257	106545274	dummy_428186	1	-
+#Deleted in new
+chr14	106545279	106545310	dummy_428187	1	-
+#Deleted in new
+chr14	106545317	106545373	dummy_428188	1	-
+#Deleted in new
+chr14	106545384	106545559	dummy_428189	1	-
+#Deleted in new
+chr14	106545572	106545722	dummy_428190	1	-
+#Deleted in new
+chr14	106545734	106545810	dummy_428191	1	-
+#Deleted in new
+chr14	106545821	106545899	dummy_428192	1	-
+#Deleted in new
+chr14	106545913	106545914	dummy_428193	1	-
+#Partially deleted in new
+chr14	106545926	106546100	dummy_428194	1	-
+#Deleted in new
+chr14	106546112	106546113	dummy_428195	1	-
+#Deleted in new
+chr14	106546119	106546326	dummy_428196	1	-
+#Deleted in new
+chr14	106546334	106546810	dummy_428197	1	-
+#Deleted in new
+chr14	106546822	106547305	dummy_428198	1	-
+#Deleted in new
+chr14	106547317	106547569	dummy_428199	1	-
+#Deleted in new
+chr14	106547578	106547671	dummy_428200	1	-
+#Deleted in new
+chr14	106547682	106547757	dummy_428201	1	-
+#Deleted in new
+chr14	106547767	106547814	dummy_428202	1	-
+#Deleted in new
+chr14	106547826	106547997	dummy_428203	1	-
+#Deleted in new
+chr14	106548008	106548181	dummy_428204	1	-
+#Deleted in new
+chr14	106548192	106548295	dummy_428205	1	-
+#Deleted in new
+chr14	106548303	106548344	dummy_428206	1	-
+#Deleted in new
+chr14	106548356	106548685	dummy_428207	1	-
+#Partially deleted in new
+chr14	106548696	106548838	dummy_428208	1	-
+#Deleted in new
+chr14	106548845	106548850	dummy_428209	1	-
+#Deleted in new
+chr14	106548856	106549097	dummy_428210	1	-
+#Deleted in new
+chr14	106549115	106549116	dummy_428211	1	-
+#Deleted in new
+chr14	106549122	106549122	dummy_428212	1	-
+#Deleted in new
+chr14	106549131	106549140	dummy_428213	1	-
+#Deleted in new
+chr14	106549144	106549159	dummy_428214	1	-
+#Deleted in new
+chr14	106549167	106549185	dummy_428215	1	-
+#Deleted in new
+chr14	106549194	106549203	dummy_428216	1	-
+#Deleted in new
+chr14	106549215	106549215	dummy_428217	1	-
+#Deleted in new
+chr14	106549226	106549233	dummy_428218	1	-
+#Deleted in new
+chr14	106549241	106549261	dummy_428219	1	-
+#Deleted in new
+chr14	106549276	106549288	dummy_428220	1	-
+#Deleted in new
+chr14	106549295	106549536	dummy_428221	1	-
+#Deleted in new
+chr14	106549547	106549574	dummy_428222	1	-
+#Deleted in new
+chr14	106549586	106549608	dummy_428223	1	-
+#Deleted in new
+chr14	106549618	106549669	dummy_428224	1	-
+#Deleted in new
+chr14	106549682	106549816	dummy_428225	1	-
+#Deleted in new
+chr14	106549827	106549863	dummy_428226	1	-
+#Deleted in new
+chr14	106549875	106549881	dummy_428227	1	-
+#Deleted in new
+chr14	106549893	106549917	dummy_428228	1	-
+#Deleted in new
+chr14	106549930	106550037	dummy_428229	1	-
+#Deleted in new
+chr14	106550048	106550195	dummy_428230	1	-
+#Deleted in new
+chr14	106550207	106550489	dummy_428231	1	-
+#Partially deleted in new
+chr14	106550503	106550831	dummy_428232	1	-
+#Partially deleted in new
+chr14	106550848	106551158	dummy_428233	1	-
+#Deleted in new
+chr14	106551174	106551227	dummy_428234	1	-
+#Deleted in new
+chr14	106551238	106551306	dummy_428235	1	-
+#Deleted in new
+chr14	106551319	106551475	dummy_428236	1	-
+#Deleted in new
+chr14	106551490	106551515	dummy_428237	1	-
+#Deleted in new
+chr14	106551521	106551560	dummy_428238	1	-
+#Deleted in new
+chr14	106551566	106551576	dummy_428239	1	-
+#Deleted in new
+chr14	106551583	106551867	dummy_428240	1	-
+#Deleted in new
+chr14	106551874	106551890	dummy_428241	1	-
+#Deleted in new
+chr14	106551902	106552138	dummy_428242	1	-
+#Deleted in new
+chr14	106552152	106552255	dummy_428243	1	-
+#Deleted in new
+chr14	106552259	106552276	dummy_428244	1	-
+#Partially deleted in new
+chr14	106552734	106553095	dummy_428245	1	-
+#Deleted in new
+chr14	106553107	106553129	dummy_428246	1	-
+#Deleted in new
+chr14	106553142	106553225	dummy_428247	1	-
+#Deleted in new
+chr14	106553235	106553317	dummy_428248	1	-
+#Deleted in new
+chr14	106553328	106553547	dummy_428249	1	-
+#Deleted in new
+chr14	106553564	106553861	dummy_428250	1	-
+#Deleted in new
+chr14	106553871	106553938	dummy_428251	1	-
+#Deleted in new
+chr14	106553950	106553975	dummy_428252	1	-
+#Deleted in new
+chr14	106553985	106554000	dummy_428253	1	-
+#Deleted in new
+chr14	106554013	106554089	dummy_428254	1	-
+#Partially deleted in new
+chr14	106554101	106554520	dummy_428255	1	-
+#Deleted in new
+chr14	106554529	106554648	dummy_428256	1	-
+#Deleted in new
+chr14	106554660	106554842	dummy_428257	1	-
+#Deleted in new
+chr14	106554852	106554899	dummy_428258	1	-
+#Split in new
+chr14	106554909	106555108	dummy_428259	1	-
+#Deleted in new
+chr14	106555118	106555371	dummy_428260	1	-
+#Deleted in new
+chr14	106555382	106555382	dummy_428261	1	-
+#Partially deleted in new
+chr14	106555391	106555547	dummy_428262	1	-
+#Deleted in new
+chr14	106555559	106555581	dummy_428263	1	-
+#Deleted in new
+chr14	106555590	106555597	dummy_428264	1	-
+#Deleted in new
+chr14	106555609	106555655	dummy_428265	1	-
+#Deleted in new
+chr14	106555667	106555763	dummy_428266	1	-
+#Deleted in new
+chr14	106555772	106556309	dummy_428267	1	-
+#Deleted in new
+chr14	106556317	106556431	dummy_428268	1	-
+#Deleted in new
+chr14	106556443	106556460	dummy_428269	1	-
+#Deleted in new
+chr14	106556476	106556788	dummy_428270	1	-
+#Deleted in new
+chr14	106556800	106556960	dummy_428271	1	-
+#Deleted in new
+chr14	106556972	106557053	dummy_428272	1	-
+#Deleted in new
+chr14	106557070	106557131	dummy_428273	1	-
+#Deleted in new
+chr14	106557143	106557200	dummy_428274	1	-
+#Deleted in new
+chr14	106557212	106557325	dummy_428275	1	-
+#Deleted in new
+chr14	106557337	106557365	dummy_428276	1	-
+#Partially deleted in new
+chr14	106557437	106557560	dummy_428278	1	-
+#Deleted in new
+chr14	106557572	106557746	dummy_428279	1	-
+#Deleted in new
+chr14	106557752	106557791	dummy_428280	1	-
+#Deleted in new
+chr14	106557802	106557951	dummy_428281	1	-
+#Deleted in new
+chr14	106557961	106558581	dummy_428282	1	-
+#Deleted in new
+chr14	106558594	106558719	dummy_428283	1	-
+#Deleted in new
+chr14	106558732	106559119	dummy_428284	1	-
+#Deleted in new
+chr14	106559130	106559130	dummy_428285	1	-
+#Deleted in new
+chr14	106559142	106559163	dummy_428286	1	-
+#Deleted in new
+chr14	106559168	106559222	dummy_428287	1	-
+#Deleted in new
+chr14	106559234	106559323	dummy_428288	1	-
+#Deleted in new
+chr14	106559335	106559416	dummy_428289	1	-
+#Deleted in new
+chr14	106559424	106559425	dummy_428290	1	-
+#Deleted in new
+chr14	106559439	106559543	dummy_428291	1	-
+#Deleted in new
+chr14	106559552	106559871	dummy_428292	1	-
+#Deleted in new
+chr14	106559890	106559917	dummy_428293	1	-
+#Deleted in new
+chr14	106559930	106559963	dummy_428294	1	-
+#Deleted in new
+chr14	106559979	106560177	dummy_428295	1	-
+#Deleted in new
+chr14	106560187	106560218	dummy_428296	1	-
+#Deleted in new
+chr14	106560232	106560271	dummy_428297	1	-
+#Deleted in new
+chr14	106560282	106560380	dummy_428298	1	-
+#Deleted in new
+chr14	106560394	106560417	dummy_428299	1	-
+#Deleted in new
+chr14	106560430	106560729	dummy_428300	1	-
+#Deleted in new
+chr14	106560742	106560772	dummy_428301	1	-
+#Deleted in new
+chr14	106560776	106560804	dummy_428302	1	-
+#Deleted in new
+chr14	106560819	106560924	dummy_428303	1	-
+#Deleted in new
+chr14	106560937	106561114	dummy_428304	1	-
+#Deleted in new
+chr14	106561126	106561249	dummy_428305	1	-
+#Deleted in new
+chr14	106561259	106561318	dummy_428306	1	-
+#Deleted in new
+chr14	106561330	106561451	dummy_428307	1	-
+#Deleted in new
+chr14	106561458	106561586	dummy_428308	1	-
+#Deleted in new
+chr14	106561597	106561741	dummy_428309	1	-
+#Deleted in new
+chr14	106561752	106561971	dummy_428310	1	-
+#Deleted in new
+chr14	106561981	106562137	dummy_428311	1	-
+#Deleted in new
+chr14	106562163	106562168	dummy_428312	1	-
+#Partially deleted in new
+chr14	106562180	106562223	dummy_428313	1	-
+#Split in new
+chr14	106562232	106562367	dummy_428314	1	-
+#Split in new
+chr14	106562372	106562511	dummy_428315	1	-
+#Partially deleted in new
+chr14	106562523	106562638	dummy_428316	1	-
+#Split in new
+chr14	106562650	106562927	dummy_428317	1	-
+#Split in new
+chr14	106562940	106563341	dummy_428318	1	-
+#Partially deleted in new
+chr14	106563351	106563490	dummy_428319	1	-
+#Split in new
+chr14	106563502	106563648	dummy_428320	1	-
+#Split in new
+chr14	106563661	106563934	dummy_428321	1	-
+#Partially deleted in new
+chr14	106563944	106564221	dummy_428322	1	-
+#Split in new
+chr14	106564233	106565103	dummy_428323	1	-
+#Partially deleted in new
+chr14	106565115	106565541	dummy_428324	1	-
+#Deleted in new
+chr14	106565552	106565951	dummy_428325	1	-
+#Deleted in new
+chr14	106565962	106566123	dummy_428326	1	-
+#Deleted in new
+chr14	106566141	106566249	dummy_428327	1	-
+#Deleted in new
+chr14	106566261	106566455	dummy_428328	1	-
+#Deleted in new
+chr14	106566468	106566528	dummy_428329	1	-
+#Deleted in new
+chr14	106566547	106566676	dummy_428330	1	-
+#Deleted in new
+chr14	106566686	106566963	dummy_428331	1	-
+#Deleted in new
+chr14	106566973	106567277	dummy_428332	1	-
+#Deleted in new
+chr14	106567285	106567304	dummy_428333	1	-
+#Deleted in new
+chr14	106567314	106567884	dummy_428334	1	-
+#Deleted in new
+chr14	106567896	106568004	dummy_428335	1	-
+#Deleted in new
+chr14	106568019	106568253	dummy_428336	1	-
+#Deleted in new
+chr14	106568265	106568314	dummy_428337	1	-
+#Split in new
+chr14	106568325	106568779	dummy_428338	1	-
+#Split in new
+chr14	106568792	106569073	dummy_428339	1	-
+#Deleted in new
+chr14	106569081	106569097	dummy_428340	1	-
+#Partially deleted in new
+chr14	106569102	106569307	dummy_428341	1	-
+#Split in new
+chr14	106569319	106569596	dummy_428342	1	-
+#Deleted in new
+chr14	106569605	106569778	dummy_428343	1	-
+#Deleted in new
+chr14	106569789	106569811	dummy_428344	1	-
+#Partially deleted in new
+chr14	106569822	106570116	dummy_428345	1	-
+#Partially deleted in new
+chr14	106572937	106573136	dummy_428361	1	-
+#Partially deleted in new
+chr14	106577479	106577521	dummy_428398	1	-
+#Deleted in new
+chr14	106580165	106580165	dummy_428414	1	-
+#Partially deleted in new
+chr14	106583928	106583975	dummy_428439	1	-
+#Partially deleted in new
+chr14	106593778	106594135	dummy_428495	1	-
+#Partially deleted in new
+chr14	106598449	106598496	dummy_428528	1	-
+#Partially deleted in new
+chr14	106598510	106598605	dummy_428529	1	-
+#Deleted in new
+chr14	106598780	106598813	dummy_428534	1	-
+#Partially deleted in new
+chr14	106599378	106599387	dummy_428538	1	-
+#Deleted in new
+chr14	106608872	106608872	dummy_428597	1	-
+#Partially deleted in new
+chr14	106614914	106614959	dummy_428640	1	-
+#Partially deleted in new
+chr14	106619344	106619406	dummy_428662	1	-
+#Deleted in new
+chr14	106627005	106627005	dummy_428714	1	-
+#Deleted in new
+chr14	106646962	106646962	dummy_428848	1	-
+#Deleted in new
+chr14	106650030	106650030	dummy_428871	1	-
+#Deleted in new
+chr14	106654916	106654916	dummy_428898	1	-
+#Deleted in new
+chr14	106655786	106655786	dummy_428902	1	-
+#Deleted in new
+chr14	106658262	106658262	dummy_428925	1	-
+#Deleted in new
+chr14	106658852	106658852	dummy_428934	1	-
+#Deleted in new
+chr14	106664250	106664250	dummy_428995	1	-
+#Partially deleted in new
+chr14	106668451	106668566	dummy_429031	1	-
+#Deleted in new
+chr14	106669639	106669639	dummy_429041	1	-
+#Deleted in new
+chr14	106669644	106669644	dummy_429042	1	-
+#Partially deleted in new
+chr14	106669862	106669876	dummy_429045	1	-
+#Deleted in new
+chr14	106675059	106675059	dummy_429091	1	-
+#Partially deleted in new
+chr14	106677118	106677207	dummy_429114	1	-
+#Deleted in new
+chr14	106679507	106679507	dummy_429127	1	-
+#Partially deleted in new
+chr14	106694242	106694432	dummy_429220	1	-
+#Deleted in new
+chr14	106704244	106704244	dummy_429281	1	-
+#Deleted in new
+chr14	106705228	106705232	dummy_429289	1	-
+#Partially deleted in new
+chr14	106707162	106707167	dummy_429308	1	-
+#Deleted in new
+chr14	106708528	106708528	dummy_429326	1	-
+#Partially deleted in new
+chr14	106709221	106709275	dummy_429337	1	-
+#Partially deleted in new
+chr14	106713092	106713139	dummy_429357	1	-
+#Partially deleted in new
+chr14	106713152	106713427	dummy_429358	1	-
+#Partially deleted in new
+chr14	106714199	106714256	dummy_429361	1	-
+#Deleted in new
+chr14	106723435	106723435	dummy_429441	1	-
+#Deleted in new
+chr14	106729565	106729565	dummy_429492	1	-
+#Partially deleted in new
+chr14	106753098	106753195	dummy_429641	1	-
+#Partially deleted in new
+chr14	106762193	106762373	dummy_429684	1	-
+#Partially deleted in new
+chr14	106762386	106762596	dummy_429685	1	-
+#Partially deleted in new
+chr14	106763757	106763930	dummy_429691	1	-
+#Partially deleted in new
+chr14	106767548	106767690	dummy_429707	1	-
+#Partially deleted in new
+chr14	106792035	106792063	dummy_429813	1	-
+#Split in new
+chr14	106805900	106806273	dummy_429847	1	-
+#Partially deleted in new
+chr14	106806285	106806336	dummy_429848	1	-
+#Partially deleted in new
+chr14	106806696	106806758	dummy_429853	1	-
+#Split in new
+chr14	106806901	106808582	dummy_429856	1	-
+#Split in new
+chr14	106808593	106809220	dummy_429857	1	-
+#Partially deleted in new
+chr14	106809232	106809395	dummy_429858	1	-
+#Partially deleted in new
+chr14	106809408	106809494	dummy_429859	1	-
+#Split in new
+chr14	106809508	106809724	dummy_429860	1	-
+#Split in new
+chr14	106809736	106810594	dummy_429861	1	-
+#Deleted in new
+chr14	106824538	106824538	dummy_429895	1	-
+#Deleted in new
+chr14	106828599	106828599	dummy_429907	1	-
+#Deleted in new
+chr14	106848803	106848803	dummy_429967	1	-
+#Deleted in new
+chr14	106881262	106881262	dummy_430046	1	-
+#Partially deleted in new
+chr14	106891817	106892190	dummy_430065	1	-
+#Partially deleted in new
+chr14	106915470	106915973	dummy_430106	1	-
+#Split in new
+chr14	106929289	106929528	dummy_430135	1	-
+#Partially deleted in new
+chr14	106997301	106997862	dummy_430233	1	-
+#Deleted in new
+chr14	107095116	107095116	dummy_430360	1	-
+#Deleted in new
+chr14	107099274	107099274	dummy_430365	1	-
+#Deleted in new
+chr14	107113736	107113736	dummy_430377	1	-
+#Deleted in new
+chr14	107274013	107274013	dummy_430480	1	-
+#Split in new
+chr15	22182935	22265318	dummy_430515	1	-
+#Split in new
+chr15	22482393	22751805	dummy_430519	1	-
+#Deleted in new
+chr15	22797749	22797749	dummy_430522	1	-
+#Split in new
+chr15	23408071	23408724	dummy_430525	1	-
+#Partially deleted in new
+chr15	29131425	29212399	dummy_430539	1	+
+#Deleted in new
+chr15	72105930	72105930	dummy_430557	1	+
+#Split in new
+chr15	82723100	82724030	dummy_430573	1	+
+#Split in new
+chr15	82808796	83193062	dummy_430574	1	+
+#Split in new
+chr15	82805936	83101542	dummy_430576	1	+
+#Split in new
+chr15	82824541	82906032	dummy_430577	1	-
+#Deleted in new
+chr15	102029687	102029687	dummy_430601	1	-
+#Deleted in new
+chr16	1279243	1279243	dummy_430616	1	-
+#Deleted in new
+chr16	2059624	2059624	dummy_430619	1	-
+#Deleted in new
+chr16	2059736	2059736	dummy_430620	1	-
+#Deleted in new
+chr16	57847635	57847635	dummy_430708	1	+
+#Partially deleted in new
+chr17	5286864	5286889	dummy_430742	1	+
+#Deleted in new
+chr17	7470286	7470286	dummy_430745	1	+
+#Partially deleted in new
+chr17	26684391	26684395	dummy_430765	1	-
+#Deleted in new
+chr17	26699204	26699205	dummy_430766	1	+
+#Deleted in new
+chr17	26727721	26727721	dummy_430768	1	-
+#Split in new
+chr17	34581969	34799016	dummy_430777	1	-
+#Partially deleted in new
+chr17	34891040	34891060	dummy_430778	1	-
+#Deleted in new
+chr17	48227384	48227403	dummy_430846	1	-
+#Deleted in new
+chr17	61660890	61660890	dummy_430851	1	+
+#Deleted in new
+chr17	73234011	73234011	dummy_430868	1	-
+#Deleted in new
+chr18	74090964	74090964	dummy_431148	1	-
+#Deleted in new
+chr18	74208487	74208487	dummy_431149	1	+
+#Deleted in new
+chr19	16268209	16268209	dummy_431171	1	+
+#Deleted in new
+chr19	36258939	36258939	dummy_431180	1	+
+#Deleted in new
+chr19	43865321	43865323	dummy_431197	1	+
+#Deleted in new
+chr19	45016990	45016990	dummy_431198	1	-
+#Deleted in new
+chr19	53952888	53952888	dummy_431216	1	+
+#Split in new
+chr19	54746407	54804139	dummy_431222	1	-
+#Split in new
+chr19_gl000209_random	116146	134765	dummy_431318	1	+
+#Split in new
+chr19_gl000209_random	135066	136583	dummy_431319	1	+
+#Split in new
+chr19_gl000209_random	136878	140045	dummy_431320	1	+
+#Split in new
+chr19_gl000209_random	140097	144360	dummy_431321	1	+
+#Split in new
+chr19_gl000209_random	144466	144927	dummy_431322	1	+
+#Split in new
+chr19_gl000209_random	131502	132293	dummy_431325	1	+
+#Split in new
+chr19_gl000209_random	132330	134765	dummy_431326	1	+
+#Split in new
+chr19_gl000209_random	136878	144360	dummy_431327	1	+
+#Split in new
+chr19_gl000209_random	132330	136583	dummy_431328	1	+
+#Split in new
+chr19_gl000209_random	132330	140045	dummy_431329	1	+
+#Split in new
+chr2	87368129	88019325	dummy_431425	1	+
+#Deleted in new
+chr2	89160456	89160456	dummy_431437	1	-
+#Deleted in new
+chr2	89161091	89161091	dummy_431452	1	-
+#Deleted in new
+chr2	89161095	89161095	dummy_431453	1	-
+#Deleted in new
+chr2	89161140	89161140	dummy_431457	1	-
+#Deleted in new
+chr2	89161461	89161461	dummy_431465	1	-
+#Deleted in new
+chr2	89161472	89161472	dummy_431466	1	-
+#Deleted in new
+chr2	89161482	89161482	dummy_431468	1	-
+#Deleted in new
+chr2	89399788	89399788	dummy_431670	1	-
+#Deleted in new
+chr2	89399791	89399791	dummy_431671	1	-
+#Deleted in new
+chr2	89595902	89595902	dummy_431726	1	+
+#Split in new
+chr2	90274234	90458614	dummy_431758	1	+
+#Split in new
+chr2	90273762	90458373	dummy_431760	1	+
+#Partially deleted in new
+chr2	233995357	234054804	dummy_431857	1	+
+#Partially deleted in new
+chr2	239757375	239831978	dummy_431861	1	+
+#Deleted in new
+chr20	35807793	35807793	dummy_431885	1	-
+#Deleted in new
+chr21	32201969	32201969	dummy_431930	1	-
+#Deleted in new
+chr21	46020656	46020670	dummy_431939	1	+
+#Split in new
+chr22	18003354	18016793	dummy_431941	1	+
+#Deleted in new
+chr22	22764619	22764619	dummy_432000	1	+
+#Deleted in new
+chr22	22974679	22974679	dummy_432084	1	+
+#Deleted in new
+chr22	23025377	23025377	dummy_432109	1	+
+#Deleted in new
+chr22	23055695	23055695	dummy_432133	1	+
+#Deleted in new
+chr22	23055701	23055701	dummy_432134	1	+
+#Deleted in new
+chr22	23101726	23101726	dummy_432189	1	+
+#Deleted in new
+chr22	23165903	23165903	dummy_432288	1	+
+#Deleted in new
+chr22	23166171	23166171	dummy_432293	1	+
+#Partially deleted in new
+chr22	23166204	23166610	dummy_432295	1	+
+#Deleted in new
+chr22	23193103	23193103	dummy_432311	1	+
+#Deleted in new
+chr22	23223643	23223643	dummy_432340	1	+
+#Deleted in new
+chr22	36587846	36587846	dummy_432398	1	-
+#Partially deleted in new
+chr3	12046233	12046264	dummy_432421	1	+
+#Deleted in new
+chr3	12942851	12942851	dummy_432422	1	-
+#Partially deleted in new
+chr3	16926548	16926562	dummy_432425	1	+
+#Partially deleted in new
+chr4	85996	86046	dummy_432530	1	+
+#Deleted in new
+chr4	69885806	69885806	dummy_432577	1	-
+#Split in new
+chr4	75320727	75480628	dummy_432581	1	+
+#Deleted in new
+chr4	76650067	76650067	dummy_432582	1	+
+#Deleted in new
+chr5	72743299	72743299	dummy_432741	1	-
+#Partially deleted in new
+chr5	138784866	138837130	dummy_432761	1	-
+#Partially deleted in new
+chr5	155135119	155297353	dummy_432783	1	+
+#Deleted in new
+chr6	49917100	49917100	dummy_432863	1	-
+#Partially deleted in new
+chr6_apd_hap1	1450277	1605414	dummy_433157	1	-
+#Partially deleted in new
+chr6_apd_hap1	1575658	1605759	dummy_433160	1	-
+#Partially deleted in new
+chr6_apd_hap1	1575658	1605556	dummy_433162	1	-
+#Partially deleted in new
+chr6_apd_hap1	3637820	3648432	dummy_433573	1	-
+#Partially deleted in new
+chr6_apd_hap1	3637820	3648326	dummy_433580	1	-
+#Partially deleted in new
+chr6_mann_hap4	2046975	2056121	dummy_437508	1	-
+#Partially deleted in new
+chr6_mann_hap4	2283663	2326780	dummy_437599	1	+
+#Partially deleted in new
+chr6_mann_hap4	2283663	2326815	dummy_437603	1	+
+#Partially deleted in new
+chr6_mann_hap4	2514366	2816314	dummy_437654	1	+
+#Partially deleted in new
+chr6_mann_hap4	2714977	2816314	dummy_437683	1	+
+#Partially deleted in new
+chr6_mann_hap4	2717914	2816314	dummy_437687	1	+
+#Partially deleted in new
+chr6_mcf_hap5	178605	191352	dummy_438403	1	-
+#Partially deleted in new
+chr6_mcf_hap5	383969	444855	dummy_438411	1	+
+#Partially deleted in new
+chr6_mcf_hap5	993875	1152685	dummy_438475	1	+
+#Partially deleted in new
+chr6_mcf_hap5	993875	1358785	dummy_438478	1	+
+#Partially deleted in new
+chr6_mcf_hap5	1152246	1358785	dummy_438500	1	+
+#Partially deleted in new
+chr6_mcf_hap5	1098467	1359175	dummy_438501	1	+
+#Partially deleted in new
+chr6_mcf_hap5	1150234	1292221	dummy_438507	1	+
+#Partially deleted in new
+chr6_mcf_hap5	1150259	1292421	dummy_438515	1	+
+#Partially deleted in new
+chr6_mcf_hap5	1151810	1293866	dummy_438516	1	+
+#Partially deleted in new
+chr6_mcf_hap5	3328811	3362663	dummy_439388	1	+
+#Partially deleted in new
+chr6_qbl_hap6	2461820	2767098	dummy_440602	1	+
+#Partially deleted in new
+chr6_qbl_hap6	2661987	2767098	dummy_440633	1	+
+#Deleted in new
+chr6_qbl_hap6	2772011	2772011	dummy_440640	1	+
+#Partially deleted in new
+chr6_ssto_hap7	3039882	3056011	dummy_442386	1	+
+#Partially deleted in new
+chr6_ssto_hap7	4370562	4420565	dummy_443027	1	+
+#Deleted in new
+chr7	28997498	28997498	dummy_443242	1	-
+#Partially deleted in new
+chr7	50358698	50459426	dummy_443264	1	+
+#Partially deleted in new
+chr7	50358698	50467615	dummy_443265	1	+
+#Partially deleted in new
+chr7	50358698	50455042	dummy_443266	1	+
+#Deleted in new
+chr7	72193863	72193865	dummy_443269	1	-
+#Deleted in new
+chr7	72209528	72209528	dummy_443270	1	-
+#Split in new
+chr7	74632980	74867228	dummy_443278	1	-
+#Split in new
+chr7	74714648	74921878	dummy_443280	1	-
+#Split in new
+chr7	74714648	74981056	dummy_443281	1	-
+#Split in new
+chr7	74703025	74981056	dummy_443282	1	-
+#Split in new
+chr7	74711112	74712530	dummy_443283	1	-
+#Split in new
+chr7	74714648	74925017	dummy_443284	1	-
+#Split in new
+chr7	74925377	74926810	dummy_443288	1	-
+#Deleted in new
+chr7	101957652	101957652	dummy_443311	1	+
+#Split in new
+chr7	130148504	130295823	dummy_443333	1	-
+#Deleted in new
+chr7	130295825	130295825	dummy_443334	1	-
+#Split in new
+chr7	142001249	142210994	dummy_443336	1	+
+#Split in new
+chr7	142021358	142470297	dummy_443337	1	+
+#Split in new
+chr7	142334920	142494532	dummy_443343	1	+
+#Split in new
+chr7	142353969	142494808	dummy_443344	1	+
+#Split in new
+chr7	142353958	142495152	dummy_443346	1	+
+#Split in new
+chr7	142353958	142494045	dummy_443347	1	+
+#Split in new
+chr7	142364710	142494532	dummy_443348	1	+
+#Split in new
+chr7	142428978	142494532	dummy_443350	1	+
+#Split in new
+chr7	142462192	142494248	dummy_443351	1	-
+#Partially deleted in new
+chr7	143321492	143416775	dummy_443354	1	+
+#Partially deleted in new
+chr7	143321492	143507082	dummy_443355	1	+
+#Partially deleted in new
+chr7	149515188	149515191	dummy_443371	1	+
+#Deleted in new
+chr8	6673377	6673377	dummy_443393	1	-
+#Partially deleted in new
+chr8	12003210	12276650	dummy_443399	1	+
+#Deleted in new
+chr8	24811071	24811071	dummy_443407	1	-
+#Deleted in new
+chr8	38827188	38827188	dummy_443413	1	+
+#Deleted in new
+chr8	120220778	120220778	dummy_443452	1	+
+#Deleted in new
+chr8	145738769	145738769	dummy_443465	1	-
+#Split in new
+chrUn_gl000228	94052	95977	dummy_443658	1	+
+#Split in new
+chrUn_gl000228	114116	123599	dummy_443662	1	+
+#Split in new
+chrX	49180343	49211737	dummy_443693	1	+
+#Split in new
+chrX	49183276	49294471	dummy_443694	1	+
+#Split in new
+chrX	49192819	49304027	dummy_443695	1	+
+#Split in new
+chrX	49192819	49313583	dummy_443697	1	+
+#Split in new
+chrX	49189886	49320538	dummy_443698	1	+
+#Split in new
+chrX	49192819	49294471	dummy_443699	1	+
+#Split in new
+chrX	49199386	49211737	dummy_443700	1	+
+#Split in new
+chrX	49202345	49223826	dummy_443701	1	+
+#Split in new
+chrX	49202345	49294471	dummy_443702	1	+
+#Split in new
+chrX	49199386	49310982	dummy_443703	1	+
+#Split in new
+chrX	49211864	49214306	dummy_443704	1	+
+#Split in new
+chrX	49208938	49221260	dummy_443705	1	+
+#Split in new
+chrX	49208938	49301426	dummy_443706	1	+
+#Split in new
+chrX	49218441	49223826	dummy_443707	1	+
+#Split in new
+chrX	49216723	49236822	dummy_443708	1	+
+#Split in new
+chrX	49240460	49294471	dummy_443709	1	+
+#Split in new
+chrX	49221387	49294471	dummy_443710	1	+
+#Split in new
+chrX	49237498	49301426	dummy_443711	1	+
+#Split in new
+chrX	49218441	49230798	dummy_443713	1	+
+#Partially deleted in new
+chrX	104464276	104464283	dummy_443747	1	-
+#Split in new
+chrX	134872778	134891268	dummy_443758	1	+
+#Partially deleted in new
+chrY	9236313	9365488	dummy_443778	1	+
+#Split in new
+chr1	90405	236614	dummy_443853	1	-
+#Split in new
+chr1	103821706	103971908	dummy_444298	1	-
+#Split in new
+chr1	143237081	143260228	dummy_444387	1	-
+#Split in new
+chr1	148352351	148352404	dummy_444413	1	+
+#Split in new
+chr1	149640912	149665905	dummy_444429	1	+
+#Split in new
+chr1	149691822	149698418	dummy_444431	1	-
+#Partially deleted in new
+chr10	48117208	48117305	dummy_445028	1	+
+#Partially deleted in new
+chr10	48117371	48117474	dummy_445029	1	+
+#Split in new
+chr10	48949486	48966877	dummy_445040	1	+
+#Split in new
+chr10	48988452	48989139	dummy_445041	1	-
+#Split in new
+chr15	23102333	23102749	dummy_447178	1	+
+#Partially deleted in new
+chr15	23103215	23103547	dummy_447185	1	+
+#Partially deleted in new
+chr15	23103569	23103904	dummy_447186	1	+
+#Partially deleted in new
+chr17	81054174	81054237	dummy_448495	1	+
+#Split in new
+chr17	81058715	81058811	dummy_448498	1	+
+#Partially deleted in new
+chr2	91750803	91750926	dummy_449552	1	+
+#Split in new
+chr2	91751038	91754491	dummy_449553	1	+
+#Split in new
+chr2	91750865	91750963	dummy_449554	1	+
+#Split in new
+chr2	91754582	91766535	dummy_449555	1	+
+#Split in new
+chr2	91754578	91766535	dummy_449556	1	+
+#Partially deleted in new
+chr4	49328557	49513169	dummy_451741	1	-
+#Partially deleted in new
+chr4	59727135	59853533	dummy_451758	1	-
+#Split in new
+chr6	26724430	26728057	dummy_453157	1	+
+#Split in new
+chr6	26728149	26752184	dummy_453158	1	+
+#Split in new
+chr9	40311375	40322770	dummy_454994	1	+
+#Partially deleted in new
+chr9	43313927	43314082	dummy_455002	1	+
+#Split in new
+chr9	45944328	45949213	dummy_455016	1	+
+#Split in new
+chr9	47162748	47163832	dummy_455020	1	+
+#Split in new
+chr9	65734498	65767351	dummy_455022	1	-
+#Split in new
+chr9	65782113	65782590	dummy_455024	1	-
+#Split in new
+chr9	65782109	65782590	dummy_455027	1	-
+#Partially deleted in new
+chr9	67051267	67269151	dummy_455037	1	+
+#Split in new
+chr9	67917725	67924863	dummy_455053	1	-
+#Split in new
+chr9	68810590	68811261	dummy_455070	1	+
+#Partially deleted in new
+chr9	70709091	70709749	dummy_455098	1	+
+#Split in new
+chrX	52942221	52944006	dummy_455588	1	+
+#Deleted in new
+chr1	145116311	145116327	dummy_455866	1	+
+#Split in new
+chr1	147931990	148176262	dummy_455868	1	+
+#Split in new
+chr10	18086361	18088502	dummy_455917	1	+
+#Partially deleted in new
+chr12	7189413	7241204	dummy_456017	1	-
+#Partially deleted in new
+chr12	109372441	109458637	dummy_456050	1	-
+#Split in new
+chr14	19583091	19944038	dummy_456079	1	+
+#Split in new
+chr14	106370571	106733142	dummy_456131	1	-
+#Split in new
+chr15	83099625	83100555	dummy_456163	1	+
+#Deleted in new
+chr17	5286864	5286888	dummy_456241	1	+
+#Deleted in new
+chr19	4499635	4499649	dummy_456352	1	+
+#Split in new
+chr19_gl000209_random	39303	134765	dummy_456431	1	+
+#Partially deleted in new
+chr1	144340780	144340812	dummy_456437	1	+
+#Partially deleted in new
+chr1	147931984	147932007	dummy_456438	1	+
+#Partially deleted in new
+chr2	233995359	234054804	dummy_456516	1	+
+#Partially deleted in new
+chr2	239757376	239831978	dummy_456519	1	+
+#Split in new
+chr22	18003354	18016787	dummy_456564	1	+
+#Partially deleted in new
+chr3	12046236	12046264	dummy_456645	1	+
+#Partially deleted in new
+chr5	138784866	138837128	dummy_456761	1	-
+#Partially deleted in new
+chr6_mcf_hap5	178605	191351	dummy_456891	1	-
+#Partially deleted in new
+chr6_mcf_hap5	383969	453589	dummy_456892	1	+
+#Partially deleted in new
+chr6_ssto_hap7	3039882	3056743	dummy_456942	1	+
+#Split in new
+chr7	142459733	142481234	dummy_456993	1	+
+#Split in new
+chr7	142468304	142479908	dummy_456994	1	+
+#Split in new
+chrX	49173768	49214303	dummy_457100	1	+
+#Split in new
+chrX	49179755	49180219	dummy_457101	1	+
+#Split in new
+chrX	49179697	49189242	dummy_457102	1	+
+#Split in new
+chr1	143135867	143189433	dummy_457152	1	-
+#Deleted in new
+chr1	145592257	145592295	dummy_457186	1	-
+#Deleted in new
+chr8	6673378	6673378	dummy_457191	1	-
+#Deleted in new
+chr6_dbb_hap3	3260807	3260807	dummy_457193	1	+
+#Deleted in new
+chr8	38827186	38827186	dummy_457213	1	+
+#Deleted in new
+chr6_ssto_hap7	3307934	3307934	dummy_457222	1	+
+#Split in new
+chrX	49211867	49214306	dummy_457264	1	+
+#Deleted in new
+chr16	21415557	21415557	dummy_457267	1	-
+#Partially deleted in new
+chr9	133072341	133223930	dummy_457269	1	+
+#Deleted in new
+chr11	111742146	111742146	dummy_457295	1	-
+#Split in new
+chrX	49019275	49020118	dummy_457302	1	+
+#Partially deleted in new
+chrY	9236313	9365753	dummy_457307	1	+
+#Partially deleted in new
+chr6_apd_hap1	3637822	3648432	dummy_457308	1	-
+#Deleted in new
+chr6	32551948	32551948	dummy_457309	1	-
+#Deleted in new
+chr19	53952886	53952886	dummy_457319	1	+
+#Split in new
+chr1	145833119	146395304	dummy_457333	1	+
+#Split in new
+chr1	148337538	148338371	dummy_457337	1	-
+#Split in new
+chr1	148346794	149108982	dummy_457338	1	-
+#Partially deleted in new
+chr6_apd_hap1	1575660	1605755	dummy_457349	1	-
+#Partially deleted in new
+chr6_mcf_hap5	1150185	1292221	dummy_457383	1	+
+#Deleted in new
+chr1	156354348	156354348	dummy_457386	1	+
+#Split in new
+chr7	74988528	74988551	dummy_457389	1	+
+#Deleted in new
+chr11	76751542	76751542	dummy_457392	1	+
+#Deleted in new
+chr11	76751604	76751604	dummy_457393	1	+
+#Partially deleted in new
+chr15	22736361	22736396	dummy_457401	1	+
+#Deleted in new
+chr8	143746088	143746089	dummy_457402	1	-
+#Deleted in new
+chr6_qbl_hap6	1851379	1851379	dummy_457407	1	+
+#Split in new
+chr15	23406412	23406912	dummy_457408	1	-
+#Split in new
+chr15	23406979	23572240	dummy_457409	1	-
+#Split in new
+chr15	23572352	23572372	dummy_457410	1	-
+#Deleted in new
+chr4	86033	86033	dummy_457414	1	+
+#Deleted in new
+chr4	86036	86036	dummy_457415	1	+
+#Deleted in new
+chr15	20740292	20740295	dummy_457432	1	-
+#Deleted in new
+chr15	20746892	20746927	dummy_457435	1	-
+#Deleted in new
+chr11	112832340	112832340	dummy_457441	1	+
+#Split in new
+chr7	74703025	74977921	dummy_457442	1	-
+#Split in new
+chrX	134852871	134889320	dummy_457443	1	+
+#Partially deleted in new
+chr19	54745745	54745900	dummy_457444	1	-
+#Deleted in new
+chr18	74208486	74208486	dummy_457446	1	+
+#Deleted in new
+chr14	22138562	22138563	dummy_457448	1	-
+#Deleted in new
+chr10	89623861	89623861	dummy_457452	1	+
+#Deleted in new
+chr6	31975224	31975224	dummy_457458	1	+
+#Split in new
+chr15	82808422	82808547	dummy_457463	1	+
+#Split in new
+chr1	146445389	146446923	dummy_457479	1	+
+#Deleted in new
+chr15	72105929	72105929	dummy_457485	1	+
+#Deleted in new
+chr7	128550681	128550681	dummy_457486	1	-
+#Deleted in new
+chr19	16268208	16268208	dummy_457496	1	+
+#Deleted in new
+chr6_ssto_hap7	1890754	1890754	dummy_457502	1	+
+#Deleted in new
+chr6_cox_hap2	2070524	2070524	dummy_457503	1	+
+#Deleted in new
+chr6_dbb_hap3	1852112	1852112	dummy_457504	1	+
+#Deleted in new
+chr17	4621980	4621980	dummy_457505	1	+
+#Deleted in new
+chr8	145106939	145106940	dummy_457507	1	-
+#Deleted in new
+chr4	59958	59958	dummy_457516	1	+
+#Deleted in new
+chrX	142715897	142715907	dummy_457523	1	-
+#Deleted in new
+chr8	145738768	145738768	dummy_457531	1	-
+#Deleted in new
+chr3	16926540	16926540	dummy_457535	1	+
+#Partially deleted in new
+chr3	16926549	16926562	dummy_457536	1	+
+#Deleted in new
+chr21	31913982	31913982	dummy_457567	1	-
+#Deleted in new
+chr22	20780031	20780031	dummy_457573	1	-
+#Deleted in new
+chr19	45016991	45016991	dummy_457583	1	-
+#Partially deleted in new
+chr20	34152275	34152423	dummy_457586	1	-
+#Split in new
+chr15	82635576	82933938	dummy_457605	1	-
+#Split in new
+chr15	82934603	83013647	dummy_457606	1	-
+#Deleted in new
+chr6_cox_hap2	4003161	4003161	dummy_457650	1	-
+#Deleted in new
+chr6_qbl_hap6	3789620	3789620	dummy_457651	1	-
+#Partially deleted in new
+chr1	149378233	149378241	dummy_457656	1	+
+#Split in new
+chr9	65493750	65493817	dummy_457698	1	-
+#Deleted in new
+chr11	118898436	118898436	dummy_457732	1	-
+#Split in new
+chr9	67779288	67779768	dummy_457738	1	+
+#Split in new
+chr9	67780014	67781149	dummy_457739	1	+
+#Deleted in new
+chr8	21966703	21966703	dummy_457747	1	-
+#Deleted in new
+chr8	21966708	21966708	dummy_457748	1	-
+#Deleted in new
+chrX	104464278	104464278	dummy_457750	1	-
+#Deleted in new
+chrX	104464282	104464282	dummy_457751	1	-
+#Deleted in new
+chr17	26727722	26727722	dummy_457753	1	-
+#Deleted in new
+chr8	120220776	120220776	dummy_457757	1	+
+#Deleted in new
+chr11	47368975	47368975	dummy_457758	1	-
+#Deleted in new
+chr16	1279238	1279238	dummy_457759	1	-
+#Split in new
+chr1	13330993	13698071	dummy_457764	1	-
+#Deleted in new
+chr16	3602228	3602228	dummy_457765	1	-
+#Deleted in new
+chr16	2059622	2059622	dummy_457766	1	-
+#Deleted in new
+chr16	2059737	2059737	dummy_457767	1	-
+#Deleted in new
+chr3	183898633	183898633	dummy_457768	1	+
+#Deleted in new
+chrX	140591081	140591094	dummy_457780	1	+
+#Deleted in new
+chr18	74090958	74090958	dummy_457784	1	-
+#Deleted in new
+chr12	7080212	7080212	dummy_457785	1	+
+#Deleted in new
+chr17	26699203	26699203	dummy_457796	1	+
+#Deleted in new
+chr3	14444244	14444244	dummy_457800	1	+
+#Deleted in new
+chr3	14444250	14444250	dummy_457801	1	+
+#Deleted in new
+chr3	14444278	14444278	dummy_457802	1	+
+#Deleted in new
+chr3	14444286	14444286	dummy_457803	1	+
+#Deleted in new
+chr3	14444309	14444309	dummy_457804	1	+
+#Deleted in new
+chr3	14444319	14444319	dummy_457805	1	+
+#Deleted in new
+chr3	14444327	14444327	dummy_457806	1	+
+#Deleted in new
+chr3	14444330	14444330	dummy_457807	1	+
+#Deleted in new
+chr8	24811065	24811065	dummy_457841	1	-
+#Deleted in new
+chr19	36258938	36258938	dummy_457866	1	+
+#Split in new
+chr1	13052788	13108899	dummy_457867	1	-
+#Partially deleted in new
+chr11	1162362	1212759	dummy_457883	1	+
+#Deleted in new
+chr11	1216338	1216338	dummy_457884	1	+
+#Deleted in new
+chr7	149522371	149522371	dummy_457948	1	+
+#Deleted in new
+chr21	32201970	32201970	dummy_457973	1	-
+#Deleted in new
+chr1	17718672	17718672	dummy_457974	1	+
+#Split in new
+chr3	57386256	57389034	dummy_457996	1	-
+#Deleted in new
+chr7	100608370	100608725	dummy_457997	1	+
+#Deleted in new
+chr7	100611136	100611268	dummy_457998	1	+
+#Partially deleted in new
+chr7	50367354	50459426	dummy_458001	1	+
+#Partially deleted in new
+chr7	50367354	50455042	dummy_458188	1	+
+#Split in new
+chrUn_gl000227	73458	74110	dummy_458245	1	-
+#Split in new
+chr9	43609478	43614739	dummy_458305	1	-
+#Split in new
+chr10	51361911	51370853	dummy_458313	1	-
+#Partially deleted in new
+chr8	145596517	145596626	dummy_458361	1	-
+#Split in new
+chr1	237956	522200	dummy_458433	1	-
+#Split in new
+chr1	257673	639064	dummy_458435	1	-
+#Split in new
+chr1	1577132	1588854	dummy_458651	1	-
+#Split in new
+chr1	12821511	12823305	dummy_459034	1	+
+#Split in new
+chr1	13115598	13122439	dummy_459037	1	-
+#Split in new
+chr1	13217250	13330413	dummy_459039	1	-
+#Split in new
+chr1	13219127	13330537	dummy_459040	1	-
+#Deleted in new
+chr1	38077349	38077418	dummy_459959	1	-
+#Split in new
+chr1	120873006	120880233	dummy_461280	1	+
+#Split in new
+chr1	142618962	143119060	dummy_461289	1	+
+#Split in new
+chr1	143235334	143253881	dummy_461291	1	+
+#Split in new
+chr1	143135769	143188508	dummy_461337	1	-
+#Split in new
+chr1	143209805	143211510	dummy_461339	1	-
+#Split in new
+chr1	143211644	143213092	dummy_461340	1	-
+#Split in new
+chr1	143226399	143227880	dummy_461341	1	-
+#Split in new
+chr1	143233122	143265370	dummy_461348	1	-
+#Split in new
+chr1	143226399	143229453	dummy_461349	1	-
+#Split in new
+chr1	143210351	143211510	dummy_461351	1	-
+#Split in new
+chr1	143267489	143270925	dummy_461352	1	-
+#Split in new
+chr1	143233122	143265416	dummy_461353	1	-
+#Split in new
+chr1	143668911	143686970	dummy_461374	1	-
+#Split in new
+chr1	144169304	144179473	dummy_461384	1	+
+#Split in new
+chr1	144205098	144220127	dummy_461385	1	+
+#Split in new
+chr1	144162038	144163655	dummy_461386	1	+
+#Split in new
+chr1	144167757	144182695	dummy_461387	1	+
+#Split in new
+chr1	144187633	144205816	dummy_461389	1	+
+#Split in new
+chr1	144158899	144163655	dummy_461390	1	+
+#Split in new
+chr1	144164571	144168359	dummy_461391	1	+
+#Split in new
+chr1	144158230	144160414	dummy_461392	1	+
+#Split in new
+chr1	144165344	144166040	dummy_461393	1	+
+#Split in new
+chr1	144167757	144169908	dummy_461394	1	+
+#Split in new
+chr1	144153065	144158177	dummy_461395	1	+
+#Split in new
+chr1	144160495	144161296	dummy_461396	1	+
+#Split in new
+chr1	144161349	144203298	dummy_461397	1	+
+#Split in new
+chr1	144207411	144217611	dummy_461398	1	+
+#Split in new
+chr1	144219273	144222416	dummy_461399	1	+
+#Split in new
+chr1	144222459	144224082	dummy_461400	1	+
+#Split in new
+chr1	144187633	144220127	dummy_461401	1	+
+#Split in new
+chr1	144159044	144188351	dummy_461402	1	+
+#Split in new
+chr1	144188404	144220786	dummy_461403	1	+
+#Split in new
+chr1	144159815	144163626	dummy_461404	1	+
+#Split in new
+chr1	144166105	144181063	dummy_461405	1	+
+#Split in new
+chr1	144162174	144218498	dummy_461406	1	+
+#Split in new
+chr1	144220180	144222378	dummy_461407	1	+
+#Split in new
+chr1	144162997	144165170	dummy_461408	1	+
+#Split in new
+chr1	144163151	144164725	dummy_461409	1	+
+#Split in new
+chr1	144181101	144182724	dummy_461410	1	+
+#Split in new
+chr1	144183640	144187459	dummy_461411	1	+
+#Split in new
+chr1	144193150	144196975	dummy_461412	1	+
+#Split in new
+chr1	144202639	144204924	dummy_461413	1	+
+#Split in new
+chr1	144177225	144181063	dummy_461414	1	+
+#Split in new
+chr1	144174034	144181063	dummy_461415	1	+
+#Split in new
+chr1	144169304	144182695	dummy_461416	1	+
+#Split in new
+chr1	144179504	144182724	dummy_461417	1	+
+#Split in new
+chr1	144184332	144189091	dummy_461418	1	+
+#Split in new
+chr1	144189131	144193876	dummy_461419	1	+
+#Split in new
+chr1	144182214	144183794	dummy_461420	1	+
+#Split in new
+chr1	144189185	144189881	dummy_461422	1	+
+#Split in new
+chr1	144186824	144189011	dummy_461424	1	+
+#Split in new
+chr1	144188404	144192205	dummy_461425	1	+
+#Split in new
+chr1	144194694	144200105	dummy_461426	1	+
+#Split in new
+chr1	144191578	144193759	dummy_461427	1	+
+#Split in new
+chr1	144197920	144204924	dummy_461430	1	+
+#Split in new
+chr1	144205869	144219235	dummy_461431	1	+
+#Split in new
+chr1	144195517	144204185	dummy_461432	1	+
+#Split in new
+chr1	144204295	144206476	dummy_461433	1	+
+#Split in new
+chr1	144196340	144198519	dummy_461435	1	+
+#Split in new
+chr1	144201102	144204924	dummy_461437	1	+
+#Split in new
+chr1	144196494	144198074	dummy_461438	1	+
+#Split in new
+chr1	144203336	144204962	dummy_461439	1	+
+#Split in new
+chr1	144204449	144206023	dummy_461441	1	+
+#Split in new
+chr1	144217674	144219298	dummy_461442	1	+
+#Split in new
+chr1	144216108	144219315	dummy_461443	1	+
+#Split in new
+chr1	144210594	144217611	dummy_461444	1	+
+#Split in new
+chr1	144206650	144207346	dummy_461445	1	+
+#Split in new
+chr1	144209057	144219235	dummy_461446	1	+
+#Split in new
+chr1	144217785	144223265	dummy_461447	1	+
+#Split in new
+chr1	144223375	144224082	dummy_461448	1	+
+#Split in new
+chr1	144218608	144220786	dummy_461449	1	+
+#Split in new
+chr1	144220960	144223265	dummy_461450	1	+
+#Split in new
+chr1	144223375	144825352	dummy_461451	1	+
+#Split in new
+chr1	144218762	144220334	dummy_461452	1	+
+#Split in new
+chr1	144290007	144340525	dummy_461453	1	-
+#Split in new
+chr1	144283166	144284291	dummy_461454	1	-
+#Split in new
+chr1	144300931	144340525	dummy_461456	1	-
+#Split in new
+chr1	144301537	144311448	dummy_461457	1	-
+#Split in new
+chr1	144301361	144340676	dummy_461458	1	-
+#Split in new
+chr1	144480982	144520773	dummy_461461	1	-
+#Split in new
+chr1	144481160	144520773	dummy_461462	1	-
+#Split in new
+chr1	144481766	144491677	dummy_461465	1	-
+#Split in new
+chr1	144481590	144520924	dummy_461466	1	-
+#Split in new
+chr1	144572683	144575102	dummy_461467	1	+
+#Partially deleted in new
+chr1	144575213	144575360	dummy_461468	1	+
+#Split in new
+chr1	144825526	144826222	dummy_461470	1	+
+#Split in new
+chr1	144825526	144827819	dummy_461471	1	+
+#Split in new
+chr1	144615304	144813741	dummy_461474	1	+
+#Split in new
+chr1	144612822	144852393	dummy_461475	1	-
+#Split in new
+chr1	144614999	144621446	dummy_461476	1	+
+#Split in new
+chr1	144825433	144826234	dummy_461477	1	+
+#Split in new
+chr1	145314943	145363716	dummy_461491	1	+
+#Split in new
+chr1	145314268	145363678	dummy_461492	1	+
+#Split in new
+chr1	145321829	145350160	dummy_461496	1	+
+#Split in new
+chr1	145352442	145363454	dummy_461497	1	+
+#Split in new
+chr1	145364630	145367774	dummy_461498	1	+
+#Split in new
+chr1	145311959	145341000	dummy_461499	1	+
+#Split in new
+chr1	145311155	145340108	dummy_461501	1	+
+#Split in new
+chr1	145359188	145361448	dummy_461506	1	+
+#Split in new
+chr1	145322176	145325951	dummy_461507	1	+
+#Split in new
+chr1	145311155	145341648	dummy_461508	1	+
+#Split in new
+chr1	145341768	145360674	dummy_461509	1	+
+#Split in new
+chr1	145318988	145321229	dummy_461511	1	+
+#Split in new
+chr1	145325344	145327492	dummy_461512	1	+
+#Split in new
+chr1	145340282	145345724	dummy_461515	1	+
+#Split in new
+chr1	145330075	145332222	dummy_461518	1	+
+#Split in new
+chr1	145330856	145366178	dummy_461522	1	+
+#Split in new
+chr1	145342583	145344832	dummy_461526	1	+
+#Split in new
+chr1	145341053	145344832	dummy_461528	1	+
+#Split in new
+chr1	145352037	145354294	dummy_461532	1	+
+#Split in new
+chr1	145355937	145360654	dummy_461533	1	+
+#Split in new
+chr1	145356010	145356706	dummy_461538	1	+
+#Split in new
+chr1	145356771	145363678	dummy_461539	1	+
+#Split in new
+chr1	145354468	145366178	dummy_461540	1	+
+#Split in new
+chr1	145358413	145360554	dummy_461541	1	+
+#Split in new
+chr1	145358413	145362096	dummy_461543	1	+
+#Split in new
+chr1	145364675	145366826	dummy_461544	1	+
+#Split in new
+chr1	146022219	146024234	dummy_461604	1	+
+#Split in new
+chr1	146024341	146059784	dummy_461605	1	+
+#Split in new
+chr1	146032746	146033826	dummy_461606	1	-
+#Split in new
+chr1	146039163	146215942	dummy_461607	1	-
+#Split in new
+chr1	146217650	146230953	dummy_461608	1	-
+#Split in new
+chr1	146033132	146033402	dummy_461609	1	-
+#Split in new
+chr1	146037623	146215942	dummy_461610	1	-
+#Split in new
+chr1	146215281	146215958	dummy_461613	1	-
+#Split in new
+chr1	146218532	146223901	dummy_461614	1	-
+#Split in new
+chr1	146224836	146230192	dummy_461615	1	-
+#Split in new
+chr1	146227916	146231722	dummy_461616	1	-
+#Split in new
+chr1	146246284	146247869	dummy_461617	1	-
+#Split in new
+chr1	146231127	147576819	dummy_461618	1	-
+#Split in new
+chr1	146438454	146442153	dummy_461619	1	+
+#Split in new
+chr1	146442327	146446185	dummy_461620	1	+
+#Split in new
+chr1	146373773	146373949	dummy_461621	1	-
+#Split in new
+chr1	146419396	146421558	dummy_461623	1	+
+#Split in new
+chr1	146453311	146463539	dummy_461625	1	+
+#Split in new
+chr1	146373816	146373991	dummy_461626	1	+
+#Split in new
+chr1	146420192	146452490	dummy_461627	1	+
+#Split in new
+chr1	146452543	146462657	dummy_461628	1	+
+#Split in new
+chr1	146373666	146374214	dummy_461629	1	+
+#Split in new
+chr1	146373746	146373922	dummy_461630	1	+
+#Split in new
+chr1	146453311	146458779	dummy_461636	1	+
+#Split in new
+chr1	146460494	146462657	dummy_461637	1	+
+#Split in new
+chr1	146438454	146446833	dummy_461639	1	+
+#Split in new
+chr1	146419396	146448373	dummy_461640	1	+
+#Split in new
+chr1	146448547	146458779	dummy_461641	1	+
+#Split in new
+chr1	146459671	146462010	dummy_461642	1	+
+#Split in new
+chr1	146462063	146465877	dummy_461643	1	+
+#Split in new
+chr1	146424099	146465200	dummy_461644	1	+
+#Split in new
+chr1	146423202	146464301	dummy_461645	1	+
+#Split in new
+chr1	146420192	146430440	dummy_461646	1	+
+#Split in new
+chr1	146433689	146435853	dummy_461647	1	+
+#Split in new
+chr1	146420192	146441505	dummy_461648	1	+
+#Split in new
+chr1	146447778	146451598	dummy_461649	1	+
+#Split in new
+chr1	146419396	146440618	dummy_461650	1	+
+#Split in new
+chr1	146440792	146458779	dummy_461651	1	+
+#Split in new
+chr1	146422493	146454737	dummy_461652	1	+
+#Split in new
+chr1	146448493	146456478	dummy_461654	1	+
+#Split in new
+chr1	146425728	146429548	dummy_461658	1	+
+#Split in new
+chr1	146440792	146444574	dummy_461660	1	+
+#Split in new
+chr1	146452543	146465877	dummy_461661	1	+
+#Split in new
+chr1	146457303	146461118	dummy_461663	1	+
+#Split in new
+chr1	146464412	146466541	dummy_461664	1	+
+#Split in new
+chr1	146455734	146457897	dummy_461665	1	+
+#Split in new
+chr1	146465244	146465915	dummy_461666	1	+
+#Split in new
+chr1	146465260	148589660	dummy_461667	1	+
+#Split in new
+chr1	147585100	148626281	dummy_461694	1	-
+#Split in new
+chr1	147579400	148005402	dummy_461698	1	-
+#Split in new
+chr1	148005512	148007799	dummy_461708	1	-
+#Split in new
+chr1	148013372	148274208	dummy_461709	1	-
+#Split in new
+chr1	148274382	148303630	dummy_461710	1	-
+#Split in new
+chr1	148303683	148328219	dummy_461711	1	-
+#Split in new
+chr1	148004128	148006250	dummy_461712	1	-
+#Split in new
+chr1	148004792	148252729	dummy_461713	1	-
+#Split in new
+chr1	148252839	148283762	dummy_461714	1	-
+#Split in new
+chr1	148284648	148312385	dummy_461715	1	-
+#Split in new
+chr1	148312559	148317938	dummy_461716	1	-
+#Split in new
+chr1	148356259	148361008	dummy_461720	1	-
+#Split in new
+chr1	148024926	148338366	dummy_461721	1	-
+#Split in new
+chr1	148006399	148011679	dummy_461722	1	-
+#Split in new
+chr1	148303683	148318709	dummy_461723	1	-
+#Split in new
+chr1	148007913	148009454	dummy_461724	1	-
+#Split in new
+chr1	148007103	148007799	dummy_461725	1	-
+#Split in new
+chr1	148007973	148013319	dummy_461726	1	-
+#Split in new
+chr1	148318883	148322686	dummy_461728	1	-
+#Split in new
+chr1	148323551	148324258	dummy_461729	1	-
+#Split in new
+chr1	148007973	148011679	dummy_461730	1	-
+#Split in new
+chr1	148010977	148011679	dummy_461731	1	-
+#Split in new
+chr1	148014254	148252729	dummy_461732	1	-
+#Split in new
+chr1	148283827	148287024	dummy_461733	1	-
+#Split in new
+chr1	148287853	148288549	dummy_461734	1	-
+#Split in new
+chr1	148242330	148247984	dummy_461735	1	-
+#Split in new
+chr1	148248041	148337317	dummy_461736	1	-
+#Split in new
+chr1	148254432	148317153	dummy_461737	1	-
+#Split in new
+chr1	148257603	148259904	dummy_461738	1	-
+#Split in new
+chr1	148255314	148259143	dummy_461739	1	-
+#Split in new
+chr1	148259208	148259904	dummy_461740	1	-
+#Split in new
+chr1	148258444	148263207	dummy_461741	1	-
+#Split in new
+chr1	148256866	148260685	dummy_461742	1	-
+#Split in new
+chr1	148261550	148262257	dummy_461743	1	-
+#Split in new
+chr1	148264838	148267017	dummy_461744	1	-
+#Split in new
+chr1	148275926	148286132	dummy_461745	1	-
+#Split in new
+chr1	148266390	148270217	dummy_461746	1	-
+#Split in new
+chr1	148309349	148317938	dummy_461747	1	-
+#Split in new
+chr1	148312559	148329029	dummy_461748	1	-
+#Split in new
+chr1	148283936	148316392	dummy_461749	1	-
+#Split in new
+chr1	148316445	148326675	dummy_461750	1	-
+#Split in new
+chr1	148251455	148253577	dummy_461751	1	-
+#Split in new
+chr1	148255974	148318709	dummy_461753	1	-
+#Split in new
+chr1	148318803	148320426	dummy_461754	1	-
+#Split in new
+chr1	148322079	148324258	dummy_461755	1	-
+#Split in new
+chr1	148256786	148257493	dummy_461756	1	-
+#Split in new
+chr1	148261630	148265445	dummy_461757	1	-
+#Split in new
+chr1	148329082	148330203	dummy_461758	1	-
+#Split in new
+chr1	148283876	148315678	dummy_461759	1	-
+#Split in new
+chr1	148315735	148325914	dummy_461760	1	-
+#Split in new
+chr1	148346792	148354225	dummy_461762	1	-
+#Split in new
+chr1	148256866	148259143	dummy_461763	1	-
+#Split in new
+chr1	148259196	148260021	dummy_461764	1	-
+#Split in new
+chr1	148260078	148263903	dummy_461765	1	-
+#Split in new
+chr1	148263968	148264664	dummy_461766	1	-
+#Split in new
+chr1	148269610	148271791	dummy_461768	1	-
+#Split in new
+chr1	148255184	148259945	dummy_461769	1	-
+#Split in new
+chr1	148259984	148317233	dummy_461770	1	-
+#Split in new
+chr1	148317327	148321144	dummy_461771	1	-
+#Split in new
+chr1	148255314	148257493	dummy_461773	1	-
+#Split in new
+chr1	148256837	148261601	dummy_461774	1	-
+#Split in new
+chr1	148275926	148289330	dummy_461775	1	-
+#Split in new
+chr1	148290275	148294100	dummy_461776	1	-
+#Split in new
+chr1	148295045	148298870	dummy_461777	1	-
+#Split in new
+chr1	148299815	148303630	dummy_461778	1	-
+#Split in new
+chr1	148304575	148308404	dummy_461779	1	-
+#Split in new
+chr1	148309349	148313166	dummy_461780	1	-
+#Split in new
+chr1	148314111	148317938	dummy_461781	1	-
+#Split in new
+chr1	148318803	148319510	dummy_461782	1	-
+#Split in new
+chr1	148260078	148262257	dummy_461783	1	-
+#Split in new
+chr1	148268740	148269436	dummy_461784	1	-
+#Split in new
+chr1	148271082	148271791	dummy_461785	1	-
+#Split in new
+chr1	148275926	148282939	dummy_461786	1	-
+#Split in new
+chr1	148284648	148288549	dummy_461787	1	-
+#Split in new
+chr1	148264838	148268675	dummy_461789	1	-
+#Split in new
+chr1	148268728	148269553	dummy_461790	1	-
+#Split in new
+chr1	148269610	148273447	dummy_461791	1	-
+#Split in new
+chr1	148275846	148276555	dummy_461793	1	-
+#Split in new
+chr1	148277432	148280623	dummy_461794	1	-
+#Split in new
+chr1	148280662	148287048	dummy_461795	1	-
+#Split in new
+chr1	148274382	148278209	dummy_461797	1	-
+#Split in new
+chr1	148274382	148276555	dummy_461798	1	-
+#Split in new
+chr1	148276665	148283762	dummy_461799	1	-
+#Split in new
+chr1	148279144	148281402	dummy_461800	1	-
+#Split in new
+chr1	148290195	148290902	dummy_461801	1	-
+#Split in new
+chr1	148285387	148288578	dummy_461802	1	-
+#Split in new
+chr1	148290195	148291818	dummy_461803	1	-
+#Split in new
+chr1	148293493	148295672	dummy_461804	1	-
+#Split in new
+chr1	148282337	148284595	dummy_461805	1	-
+#Split in new
+chr1	148284648	148307619	dummy_461806	1	-
+#Split in new
+chr1	148307793	148311624	dummy_461807	1	-
+#Split in new
+chr1	148311689	148312385	dummy_461808	1	-
+#Split in new
+chr1	148312559	148314738	dummy_461809	1	-
+#Split in new
+chr1	148286242	148288549	dummy_461811	1	-
+#Split in new
+chr1	148285426	148287024	dummy_461812	1	-
+#Split in new
+chr1	148285530	148287788	dummy_461813	1	-
+#Split in new
+chr1	148287841	148288666	dummy_461814	1	-
+#Split in new
+chr1	148288723	148292558	dummy_461815	1	-
+#Split in new
+chr1	148292623	148293319	dummy_461816	1	-
+#Split in new
+chr1	148294965	148295672	dummy_461817	1	-
+#Split in new
+chr1	148298263	148300442	dummy_461818	1	-
+#Split in new
+chr1	148299735	148300442	dummy_461819	1	-
+#Split in new
+chr1	148293493	148297328	dummy_461820	1	-
+#Split in new
+chr1	148297393	148298089	dummy_461821	1	-
+#Split in new
+chr1	148299735	148301358	dummy_461822	1	-
+#Split in new
+chr1	148303023	148305202	dummy_461823	1	-
+#Split in new
+chr1	148297381	148298206	dummy_461824	1	-
+#Split in new
+chr1	148298263	148302088	dummy_461825	1	-
+#Split in new
+chr1	148302153	148302849	dummy_461826	1	-
+#Split in new
+chr1	148303683	148307619	dummy_461827	1	-
+#Split in new
+chr1	148304495	148305202	dummy_461829	1	-
+#Split in new
+chr1	148303023	148306858	dummy_461830	1	-
+#Split in new
+chr1	148307793	148309976	dummy_461834	1	-
+#Split in new
+chr1	148310973	148316392	dummy_461835	1	-
+#Split in new
+chr1	148312559	148316392	dummy_461837	1	-
+#Split in new
+chr1	148314031	148314738	dummy_461838	1	-
+#Split in new
+chr1	148317327	148319510	dummy_461840	1	-
+#Split in new
+chr1	148322079	148325914	dummy_461841	1	-
+#Split in new
+chr1	148323631	148327448	dummy_461842	1	-
+#Split in new
+chr1	148324298	148327448	dummy_461843	1	-
+#Split in new
+chr1	148321975	148325150	dummy_461844	1	-
+#Split in new
+chr1	148589046	148589740	dummy_461851	1	+
+#Split in new
+chr1	148591374	148592070	dummy_461852	1	+
+#Split in new
+chr1	148589046	148591200	dummy_461854	1	+
+#Split in new
+chr1	148591374	148593677	dummy_461855	1	+
+#Split in new
+chr1	148593784	148753248	dummy_461856	1	+
+#Split in new
+chr1	148753422	148755721	dummy_461857	1	+
+#Split in new
+chr1	148593784	148751708	dummy_461860	1	+
+#Split in new
+chr1	148753422	148754118	dummy_461861	1	+
+#Split in new
+chr1	148753329	148754130	dummy_461862	1	+
+#Split in new
+chr1	148752653	148754834	dummy_461863	1	+
+#Split in new
+chr1	148751839	148753378	dummy_461864	1	+
+#Split in new
+chr1	148754983	148757104	dummy_461865	1	+
+#Split in new
+chr1	148751090	148753248	dummy_461867	1	+
+#Split in new
+chr1	149576701	149627308	dummy_461886	1	+
+#Split in new
+chr1	149576701	149616370	dummy_461888	1	+
+#Partially deleted in new
+chr1	150281580	150281882	dummy_461946	1	-
+#Split in new
+chr10	46790563	46793519	dummy_464640	1	+
+#Split in new
+chr10	47197574	47198474	dummy_464661	1	-
+#Split in new
+chr10	47213480	47220829	dummy_464663	1	-
+#Split in new
+chr10	47262223	47271236	dummy_464670	1	+
+#Split in new
+chr10	47262223	47271262	dummy_464672	1	+
+#Partially deleted in new
+chr10	47742177	47742395	dummy_464680	1	+
+#Split in new
+chr10	47747133	47751122	dummy_464685	1	+
+#Split in new
+chr10	47915913	47926086	dummy_464690	1	+
+#Split in new
+chr10	47922367	47929794	dummy_464693	1	+
+#Split in new
+chr10	48197196	48208428	dummy_464704	1	+
+#Split in new
+chr10	48208522	48215870	dummy_464705	1	+
+#Split in new
+chr10	48237672	48238562	dummy_464706	1	+
+#Split in new
+chr10	48198355	48200200	dummy_464710	1	+
+#Split in new
+chr10	48229192	48230543	dummy_464714	1	+
+#Split in new
+chr10	48230878	48231778	dummy_464715	1	+
+#Split in new
+chr10	48930367	48938476	dummy_464727	1	-
+#Split in new
+chr10	48938600	48940041	dummy_464728	1	-
+#Split in new
+chr10	48950966	48952446	dummy_464729	1	-
+#Split in new
+chr10	48941334	48943408	dummy_464730	1	-
+#Split in new
+chr10	48950966	48952466	dummy_464731	1	-
+#Split in new
+chr10	48938600	48941193	dummy_464732	1	-
+#Split in new
+chr10	48980321	48983279	dummy_464733	1	+
+#Split in new
+chr10	51124038	51352038	dummy_464773	1	-
+#Split in new
+chr10	51352373	51370853	dummy_464775	1	-
+#Split in new
+chr10	51363779	51370853	dummy_464776	1	-
+#Split in new
+chr10	51364772	51371251	dummy_464777	1	-
+#Split in new
+chr10	51363779	51371284	dummy_464778	1	-
+#Split in new
+chr10	51216340	51240709	dummy_464780	1	-
+#Split in new
+chr10	51262178	51606987	dummy_464783	1	-
+#Split in new
+chr10	51283684	51287080	dummy_464786	1	-
+#Split in new
+chr10	51295171	51299300	dummy_464787	1	-
+#Split in new
+chr10	51387764	51393542	dummy_464790	1	+
+#Split in new
+chr10	51623902	51748510	dummy_464831	1	+
+#Partially deleted in new
+chr11	1144344	1145309	dummy_466309	1	+
+#Partially deleted in new
+chr11	1162362	1212973	dummy_466313	1	+
+#Partially deleted in new
+chr12	7188100	7241535	dummy_469800	1	-
+#Partially deleted in new
+chr12	7187949	7241981	dummy_469801	1	-
+#Partially deleted in new
+chr12	7188559	7241283	dummy_469802	1	-
+#Split in new
+chr14	106351913	106790998	dummy_475298	1	-
+#Split in new
+chr14	106330845	106790982	dummy_475329	1	-
+#Split in new
+chr14	106370382	106667577	dummy_475340	1	-
+#Split in new
+chr14	106450542	106494139	dummy_475353	1	-
+#Split in new
+chr14	106329463	106539072	dummy_475355	1	-
+#Split in new
+chr14	106174775	106725221	dummy_475356	1	-
+#Split in new
+chr14	106329463	106805188	dummy_475361	1	-
+#Split in new
+chr14	106357580	107083254	dummy_475362	1	-
+#Split in new
+chr14	106331654	106725178	dummy_475365	1	-
+#Split in new
+chr14	106331654	106805188	dummy_475377	1	-
+#Split in new
+chr14	106330468	106573206	dummy_475379	1	-
+#Split in new
+chr14	106330468	106610296	dummy_475380	1	-
+#Split in new
+chr14	106329489	106573226	dummy_475383	1	-
+#Split in new
+chr14	106351913	106725197	dummy_475396	1	-
+#Split in new
+chr14	106382716	107169922	dummy_475402	1	-
+#Split in new
+chr14	106330845	106573206	dummy_475409	1	-
+#Split in new
+chr14	106518499	106552396	dummy_475415	1	-
+#Split in new
+chr14	106330468	106725178	dummy_475423	1	-
+#Split in new
+chr14	106330845	106725178	dummy_475431	1	-
+#Split in new
+chr14	106380242	106573226	dummy_475433	1	-
+#Split in new
+chr14	106330468	106691652	dummy_475441	1	-
+#Split in new
+chr14	106380242	106805205	dummy_475449	1	-
+#Split in new
+chr14	106382714	106829587	dummy_475451	1	-
+#Split in new
+chr14	106330468	106829587	dummy_475452	1	-
+#Split in new
+chr14	106330842	107083239	dummy_475453	1	-
+#Split in new
+chr14	106330842	106829587	dummy_475455	1	-
+#Split in new
+chr14	106370385	107083254	dummy_475457	1	-
+#Split in new
+chr14	106349781	106829587	dummy_475459	1	-
+#Split in new
+chr14	106351905	106829587	dummy_475461	1	-
+#Split in new
+chr14	106351919	107083254	dummy_475463	1	-
+#Split in new
+chr14	106354435	106829587	dummy_475465	1	-
+#Split in new
+chr14	106357575	107095117	dummy_475467	1	-
+#Split in new
+chr14	106357575	106829587	dummy_475468	1	-
+#Split in new
+chr14	106363844	106829587	dummy_475470	1	-
+#Split in new
+chr14	106367010	106829587	dummy_475472	1	-
+#Split in new
+chr14	106367023	107034722	dummy_475474	1	-
+#Split in new
+chr14	106367023	106829587	dummy_475476	1	-
+#Split in new
+chr14	106370385	106829587	dummy_475478	1	-
+#Split in new
+chr14	106380245	106829587	dummy_475480	1	-
+#Split in new
+chr14	106382714	107034722	dummy_475482	1	-
+#Split in new
+chr14	106363844	106805205	dummy_475485	1	-
+#Split in new
+chr14	106331481	106829601	dummy_475487	1	-
+#Split in new
+chr14	106331662	106829587	dummy_475488	1	-
+#Split in new
+chr14	106379097	106829587	dummy_475491	1	-
+#Split in new
+chr14	106805458	106829836	dummy_475493	1	-
+#Split in new
+chr14	106330468	106877598	dummy_475494	1	-
+#Split in new
+chr14	106805289	106877705	dummy_475495	1	-
+#Split in new
+chr14	106351919	106829587	dummy_475496	1	-
+#Split in new
+chr14	106370385	107034722	dummy_475502	1	-
+#Split in new
+chr14	106349781	107034734	dummy_475503	1	-
+#Split in new
+chr14	106331662	107048655	dummy_475504	1	-
+#Split in new
+chr14	106330859	106877620	dummy_475506	1	-
+#Split in new
+chr14	106363844	107083254	dummy_475509	1	-
+#Split in new
+chr14	106478263	107095270	dummy_475513	1	-
+#Split in new
+chr14	106805376	106829766	dummy_475514	1	-
+#Split in new
+chr14	106805289	106829674	dummy_475515	1	-
+#Split in new
+chr14	106361529	106829587	dummy_475517	1	-
+#Split in new
+chr14	106330842	106877598	dummy_475518	1	-
+#Split in new
+chr14	106367023	106962932	dummy_475520	1	-
+#Split in new
+chr14	106329466	107095117	dummy_475521	1	-
+#Partially deleted in new
+chr14	106323114	106323499	dummy_475525	1	-
+#Split in new
+chr14	106330468	106805188	dummy_475529	1	-
+#Split in new
+chr14	106357578	106725197	dummy_475532	1	-
+#Split in new
+chr14	106354435	106610296	dummy_475539	1	-
+#Split in new
+chr14	106370563	106790998	dummy_475548	1	-
+#Split in new
+chr14	106471338	106539171	dummy_475571	1	-
+#Split in new
+chr14	106539355	106780789	dummy_475572	1	-
+#Split in new
+chr14	106539106	106573259	dummy_475573	1	-
+#Split in new
+chr14	106518479	106573311	dummy_475575	1	-
+#Split in new
+chr14	106329451	106725197	dummy_475584	1	-
+#Split in new
+chr14	106379097	106725197	dummy_475590	1	-
+#Split in new
+chr14	106351902	106790998	dummy_475594	1	-
+#Split in new
+chr14	106518705	106587395	dummy_475608	1	-
+#Split in new
+chr14	106380253	106725197	dummy_475614	1	-
+#Split in new
+chr14	106478309	106805408	dummy_475617	1	-
+#Split in new
+chr14	106322323	106805353	dummy_475618	1	-
+#Split in new
+chr14	106322323	106803852	dummy_475621	1	-
+#Split in new
+chr14	106382714	107169924	dummy_475625	1	-
+#Split in new
+chr14	106331684	107169938	dummy_475626	1	-
+#Split in new
+chr14	106346905	107169922	dummy_475628	1	-
+#Split in new
+chr14	106518499	106573331	dummy_475632	1	-
+#Split in new
+chr14	106471522	106478383	dummy_475633	1	-
+#Split in new
+chr14	106494417	106829867	dummy_475634	1	-
+#Split in new
+chr14	106518254	106573085	dummy_475635	1	-
+#Split in new
+chr14	106518676	106829867	dummy_475636	1	-
+#Split in new
+chr14	106539256	106641739	dummy_475637	1	-
+#Split in new
+chr14	106552402	106573346	dummy_475639	1	-
+#Split in new
+chr14	106725329	106815849	dummy_475648	1	-
+#Split in new
+chr14	106725233	106815754	dummy_475656	1	-
+#Split in new
+chr14	106725357	106815878	dummy_475657	1	-
+#Split in new
+chr14	106757932	106829867	dummy_475661	1	-
+#Split in new
+chr14	106780654	106829734	dummy_475664	1	-
+#Split in new
+chr14	106780818	106829978	dummy_475665	1	-
+#Split in new
+chr14	106805409	106877824	dummy_475667	1	-
+#Split in new
+chr14	106791045	106815754	dummy_475675	1	-
+#Split in new
+chr14	106791151	106815878	dummy_475676	1	-
+#Split in new
+chr14	106805362	106877772	dummy_475678	1	-
+#Split in new
+chr14	106805517	106829978	dummy_475679	1	-
+#Split in new
+chr14	106805350	106829734	dummy_475680	1	-
+#Split in new
+chr14	106805241	106829623	dummy_475682	1	-
+#Split in new
+chr14	106805362	106829747	dummy_475683	1	-
+#Deleted in new
+chr14	106986865	106986924	dummy_475707	1	-
+#Partially deleted in new
+chr15	20876598	21905472	dummy_475744	1	-
+#Split in new
+chr15	21166130	22173671	dummy_475752	1	+
+#Split in new
+chr15	22742548	22743174	dummy_475782	1	+
+#Split in new
+chr15	23406341	23406655	dummy_475810	1	-
+#Split in new
+chr15	23406955	23407866	dummy_475811	1	-
+#Split in new
+chr15	23406769	23407101	dummy_475812	1	-
+#Split in new
+chr15	23407324	23407431	dummy_475814	1	-
+#Split in new
+chr15	23406778	23407611	dummy_475819	1	-
+#Partially deleted in new
+chr15	29131407	29213842	dummy_475934	1	+
+#Split in new
+chr15	82637340	82637444	dummy_477199	1	-
+#Split in new
+chr15	82637363	82637466	dummy_477200	1	-
+#Partially deleted in new
+chr15	82735961	82736228	dummy_477210	1	-
+#Split in new
+chr15	82736354	82737038	dummy_477211	1	-
+#Split in new
+chr15	82767770	82769173	dummy_477213	1	-
+#Split in new
+chr15	82767770	82768926	dummy_477216	1	-
+#Split in new
+chr15	82808186	82808563	dummy_477219	1	+
+#Split in new
+chr15	82808219	82808595	dummy_477221	1	+
+#Split in new
+chr15	82934582	82934875	dummy_477228	1	-
+#Split in new
+chr15	83144354	83145757	dummy_477250	1	-
+#Split in new
+chr15	83144354	83145510	dummy_477253	1	-
+#Partially deleted in new
+chr17	26684391	26684443	dummy_481369	1	-
+#Partially deleted in new
+chr17	62400239	62466373	dummy_482998	1	-
+#Split in new
+chr19	20508083	20577253	dummy_486130	1	-
+#Split in new
+chr19	20516942	20591749	dummy_486131	1	-
+#Split in new
+chr19	20516804	20588819	dummy_486132	1	-
+#Split in new
+chr19	40374087	40407935	dummy_486693	1	-
+#Split in new
+chr19	40386784	40405918	dummy_486695	1	-
+#Partially deleted in new
+chr19	42400859	42401083	dummy_486860	1	+
+#Deleted in new
+chr19	42400877	42400952	dummy_486864	1	-
+#Split in new
+chr19	54784155	54804139	dummy_488025	1	-
+#Split in new
+chr2	87368129	88019313	dummy_489473	1	+
+#Split in new
+chr2	89442268	90538033	dummy_489646	1	-
+#Split in new
+chr2	90528206	90531600	dummy_489669	1	+
+#Partially deleted in new
+chr2	91750927	91750963	dummy_489671	1	+
+#Split in new
+chr2	98101112	98109116	dummy_489792	1	-
+#Split in new
+chr2	242743704	242750270	dummy_491643	1	+
+#Split in new
+chr2	242760598	242761452	dummy_491646	1	+
+#Partially deleted in new
+chr20	34151775	34152631	dummy_492385	1	-
+#Partially deleted in new
+chr20	34152201	34152348	dummy_492389	1	-
+#Partially deleted in new
+chr21	9719135	9891954	dummy_493138	1	+
+#Partially deleted in new
+chr21	9758599	9966321	dummy_493146	1	-
+#Split in new
+chr22	18003357	18016791	dummy_493707	1	+
+#Split in new
+chr22	18057742	18062510	dummy_493710	1	+
+#Split in new
+chr22	18043414	18062567	dummy_493711	1	+
+#Split in new
+chr22	20400788	21091051	dummy_493857	1	-
+#Split in new
+chr22	20689336	20695278	dummy_493870	1	+
+#Partially deleted in new
+chr3	12046064	12046293	dummy_495495	1	+
+#Partially deleted in new
+chr4	49244808	49488974	dummy_498583	1	-
+#Partially deleted in new
+chr5	91628385	91709482	dummy_500568	1	+
+#Split in new
+chr6	906526	906684	dummy_502070	1	-
+#Split in new
+chr6	906745	906785	dummy_502071	1	-
+#Split in new
+chr6	26723383	26726995	dummy_502340	1	+
+#Split in new
+chr6	26727107	26728057	dummy_502341	1	+
+#Split in new
+chr7	72242545	72277658	dummy_506081	1	-
+#Split in new
+chr7	74237764	74262338	dummy_506200	1	-
+#Split in new
+chr7	74251506	74267733	dummy_506201	1	-
+#Partially deleted in new
+chr7	74312629	74313592	dummy_506270	1	+
+#Partially deleted in new
+chr7	74456410	74482476	dummy_506278	1	-
+#Partially deleted in new
+chr7	74456655	74474561	dummy_506279	1	-
+#Partially deleted in new
+chr7	74456520	74486485	dummy_506282	1	-
+#Split in new
+chr7	74687220	74688914	dummy_506314	1	-
+#Split in new
+chr7	74710937	74714507	dummy_506318	1	-
+#Partially deleted in new
+chr7	74771854	74789759	dummy_506322	1	+
+#Split in new
+chr7	74908498	74909857	dummy_506325	1	+
+#Split in new
+chr7	74925202	74928781	dummy_506329	1	-
+#Split in new
+chr7	74953399	74954556	dummy_506331	1	-
+#Split in new
+chr7	74953224	74956806	dummy_506336	1	-
+#Split in new
+chr7	74988528	74988599	dummy_506349	1	+
+#Split in new
+chr7	100553141	100606719	dummy_506809	1	+
+#Split in new
+chr7	100555096	100606737	dummy_506810	1	+
+#Deleted in new
+chr7	100607906	100607996	dummy_506811	1	-
+#Split in new
+chr7	142021363	142494532	dummy_507380	1	+
+#Split in new
+chr7	142021378	142494808	dummy_507381	1	+
+#Split in new
+chr7	142028609	142494804	dummy_507382	1	+
+#Split in new
+chr7	142028609	142495139	dummy_507383	1	+
+#Split in new
+chr7	142028620	142494532	dummy_507384	1	+
+#Split in new
+chr7	142045810	142494516	dummy_507386	1	+
+#Split in new
+chr7	142045810	142494227	dummy_507387	1	+
+#Split in new
+chr7	142327048	142494804	dummy_507390	1	+
+#Split in new
+chr7	142334930	142494697	dummy_507391	1	+
+#Split in new
+chr7	142334930	142495149	dummy_507392	1	+
+#Split in new
+chr7	142334930	142494532	dummy_507393	1	+
+#Split in new
+chr7	142334904	142494793	dummy_507394	1	+
+#Split in new
+chr7	142344899	142495149	dummy_507395	1	+
+#Split in new
+chr7	142364728	142494250	dummy_507396	1	+
+#Split in new
+chr7	142364715	142494532	dummy_507397	1	+
+#Split in new
+chr7	142423682	142494786	dummy_507402	1	+
+#Split in new
+chr7	142423682	142495146	dummy_507403	1	+
+#Split in new
+chr7	142428448	142498678	dummy_507404	1	+
+#Split in new
+chr7	142428991	142494049	dummy_507405	1	+
+#Split in new
+chr7	142428978	142494784	dummy_507406	1	+
+#Split in new
+chr7	142428978	142494227	dummy_507407	1	+
+#Split in new
+chr7	142429002	142494064	dummy_507408	1	+
+#Split in new
+chr7	142428991	142494532	dummy_507409	1	+
+#Split in new
+chr7	142448732	142494227	dummy_507410	1	+
+#Split in new
+chr7	142448732	142494516	dummy_507411	1	+
+#Split in new
+chr7	142448757	142495146	dummy_507412	1	+
+#Split in new
+chr7	142448757	142494532	dummy_507413	1	+
+#Split in new
+chr7	142459879	142481775	dummy_507447	1	+
+#Split in new
+chr7	142457376	142479908	dummy_507448	1	+
+#Split in new
+chr7	142460740	142482232	dummy_507449	1	+
+#Split in new
+chr7	142460419	142482211	dummy_507450	1	+
+#Split in new
+chr7	142470664	142481247	dummy_507461	1	+
+#Partially deleted in new
+chr7	143318114	143412980	dummy_507518	1	+
+#Partially deleted in new
+chr7	154237647	154587554	dummy_507724	1	+
+#Partially deleted in new
+chr8	7471565	7916499	dummy_507859	1	+
+#Partially deleted in new
+chr8	12052947	12295672	dummy_507939	1	+
+#Split in new
+chr8	48207423	48281846	dummy_508423	1	+
+#Split in new
+chr8	145448824	145462711	dummy_509273	1	+
+#Split in new
+chr8	145474191	145485759	dummy_509276	1	+
+#Split in new
+chr9	39288130	39817365	dummy_509837	1	-
+#Split in new
+chr9	39178358	39722426	dummy_509838	1	-
+#Split in new
+chr9	39722575	40582250	dummy_509839	1	-
+#Split in new
+chr9	39865111	39865815	dummy_509848	1	+
+#Split in new
+chr9	39886773	39887005	dummy_509849	1	+
+#Split in new
+chr9	40325583	40332890	dummy_509854	1	+
+#Split in new
+chr9	42257729	42671886	dummy_509882	1	+
+#Split in new
+chr9	43152009	43159908	dummy_509915	1	-
+#Split in new
+chr9	43876146	43890295	dummy_509920	1	+
+#Split in new
+chr9	44345690	44391703	dummy_509936	1	-
+#Split in new
+chr9	44391814	44401775	dummy_509937	1	-
+#Split in new
+chr9	44356934	44391703	dummy_509939	1	-
+#Split in new
+chr9	44433440	44463494	dummy_509940	1	+
+#Partially deleted in new
+chr9	44890782	44990679	dummy_509943	1	-
+#Split in new
+chr9	45727322	45733421	dummy_509950	1	+
+#Split in new
+chr9	45733247	45733421	dummy_509951	1	+
+#Split in new
+chr9	45870923	45874112	dummy_509952	1	+
+#Split in new
+chr9	46271376	46329395	dummy_509955	1	-
+#Split in new
+chr9	46390653	46424710	dummy_509956	1	+
+#Split in new
+chr9	65595188	65602609	dummy_509962	1	+
+#Split in new
+chr9	65602811	65631902	dummy_509963	1	+
+#Split in new
+chr9	67786421	67793896	dummy_509984	1	-
+#Partially deleted in new
+chr9	68728708	68728836	dummy_510002	1	+
+#Split in new
+chr9	69245114	69245940	dummy_510021	1	-
+#Split in new
+chr9	69218562	69234829	dummy_510022	1	-
+#Split in new
+chr9	69231313	69233983	dummy_510023	1	+
+#Partially deleted in new
+chrX	94718	155403	dummy_511428	1	-
+#Partially deleted in new
+chrX	230885	288511	dummy_511433	1	-
+#Partially deleted in new
+chrX	10535644	10851737	dummy_511530	1	-
+#Split in new
+chrX	49218395	49221260	dummy_511963	1	+
+#Split in new
+chrX	52386025	52454581	dummy_512010	1	-
+#Partially deleted in new
+chrX	148868206	149013392	dummy_512928	1	+
+#Partially deleted in new
+chrX	148864690	149012846	dummy_512929	1	+
+#Split in new
+chrX	149531699	149613719	dummy_512936	1	+
+#Split in new
+chrX	151877123	151896559	dummy_512966	1	-
+#Split in new
+chrX	151900876	152485349	dummy_512968	1	-
+#Split in new
+chrX	151901815	151922311	dummy_512969	1	-
+#Split in new
+chrX	151900207	151935572	dummy_512970	1	-
+#Split in new
+chrX	151900876	151922311	dummy_512973	1	-
+#Split in new
+chrX	151919953	152485349	dummy_512974	1	-
+#Partially deleted in new
+chrY	44718	105403	dummy_513251	1	-
+#Partially deleted in new
+chrY	180885	238511	dummy_513256	1	-
+#Split in new
+chr1	13642051	13644799	dummy_513549	1	+
+#Split in new
+chr1	143119120	143205410	dummy_513824	1	+
+#Split in new
+chr1	144166105	144177874	dummy_513829	1	+
+#Split in new
+chr1	144301527	144340525	dummy_513831	1	-
+#Split in new
+chr1	145319797	145367713	dummy_513835	1	+
+#Split in new
+chr1	145315900	145323653	dummy_513837	1	+
+#Split in new
+chr1	145323706	145330682	dummy_513838	1	+
+#Split in new
+chr2	242743698	242750264	dummy_515347	1	+
+#Split in new
+chr22	19960758	21098966	dummy_515517	1	-
+#Deleted in new
+chr3	183911787	183911787	dummy_515756	1	+
+#Deleted in new
+chr5	108523913	108523913	dummy_515955	1	+
+#Deleted in new
+chr5	179665331	179665331	dummy_516070	1	-
+#Partially deleted in new
+chr6_apd_hap1	1575658	1605414	dummy_516382	1	-
+#Partially deleted in new
+chr6_mcf_hap5	627689	693559	dummy_517615	1	-
+#Partially deleted in new
+chr6_mcf_hap5	646390	720912	dummy_517618	1	-
+#Partially deleted in new
+chr6_ssto_hap7	2098821	2130519	dummy_518468	1	-
+#Partially deleted in new
+chr6_ssto_hap7	4367898	4423010	dummy_518665	1	+
+#Split in new
+chr9	46271376	46273488	dummy_519209	1	-
+#Split in new
+chr9	69229669	69231351	dummy_519211	1	-
+#Split in new
+chr9	69231559	69234166	dummy_519212	1	-
+#Split in new
+chr9	69234251	69234655	dummy_519213	1	-
+#Partially deleted in new
+chr9	69234701	69234829	dummy_519214	1	-
+#Split in new
+chr9	69234953	69235562	dummy_519215	1	-
+#Split in new
+chr9	69229671	69234033	dummy_519216	1	-
+#Split in new
+chr9	69247576	69249520	dummy_519217	1	-
+#Split in new
+chr9	69247576	69255603	dummy_519218	1	-
+#Split in new
+chr9	69243653	69247521	dummy_519219	1	-
+#Split in new
+chr9	69247585	69255603	dummy_519220	1	-
+#Split in new
+chrX	134891886	134893115	dummy_519527	1	+
+#Partially deleted in new
+chrX	134927066	134928330	dummy_519528	1	-

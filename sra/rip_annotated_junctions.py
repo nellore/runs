@@ -3,7 +3,7 @@
 rip_annotated_junctions.py
 
 Rips junctions from annotation files contained in
-jan_24_2016_annotations.tar.gz, as described in annotation_definition.txt.
+jan_24_2016_annotations.tar.gz, as described in annotation_definition.md.
 Junctions are dumped to stdout, which we record as annotated_junctions.tsv.gz
 in runs/sra (same directory as this file). annotated_junctions.tsv.gz is
 required by tables.py. The format of annotated_junctions.tsv.gz is
@@ -34,7 +34,7 @@ pypy rip_annotated_junctions.py
     --chain /path/to/hg38ToHg19.over.chain
     --liftover /path/to/liftOver
     --unmapped unmapped_hg38.bed 2>annotated_junctions_stats.txt
-    | sort -k1,1 -k2,2n -k3,3n >annotated_junctions.tsv.gz
+    | sort -k1,1 -k2,2n -k3,3n | gzip >annotated_junctions.tsv.gz
 """
 
 import subprocess
