@@ -17,7 +17,7 @@ required by tables.py. The format of annotated_junctions.tsv.gz is
 Must have
 
 http://hgdownload.cse.ucsc.edu/goldenPath/hg38/liftOver/
-    hg38ToHg19.over.chain.gz
+    hg19ToHg38.over.chain.gz
 
 and liftOver executable available from
     https://genome-store.ucsc.edu/products/ .
@@ -68,7 +68,7 @@ if __name__ == '__main__':
         )
     parser.add_argument('--chain', type=str, required=True,
             help=('path to unzipped liftover chain; this should be '
-                  'hg38ToHg19.over.chain')
+                  'hg19ToHg38.over.chain')
         )
     parser.add_argument('--unmapped', type=str, required=True,
             help='BED in which unmapped junctions should be stored'
