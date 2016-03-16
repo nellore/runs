@@ -85,7 +85,7 @@ the following tab-separated fields.
     index 4, 10 reads overlapping the junction in the sample with index 5, and
     11 reads overlapping the junction in the sample with index 6.
 
-Each line of intropolis.idmap.v1.hg19.tsv specifies a different sample
+Each line of intropolis.idmap.v2.hg38.tsv specifies a different sample
 (specifically, run) on SRA and has the following tab-separated fields.
 1. sample index
 2. project accession number (regex: [SED]RP\d+)
@@ -95,7 +95,7 @@ Each line of intropolis.idmap.v1.hg19.tsv specifies a different sample
 
 We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and ran:
 pypy tables.py
-    --hisat2-dir /path/to/hisat2-2.0.0-beta
+    --hisat2-dir /path/to/hisat2-2.0.1-beta
     --gencode-dir /path/to/directory/with/gencode/gtf.gzs
     --refgene /path/to/refGene.gtf.gz
     --junctions /path/to/intropolis.v1.hg19.tsv.gz
@@ -191,6 +191,9 @@ import re
 import os
 import subprocess
 from contextlib import contextmanager
+import tempfile
+import atexit
+import shutil
 
 def is_gzipped(filename):
     """ Uses gzip magic number to determine whether a file is compressed.
@@ -222,6 +225,60 @@ def xopen(filename):
         yield f
     finally:
         f.close()
+
+@contextmanager
+def liftover(input_stream, liftover_exe, chain_file):
+    """ Transforms input stream in genomics coordinate format X to format Y
+
+        input_stream: junctions in format
+            chrom TAB start position TAB end position TAB strand or "NA"
+            or list [chrom, start position, end position, strand or "NA"]
+        liftover_exe: liftover executable; should be args.liftover
+        chain_file: chain file for liftover executable; should be args.chain
+
+        Return value: same format as input stream except transformed to new
+            coordinate system.
+    """
+    temp_dir = tempfile.mkdtemp()
+    atexit.register(shutil.rmtree, temp_dir)
+    input_bed = os.path.join(temp_dir, 'totransform.bed')
+    output_bed = os.path.join(temp_dir, 'transformed.bed')
+    unmapped_bed = os.path.join(temp_dir, 'unmapped.bed')
+    with open(input_bed, 'w') as temp_stream:
+        for i, line in enumerate(input_stream):
+            if isinstance(line, str): 
+                tokens = line.strip().split('\t')
+            else:
+                tokens = line
+            print >>temp_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
+                    tokens[0], tokens[1], tokens[2], i, tokens[3]
+                )
+    liftover_process = subprocess.check_call(' '.join([
+                                        liftover_exe,
+                                        input_bed,
+                                        chain_file,
+                                        output_bed,
+                                        unmapped_bed
+                                    ]),
+                                    shell=True,
+                                    executable='/bin/bash'
+                                )
+    output_process = subprocess.Popen(
+            "awk '{{print $1 \"\t\ $2 \"\t\" $3 \"\t\" $6}}' {}".format(
+                    output_bed
+                ), shell=True, executable='/bin/bash',
+            stdout=subprocess.PIPE)
+    try:
+        yield output_process.stdout
+    finally:
+        output_process.stdout.close()
+        exit_code = output_process.wait()
+        if exit_code != 0:
+            raise RuntimeError(
+                'Liftover output process failed; '
+                'exit code was {}.'.format(exit_code)
+            )
+        shutil.rmtree(temp_dir)
 
 if __name__ == '__main__':
     import argparse
@@ -373,7 +430,7 @@ if __name__ == '__main__':
                                                                 )
             )
 
-    gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 20)]
+    gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 25)]
     # Write some differences/intersections
     with open(
             args.basename + '.annotation_diffint.tsv', 'w'

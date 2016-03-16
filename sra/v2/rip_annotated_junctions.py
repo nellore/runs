@@ -170,7 +170,6 @@ if __name__ == '__main__':
     temp_hg38 = os.path.join(extract_destination, 'hg38.bed')
     with open(temp_hg19, 'w') as hg19_stream:
         for i, junction in enumerate(annotated_junctions_hg19):
-            # Handle incorrect junctions
             print >>hg19_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
                     junction[0], junction[1], junction[2], i, junction[3]
                 )

@@ -335,11 +335,14 @@ if __name__ == '__main__':
                                         in tokens[3].split(',')]
                     junction = (tokens[0][:-1], int(tokens[1]),
                                     int(tokens[2]), tokens[0][-1])
-                    print >>temp_stream, '{}\t{}\t{}\t{}\t{}\t{}\t0'.format(
-                            *(junction + (','.join([str(sample_index)
-                                                    for sample_index
-                                                    in sample_indexes]),
-                                          tokens[4]))
+                    if junction[2] > junction[1]:
+                        print >>temp_stream, (
+                            '{}\t{}\t{}\t{}\t{}\t{}\t0'.format(
+                                *(junction + (','.join([str(sample_index)
+                                                        for sample_index
+                                                        in sample_indexes]),
+                                              tokens[4]))
+                            )
                         )
                 tokens = second_pass_handles[i].readline().strip().split('\t')
                 if tokens[0] != '':
