@@ -286,7 +286,7 @@ if __name__ == '__main__':
             j = 0
             for line in manifest_stream:
                 line = line.strip()
-                if line[0] == '#' or not line: continue
+                if not line or line[0] == '#': continue
                 sample_name = line.partition('\t')[0].partition(':')[2]
                 original_index_to_final_index[(batch_number, j)] = i
                 final_index_to_sample_name[i] = sample_name
