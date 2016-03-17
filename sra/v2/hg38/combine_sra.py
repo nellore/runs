@@ -265,7 +265,21 @@ if __name__ == '__main__':
     sample_name_to_final_index = {}
     batch_numbers = []
     i = 0
-    for manifest in glob.glob(os.path.join(containing_dir, '*.manifest')):
+    ordered_batch_numbers = [
+                    54, 44, 13, 74, 92, 23, 0, 64, 82, 33, 43, 14, 53,
+                    63, 7, 8, 85, 34, 73, 95, 24, 93, 75, 22, 83, 65, 1, 32,
+                    55, 45, 12, 84, 9, 6, 62, 35, 94, 72, 25, 42, 15, 52, 16,
+                    19, 41, 51, 39, 36, 88, 87, 5, 61, 26, 29, 97, 98, 71,
+                    56, 59, 11, 49, 46, 21, 90, 79, 76, 31, 80, 66, 2, 69,
+                    37, 38, 60, 4, 86, 89, 28, 27, 70, 99, 96, 18, 17, 40,
+                    50, 20, 77, 78, 91, 30, 68, 3, 67, 81, 58, 57, 10, 47, 48
+                ]
+    '''Used glob first, which puts manifest files in directory order. This
+    varies from machine to machine, so ordered batch numbers are now used
+    for reproducibility.'''
+    for manifest in [os.path.join(containing_dir,
+                                    'gtex_batch_{}.manifest'.format(q))
+                        for q in ordered_batch_numbers]:
         batch_number = int(manifest.partition('.')[0].rpartition('_')[2])
         batch_numbers.append(batch_number)
         with open(manifest) as manifest_stream:
