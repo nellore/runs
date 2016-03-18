@@ -34,17 +34,18 @@ File requirements:
 6. All GENCODE gene annotations for GRCh37 and GRCh38, which may be obtained by
     executing the following command.
 
-    for i in 3c 3d 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24;
-    do curl -o gencode.$i.gtf.gz
-    ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
-    gencode.v$i.annotation.gtf.gz; if [ $? -eq 78 ];
+    for i in 3c 3d 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; 
+    do curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
+    Gencode_human/release_$i/gencode.v$i.annotation.gtf.gz; if [ $? -eq 78 ]; 
     then curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
-    Gencode_human/release_$i/gencode.v$i.annotation.GRCh37.gtf.gz;
+    Gencode_human/release_$i/gencode.v$i.annotation.GRCh37.gtf.gz; fi;
+    if [ $? -eq 78 ]; then curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/
+    pub/gencode/Gencode_human/release_$i/gencode_v$i.annotation.GRCh37.gtf.gz;
     fi; if [ $? -eq 78 ]; then curl -o gencode.$i.gtf.gz ftp://
-    ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
-    gencode_v$i.annotation.GRCh37.gtf.gz; fi; if [ $? -eq 78 ]; then
-    curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
-    release_$i/gencode.v$i.gtf.gz; fi; done
+    ftp.sanger.ac.uk/pub/gencode/release_$i/gencode.v$i.gtf.gz; fi;
+    if [$? -eq 78]; then curl -o gencode.$i.gtf.gz ftp://
+    ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/gencode.v$i.gtf.gz;
+    fi; done
 
     The GENCODE GTF filenames must have the format gencode.[VERSION].gtf.gz .
     The directory containing GENCODE GTFs is specified at the command line.
@@ -93,17 +94,20 @@ Each line of intropolis.idmap.v2.hg38.tsv specifies a different sample
 4. experiment accession number (regex: [SED]RX\d+)
 5. run accession number (regex: [SED]RR\d+)
 
-We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and ran:
-pypy tables.py
-    --hisat2-dir /path/to/hisat2-2.0.1-beta
-    --gencode-dir /path/to/directory/with/gencode/gtf.gzs
-    --refgene /path/to/refGene.gtf.gz
-    --junctions /path/to/intropolis.v1.hg19.tsv.gz
-    --index-to-sra /path/to/intropolis.idmap.v1.hg19.tsv
-    --tmp /path/to/temp_dir_with_200_GB_free_space
-    --seqc /path/to/nbt.2957-S4.zip
-    --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
-    --biosample-metadata /path/to/biosample_tags.tsv
+We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and from 
+the directory containing tables.py ran:
+
+    pypy tables.py
+        --hisat2-dir /path/to/hisat2-2.0.1-beta
+        --annotation annotated_junctions.tsv.gz
+        --gencode-dir /path/to/dir/with/gencode/annotations/across/versions
+        --junctions /path/to/intropolis.v2.hg38.tsv.gz
+        --biosample-metadata ./hg38/biosample_tags.tsv
+        --seqc /path/to/nbt.2957-S4.zip
+        --liftover /path/to/liftOver
+        --chain /path/to/hg19ToHg38.over.chain
+        --basename hg38
+        --index-to-sra intropolis.idmap.v2.hg38.tsv 
 
 Note that the argument of --hisat2-dir is the directory containing the HISAT 2
 binary and extract_splice_sites.py.
