@@ -40,6 +40,12 @@ if __name__ == '__main__':
                 srr_to_read_count[tokens[0]] = int(tokens[3]) * 2
             elif tokens[15] == 'SINGLE':
                 srr_to_read_count[tokens[0]] = int(tokens[3])
+            else:
+                raise RuntimeError(
+                        'Fail: {} is neither SINGLE nor PAIRED'.format(
+                                                                    tokens[15]
+                                                                )
+                    )
     for i in xrange(100):
         with gzip.open(
                 os.path.join(args.sra_dir,
