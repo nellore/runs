@@ -68,6 +68,4 @@ if __name__ == '__main__':
                     except ZeroDivisionError:
                         ratio = 'NA'
                     print '\t'.join(map(str, [srr, srr_to_read_count[srr],
-                                        read_count,
-                                        float(read_count)
-                                            / srr_to_read_count[srr]]))
+                                        read_count, ratio]))
