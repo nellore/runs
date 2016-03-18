@@ -30,7 +30,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     containing_dir = os.path.dirname(os.path.realpath(__file__))
     srr_to_read_count = {}
-    with open(os.path.join(containing_dir, 'SraRunInfo.csv')) as run_stream:
+    with open(os.path.join(containing_dir, 'hg38',
+                            'SraRunInfo.csv')) as run_stream:
         run_stream.readline()
         run_reader = csv.reader(run_stream, delimiter=',', quotechar='"')
         for tokens in run_reader:
