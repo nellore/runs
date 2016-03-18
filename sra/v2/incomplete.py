@@ -59,13 +59,23 @@ if __name__ == '__main__':
                 read_count = int(
                         line.rpartition('\t')[2].partition(',')[0]
                     )
+                try:
+                    ratio = float(read_count) / srr_to_read_count[srr]
+                    if ratio > 1:
+                        '''Mislabeled sample; probably recorded as SINGLE
+                        when PAIRED'''
+                        read_count *= 2
+                        ratio = float(read_count) / srr_to_read_count[srr]
+                    elif ratio == 0.5:
+                        '''Mislabeled sample; probably recorded as PAIRED
+                        when SINGLE'''
+                        read_count /= 2
+                        ratio = float(read_count) / srr_to_read_count[srr]
+                except ZeroDivisionError:
+                    ratio = 'NA'
                 if read_count == srr_to_read_count[srr]:
                     # We got this one right
                     continue
                 else:
-                    try:
-                        ratio = float(read_count) / srr_to_read_count[srr]
-                    except ZeroDivisionError:
-                        ratio = 'NA'
                     print '\t'.join(map(str, [srr, srr_to_read_count[srr],
                                         read_count, ratio]))
