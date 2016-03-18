@@ -240,47 +240,49 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
         Return value: same format as input stream except transformed to new
             coordinate system.
     """
-    if not perform: return input_stream
-    temp_dir = tempfile.mkdtemp()
-    atexit.register(shutil.rmtree, temp_dir)
-    input_bed = os.path.join(temp_dir, 'totransform.bed')
-    output_bed = os.path.join(temp_dir, 'transformed.bed')
-    unmapped_bed = os.path.join(temp_dir, 'unmapped.bed')
-    with open(input_bed, 'w') as temp_stream:
-        for i, line in enumerate(input_stream):
-            if isinstance(line, str): 
-                tokens = line.strip().split('\t')
-            else:
-                tokens = line
-            print >>temp_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
-                    tokens[0], tokens[1], tokens[2], i, tokens[3]
+    if not perform:
+        yield input_stream
+    else:
+        temp_dir = tempfile.mkdtemp()
+        atexit.register(shutil.rmtree, temp_dir)
+        input_bed = os.path.join(temp_dir, 'totransform.bed')
+        output_bed = os.path.join(temp_dir, 'transformed.bed')
+        unmapped_bed = os.path.join(temp_dir, 'unmapped.bed')
+        with open(input_bed, 'w') as temp_stream:
+            for i, line in enumerate(input_stream):
+                if isinstance(line, str): 
+                    tokens = line.strip().split('\t')
+                else:
+                    tokens = line
+                print >>temp_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
+                        tokens[0], tokens[1], tokens[2], i, tokens[3]
+                    )
+        liftover_process = subprocess.check_call(' '.join([
+                                            liftover_exe,
+                                            input_bed,
+                                            chain_file,
+                                            output_bed,
+                                            unmapped_bed
+                                        ]),
+                                        shell=True,
+                                        executable='/bin/bash'
+                                    )
+        output_process = subprocess.Popen(
+                "awk '{{print $1 \"\t\ $2 \"\t\" $3 \"\t\" $6}}' {}".format(
+                        output_bed
+                    ), shell=True, executable='/bin/bash',
+                stdout=subprocess.PIPE)
+        try:
+            yield output_process.stdout
+        finally:
+            output_process.stdout.close()
+            exit_code = output_process.wait()
+            if exit_code != 0:
+                raise RuntimeError(
+                    'Liftover output process failed; '
+                    'exit code was {}.'.format(exit_code)
                 )
-    liftover_process = subprocess.check_call(' '.join([
-                                        liftover_exe,
-                                        input_bed,
-                                        chain_file,
-                                        output_bed,
-                                        unmapped_bed
-                                    ]),
-                                    shell=True,
-                                    executable='/bin/bash'
-                                )
-    output_process = subprocess.Popen(
-            "awk '{{print $1 \"\t\ $2 \"\t\" $3 \"\t\" $6}}' {}".format(
-                    output_bed
-                ), shell=True, executable='/bin/bash',
-            stdout=subprocess.PIPE)
-    try:
-        yield output_process.stdout
-    finally:
-        output_process.stdout.close()
-        exit_code = output_process.wait()
-        if exit_code != 0:
-            raise RuntimeError(
-                'Liftover output process failed; '
-                'exit code was {}.'.format(exit_code)
-            )
-        shutil.rmtree(temp_dir)
+            shutil.rmtree(temp_dir)
 
 if __name__ == '__main__':
     import argparse
