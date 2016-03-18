@@ -296,15 +296,15 @@ if __name__ == '__main__':
                   'by rip_annotated_junctions.py')
         )
     parser.add_argument('--gencode-dir', type=str, required=True,
-            help='path to directory containing all GENCODE GTFs for hg19, '
-                 'which includes 3c, 3d, and 4 through 19'
+            help='path to directory containing all GENCODE GTFs for hg19 and '
+                 'hg38, which includes 3c, 3d, and 4 through 24'
         )
     parser.add_argument('--junctions', type=str, required=True,
-            help='junctions file; this should be intropolis.v1.hg19.tsv.gz'
+            help='junctions file; this should be intropolis.v2.hg38.tsv.gz'
         )
     parser.add_argument('--index-to-sra', type=str, required=True,
             help='index to SRA accession numbers file; this should be '
-                 'intropolis.idmap.v1.hg19.tsv'
+                 'intropolis.idmap.v2.hg38.tsv'
         )
     parser.add_argument('--biosample-metadata', type=str, required=True,
             help='path to Biosample metadata file; this should be '
@@ -313,7 +313,7 @@ if __name__ == '__main__':
     parser.add_argument('--seqc', type=str, required=True,
             help='path to SEQC junctions; this should be nbt.2957-S4.zip')
     parser.add_argument('--basename', type=str, required=False,
-            default='hg19',
+            default='hg38',
             help='basename for output files'
         )
     parser.add_argument('--liftover', type=str, required=True,
@@ -390,9 +390,11 @@ if __name__ == '__main__':
 
     # Grab all GENCODE junctions
     gencodes = defaultdict(set)
-    refs = set(
-            ['chr' + str(i) for i in xrange(1, 23)] + ['chrM', 'chrX', 'chrY']
-        )
+    containing_dir = os.path.dirname(os.path.realpath(__file__))
+    with open(os.path.join(containing_dir, 'hg38.sizes')) as hg38_stream:
+        refs = set(
+                [tokens.strip().split('\t')[0] for tokens in hg38_stream]
+            )
     extract_splice_sites_path = os.path.join(args.hisat2_dir,
                                                 'extract_splice_sites.py')
     from glob import glob
