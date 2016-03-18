@@ -57,7 +57,7 @@ if __name__ == '__main__':
             for line in count_stream:
                 srr = line.partition('\t')[0]
                 read_count = int(
-                        line.rpartition('\t')[2][-1].partition(',')[0]
+                        line.rpartition('\t')[2].partition(',')[0]
                     )
                 if read_count == srr_to_read_count[srr]:
                     # We got this one right
