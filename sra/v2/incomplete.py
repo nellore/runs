@@ -84,6 +84,6 @@ if __name__ == '__main__':
                     # We got this one right
                     continue
                 else:
-                    print '\t'.join(map(str, srr_to_line
+                    print '\t'.join(map(str, srr_to_line[srr]
                                         + [srr_to_read_count[srr],
                                         read_count, ratio]))
