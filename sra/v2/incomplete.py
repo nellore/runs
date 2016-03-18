@@ -63,7 +63,7 @@ if __name__ == '__main__':
                     # We got this one right
                     continue
                 else:
-                    print '\t'.join([srr, srr_to_read_count[srr],
+                    print '\t'.join(map(str, [srr, srr_to_read_count[srr],
                                         read_count,
                                         float(read_count)
-                                            / srr_to_read_count[srr]])
+                                            / srr_to_read_count[srr]]))
