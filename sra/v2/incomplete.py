@@ -6,10 +6,13 @@ Finds SRA samples that were incompletely downloaded and/or aligned by comparing
 counts.tsv.gz files across batches with read counts in SraRunInfo.csv.
 
 Tab-separated output fields:
-1. run accession number
-2. number of reads from SraRunInfo (i.e. mates for paired end samples)
-3. number of reads Rail attempted to map
-4. proportion of reads Rail attempted to map
+1. project accession number
+2. experiment accession number
+3. sample accession number
+4. run accession number
+5. number of reads from SraRunInfo (i.e. mates for paired end samples)
+6. number of reads Rail attempted to map
+7. proportion of reads Rail attempted to map
 
 Only runs for which Rail downloaded and aligned fewer than 100% of reads are
 included.
@@ -30,12 +33,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
     containing_dir = os.path.dirname(os.path.realpath(__file__))
     srr_to_read_count = {}
+    srr_to_line = {}
     with open(os.path.join(containing_dir, 'hg38',
                             'SraRunInfo.csv')) as run_stream:
         run_stream.readline()
         run_reader = csv.reader(run_stream, delimiter=',', quotechar='"')
         for tokens in run_reader:
             if not tokens or (len(tokens) == 1 and tokens[0] == ''): continue
+            srr_to_line[tokens[0]] = '\t'.join(
+                    [tokens[20], tokens[24], tokens[10], tokens[0]]
+                )
             if tokens[15] == 'PAIRED':
                 srr_to_read_count[tokens[0]] = int(tokens[3]) * 2
             elif tokens[15] == 'SINGLE':
@@ -62,12 +69,12 @@ if __name__ == '__main__':
                 try:
                     ratio = float(read_count) / srr_to_read_count[srr]
                     if ratio > 1:
-                        '''Mislabeled sample; probably recorded as SINGLE
+                        '''Mislabeled sample; whp recorded as SINGLE
                         when PAIRED'''
                         srr_to_read_count[srr] *= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
                     elif ratio == 0.5:
-                        '''Mislabeled sample; probably recorded as PAIRED
+                        '''Mislabeled sample; whp recorded as PAIRED
                         when SINGLE'''
                         srr_to_read_count[srr] /= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
@@ -77,5 +84,6 @@ if __name__ == '__main__':
                     # We got this one right
                     continue
                 else:
-                    print '\t'.join(map(str, [srr, srr_to_read_count[srr],
+                    print '\t'.join(map(str, srr_to_line
+                                        + [srr_to_read_count[srr],
                                         read_count, ratio]))
