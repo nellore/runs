@@ -44,7 +44,7 @@ if __name__ == '__main__':
         with gzip.open(
                 os.path.join(args.sra_dir,
                                 'batch_{}'.format(i),
-                                'cross_sample_results'
+                                'cross_sample_results',
                                 'counts.tsv.gz')
             ) as count_stream:
             count_stream.readline()
