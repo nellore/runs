@@ -34,17 +34,18 @@ File requirements:
 6. All GENCODE gene annotations for GRCh37 and GRCh38, which may be obtained by
     executing the following command.
 
-    for i in 3c 3d 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24;
-    do curl -o gencode.$i.gtf.gz
-    ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
-    gencode.v$i.annotation.gtf.gz; if [ $? -eq 78 ];
+    for i in 3c 3d 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; 
+    do curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
+    Gencode_human/release_$i/gencode.v$i.annotation.gtf.gz; if [ $? -eq 78 ]; 
     then curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
-    Gencode_human/release_$i/gencode.v$i.annotation.GRCh37.gtf.gz;
+    Gencode_human/release_$i/gencode.v$i.annotation.GRCh37.gtf.gz; fi;
+    if [ $? -eq 78 ]; then curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/
+    pub/gencode/Gencode_human/release_$i/gencode_v$i.annotation.GRCh37.gtf.gz;
     fi; if [ $? -eq 78 ]; then curl -o gencode.$i.gtf.gz ftp://
-    ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/
-    gencode_v$i.annotation.GRCh37.gtf.gz; fi; if [ $? -eq 78 ]; then
-    curl -o gencode.$i.gtf.gz ftp://ftp.sanger.ac.uk/pub/gencode/
-    release_$i/gencode.v$i.gtf.gz; fi; done
+    ftp.sanger.ac.uk/pub/gencode/release_$i/gencode.v$i.gtf.gz; fi;
+    if [$? -eq 78]; then curl -o gencode.$i.gtf.gz ftp://
+    ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_$i/gencode.v$i.gtf.gz;
+    fi; done
 
     The GENCODE GTF filenames must have the format gencode.[VERSION].gtf.gz .
     The directory containing GENCODE GTFs is specified at the command line.
