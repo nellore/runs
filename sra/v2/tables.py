@@ -425,12 +425,12 @@ if __name__ == '__main__':
                                     )
         gencode_version = annotation.split('.')[1]
         # Lift over GENCODE versions < 20
-        with open(temp_anno, 'w') as temp_anno_stream:
-            for line in liftover(extract_process.stdout,
-                                    args.liftover, args.chain,
-                                    perform=(False if gencode_version in
-                                             ['20', '21', '22', '23', '24']
-                                             else True)):
+        with open(temp_anno, 'w') as temp_anno_stream, liftover(
+                        extract_process.stdout, args.liftover, args.chain,
+                        perform=(False if gencode_version in
+                                 ['20', '21', '22', '23', '24'] else True)
+                    ) as liftover_stream:
+            for line in liftover_stream:
                 tokens = line.strip().split('\t')
                 tokens[1] = str(int(tokens[1]) + 2)
                 print >>temp_anno_stream, '\t'.join(tokens)
@@ -489,21 +489,24 @@ if __name__ == '__main__':
             print >>lift_stream, '\t'.join([tokens[0][0], tokens[0][1],
                                             tokens[0][2], 'NA'])
     with open(lifted_supp) as lift_stream:
-        for line in liftover(lift_stream, args.liftover, args.chain):
-            tokens = line.strip().split('\t')
-            junction = (tokens[0], int(tokens[1]), int(tokens[2]))
-            add_junc = False
-            if tokens[1] == '1':
-                subread_junctions.add(junction)
-                add_junc = True
-            if tokens[2] == '1':
-                rmake_junctions.add(junction)
-                add_junc = True
-            if tokens[3] == '1':
-                magic_junctions.add(junction)
-                add_junc = True
-            if add_junc:
-                seqc_junctions.add(junction)
+        with liftover(
+                lift_stream, args.liftover, args.chain
+            ) as liftover_stream:
+            for line in liftover_stream:
+                tokens = line.strip().split('\t')
+                junction = (tokens[0], int(tokens[1]), int(tokens[2]))
+                add_junc = False
+                if tokens[1] == '1':
+                    subread_junctions.add(junction)
+                    add_junc = True
+                if tokens[2] == '1':
+                    rmake_junctions.add(junction)
+                    add_junc = True
+                if tokens[3] == '1':
+                    magic_junctions.add(junction)
+                    add_junc = True
+                if add_junc:
+                    seqc_junctions.add(junction)
     print >>sys.stderr, 'Done reading SEQC junctions.'
 
     # Key: sample index; value: number of junctions found in sample
