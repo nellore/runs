@@ -491,7 +491,9 @@ if __name__ == '__main__':
             tokens = line.strip().split('\t')
             tokens[0] = tokens[0].split('.')
             print >>lift_stream, '\t'.join([tokens[0][0], tokens[0][1],
-                                            tokens[0][2], 'NA'])
+                                            tokens[0][2], ','.join(
+                                                                tokens[1:4]
+                                                            )])
     with open(lifted_supp) as lift_stream:
         with liftover(
                 lift_stream, args.liftover, args.chain
@@ -500,13 +502,14 @@ if __name__ == '__main__':
                 tokens = line.strip().split('\t')
                 junction = (tokens[0], int(tokens[1]), int(tokens[2]))
                 add_junc = False
-                if tokens[1] == '1':
+                tokens = tokens[3].split(',')
+                if tokens[0] == '1':
                     subread_junctions.add(junction)
                     add_junc = True
-                if tokens[2] == '1':
+                if tokens[1] == '1':
                     rmake_junctions.add(junction)
                     add_junc = True
-                if tokens[3] == '1':
+                if tokens[2] == '1':
                     magic_junctions.add(junction)
                     add_junc = True
                 if add_junc:
