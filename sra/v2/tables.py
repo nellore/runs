@@ -93,17 +93,20 @@ Each line of intropolis.idmap.v2.hg38.tsv specifies a different sample
 4. experiment accession number (regex: [SED]RX\d+)
 5. run accession number (regex: [SED]RR\d+)
 
-We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and ran:
-pypy tables.py
-    --hisat2-dir /path/to/hisat2-2.0.1-beta
-    --gencode-dir /path/to/directory/with/gencode/gtf.gzs
-    --refgene /path/to/refGene.gtf.gz
-    --junctions /path/to/intropolis.v1.hg19.tsv.gz
-    --index-to-sra /path/to/intropolis.idmap.v1.hg19.tsv
-    --tmp /path/to/temp_dir_with_200_GB_free_space
-    --seqc /path/to/nbt.2957-S4.zip
-    --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
-    --biosample-metadata /path/to/biosample_tags.tsv
+We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and from 
+the directory containing tables.py ran:
+
+    pypy tables.py
+        --hisat2-dir /path/to/hisat2-2.0.1-beta
+        --annotation annotated_junctions.tsv.gz
+        --gencode-dir /path/to/dir/with/gencode/annotations/across/versions
+        --junctions /path/to/intropolis.v2.hg38.tsv.gz
+        --biosample-metadata ./hg38/biosample_tags.tsv
+        --seqc /path/to/nbt.2957-S4.zip
+        --liftover /path/to/liftOver
+        --chain /path/to/hg19ToHg38.over.chain
+        --basename hg38
+        --index-to-sra intropolis.idmap.v2.hg38.tsv 
 
 Note that the argument of --hisat2-dir is the directory containing the HISAT 2
 binary and extract_splice_sites.py.
