@@ -268,7 +268,7 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
                                         executable='/bin/bash'
                                     )
         output_process = subprocess.Popen(
-                "awk '{{print $1 \"\t\ $2 \"\t\" $3 \"\t\" $6}}' {}".format(
+                "awk '{{print $1 \"\t\" $2 \"\t\" $3 \"\t\" $6}}' {}".format(
                         output_bed
                     ), shell=True, executable='/bin/bash',
                 stdout=subprocess.PIPE)
