@@ -403,6 +403,9 @@ if __name__ == '__main__':
     annotations = glob(os.path.join(args.gencode_dir, 'gencode.*.gtf.gz'))
     annotations = [(os.path.basename(annotation_path), annotation_path)
                     for annotation_path in annotations]
+    temp_dir = tempfile.mkdtemp()
+    atexit.register(shutil.rmtree, temp_dir)
+    temp_anno = os.path.join(temp_dir, 'temp_anno.tsv')
     for annotation_base, annotation in annotations:
         extract_process = subprocess.Popen(' '.join([
                                             sys.executable,
@@ -419,15 +422,16 @@ if __name__ == '__main__':
                                         stdout=subprocess.PIPE
                                     )
         gencode_version = annotation.split('.')[1]
-        for line in liftover(extract_process.stdout,
-                                perform=(False if gencode_version in
-                                         ['20', '21', '22', '23', '24']
-                                         else True)):
-            tokens = line.strip().split('\t')
-            tokens[1] = int(tokens[1]) + 2
-            tokens[2] = int(tokens[2])
-            if tokens[0] in refs:
-                gencodes[gencode_version].add(tuple(tokens))
+        # Lift over GENCODE versions < 20
+        with open(temp_anno, 'w') as temp_anno_stream:
+            for line in liftover(extract_process.stdout,
+                                    args.liftover, args.chain,
+                                    perform=(False if gencode_version in
+                                             ['20', '21', '22', '23', '24']
+                                             else True)):
+                tokens = line.strip().split('\t')
+                tokens[1] = str(int(tokens[1]) + 2)
+                print >>temp_anno_stream, '\t'.join(tokens)
         extract_process.stdout.close()
         exit_code = extract_process.wait()
         if exit_code != 0:
@@ -436,6 +440,14 @@ if __name__ == '__main__':
                                                                     exit_code
                                                                 )
             )
+        with open(temp_anno) as temp_anno_stream:
+            for line in temp_anno_stream:
+                tokens = line.strip().split('\t')
+                tokens[1] = int(tokens[1])
+                tokens[2] = int(tokens[2])
+                if tokens[0] in refs:
+                    gencodes[gencode_version].add(tuple(tokens))
+    shutil.rmtree(temp_dir)
 
     gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 25)]
     # Write some differences/intersections
@@ -475,7 +487,7 @@ if __name__ == '__main__':
             print >>lift_stream, '\t'.join([tokens[0][0], tokens[0][1],
                                             tokens[0][2], 'NA'])
     with open(lifted_supp) as lift_stream:
-        for line in liftover(lift_stream):
+        for line in liftover(lift_stream, args.liftover, args.chain):
             tokens = line.strip().split('\t')
             junction = (tokens[0], int(tokens[1]), int(tokens[2]))
             add_junc = False
@@ -542,11 +554,11 @@ if __name__ == '__main__':
     seqc_sample_count_to_threes = defaultdict(int)
     # For junction-date analyses
     date_to_junction_count = defaultdict(int)
-    date_to_junction_count_overlap_geq_20 = defaultdict(int)
+    date_to_junction_count_overlap_geq_40 = defaultdict(int)
 
     with xopen(args.junctions) as junction_stream, gzip.open(
             args.basename
-            + '.sample_count_submission_date_overlap_geq_20.tsv.gz', 'w'
+            + '.sample_count_submission_date_overlap_geq_40.tsv.gz', 'w'
         ) as junction_date_stream:
         print >>junction_date_stream, ((
                                '# reads across samples in which junction '
@@ -589,8 +601,8 @@ if __name__ == '__main__':
             else:
                 date_to_junction_count[discovery_date] += 1
                 cov_sum = sum(coverages)
-                if cov_sum >= 20:
-                    date_to_junction_count_overlap_geq_20[discovery_date] += 1
+                if cov_sum >= 40:
+                    date_to_junction_count_overlap_geq_40[discovery_date] += 1
                     gencode_bools_to_print = [
                             '1' if junction in gencodes[ver]
                             else '0' for ver in gencode_versions
