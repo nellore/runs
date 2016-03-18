@@ -227,7 +227,7 @@ def xopen(filename):
         f.close()
 
 @contextmanager
-def liftover(input_stream, liftover_exe, chain_file):
+def liftover(input_stream, liftover_exe, chain_file, perform=True):
     """ Transforms input stream in genomics coordinate format X to format Y
 
         input_stream: junctions in format
@@ -235,10 +235,12 @@ def liftover(input_stream, liftover_exe, chain_file):
             or list [chrom, start position, end position, strand or "NA"]
         liftover_exe: liftover executable; should be args.liftover
         chain_file: chain file for liftover executable; should be args.chain
+        perform: True iff liftover should be performed
 
         Return value: same format as input stream except transformed to new
             coordinate system.
     """
+    if not perform: return input_stream
     temp_dir = tempfile.mkdtemp()
     atexit.register(shutil.rmtree, temp_dir)
     input_bed = os.path.join(temp_dir, 'totransform.bed')
@@ -417,7 +419,10 @@ if __name__ == '__main__':
                                         stdout=subprocess.PIPE
                                     )
         gencode_version = annotation.split('.')[1]
-        for line in extract_process.stdout:
+        for line in liftover(extract_process.stdout,
+                                perform=(False if gencode_version in
+                                         ['20', '21', '22', '23', '24']
+                                         else True)):
             tokens = line.strip().split('\t')
             tokens[1] = int(tokens[1]) + 2
             tokens[2] = int(tokens[2])
@@ -458,13 +463,21 @@ if __name__ == '__main__':
     NCBI Magic.''' 
     magic_junctions, rmake_junctions, subread_junctions = set(), set(), set()
     seqc_junctions = set()
+    temp_dir = tempfile.mkdtemp()
+    atexit.register(shutil.rmtree, temp_dir)
+    lifted_supp = os.path.join(temp_dir, 'lifted_supp.tsv')
     with zipfile.ZipFile(args.seqc).open('SupplementaryData3.tab') \
-        as seqc_stream:
+        as seqc_stream, open(lifted_supp, 'w') as lift_stream:
         seqc_stream.readline() # header
         for line in seqc_stream:
             tokens = line.strip().split('\t')
             tokens[0] = tokens[0].split('.')
-            junction = (tokens[0][0], int(tokens[0][1]), int(tokens[0][2]))
+            print >>lift_stream, '\t'.join([tokens[0][0], tokens[0][1],
+                                            tokens[0][2], 'NA'])
+    with open(lifted_supp) as lift_stream:
+        for line in liftover(lift_stream):
+            tokens = line.strip().split('\t')
+            junction = (tokens[0], int(tokens[1]), int(tokens[2]))
             add_junc = False
             if tokens[1] == '1':
                 subread_junctions.add(junction)
