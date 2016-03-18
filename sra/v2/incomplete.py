@@ -19,7 +19,8 @@ included.
 
 We ran 
 
-    pypy incomplete.py --sra-dir /path/to/sra/dir | sort -k7,7nr 
+    pypy incomplete.py --sra-dir /path/to/sra/dir |
+        (read -r; printf "%s\n" "$REPLY"; sort -k7,7nr)
         >incomplete.tsv
 
 Above, --sra-dir is the path to the directory with the batch_* subdirs.
