@@ -64,12 +64,12 @@ if __name__ == '__main__':
                     if ratio > 1:
                         '''Mislabeled sample; probably recorded as SINGLE
                         when PAIRED'''
-                        read_count *= 2
+                        srr_to_read_count[srr] *= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
                     elif ratio == 0.5:
                         '''Mislabeled sample; probably recorded as PAIRED
                         when SINGLE'''
-                        read_count /= 2
+                        srr_to_read_count[srr] /= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
                 except ZeroDivisionError:
                     ratio = 'NA'
