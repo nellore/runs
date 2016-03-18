@@ -7,8 +7,8 @@ counts.tsv.gz files across batches with read counts in SraRunInfo.csv.
 
 Tab-separated output fields:
 1. project accession number
-2. experiment accession number
-3. sample accession number
+2. sample accession number
+3. experiment accession number
 4. run accession number
 5. number of reads from SraRunInfo (i.e. mates for paired end samples)
 6. number of reads Rail attempted to map
@@ -17,7 +17,12 @@ Tab-separated output fields:
 Only runs for which Rail downloaded and aligned fewer than 100% of reads are
 included.
 
-We ran pypy incomplete.py | sort -k4,4er >incomplete.tsv
+We ran 
+
+    pypy incomplete.py --sra-dir /path/to/sra/dir | sort -k7,7nr 
+        >incomplete.tsv
+
+Above, --sra-dir is the path to the directory with the batch_* subdirs.
 """
 import os
 import csv
@@ -53,6 +58,9 @@ if __name__ == '__main__':
                                                                     tokens[15]
                                                                 )
                     )
+    print '\t'.join(['project', 'sample', 'experiment', 'run',
+                        'read count as reported by SRA', 'reads aligned',
+                        'proportion of reads reported by SRA aligned'])
     for i in xrange(100):
         with gzip.open(
                 os.path.join(args.sra_dir,
