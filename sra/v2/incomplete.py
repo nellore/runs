@@ -40,6 +40,7 @@ if __name__ == '__main__':
     containing_dir = os.path.dirname(os.path.realpath(__file__))
     srr_to_read_count = {}
     srr_to_line = {}
+    srr_to_paired_status = {}
     with open(os.path.join(containing_dir, 'hg38',
                             'SraRunInfo.csv')) as run_stream:
         run_stream.readline()
@@ -51,8 +52,10 @@ if __name__ == '__main__':
                 )
             if tokens[15] == 'PAIRED':
                 srr_to_read_count[tokens[0]] = int(tokens[3]) * 2
+                srr_to_paired_status[tokens[0]] = '1'
             elif tokens[15] == 'SINGLE':
                 srr_to_read_count[tokens[0]] = int(tokens[3])
+                srr_to_paired_status[tokens[0]] = '0'
             else:
                 raise RuntimeError(
                         'Fail: {} is neither SINGLE nor PAIRED'.format(
@@ -75,6 +78,7 @@ if __name__ == '__main__':
                 read_count = int(
                         line.rpartition('\t')[2].partition(',')[0]
                     )
+                mislabeled = False
                 try:
                     ratio = float(read_count) / srr_to_read_count[srr]
                     if ratio > 1:
@@ -82,11 +86,15 @@ if __name__ == '__main__':
                         when PAIRED'''
                         srr_to_read_count[srr] *= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
+                        srr_to_paired_status[srr] = '1'
+                        mislabeled = True
                     elif ratio == 0.5:
                         '''Mislabeled sample; whp recorded as PAIRED
                         when SINGLE'''
                         srr_to_read_count[srr] /= 2
                         ratio = float(read_count) / srr_to_read_count[srr]
+                        srr_to_paired_status[srr] = '0'
+                        mislabeled = True
                 except ZeroDivisionError:
                     ratio = 'NA'
                 if read_count == srr_to_read_count[srr]:
@@ -95,4 +103,7 @@ if __name__ == '__main__':
                 else:
                     print '\t'.join(map(str, [srr_to_line[srr],
                                         srr_to_read_count[srr],
-                                        read_count, ratio]))
+                                        read_count, ratio,
+                                        srr_to_paired_stats[srr],
+                                        '1' if mislabeled
+                                        else '0']))
