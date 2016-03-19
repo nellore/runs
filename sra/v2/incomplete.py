@@ -85,6 +85,7 @@ if __name__ == '__main__':
                 try:
                     ratio = float(read_count) / srr_to_read_count[srr]
                     if ratio > 1:
+                        print >>sys.stderr, srr
                         '''Mislabeled sample; whp recorded as SINGLE
                         when PAIRED'''
                         srr_to_read_count[srr] *= 2
