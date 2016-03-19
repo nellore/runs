@@ -261,7 +261,7 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True,
                     tokens = line
                 print >>temp_stream, '{}\t{}\t{}\t{}\t1\t{}'.format(
                         tokens[0], tokens[1], tokens[2],
-                        ('dummy_' + i) if len(tokens) < 5
+                        ('dummy_' + str(i)) if len(tokens) < 5
                         else tokens[5], tokens[3]
                     )
         liftover_process = subprocess.check_call(' '.join([
