@@ -13,6 +13,8 @@ Tab-separated output fields:
 5. number of reads from SraRunInfo (i.e. mates for paired end samples)
 6. number of reads Rail attempted to map
 7. proportion of reads Rail attempted to map
+8. 1 if LIKELY paired-end; else 0
+9. 1 if SRA misreported paired-end status
 
 Only runs for which Rail downloaded and aligned fewer than 100% of reads are
 included.
@@ -64,7 +66,8 @@ if __name__ == '__main__':
                     )
     print '\t'.join(['project', 'sample', 'experiment', 'run',
                         'read count as reported by SRA', 'reads aligned',
-                        'proportion of reads reported by SRA aligned'])
+                        'proportion of reads reported by SRA aligned',
+                        'paired-end', 'SRA misreported paired-end'])
     for i in xrange(100):
         with gzip.open(
                 os.path.join(args.sra_dir,
