@@ -104,6 +104,6 @@ if __name__ == '__main__':
                     print '\t'.join(map(str, [srr_to_line[srr],
                                         srr_to_read_count[srr],
                                         read_count, ratio,
-                                        srr_to_paired_stats[srr],
+                                        srr_to_paired_status[srr],
                                         '1' if mislabeled
                                         else '0']))
