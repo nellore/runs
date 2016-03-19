@@ -231,7 +231,8 @@ def xopen(filename):
         f.close()
 
 @contextmanager
-def liftover(input_stream, liftover_exe, chain_file, perform=True):
+def liftover(input_stream, liftover_exe, chain_file, perform=True,
+                ):
     """ Transforms input stream in genomics coordinate format X to format Y
 
         input_stream: junctions in format
@@ -248,7 +249,7 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
         yield input_stream
     else:
         temp_dir = tempfile.mkdtemp()
-        atexit.register(shutil.rmtree, temp_dir)
+        atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
         input_bed = os.path.join(temp_dir, 'totransform.bed')
         output_bed = os.path.join(temp_dir, 'transformed.bed')
         unmapped_bed = os.path.join(temp_dir, 'unmapped.bed')
@@ -258,8 +259,10 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
                     tokens = line.strip().split('\t')
                 else:
                     tokens = line
-                print >>temp_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
-                        tokens[0], tokens[1], tokens[2], i, tokens[3]
+                print >>temp_stream, '{}\t{}\t{}\t{}\t1\t{}'.format(
+                        tokens[0], tokens[1], tokens[2],
+                        ('dummy_' + i) if len(tokens) < 5
+                        else tokens[5], tokens[3]
                     )
         liftover_process = subprocess.check_call(' '.join([
                                             liftover_exe,
@@ -270,10 +273,10 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
                                         ]),
                                         shell=True,
                                         executable='/bin/bash'
-                                    )
+                                    ) 
         output_process = subprocess.Popen(
-                "awk '{{print $1 \"\t\" $2 \"\t\" $3 \"\t\" $6}}' {}".format(
-                        output_bed
+                "awk '{{print $1 \"\t\" $2 \"\t\" $3 \"\t\" $6{}}}' {}".format(
+                        '' if len(tokens) < 5 else ' "\t" $4', output_bed
                     ), shell=True, executable='/bin/bash',
                 stdout=subprocess.PIPE)
         try:
@@ -286,7 +289,7 @@ def liftover(input_stream, liftover_exe, chain_file, perform=True):
                     'Liftover output process failed; '
                     'exit code was {}.'.format(exit_code)
                 )
-            shutil.rmtree(temp_dir)
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 if __name__ == '__main__':
     import argparse
@@ -410,7 +413,7 @@ if __name__ == '__main__':
     annotations = [(os.path.basename(annotation_path), annotation_path)
                     for annotation_path in annotations]
     temp_dir = tempfile.mkdtemp()
-    atexit.register(shutil.rmtree, temp_dir)
+    atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     temp_anno = os.path.join(temp_dir, 'temp_anno.tsv')
     for annotation_base, annotation in annotations:
         extract_process = subprocess.Popen(' '.join([
@@ -453,7 +456,7 @@ if __name__ == '__main__':
                 tokens[2] = int(tokens[2])
                 if tokens[0] in refs:
                     gencodes[gencode_version].add(tuple(tokens))
-    shutil.rmtree(temp_dir)
+    shutil.rmtree(temp_dir, ignore_errors=True)
 
     gencode_versions = ['3c', '3d'] + [str(ver) for ver in range(4, 25)]
     # Write some differences/intersections
@@ -482,7 +485,7 @@ if __name__ == '__main__':
     magic_junctions, rmake_junctions, subread_junctions = set(), set(), set()
     seqc_junctions = set()
     temp_dir = tempfile.mkdtemp()
-    atexit.register(shutil.rmtree, temp_dir)
+    atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     lifted_supp = os.path.join(temp_dir, 'lifted_supp.tsv')
     with zipfile.ZipFile(args.seqc).open('SupplementaryData3.tab') \
         as seqc_stream, open(lifted_supp, 'w') as lift_stream:
@@ -491,7 +494,7 @@ if __name__ == '__main__':
             tokens = line.strip().split('\t')
             tokens[0] = tokens[0].split('.')
             print >>lift_stream, '\t'.join([tokens[0][0], tokens[0][1],
-                                            tokens[0][2], ','.join(
+                                            tokens[0][2], 'NA', ','.join(
                                                                 tokens[1:4]
                                                             )])
     with open(lifted_supp) as lift_stream:
@@ -502,7 +505,7 @@ if __name__ == '__main__':
                 tokens = line.strip().split('\t')
                 junction = (tokens[0], int(tokens[1]), int(tokens[2]))
                 add_junc = False
-                tokens = tokens[3].split(',')
+                tokens = tokens[4].split(',')
                 if tokens[0] == '1':
                     subread_junctions.add(junction)
                     add_junc = True
