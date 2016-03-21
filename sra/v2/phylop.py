@@ -31,7 +31,7 @@ def subprocess_wrapper(command):
         raise RuntimeException
         subprocess.check_call(command, shell=True)
     except Exception as e:
-        return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
+        return '"{}" returned exit code {}.'.format(command, e.returncode)
     return 0
 
 def write_incidence_file(input_file, min_samples, sort_exe):
@@ -47,7 +47,7 @@ def write_incidence_file(input_file, min_samples, sort_exe):
     """
     try:
         prefix = '\t'.join(input_file.split('.')[:3])
-        with open(
+        with open(s
                 input_file
             ) as input_stream, open(
                 input_file + '.incidence', 'w'
