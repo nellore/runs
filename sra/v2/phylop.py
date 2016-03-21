@@ -154,13 +154,13 @@ if __name__ == '__main__':
     for unsorted_file in to_sort:
         pool.apply_async(
                 subprocess_wrapper,
-                '{sort_exe} -T {temp_dir} -k1,1 >{dest}'.format(
+                ('{sort_exe} -T {temp_dir} -k1,1 >{dest}'.format(
                         sort_exe=args.sort,
                         temp_dir=temp_dir,
                         dest='.'.join(
                                 unsorted_file.split('.')[:-1] + ['sorted']
                             )
-                    ), callback=return_values.append
+                    ),), callback=return_values.append
             )
     print >>sys.stderr, 'Done. Sorting tasks...'
     while len(return_values) < total_files:
