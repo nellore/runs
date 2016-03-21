@@ -272,7 +272,7 @@ if __name__ == '__main__':
                     )
                 splice_sites += 1
                 tokens = line.strip().split('\t')
-                chrom, left_or_right, strand, coordinate = tokens[:4]
+                _, chrom, left_or_right, strand, coordinate = tokens
                 coordinate = int(coordinate) - 1
                 if (left_or_right == 'l' and strand == '+'
                     or left_or_right == 'r' and strand == '-'):
