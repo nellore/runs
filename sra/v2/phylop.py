@@ -47,7 +47,7 @@ def write_incidence_file(input_file, min_samples, sort_exe):
     """
     try:
         prefix = '\t'.join(input_file.split('.')[:3])
-        with open(s
+        with open(
                 input_file
             ) as input_stream, open(
                 input_file + '.incidence', 'w'
