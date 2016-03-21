@@ -162,7 +162,7 @@ if __name__ == '__main__':
                         dest='.'.join(
                                 unsorted_file.split('.')[:-1] + ['sorted']
                             )
-                    ),), callback=return_values.append
+                    ),), callback=return_values.extend
             )
     print >>sys.stderr, 'Done. Sorting tasks...'
     while len(return_values) < total_files:
@@ -187,7 +187,7 @@ if __name__ == '__main__':
         pool.apply_async(
                 write_incidence_file,
                 args=(incidence_file, args.min_samples, args.sort),
-                callback=return_values.append
+                callback=return_values.extend
             )
     while len(return_values) < total_files:
         print >>sys.stderr, '{}/{} tasks complete.\r'.format(
