@@ -317,12 +317,12 @@ if __name__ == '__main__':
                     # 3' site
                     if (chrom, coordinate) in annotated_3p:
                         threep_splice_site_counts = (
-                                annotated_fivep_splice_site_counts
+                                annotated_threep_splice_site_counts
                             )
                         annotated_line_count += 1
                     else:
                         threep_splice_site_counts = (
-                                unannotated_fivep_splice_site_counts
+                                unannotated_threep_splice_site_counts
                             )
                         line_count += 1
                     if strand == '+':
@@ -348,12 +348,14 @@ if __name__ == '__main__':
             if line_count:
                 # Print only if we won't get a ZeroDivisionError
                 print >>output_stream, '\t'.join([key + '.3p'] + [
-                            float(threep_splice_site_counts[i]) / line_count
+                            float(unannotated_threep_splice_site_counts[i])
+                            / line_count
                         for i in xrange(
                             -args.extension, args.extension
                         )])
                 print >>output_stream, '\t'.join([key + '.5p'] + [
-                            float(fivep_splice_site_counts[i]) / line_count
+                            float(unannotated_fivep_splice_site_counts[i])
+                            / line_count
                         for i in xrange(
                             -args.extension, args.extension
                         )])
