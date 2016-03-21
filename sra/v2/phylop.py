@@ -164,6 +164,7 @@ if __name__ == '__main__':
             )
     print >>sys.stderr, 'Done. Sorting tasks...'
     while len(return_values) < total_files:
+        print return_values
         print >>sys.stderr, '{}/{} tasks complete.\r'.format(
                 len(return_values),
                 total_files
