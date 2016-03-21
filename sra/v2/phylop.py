@@ -67,7 +67,7 @@ def write_incidence_file(input_file, min_samples, sort_exe):
                                         os.path.dirname(input_file),
                                         input_file + '.incidence',
                                         input_file + '.incidence.sorted'
-                                    ))
+                                    ), shell=True)
         os.remove(input_file + '.incidence')
     except Exception as e:
         return e.message
@@ -179,6 +179,12 @@ if __name__ == '__main__':
                                                 return_value
                                             ))
         time.sleep(4)
+    if not all([return_value == 0 for return_value in return_values]):
+        for return_value in return_values:
+            if return_value != 0:
+                raise RuntimeError('Error during sorting: "{}".'.format(
+                                            return_value
+                                        ))
     for unsorted_file in to_sort:
         os.remove(unsorted_file)
     print >>sys.stderr, (
@@ -206,6 +212,13 @@ if __name__ == '__main__':
                                                 return_value
                                             ))
         time.sleep(4)
+    if not all([return_value == 0 for return_value in return_values]):
+        for return_value in return_values:
+            if return_value != 0:
+                raise RuntimeError('Error during incidence computation: '
+                                   '"{}".'.format(
+                                            return_value
+                                        ))
     pool.close()
     pool.join()
     allincidence = os.path.join(temp_dir, 'allincidence.temp')
