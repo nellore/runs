@@ -190,7 +190,7 @@ if __name__ == '__main__':
     for unsorted_file in to_sort:
         os.remove(unsorted_file)
     print >>sys.stderr, (
-            '\x1b[KCompleted sorting. Computing splice site incidence...'
+            '\x1b[KCompleted sorting. Computing splice site incidences...'
         )
     return_values = []
     to_incidence = glob.glob(os.path.join(temp_dir, '*.sorted'))
@@ -380,7 +380,7 @@ if __name__ == '__main__':
                         )])
                 print >>output_stream, '\t'.join(['annotated.5p'] + [
                             str(float(annotated_fivep_splice_site_counts[i])
-                                / annotated_line_count[i])
+                                / annotated_line_counts[i])
                         for i in xrange(
                             -args.extension, args.extension
                         )])
