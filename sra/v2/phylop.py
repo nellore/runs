@@ -111,7 +111,7 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp()
-    atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
+    #atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
     print >>sys.stderr, '\x1b[KDistributing splice sites across tasks.'
