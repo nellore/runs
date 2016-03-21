@@ -362,14 +362,14 @@ if __name__ == '__main__':
     if annotated_line_count:
         # Print only if we won't get a ZeroDivisionError
         print '\t'.join(['annotated.3p'] + [
-                    float(annotated_threep_splice_site_counts[i])
-                    / annotated_line_count
+                    str(float(annotated_threep_splice_site_counts[i])
+                         / annotated_line_count)
                 for i in xrange(
                     -args.extension, args.extension
                 )])
         print '\t'.join(['annotated.5p'] + [
-                    float(annotated_fivep_splice_site_counts[i])
-                    / annotated_line_count
+                    str(float(annotated_fivep_splice_site_counts[i])
+                        / annotated_line_count)
                 for i in xrange(
                     -args.extension, args.extension
                 )])
