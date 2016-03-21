@@ -112,7 +112,7 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp()
-    #atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
+    atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
     print >>sys.stderr, '\x1b[KDistributing splice sites across tasks.'
@@ -309,7 +309,7 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            if not math.isnan(bwvals[i]):
+                            if not math.isnan(bwvals[-i-1]):
                                 fivep_splice_site_counts[j] += bwvals[-i-1]
                                 line_counts[j] += 1
                     else:
@@ -351,7 +351,7 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            if not math.isnan(bwvals[i]):
+                            if not math.isnan(bwvals[-i-1]):
                                 threep_splice_site_counts[j] += bwvals[-i-1]
                                 line_counts[j] += 1
             # Print only if we won't get a ZeroDivisionError
