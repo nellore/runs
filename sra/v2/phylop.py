@@ -309,7 +309,7 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            if not math.isnan(bwvals[i])
+                            if not math.isnan(bwvals[i]):
                                 fivep_splice_site_counts[j] += bwvals[-i-1]
                                 line_counts[j] += 1
                     else:
@@ -339,7 +339,7 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            if not math.isnan(bwvals[i])
+                            if not math.isnan(bwvals[i]):
                                 threep_splice_site_counts[j] += bwvals[i]
                                 line_counts[j] += 1
                     elif strand == '-':
@@ -351,7 +351,7 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            if not math.isnan(bwvals[i])
+                            if not math.isnan(bwvals[i]):
                                 threep_splice_site_counts[j] += bwvals[-i-1]
                                 line_counts[j] += 1
             if all(unannotated_line_counts):
