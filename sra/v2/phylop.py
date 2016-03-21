@@ -129,12 +129,12 @@ if __name__ == '__main__':
                         handles[(tokens[0], left_or_right
                                             + strand)] = open(
                                             os.path.join(temp_dir,
-                                                    '.'.join(
+                                                    '.'.join([
                                                         tokens[0],
                                                         left_or_right,
                                                         strand,
                                                         'unsorted'
-                                                )
+                                                ])
                                             ), 'w'
                                         )
                         print >>handles[(tokens[0], left_or_right
