@@ -30,6 +30,8 @@ def subprocess_wrapper(command):
         subprocess.check_call(command, shell=True)
     except subprocess.CalledProcessError as e:
         return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
+    except Exception as e:
+        return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
     return 0
 
 def write_incidence_file(input_file, min_samples):
@@ -111,7 +113,7 @@ if __name__ == '__main__':
     atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
-    print >>sys.stderr, 'Distributing splices sites across tasks.'
+    print >>sys.stderr, 'Distributing splice sites across tasks.'
     try:
         with gzip.open(args.junctions) as junction_stream:
             for k, line in enumerate(junction_stream):
