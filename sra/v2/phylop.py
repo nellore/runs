@@ -18,6 +18,7 @@ import itertools
 import shutil
 import sys
 import os
+import subprocess
 
 def subprocess_wrapper(command):
     """ Wraps subprocess.check_call so exceptions can be handled cleanly.
