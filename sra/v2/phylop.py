@@ -348,14 +348,14 @@ if __name__ == '__main__':
             if line_count:
                 # Print only if we won't get a ZeroDivisionError
                 print >>output_stream, '\t'.join([key + '.3p'] + [
-                            float(unannotated_threep_splice_site_counts[i])
-                            / line_count
+                            str(float(unannotated_threep_splice_site_counts[i])
+                                / line_count)
                         for i in xrange(
                             -args.extension, args.extension
                         )])
                 print >>output_stream, '\t'.join([key + '.5p'] + [
-                            float(unannotated_fivep_splice_site_counts[i])
-                            / line_count
+                            str(float(unannotated_fivep_splice_site_counts[i])
+                                / line_count)
                         for i in xrange(
                             -args.extension, args.extension
                         )])
