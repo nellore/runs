@@ -251,7 +251,7 @@ if __name__ == '__main__':
     annotated_fivep_splice_site_counts = defaultdict(int)
     annotated_threep_splice_site_counts = defaultdict(int)
     from bx.bbi.bigwig_file import BigWigFile
-    bw = BigWigFile.open(args.phylop_bw)
+    bw = BigWigFile(open(args.phylop_bw, 'rb'))
     print >>sys.stderr, '\x1b[KDone. Computing/writing matrix elements...'
     with open(
             allincidence
