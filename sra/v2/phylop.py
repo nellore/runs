@@ -20,6 +20,7 @@ import sys
 import os
 import subprocess
 from collections import defaultdict
+import math
 
 def subprocess_wrapper(command):
     """ Wraps subprocess.check_call so exceptions can be handled cleanly.
@@ -258,8 +259,8 @@ if __name__ == '__main__':
         ) as incidence_stream, open(
             args.out, 'w'
         ) as output_stream:
-        line_count = 0
-        annotated_line_count = 0
+        unannotated_line_counts = defaultdict(int)
+        annotated_line_counts = defaultdict(int)
         splice_sites = 0
         for key, group in itertools.groupby(
                                 incidence_stream, lambda x: x.split('\t')[0]
@@ -281,12 +282,12 @@ if __name__ == '__main__':
                         fivep_splice_site_counts = (
                                 annotated_fivep_splice_site_counts
                             )
-                        annotated_line_count += 1
+                        line_counts = annotated_line_counts
                     else:
                         fivep_splice_site_counts = (
                                 unannotated_fivep_splice_site_counts
                             )
-                        line_count += 1
+                        line_counts = unannotated_line_counts
                     if strand == '+':
                         bwvals = bw.get_as_array(
                                     chrom,
@@ -296,7 +297,9 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            fivep_splice_site_counts[j] += bwvals[i]
+                            if not math.isnan(bwvals[i]):
+                                fivep_splice_site_counts[j] += bwvals[i]
+                                line_counts[j] += 1
                     elif strand == '-':
                         bwvals = bw.get_as_array(
                                     chrom,
@@ -306,7 +309,9 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            fivep_splice_site_counts[j] += bwvals[-i-1]
+                            if not math.isnan(bwvals[i])
+                                fivep_splice_site_counts[j] += bwvals[-i-1]
+                                line_counts[j] += 1
                     else:
                         raise RuntimeError(
                                 'Strand {} is neither + nor -.'.format(
@@ -319,12 +324,12 @@ if __name__ == '__main__':
                         threep_splice_site_counts = (
                                 annotated_threep_splice_site_counts
                             )
-                        annotated_line_count += 1
+                        line_counts = annotated_line_counts
                     else:
                         threep_splice_site_counts = (
                                 unannotated_threep_splice_site_counts
                             )
-                        line_count += 1
+                        line_counts = unannotated_line_counts
                     if strand == '+':
                         bwvals = bw.get_as_array(
                                     chrom,
@@ -334,7 +339,9 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            threep_splice_site_counts[j] += bwvals[i]
+                            if not math.isnan(bwvals[i])
+                                threep_splice_site_counts[j] += bwvals[i]
+                                line_counts[j] += 1
                     elif strand == '-':
                         bwvals = bw.get_as_array(
                                     chrom,
@@ -344,33 +351,35 @@ if __name__ == '__main__':
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
-                            threep_splice_site_counts[j] += bwvals[-i-1]
-            if line_count:
+                            if not math.isnan(bwvals[i])
+                                threep_splice_site_counts[j] += bwvals[-i-1]
+                                line_counts[j] += 1
+            if all(unannotated_line_counts):
                 # Print only if we won't get a ZeroDivisionError
                 print >>output_stream, '\t'.join([key + '.3p'] + [
                             str(float(unannotated_threep_splice_site_counts[i])
-                                / line_count)
+                                / unannotated_line_counts[i])
                         for i in xrange(
                             -args.extension, args.extension
                         )])
                 print >>output_stream, '\t'.join([key + '.5p'] + [
                             str(float(unannotated_fivep_splice_site_counts[i])
-                                / line_count)
+                                / unannotated_line_counts[i])
                         for i in xrange(
                             -args.extension, args.extension
                         )])
-        if annotated_line_count:
+        if all(annotated_line_counts):
             # Print only if we won't get a ZeroDivisionError
             print >>output_stream, '\t'.join(['annotated.3p'] + [
                         str(float(annotated_threep_splice_site_counts[i])
-                             / annotated_line_count)
+                             / annotated_line_counts[i])
                     for i in xrange(
                         -args.extension, args.extension
                     )])
             print >>output_stream, '\t'.join(['annotated.5p'] + [
                         str(float(annotated_fivep_splice_site_counts[i])
-                            / annotated_line_count)
+                            / annotated_line_count[i])
                     for i in xrange(
                         -args.extension, args.extension
                     )])
-    print >>sys.stderr, 'Done.'
+    print >>sys.stderr, '\x1b[KDone.'
