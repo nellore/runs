@@ -237,11 +237,11 @@ if __name__ == '__main__':
         for line in annotated_stream:
             tokens = line.strip().split('\t')
             if tokens[3] == '+':
-                annotated_5p.add((tokens[0], int(tokens[1])))
-                annotated_3p.add((tokens[0], int(tokens[2])))
+                annotated_5p.add((tokens[0], int(tokens[1]) - 1))
+                annotated_3p.add((tokens[0], int(tokens[2]) - 1))
             elif tokens[3] == '-':
-                annotated_3p.add((tokens[0], int(tokens[1])))
-                annotated_5p.add((tokens[0], int(tokens[2])))
+                annotated_3p.add((tokens[0], int(tokens[1]) - 1))
+                annotated_5p.add((tokens[0], int(tokens[2]) - 1))
             else:
                 raise RuntimeError(
                         'Invalid line in annotation file: "{}".'.format(line)
@@ -269,7 +269,7 @@ if __name__ == '__main__':
                         'Processed {} splice sites...\r'.format(
                                                                 splice_sites
                                                             )
-                    )
+                    ),
                 splice_sites += 1
                 tokens = line.strip().split('\t')
                 _, chrom, left_or_right, strand, coordinate = tokens
