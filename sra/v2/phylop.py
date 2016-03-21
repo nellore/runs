@@ -115,7 +115,7 @@ if __name__ == '__main__':
     try:
         with gzip.open(args.junctions) as junction_stream:
             for k, line in enumerate(junction_stream):
-                print >>sys.stderr, 'Processed {} junctions...'.format(k),
+                print >>sys.stderr, 'Processed {} junctions...\r'.format(k),
                 tokens = line.strip().split('\t')
                 strand = tokens[4]
                 for left_or_right, index in [('l', 1), ('r', 2)]:
@@ -144,7 +144,7 @@ if __name__ == '__main__':
                                                 )
     finally:
         for handle in handles:
-            handle.close()
+            handles[handle].close()
     pool = multiprocessing.Pool(args.num_processes)
     return_values = []
     to_sort = glob.glob(os.path.join(temp_dir, '*.unsorted'))
@@ -241,7 +241,7 @@ if __name__ == '__main__':
                                 incidence_stream, lambda x: x.split('\t')[0]
                             ):
             for line in group:
-                print >>sys.stderr, 'Processed {} splice sites...'.format(
+                print >>sys.stderr, 'Processed {} splice sites...\r'.format(
                                                                 splice_sites
                                                             )
                 splice_sites += 1
