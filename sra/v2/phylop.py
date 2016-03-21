@@ -30,17 +30,16 @@ def subprocess_wrapper(command):
         subprocess.check_call(command, shell=True)
     except subprocess.CalledProcessError as e:
         return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
-    except Exception as e:
-        return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
     return 0
 
-def write_incidence_file(input_file, min_samples):
+def write_incidence_file(input_file, min_samples, sort_exe):
     """ Writes number of samples in which each splice site is found
 
         input_file: file with coordinate as first field and comma-separated
             list of sample indexes as second field
         min_samples: minimum number of samples in which splice site should
             appear to be analyzed
+        sort_exe: path to sort executable
 
         No return value.
     """
@@ -62,7 +61,8 @@ def write_incidence_file(input_file, min_samples):
                     print >>output_stream, '\t'.join(
                                             [str(len(samples)), prefix, key]
                                         )
-        subprocess.check_call('sort -T {} -k1,1nr {} >{}'.format(
+        subprocess.check_call('{} -T {} -k1,1nr {} >{}'.format(
+                                        args.sort,
                                         os.path.dirname(input_file),
                                         input_file + '.incidence',
                                         input_file + '.incidence.sorted'
@@ -154,9 +154,10 @@ if __name__ == '__main__':
     for unsorted_file in to_sort:
         pool.apply_async(
                 subprocess_wrapper,
-                ('{sort_exe} -T {temp_dir} -k1,1 >{dest}'.format(
+                ('{sort_exe} -T {temp_dir} -k1,1 {unsorted} >{dest}'.format(
                         sort_exe=args.sort,
                         temp_dir=temp_dir,
+                        unsorted=unsorted_file,
                         dest='.'.join(
                                 unsorted_file.split('.')[:-1] + ['sorted']
                             )
@@ -164,7 +165,6 @@ if __name__ == '__main__':
             )
     print >>sys.stderr, 'Done. Sorting tasks...'
     while len(return_values) < total_files:
-        print return_values
         print >>sys.stderr, '{}/{} tasks complete.\r'.format(
                 len(return_values),
                 total_files
@@ -184,7 +184,8 @@ if __name__ == '__main__':
     total_files = len(to_incidence)
     for incidence_file in to_incidence:
         pool.apply_async(
-                write_incidence, (incidence_file, args.min_samples),
+                write_incidence_file,
+                (incidence_file, args.min_samples, args.sort),
                 callback=return_values.append
             )
     while len(return_values) < total_files:
@@ -204,7 +205,8 @@ if __name__ == '__main__':
     pool.join()
     allincidence = os.path.join(temp_dir, 'allincidence.temp')
     print >>sys.stderr, 'Done. Merging splice site incidence files...'
-    subprocess.check_call('sort -T {} -m -k1,1nr {} >{}'.format(
+    subprocess.check_call('{} -T {} -m -k1,1nr {} >{}'.format(
+                                args.sort,
                                 temp_dir,
                                 os.path.join(temp_dir, '*.incidence.sorted'),
                                 os.path.join(temp_dir, 'allincidence.temp')
