@@ -110,7 +110,8 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Distributing splices sites across tasks.'
     try:
         with gzip.open(args.junctions) as junction_stream:
-            for line in junction_stream:
+            for k, line in junction_stream:
+                print >>sys.stderr, 'Processed {} junctions...'.format(k),
                 tokens = line.strip().split('\t')
                 strand = tokens[4]
                 for left_or_right, index in [('l', 1), ('r', 2)]
@@ -231,10 +232,15 @@ if __name__ == '__main__':
         ) as output_stream:
         line_count = 0
         annotated_line_count = 0
+        splice_sites = 0
         for key, group in itertools.groupby(
                                 incidence_stream, lambda x: x.split('\t')[0]
                             ):
             for line in group:
+                print >>sys.stderr, 'Processed {} splice sites...'.format(
+                                                                splice_sites
+                                                            )
+                splice_sites += 1
                 tokens = line.strip().split('\t')
                 chrom, left_or_right, strand, coordinate = tokens[:4]
                 coordinate = int(coordinate) - 1
