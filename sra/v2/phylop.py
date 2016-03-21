@@ -298,6 +298,8 @@ if __name__ == '__main__':
                                     coordinate - args.extension,
                                     coordinate + args.extension
                                 )
+                        if bwvals is None:
+                            continue
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
@@ -310,6 +312,8 @@ if __name__ == '__main__':
                                     coordinate - (args.extension - 1),
                                     coordinate + (args.extension + 1)
                                 )
+                        if bwvals is None:
+                            continue
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
@@ -340,6 +344,8 @@ if __name__ == '__main__':
                                     coordinate - (args.extension - 1),
                                     coordinate + (args.extension + 1)
                                 )
+                        if bwvals is None:
+                            continue
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
@@ -352,6 +358,8 @@ if __name__ == '__main__':
                                     coordinate - args.extension,
                                     coordinate + args.extension
                                 )
+                        if bwvals is None:
+                            continue
                         for i, j in enumerate(
                                         xrange(-args.extension, args.extension)
                                     ):
