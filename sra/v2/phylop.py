@@ -370,20 +370,20 @@ if __name__ == '__main__':
                         )])
             except ZeroDivisionError:
                 pass
-            try:
-                # Print only if we won't get a ZeroDivisionError
-                print >>output_stream, '\t'.join(['annotated.3p'] + [
-                            str(float(annotated_threep_splice_site_counts[i])
-                                 / annotated_line_counts[i])
-                        for i in xrange(
-                            -args.extension, args.extension
-                        )])
-                print >>output_stream, '\t'.join(['annotated.5p'] + [
-                            str(float(annotated_fivep_splice_site_counts[i])
-                                / annotated_line_counts[i])
-                        for i in xrange(
-                            -args.extension, args.extension
-                        )])
-            except ZeroDivisionError:
-                pass
+        try:
+            # Print only if we won't get a ZeroDivisionError
+            print >>output_stream, '\t'.join(['annotated.3p'] + [
+                        str(float(annotated_threep_splice_site_counts[i])
+                             / annotated_line_counts[i])
+                    for i in xrange(
+                        -args.extension, args.extension
+                    )])
+            print >>output_stream, '\t'.join(['annotated.5p'] + [
+                        str(float(annotated_fivep_splice_site_counts[i])
+                            / annotated_line_counts[i])
+                    for i in xrange(
+                        -args.extension, args.extension
+                    )])
+        except ZeroDivisionError:
+            pass
     print >>sys.stderr, '\x1b[KDone.'
