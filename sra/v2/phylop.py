@@ -63,15 +63,14 @@ def write_incidence_file(input_file, min_samples, sort_exe):
                                             [str(len(samples)), prefix, key]
                                         )
         subprocess.check_call('{} -T {} -k1,1nr {} >{}'.format(
-                                        args.sort,
+                                        sort_exe,
                                         os.path.dirname(input_file),
                                         input_file + '.incidence',
                                         input_file + '.incidence.sorted'
                                     ))
         os.remove(input_file + '.incidence')
     except Exception as e:
-        exc_type, exc_value, exc_traceback = sys.exc_info()
-        return exc_traceback
+        return e.message
     return 0
 
 if __name__ == '__main__':
