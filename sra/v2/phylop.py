@@ -119,7 +119,7 @@ if __name__ == '__main__':
     atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
-    print >>sys.stderr, '\x1b[KDistributing splice sites across tasks.'
+    print >>sys.stderr, '\x1b[KDistributing splice sites across tasks...'
     try:
         with gzip.open(args.junctions) as junction_stream:
             for k, line in enumerate(junction_stream):
