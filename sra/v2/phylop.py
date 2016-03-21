@@ -113,7 +113,7 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Distributing splices sites across tasks.'
     try:
         with gzip.open(args.junctions) as junction_stream:
-            for k, line in junction_stream:
+            for k, line in enumerate(junction_stream):
                 print >>sys.stderr, 'Processed {} junctions...'.format(k),
                 tokens = line.strip().split('\t')
                 strand = tokens[4]
