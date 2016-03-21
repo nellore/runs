@@ -24,13 +24,13 @@ def subprocess_wrapper(command):
 
         command: command to run
 
-        Return value: None if successful; else error
+        Return value: 0 if successful; else error
     """
     try:
         subprocess.check_call(command, shell=True)
     except subprocess.CalledProcessError as e:
         return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
-    return None
+    return 0
 
 def write_incidence_file(input_file, min_samples):
     """ Writes number of samples in which each splice site is found
@@ -69,7 +69,7 @@ def write_incidence_file(input_file, min_samples):
     except Exception as e:
         exc_type, exc_value, exc_traceback = sys.exc_info()
         return exc_traceback
-    return None
+    return 0
 
 if __name__ == '__main__':
     import argparse
@@ -166,9 +166,9 @@ if __name__ == '__main__':
                 len(return_values),
                 total_files
             ),
-        if not all([return_value is None for return_value in return_values]):
+        if not all([return_value == 0 for return_value in return_values]):
             for return_value in return_values:
-                if return_value is not None:
+                if return_value != 0:
                     raise RuntimeError('Error during sorting: "{}".'.format(
                                                 return_value
                                             ))
@@ -189,9 +189,9 @@ if __name__ == '__main__':
                 len(return_values),
                 total_files
             ),
-        if not all([return_value is None for return_value in return_values]):
+        if not all([return_value == 0 for return_value in return_values]):
             for return_value in return_values:
-                if return_value is not None:
+                if return_value != 0:
                     raise RuntimeError('Error during incidence computation: '
                                        '"{}".'.format(
                                                 return_value
