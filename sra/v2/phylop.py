@@ -228,7 +228,7 @@ if __name__ == '__main__':
                                 temp_dir,
                                 os.path.join(temp_dir, '*.incidence.sorted'),
                                 os.path.join(temp_dir, 'allincidence.temp')
-                            ))
+                            ), shell=True)
     print >>sys.stderr, '\x1b[KDone. Reading annotated splice sites...'
     annotated_5p = set()
     annotated_3p = set()
