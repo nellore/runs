@@ -15,6 +15,8 @@ import multiprocessing
 import glob
 import time
 import itertools
+import shutil
+import sys
 
 def subprocess_wrapper(command):
     """ Wraps subprocess.check_call so exceptions can be handled cleanly.
@@ -103,8 +105,9 @@ if __name__ == '__main__':
             help=('min number of sample in which splice site should appear to '
                   'be analyzed')
         )
+    args = parser.parse_args()
     temp_dir = tempfile.mkdtemp()
-    atexit.register(temp_dir, shutil.rmtree, ignoreerrors=True)
+    atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
     print >>sys.stderr, 'Distributing splices sites across tasks.'
@@ -114,7 +117,7 @@ if __name__ == '__main__':
                 print >>sys.stderr, 'Processed {} junctions...'.format(k),
                 tokens = line.strip().split('\t')
                 strand = tokens[4]
-                for left_or_right, index in [('l', 1), ('r', 2)]
+                for left_or_right, index in [('l', 1), ('r', 2)]:
                     try:
                         print >>handles[(tokens[0], left_or_right
                                                     + strand)], '\t'.join(
@@ -159,7 +162,7 @@ if __name__ == '__main__':
     print >>sys.stderr, 'Done. Sorting tasks...'
     while len(return_values) < total_files:
         print >>sys.stderr, '{}/{} tasks complete.\r'.format(
-                len(return_values)
+                len(return_values),
                 total_files
             ),
         if not all([return_value is None for return_value in return_values]):
@@ -175,14 +178,14 @@ if __name__ == '__main__':
     return_values = []
     to_incidence = glob.glob(os.path.join(temp_dir, '*.incidence'))
     total_files = len(to_incidence)
-    for incidence_file in to incidence:
+    for incidence_file in to_incidence:
         pool.apply_async(
                 write_incidence, (incidence_file, args.min_samples),
                 callback=return_values.append
             )
     while len(return_values) < total_files:
         print >>sys.stderr, '{}/{} tasks complete.\r'.format(
-                len(return_values)
+                len(return_values),
                 total_files
             ),
         if not all([return_value is None for return_value in return_values]):
