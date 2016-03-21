@@ -45,7 +45,7 @@ def write_incidence_file(input_file, min_samples, sort_exe):
         No return value.
     """
     try:
-        prefix = '\t'.join(input_file.split('.')[:3])
+        prefix = '\t'.join(os.path.basename(input_file).split('.')[:-1])
         with open(
                 input_file
             ) as input_stream, open(
@@ -186,12 +186,12 @@ if __name__ == '__main__':
             '\x1b[KCompleted sorting. Computing splice site incidence...'
         )
     return_values = []
-    to_incidence = glob.glob(os.path.join(temp_dir, '*.incidence'))
+    to_incidence = glob.glob(os.path.join(temp_dir, '*.sorted'))
     total_files = len(to_incidence)
-    for incidence_file in to_incidence:
+    for sorted_file in to_incidence:
         pool.apply_async(
                 write_incidence_file,
-                args=(incidence_file, args.min_samples, args.sort),
+                args=(sorted_file, args.min_samples, args.sort),
                 callback=return_values.append
             )
     while len(return_values) < total_files:
