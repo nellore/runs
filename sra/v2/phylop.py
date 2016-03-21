@@ -28,9 +28,8 @@ def subprocess_wrapper(command):
         Return value: 0 if successful; else error
     """
     try:
-        raise RuntimeException
         subprocess.check_call(command, shell=True)
-    except Exception as e:
+    except subprocess.CalledProcessError as e:
         return '"{}" returned exit code {}.'.format(command, e.returncode)
     return 0
 
