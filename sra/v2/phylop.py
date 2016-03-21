@@ -87,6 +87,10 @@ if __name__ == '__main__':
     parser.add_argument('--phylop-bw', type=str, required=True,
             help='phylop bigwig; should be hg38.phyloP100way.bw'
         )
+    parser.add_argument('--temp-dir', type=str, required=False,
+            default=None,
+            help='path to where temporary files should be stored'
+        )
     parser.add_argument('--annotation', type=str, required=True,
             help=('path to annotated_junctions.tsv.gz; defined in '
                   'annotation_definition.md')
@@ -110,8 +114,13 @@ if __name__ == '__main__':
             help=('min number of sample in which splice site should appear to '
                   'be analyzed')
         )
+    parser.add_argument('--min-samples', type=int, required=False,
+            default=100,
+            help=('min number of sample in which splice site should appear to '
+                  'be analyzed')
+        )
     args = parser.parse_args()
-    temp_dir = tempfile.mkdtemp()
+    temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
     atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
