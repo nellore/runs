@@ -19,6 +19,7 @@ import shutil
 import sys
 import os
 import subprocess
+from collections import defaultdict
 
 def subprocess_wrapper(command):
     """ Wraps subprocess.check_call so exceptions can be handled cleanly.
