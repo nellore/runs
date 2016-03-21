@@ -113,11 +113,13 @@ if __name__ == '__main__':
     atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
     # First count number of samples in which each splice site is found
     handles = {}
-    print >>sys.stderr, 'Distributing splice sites across tasks.'
+    print >>sys.stderr, '\x1b[KDistributing splice sites across tasks.'
     try:
         with gzip.open(args.junctions) as junction_stream:
             for k, line in enumerate(junction_stream):
-                print >>sys.stderr, 'Processed {} junctions...\r'.format(k),
+                print >>sys.stderr, (
+                        '\x1b[KProcessed {} junctions...\r'.format(k)
+                    ),
                 tokens = line.strip().split('\t')
                 strand = tokens[3]
                 for left_or_right, index in [('l', 1), ('r', 2)]:
@@ -162,11 +164,11 @@ if __name__ == '__main__':
                         dest='.'.join(
                                 unsorted_file.split('.')[:-1] + ['sorted']
                             )
-                    ),), callback=return_values.extend
+                    ),), callback=return_values.append
             )
-    print >>sys.stderr, 'Done. Sorting tasks...'
+    print >>sys.stderr, '\x1b[KDone. Sorting tasks...'
     while len(return_values) < total_files:
-        print >>sys.stderr, '{}/{} tasks complete.\r'.format(
+        print >>sys.stderr, '\x1b[K{}/{} tasks complete.\r'.format(
                 len(return_values),
                 total_files
             ),
@@ -179,7 +181,9 @@ if __name__ == '__main__':
         time.sleep(4)
     for unsorted_file in to_sort:
         os.remove(unsorted_file)
-    print >>sys.stderr, 'Completed sorting. Computing splice site incidence...'
+    print >>sys.stderr, (
+            '\x1b[KCompleted sorting. Computing splice site incidence...'
+        )
     return_values = []
     to_incidence = glob.glob(os.path.join(temp_dir, '*.incidence'))
     total_files = len(to_incidence)
@@ -187,10 +191,10 @@ if __name__ == '__main__':
         pool.apply_async(
                 write_incidence_file,
                 args=(incidence_file, args.min_samples, args.sort),
-                callback=return_values.extend
+                callback=return_values.append
             )
     while len(return_values) < total_files:
-        print >>sys.stderr, '{}/{} tasks complete.\r'.format(
+        print >>sys.stderr, '\x1b[K{}/{} tasks complete.\r'.format(
                 len(return_values),
                 total_files
             ),
@@ -205,14 +209,14 @@ if __name__ == '__main__':
     pool.close()
     pool.join()
     allincidence = os.path.join(temp_dir, 'allincidence.temp')
-    print >>sys.stderr, 'Done. Merging splice site incidence files...'
+    print >>sys.stderr, '\x1b[KDone. Merging splice site incidence files...'
     subprocess.check_call('{} -T {} -m -k1,1nr {} >{}'.format(
                                 args.sort,
                                 temp_dir,
                                 os.path.join(temp_dir, '*.incidence.sorted'),
                                 os.path.join(temp_dir, 'allincidence.temp')
                             ))
-    print >>sys.stderr, 'Done. Reading annotated splice sites...'
+    print >>sys.stderr, '\x1b[KDone. Reading annotated splice sites...'
     annotated_5p = set()
     annotated_3p = set()
     with gzip.open(args.annotation) as annotated_stream:
@@ -234,7 +238,7 @@ if __name__ == '__main__':
     annotated_threep_splice_site_counts = defaultdict(int)
     import pyBigWig
     bw = pyBigWig.open(args.phylop_bw)
-    print >>sys.stderr, 'Done. Computing/writing matrix elements...'
+    print >>sys.stderr, '\x1b[KDone. Computing/writing matrix elements...'
     with open(
             allincidence
         ) as incidence_stream, open(
@@ -247,9 +251,11 @@ if __name__ == '__main__':
                                 incidence_stream, lambda x: x.split('\t')[0]
                             ):
             for line in group:
-                print >>sys.stderr, 'Processed {} splice sites...\r'.format(
+                print >>sys.stderr, (
+                        '\x1b[KProcessed {} splice sites...\r'.format(
                                                                 splice_sites
                                                             )
+                    )
                 splice_sites += 1
                 tokens = line.strip().split('\t')
                 chrom, left_or_right, strand, coordinate = tokens[:4]
