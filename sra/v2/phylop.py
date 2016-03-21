@@ -118,7 +118,7 @@ if __name__ == '__main__':
         with gzip.open(args.junctions) as junction_stream:
             for k, line in enumerate(junction_stream):
                 print >>sys.stderr, (
-                        '\x1b[KProcessed {} junctions...\r'.format(k)
+                        'Processed {} junctions...\r'.format(k)
                     ),
                 tokens = line.strip().split('\t')
                 strand = tokens[3]
@@ -252,7 +252,7 @@ if __name__ == '__main__':
                             ):
             for line in group:
                 print >>sys.stderr, (
-                        '\x1b[KProcessed {} splice sites...\r'.format(
+                        'Processed {} splice sites...\r'.format(
                                                                 splice_sites
                                                             )
                     )
