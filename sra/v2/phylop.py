@@ -28,7 +28,7 @@ def subprocess_wrapper(command):
     """
     try:
         subprocess.check_call(command, shell=True)
-    except subprocess.CalledProcessError as e:
+    except Exception as e:
         return '"{}" returned exit code {}.'.format(e.cmd, e.returncode)
     return 0
 
