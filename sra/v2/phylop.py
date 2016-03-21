@@ -156,7 +156,7 @@ if __name__ == '__main__':
                         sort_exe=args.sort,
                         temp_dir=temp_dir,
                         dest='.'.join(
-                                unsorted.file.split('.')[:-1] + ['sorted']
+                                unsorted_file.split('.')[:-1] + ['sorted']
                             )
                     ), callback=return_values.append
             )
