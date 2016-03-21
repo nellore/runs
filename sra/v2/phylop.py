@@ -250,8 +250,8 @@ if __name__ == '__main__':
     unannotated_threep_splice_site_counts = defaultdict(int)
     annotated_fivep_splice_site_counts = defaultdict(int)
     annotated_threep_splice_site_counts = defaultdict(int)
-    import pyBigWig
-    bw = pyBigWig.open(args.phylop_bw)
+    from bx.bbi.bigwig_file import BigWigFile
+    bw = BigWigFile.open(file=open(args.phylop_bw, 'rb'))
     print >>sys.stderr, '\x1b[KDone. Computing/writing matrix elements...'
     with open(
             allincidence
@@ -288,7 +288,7 @@ if __name__ == '__main__':
                             )
                         line_count += 1
                     if strand == '+':
-                        bwvals = bw.values(
+                        bwvals = bw.get_as_array(
                                     chrom,
                                     coordinate - args.extension,
                                     coordinate + args.extension
@@ -298,7 +298,7 @@ if __name__ == '__main__':
                                     ):
                             fivep_splice_site_counts[j] += bwvals[i]
                     elif strand == '-':
-                        bwvals = bw.values(
+                        bwvals = bw.get_as_array(
                                     chrom,
                                     coordinate - (args.extension - 1),
                                     coordinate + (args.extension + 1)
@@ -326,7 +326,7 @@ if __name__ == '__main__':
                             )
                         line_count += 1
                     if strand == '+':
-                        bwvals = bw.values(
+                        bwvals = bw.get_as_array(
                                     chrom,
                                     coordinate - (args.extension - 1),
                                     coordinate + (args.extension + 1)
@@ -336,7 +336,7 @@ if __name__ == '__main__':
                                     ):
                             threep_splice_site_counts[j] += bwvals[i]
                     elif strand == '-':
-                        bwvals = bw.values(
+                        bwvals = bw.get_as_array(
                                     chrom,
                                     coordinate - args.extension,
                                     coordinate + args.extension
