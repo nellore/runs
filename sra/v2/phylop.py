@@ -114,11 +114,6 @@ if __name__ == '__main__':
             help=('min number of sample in which splice site should appear to '
                   'be analyzed')
         )
-    parser.add_argument('--min-samples', type=int, required=False,
-            default=100,
-            help=('min number of sample in which splice site should appear to '
-                  'be analyzed')
-        )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
     atexit.register(shutil.rmtree, temp_dir, ignore_errors=True)
