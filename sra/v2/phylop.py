@@ -119,7 +119,7 @@ if __name__ == '__main__':
             for k, line in enumerate(junction_stream):
                 print >>sys.stderr, 'Processed {} junctions...\r'.format(k),
                 tokens = line.strip().split('\t')
-                strand = tokens[4]
+                strand = tokens[3]
                 for left_or_right, index in [('l', 1), ('r', 2)]:
                     try:
                         print >>handles[(tokens[0], left_or_right
@@ -154,7 +154,8 @@ if __name__ == '__main__':
     for unsorted_file in to_sort:
         pool.apply_async(
                 subprocess_wrapper,
-                ('{sort_exe} -T {temp_dir} -k1,1 {unsorted} >{dest}'.format(
+                args=(
+                    '{sort_exe} -T {temp_dir} -k1,1 {unsorted} >{dest}'.format(
                         sort_exe=args.sort,
                         temp_dir=temp_dir,
                         unsorted=unsorted_file,
@@ -185,7 +186,7 @@ if __name__ == '__main__':
     for incidence_file in to_incidence:
         pool.apply_async(
                 write_incidence_file,
-                (incidence_file, args.min_samples, args.sort),
+                args=(incidence_file, args.min_samples, args.sort),
                 callback=return_values.append
             )
     while len(return_values) < total_files:
