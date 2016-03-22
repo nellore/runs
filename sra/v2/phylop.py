@@ -85,7 +85,9 @@ if __name__ == '__main__':
             help='junctions file; this should be intropolis.v2.hg38.tsv.gz'
         )
     parser.add_argument('--phylop-bw', type=str, required=True,
-            help='phylop bigwig; should be hg38.phyloP100way.bw'
+            help='phylop bigwigs; should be one of '
+                 'hg38.phyloP100way.bw, hg38.phyloP20way.bw, '
+                 'hg38.phyloP100way.bw'
         )
     parser.add_argument('--temp-dir', type=str, required=False,
             default=None,
@@ -96,7 +98,7 @@ if __name__ == '__main__':
                   'annotation_definition.md')
         )
     parser.add_argument('--out', type=str, required=True,
-            help='output file'
+            help='output basename'
         )
     parser.add_argument('--sort', type=str, required=False,
             help='path to sort executable'
