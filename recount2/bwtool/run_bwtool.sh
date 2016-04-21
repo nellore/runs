@@ -56,15 +56,17 @@ date
 
 ## Run bwtool
 echo "\${bwtoolcmd}"
-#\${bwtoolcmd}
+# \${bwtoolcmd}
 
 echo "**** Job ends ****"
 date
+
+## Move log files
+mv ${WDIR}/${sname}.*.\${SGE_TASK_ID} ${WDIR}/logs/
 EOF
 
 call="qsub ${WDIR}/.${sname}.sh"
 echo $call
 $call
 
-## Move log files
-mv ${WDIR}/${sname}.* ${WDIR}/logs/
+
