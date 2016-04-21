@@ -2,38 +2,22 @@
 library('TxDb.Hsapiens.UCSC.hg38.knownGene')
 library('rtracklayer')
 
-## Keep only canonical chrs + chrM
-txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene
-txdb <- keepSeqlevels(txdb, paste0('chr', c(1:22, 'X', 'Y', 'M')))
-
-## Get genes
-genes <- genes(txdb)
+## Get genes with default option single.strand.genes.only = TRUE
+genes <- genes(TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene)
 save(genes, file = 'ucsc-knowngene-hg38-genes.Rdata')
 
 ## Get Exons
-exons <- exonsBy(txdb, by = 'gene')
+exons <- exonsBy(TxDb.Hsapiens.UCSC.hg38.knownGene::TxDb.Hsapiens.UCSC.hg38.knownGene, by = 'gene')
 
-## Reduce by gene exons won't be overlapping
+## Keep only exons for gene ids that we selected previously
+exons <- exons[names(exons) %in% names(genes)]
+
+## Reduce exons by gene so the exons won't be overlapping each other inside a gene
 exons <- reduce(exons)
-
 save(exons, file ='ucsc-knowngene-hg38-exons.Rdata')
-
-## Identify weird cases
-strand <- strand(exons)
-strand_run <- sapply(strand, nrun)
-seq <- seqnames(exons)
-seq_run <- sapply(seq, nrun)
-
-## Weird cases
-exons[which(strand_run > 1 & seq_run > 1)]
-exons_exclude <- exons[strand_run > 1 | seq_run > 1]
 
 ## Export exons as a BED file
 export(exons, con = 'ucsc-knowngene-hg38.bed', format='BED')
-
-## Print some info
-length(genes)
-length(exons)
 
 ## Reproducibility info
 proc.time()
