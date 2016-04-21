@@ -33,6 +33,7 @@ Above, --sra-dir is the path to the directory with the batch_* subdirs.
 import os
 import csv
 import gzip
+from collections import defaultdict
 
 if __name__ == '__main__':
     import argparse
