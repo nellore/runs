@@ -42,10 +42,10 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #$ -l mem_free=1G,h_vmem=2G,h_fsize=100G
 #$ -N ${sname}
 #$ -t 1:${LINES}
-#$ -hold_jid region-hg38
+#$ -hold_jid genes-hg38-ucsc
 
 ## Get the bwtool command
-bwtoolcmd=$(awk "NR==\${SGE_TASK_ID}" ${WDIR}/bwtool_cmds_${PROJECT}.txt)
+bwtoolcmd=\$(awk "NR==\${SGE_TASK_ID}" ${WDIR}/bwtool_cmds_${PROJECT}.txt)
 
 ## Extract the sample and print it
 bwfile=\$(echo "\${bwtoolcmd}" | cut -f5 -d " ")
