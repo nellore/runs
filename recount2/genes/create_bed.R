@@ -17,7 +17,7 @@ exons <- reduce(exons)
 save(exons, file ='ucsc-knowngene-hg38-exons.Rdata')
 
 ## Export exons as a BED file
-export(exons, con = 'ucsc-knowngene-hg38.bed', format='BED')
+export(unlist(exons), con = 'ucsc-knowngene-hg38.bed', format='BED')
 
 ## Reproducibility info
 proc.time()
