@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
-incomplete.py
+recount2_metadata.py
 
-Finds SRA samples that were incompletely downloaded and/or aligned by comparing
-counts.tsv.gz files across batches with read counts in SraRunInfo.csv.
+Dumps SRA metadata for Recount 2. Based on incomplete.py. Uses metadata from
+SHARQ, developed by Carl Kingsford's group.
 
 Tab-separated output fields:
 1. project accession number
@@ -17,22 +17,23 @@ Tab-separated output fields:
 9. 1 if SRA misreported paired-end status
 10. mapped read count
 11. SHARQ tissue if available else NA
-12. date (from biosample DB)
-
-Only runs for which Rail downloaded and aligned fewer than 100% of reads are
-included.
+12: SHARQ cell type if available else NA
+13. submission date (from biosample DB)
+14. publication date (from biosample DB)
+15. update date (from biosample DB)
 
 We ran 
 
-    pypy incomplete.py --sra-dir /path/to/sra/dir |
+    pypy recount2_metadata.py --sra-dir /path/to/sra/dir |
         (read -r; printf "%s\n" "$REPLY"; sort -k7,7nr)
-        >incomplete.tsv
+        >recount2_metadata.tsv
 
 Above, --sra-dir is the path to the directory with the batch_* subdirs.
 """
 import os
 import csv
 import gzip
+from collections import defaultdict
 
 if __name__ == '__main__':
     import argparse
@@ -43,6 +44,35 @@ if __name__ == '__main__':
              'subdirectories are')
     args = parser.parse_args()
     containing_dir = os.path.dirname(os.path.realpath(__file__))
+    # Get mappings from srs to srr
+    srs_to_srr = defaultdict(list)
+    with open(os.path.join(containing_dir,
+                            'intropolis.idmap.v2.hg38.tsv')) as idmap_stream:
+        for line in idmap_stream:
+            tokens = line.strip().split('\t')
+            srs_to_srr[tokens[2]].append(tokens[4])
+    srr_to_submission_date = defaultdict(lambda: 'NA')
+    srr_to_publication_date = defaultdict(lambda: 'NA')
+    srr_to_update_date = defaultdict(lambda: 'NA')
+    # Get dates from biosample
+    with open(os.path.join(containing_dir,
+                            'hg38', 'biosample_tags.tsv')) as biosample_stream:
+        biosample_stream.readline()
+        for line in biosample_stream:
+            tokens = line.strip().split('\t')
+            for srr in srs_to_srr[tokens[9]]:
+                srr_to_submission_date[srr] = tokens[10]
+                srr_to_publication_date[srr] = tokens[11]
+                srr_to_update_date[srr] = tokens[12]
+    srr_to_tissue, srr_to_cell_type =  (defaultdict(lambda: 'NA'),
+                                            defaultdict(lambda: 'NA'))
+    with open(os.path.join(containing_dir,
+                            'sra-all-fields-2015-9-13.txt')) as sharq_stream:
+        sharq_stream.readline()
+        sharq_reader = csv.reader(sharq_stream, delimiter=',', quotechar='"')
+        for tokens in sharq_reader:
+            srr_to_tissue[tokens[0]] = tokens[5]
+            srr_to_cell_type[tokens[0]] = tokens[6]
     srr_to_read_count = {}
     srr_to_line = {}
     srr_to_paired_status = {}
@@ -70,7 +100,12 @@ if __name__ == '__main__':
     print '\t'.join(['project', 'sample', 'experiment', 'run',
                         'read count as reported by SRA', 'reads aligned',
                         'proportion of reads reported by SRA aligned',
-                        'paired-end', 'SRA misreported paired-end'])
+                        'paired-end', 'SRA misreported paired-end',
+                        'mapped read count', 'SHARQ tissue', 'SHARQ cell type',
+                        'Biosample submission date',
+                        'Biosample publication date',
+                        'Biosample update date'])
+    srr_to_mapped_reads = defaultdict(int)
     for i in xrange(100):
         with gzip.open(
                 os.path.join(args.sra_dir,
@@ -81,9 +116,9 @@ if __name__ == '__main__':
             count_stream.readline()
             for line in count_stream:
                 srr = line.partition('\t')[0]
-                read_count = int(
-                        line.rpartition('\t')[2].partition(',')[0]
-                    )
+                tokens = line.strip().split('\t')
+                read_count = int(tokens[-1].partition(',')[0])
+                srr_to_mapped_reads[srr] = int(tokens[-2].partition(',')[0])
                 mislabeled = False
                 try:
                     ratio = float(read_count) / srr_to_read_count[srr]
@@ -103,13 +138,14 @@ if __name__ == '__main__':
                         mislabeled = True
                 except ZeroDivisionError:
                     ratio = 'NA'
-                if read_count == srr_to_read_count[srr]:
-                    # We got this one right
-                    continue
-                else:
-                    print '\t'.join(map(str, [srr_to_line[srr],
-                                        srr_to_read_count[srr],
-                                        read_count, ratio,
-                                        srr_to_paired_status[srr],
-                                        '1' if mislabeled
-                                        else '0']))
+                print '\t'.join(map(str, [srr_to_line[srr],
+                                    srr_to_read_count[srr],
+                                    read_count, ratio,
+                                    srr_to_paired_status[srr],
+                                    '1' if mislabeled
+                                    else '0', srr_to_mapped_reads[srr],
+                                    srr_to_tissue[srr],
+                                    srr_to_cell_type[srr],
+                                    srr_to_submission_date[srr],
+                                    srr_to_publication_date[srr],
+                                    srr_to_update_date[srr]]))
