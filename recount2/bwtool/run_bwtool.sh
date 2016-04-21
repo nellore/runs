@@ -38,7 +38,7 @@ sname="${PROJECT}.bwtool"
 cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
-#$ -m a
+#$ -m e
 #$ -l mem_free=1G,h_vmem=2G,h_fsize=100G
 #$ -N ${sname}
 #$ -t 1:${LINES}
