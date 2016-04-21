@@ -51,9 +51,9 @@ if __name__ == '__main__':
         for line in idmap_stream:
             tokens = line.strip().split('\t')
             srs_to_srr[tokens[2]].append(tokens[4])
-    srr_to_submission_date = defaultdict('NA')
-    srr_to_publication_date = defaultdict('NA')
-    srr_to_update_date = defaultdict('NA')
+    srr_to_submission_date = defaultdict(lambda: 'NA')
+    srr_to_publication_date = defaultdict(lambda: 'NA')
+    srr_to_update_date = defaultdict(lambda: 'NA')
     # Get dates from biosample
     with open(os.path.join(containing_dir,
                             'hg38', 'biosample_tags.tsv')) as biosample_stream:
@@ -64,7 +64,8 @@ if __name__ == '__main__':
                 srr_to_submission_date[srr] = tokens[10]
                 srr_to_publication_date[srr] = tokens[11]
                 srr_to_update_date[srr] = tokens[12]
-    srr_to_tissue, srr_to_cell_type =  defaultdict('NA'), defaultdict('NA')
+    srr_to_tissue, srr_to_cell_type =  (defaultdict(lambda: 'NA'),
+                                            defaultdict(lambda: 'NA'))
     with open(os.path.join(containing_dir,
                             'sra-all-fields-2015-9-13.txt')) as sharq_stream:
         sharq_stream.readline()
