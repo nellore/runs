@@ -3,7 +3,8 @@
 recount2_metadata.py
 
 Dumps SRA metadata for Recount 2. Based on incomplete.py. Uses metadata from
-SHARQ, developed by Carl Kingsford's group.
+SHARQ, developed by Carl Kingsford's group. Requires that AUC.sh has been
+executed.
 
 Tab-separated output fields:
 1. project accession number
