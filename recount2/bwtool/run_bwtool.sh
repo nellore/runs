@@ -56,7 +56,7 @@ date
 
 ## Run bwtool
 echo "\${bwtoolcmd}"
-# \${bwtoolcmd}
+\${bwtoolcmd}
 
 echo "**** Job ends ****"
 date
