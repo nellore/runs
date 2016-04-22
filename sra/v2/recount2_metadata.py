@@ -79,7 +79,9 @@ if __name__ == '__main__':
     with open(os.path.join(containing_dir, 'auc.tsv')) as auc_stream:
         for line in auc_stream:
             tokens = line.strip().split('\t')
-            srr_to_auc[tokens[0]] = str(int(tokens[1]))
+            srr_to_auc[tokens[0].strip()] = str(
+                            int(tokens[1].strip())
+                        )
     srr_to_read_count = {}
     srr_to_line = {}
     srr_to_paired_status = {}
