@@ -45,7 +45,7 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #$ -N ${sname}
 #$ -t 1:${LINES}
 
-PROJECTNAME=\$(awk "NR==\${SGE_TASK_ID}" ${WDIR}/bwtool_cmds_${PROJECT}.txt)
+PROJECTNAME=\$(awk "NR==\${SGE_TASK_ID}" ${MAINDIR}/bwtool/bwtool_cmds_${PROJECT}.txt)
 
 echo "**** Job starts project \${PROJECTNAME} ****"
 date
