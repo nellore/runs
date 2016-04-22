@@ -17,11 +17,12 @@ Tab-separated output fields:
 8. 1 if LIKELY paired-end; else 0
 9. 1 if SRA misreported paired-end status
 10. mapped read count
-11. SHARQ tissue if available else NA
-12: SHARQ cell type if available else NA
-13. submission date (from biosample DB)
-14. publication date (from biosample DB)
-15. update date (from biosample DB)
+11. AUC
+12. SHARQ tissue if available else NA
+13: SHARQ cell type if available else NA
+14. submission date (from biosample DB)
+15. publication date (from biosample DB)
+16. update date (from biosample DB)
 
 We ran 
 
@@ -74,6 +75,11 @@ if __name__ == '__main__':
         for tokens in sharq_reader:
             srr_to_tissue[tokens[0]] = tokens[5]
             srr_to_cell_type[tokens[0]] = tokens[6]
+    srr_to_auc = defaultdict(lambda: 'NA')
+    with open(os.path.join(containing_dir, 'auc.tsv')) as auc_stream:
+        for line in auc_stream:
+            tokens = line.strip().split('\t')
+            srr_to_auc[tokens[0]] = str(int(tokens[1]))
     srr_to_read_count = {}
     srr_to_line = {}
     srr_to_paired_status = {}
@@ -102,7 +108,8 @@ if __name__ == '__main__':
                         'read count as reported by SRA', 'reads aligned',
                         'proportion of reads reported by SRA aligned',
                         'paired-end', 'SRA misreported paired-end',
-                        'mapped read count', 'SHARQ tissue', 'SHARQ cell type',
+                        'mapped read count', 'AUC',
+                        'SHARQ tissue', 'SHARQ cell type',
                         'Biosample submission date',
                         'Biosample publication date',
                         'Biosample update date'])
@@ -145,6 +152,7 @@ if __name__ == '__main__':
                                     srr_to_paired_status[srr],
                                     '1' if mislabeled
                                     else '0', srr_to_mapped_reads[srr],
+                                    srr_to_auc[srr],
                                     srr_to_tissue[srr],
                                     srr_to_cell_type[srr],
                                     srr_to_submission_date[srr],
