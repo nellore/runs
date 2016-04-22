@@ -19,8 +19,10 @@ mkdir -p ${WDIR}/logs
 
 if [[ "${PROJECT}" == "sra" ]]
 then
+    echo "$PROJECT"
 elif [[ "${PROJECT}" == "gtex" ]]
 then
+    echo "$PROJECT"
 else
     echo "Specify a valid project: gtex, sra"
 fi
