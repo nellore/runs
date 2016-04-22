@@ -67,6 +67,7 @@ print(object.size(counts), units = 'Mb')
 message(paste(Sys.time(), 'writing file', file.path(outdir, 'counts_exon.tsv')))
 write.table(counts, file = file.path(outdir, 'counts_exon.tsv'),
     sep = '\t', row.names = FALSE, quote = FALSE, col.names = TRUE)
+system(paste('gzip', file.path(outdir, 'counts_exon.tsv')))
 
 ## Remove bigwig and tsv file paths
 metadata_clean <- metadata[, !colnames(metadata) %in% c('bigwig_path',
@@ -92,6 +93,7 @@ print(object.size(counts_gene), units = 'Mb')
 message(paste(Sys.time(), 'writing file', file.path(outdir, 'counts_gene.tsv')))
 write.table(counts_gene, file = file.path(outdir, 'counts_gene.tsv'),
     sep = '\t', row.names = FALSE, quote = FALSE, col.names = TRUE)
+system(paste('gzip', file.path(outdir, 'counts_gene.tsv')))
 
 ## Create gene level rse
 rse_gene <- SummarizedExperiment(assays = list('counts' = counts_gene),
