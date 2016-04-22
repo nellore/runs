@@ -1,7 +1,7 @@
 ## Load libraries
 library('getopt')
-library('GenomicRanges')
-library('SummarizedExperiment')
+suppressPackageStartupMessages(library('GenomicRanges'))
+suppressPackageStartupMessages(library('SummarizedExperiment'))
 
 ## Specify parameters
 spec <- matrix(c(
