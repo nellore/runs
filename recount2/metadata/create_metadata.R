@@ -1,7 +1,7 @@
 ## Prepare metadata
 # module load R/3.3
 # mkdir -p logs
-# Rscript create_metadata.R > logs/create_metadata.txt 2>&1
+# Rscript create_metadata.R > logs/create_metadata_log.txt 2>&1
 
 ## Load sra info
 metadata <- read.table('/dcl01/leek/data/gtex_work/runs/sra/v2/recount2_metadata.tsv',
