@@ -29,8 +29,8 @@ fi
 
 # Count how many commands there are
 # For testing use: LINES=10
-#LINES=$(wc -l ${WDIR}/project_ids_${PROJECT}.txt | cut -f1 -d " ")
-LINES=10
+#LINES=10
+LINES=$(wc -l ${MAINDIR}/metadata/project_ids_${PROJECT}.txt | cut -f1 -d " ")
 METADATA="${MAINDIR}/metadata/metadata_${PROJECT}.Rdata"
 
 
