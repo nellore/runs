@@ -20,7 +20,7 @@ mkdir -p ${WDIR}/logs
 
 if [[ "${PROJECT}" == "sra" ]]
 then
-    sh /dcl01/leek/data/gtex_work/runs/recount2/generate_sums.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/recount2/genes/ucsc-knowngene-hg38.bed /dcl01/leek/data/sra/v2 /dcl01/leek/data/recount2/coverage | head -n 10 > ${WDIR}/bwtool_cmds_${PROJECT}.txt
+    sh /dcl01/leek/data/gtex_work/runs/recount2/generate_sums.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/recount2/genes/ucsc-knowngene-hg38.bed /dcl01/leek/data/sra/v2 /dcl01/leek/data/recount2/coverage > ${WDIR}/bwtool_cmds_${PROJECT}.txt
 elif [[ "${PROJECT}" == "gtex" ]]
 then
     sh /dcl01/leek/data/gtex_work/runs/recount2/generate_sums.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/recount2/genes/ucsc-knowngene-hg38.bed /dcl01/leek/data/gtex /dcl01/leek/data/recount2/coverage > ${WDIR}/bwtool_cmds_${PROJECT}.txt
