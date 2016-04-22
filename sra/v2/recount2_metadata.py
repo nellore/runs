@@ -80,7 +80,7 @@ if __name__ == '__main__':
         for line in auc_stream:
             tokens = line.strip().split('\t')
             srr_to_auc[tokens[0].strip()] = str(
-                            int(tokens[1].strip())
+                            int(float(tokens[1].strip()))
                         )
     srr_to_read_count = {}
     srr_to_line = {}
