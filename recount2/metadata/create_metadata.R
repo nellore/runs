@@ -35,7 +35,7 @@ metadata$bigwig_path <- bigwigs[j]
 metadata$bigwig_file <- gsub('.*coverage_bigwigs/', '', metadata$bigwig_path)
 
 ## Save the metadata
-save(metadata, file = 'metadata.Rdata')
+save(metadata, file = 'metadata_sra.Rdata')
 
 ## Explore metadata
 print('Number of dimensions')
@@ -60,7 +60,7 @@ sapply(metadata, function(x) { sum(is.na(x)) }) / nrow(metadata) * 100
 dir.create('project_metadata', showWarnings = FALSE)
 
 metadata_nobw <- metadata[, colnames(metadata) != 'bigwig_path']
-save(metadata_nobw, file = 'metadata_nobw.Rdata')
+save(metadata_nobw, file = 'metadata_nobw_sra.Rdata')
 
 meta <- split(metadata_nobw, metadata_nobw$project)
 stopifnot(length(meta) == length(unique(metadata_nobw$project)))
@@ -71,7 +71,7 @@ xx <- sapply(unique(metadata_nobw$project), function(project) {
 })
 
 ## Save project ids in a file
-write.table(unique(metadata_nobw$project), file = 'project_ids.txt', sep = '\t', row.names = FALSE, quote = FALSE, col.names = FALSE)
+write.table(unique(metadata_nobw$project), file = 'project_ids_sra.txt', sep = '\t', row.names = FALSE, quote = FALSE, col.names = FALSE)
 
 ## Reproducibility info
 proc.time()
