@@ -6,6 +6,7 @@
 ## Create genes GRanges object with total (reduced) exon bp length
 ## Also save how the exons are related, for speeding up the tsv -> count matrix step
 library('GenomicRanges')
+library('S4Vectors')
 
 ## Load data
 load('ucsc-knowngene-hg38-genes.Rdata')
