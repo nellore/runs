@@ -1,0 +1,65 @@
+Loading required package: colorout
+Loading required package: methods
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, cbind, colnames, do.call,
+    duplicated, eval, evalq, Filter, Find, get, grep, grepl, intersect,
+    is.unsorted, lapply, lengths, Map, mapply, match, mget, order,
+    paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind,
+    Reduce, rownames, sapply, setdiff, sort, table, tapply, union,
+    unique, unsplit
+
+Loading required package: S4Vectors
+Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:base’:
+
+    colMeans, colSums, expand.grid, rowMeans, rowSums
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+       0     2696    15830    60670    51230 36620000 
+   user  system elapsed 
+  4.352   0.550   5.177 
+2016-04-22 10:35:24
+Session info -----------------------------------------------------------------------------------------------------------
+ setting  value                                   
+ version  R version 3.3.0 beta (2016-04-21 r70529)
+ system   x86_64, linux-gnu                       
+ ui       X11                                     
+ language (EN)                                    
+ collate  en_US.UTF-8                             
+ tz       <NA>                                    
+ date     2016-04-22                              
+
+Packages ---------------------------------------------------------------------------------------------------------------
+ package       * version date       source                            
+ BiocGenerics  * 0.17.5  2016-04-18 Bioconductor                      
+ colorout      * 1.1-2   2016-04-02 Github (jalvesaq/colorout@f96c00c)
+ devtools        1.10.0  2016-01-23 CRAN (R 3.3.0)                    
+ digest          0.6.9   2016-01-08 CRAN (R 3.3.0)                    
+ GenomeInfoDb  * 1.7.6   2016-04-02 Bioconductor                      
+ GenomicRanges * 1.23.27 2016-04-18 Bioconductor                      
+ IRanges       * 2.5.46  2016-04-18 Bioconductor                      
+ memoise         1.0.0   2016-01-29 CRAN (R 3.3.0)                    
+ S4Vectors     * 0.9.51  2016-04-18 Bioconductor                      
+ XVector         0.11.8  2016-04-11 Bioconductor                      
+ zlibbioc        1.17.1  2016-03-28 Bioconductor                      
