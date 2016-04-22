@@ -6,3 +6,6 @@ logs
 
 ## files with commands
 bwtool_cmds*
+
+## File length check
+tsv_lines.Rdata
