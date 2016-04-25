@@ -41,7 +41,7 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
 #$ -m a
-#$ -l mem_free=30G,h_vmem=35G,h_fsize=100G
+#$ -l mem_free=50G,h_vmem=60G,h_fsize=100G
 #$ -N ${sname}
 #$ -t 1:${LINES}
 
