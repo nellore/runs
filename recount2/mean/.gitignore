@@ -1,0 +1,6 @@
+## Script files
+.*.sh
+
+## Output
+logs
+means_*
