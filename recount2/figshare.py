@@ -30,7 +30,7 @@ if __name__ == '__main__':
     BASE_URL = 'https://api.figshare.com/v2/{endpoint}'
     HEADERS = {'Authorization': 'token ' + args.token}
 
-    for file_to_upload in paths:
+    for file_to_upload in args.paths:
         file_name = os.path.basename(file_to_upload)
         # Get file info
         with open(file_to_upload, 'rb') as fin:
