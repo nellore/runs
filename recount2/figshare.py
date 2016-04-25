@@ -25,6 +25,7 @@ if __name__ == '__main__':
     parser.add_argument('--article-id', type=str, required=True,
             help='article id under which files are to be uploaded'
         )
+    args = parser.parse_args()
 
     BASE_URL = 'https://api.figshare.com/v2/{endpoint}'
     HEADERS = {'Authorization': 'token ' + args.token}
