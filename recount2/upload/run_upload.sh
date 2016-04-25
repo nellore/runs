@@ -44,6 +44,7 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #$ -l rnet,mem_free=20G,h_vmem=25G,h_fsize=20G
 #$ -N ${sname}
 #$ -t 1:${LINES}
+#$ -tc 8
 #$ -hold_jid ${PROJECT}.mean
 
 PROJECTNAME=\$(awk "NR==\${SGE_TASK_ID}" ${MAINDIR}/metadata/project_ids_${PROJECT}.txt)
