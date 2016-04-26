@@ -6,7 +6,7 @@
 
 # Directories
 MAINDIR=/dcl01/leek/data/gtex_work/runs/recount2
-WDIR=${MAINDIR}/upload
+WDIR=${MAINDIR}/upload_figshare
 
 # Define variables
 PROJECT=$1

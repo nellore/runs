@@ -70,7 +70,7 @@ if(!file.exists(mean_bw)) stop(paste('Missing mean bigwig file for project', opt
 names(mean_bw) <- paste0('mean_', opt$projectid, '.bw')
 
 ## Create output dir for the project
-outdir <- file.path('/dcl01/leek/data/gtex_work/runs/recount2/upload', 
+outdir <- file.path('/dcl01/leek/data/gtex_work/runs/recount2/upload_figshare', 
     paste0('upload_', opt$project), opt$projectid)
 dir.create(outdir, showWarnings = FALSE)
 stopifnot(dir.exists(outdir))
@@ -146,20 +146,6 @@ load('.auth_string.Rdata') ## String from creating a "Personal Token" at https:/
 fs_my_upload <- function(article, files, token) {
     cmd <- paste('python /dcl01/leek/data/gtex_work/runs/recount2/figshare.py --article-id', article, '--paths', paste(files, collapse = ' '), '--token', token)
     system(cmd)
-    
-#    status <- unlist(upload_info['status_code', ])
-#    attempt <- 1
-#    while(any(status != 200)) {
-#        attempt <- attempt + 1
-#        weird <- status != 200
-#        print(paste('Attempt number', attempt, 'for a total size of',
-#            round(sum(file_size[weird]) / 1024, digits = 3), 'Mb'))
-#        upload_info_new <- fs_upload_v2(article, files[weird])
-#        upload_info[, weird] <- upload_info_new
-#        status <- unlist(upload_info['status_code', ])
-#        
-#        if(attempt == 3) break()
-#    }
 }
 print('Time spent uploading files')
 system.time( upload_info <- fs_my_upload(art_id, upload_files,
