@@ -1,0 +1,6 @@
+## Script files
+.*.sh
+
+## Output
+logs
+fileline_*/

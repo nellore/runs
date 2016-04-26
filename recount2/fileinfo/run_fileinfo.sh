@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Usage
-# sh run_upload.sh sra
-# sh run_upload.sh gtex
+# sh run_fileinfo.sh sra
+# sh run_fileinfo.sh gtex
 
 # Directories
 MAINDIR=/dcl01/leek/data/gtex_work/runs/recount2
-WDIR=${MAINDIR}/upload_figshare
+WDIR=${MAINDIR}/fileinfo
 
 # Define variables
 PROJECT=$1
@@ -35,16 +35,15 @@ METADATA="${MAINDIR}/metadata/metadata_${PROJECT}.Rdata"
 
 
 echo "Creating script for project ${PROJECT}"
-sname="${PROJECT}.uploadfigshare"
+sname="${PROJECT}.fileinfo"
     
 cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
 #$ -m a
-#$ -l rnet,mem_free=20G,h_vmem=25G,h_fsize=20G
+#$ -l mem_free=1G,h_vmem=2G,h_fsize=10G
 #$ -N ${sname}
 #$ -t 1:${LINES}
-#$ -tc 8
 #$ -hold_jid ${PROJECT}.mean
 
 PROJECTNAME=\$(awk "NR==\${SGE_TASK_ID}" ${MAINDIR}/metadata/project_ids_${PROJECT}.txt)
@@ -52,10 +51,10 @@ PROJECTNAME=\$(awk "NR==\${SGE_TASK_ID}" ${MAINDIR}/metadata/project_ids_${PROJE
 echo "**** Job starts project \${PROJECTNAME} ****"
 date
 
-## Run the R script that creates a fileset per project and uploads the files to figshare
+## Run the R script that computes md5sum and file sizes as well as the final
+## list of files to upload
 module load R/3.3
-module load python/2.7.9
-Rscript upload_project.R -p "${PROJECT}" -m "${METADATA}" -i "\${PROJECTNAME}"
+Rscript get_fileinfo.R -p "${PROJECT}" -m "${METADATA}" -i "\${PROJECTNAME}"
 
 echo "**** Job ends ****"
 date
