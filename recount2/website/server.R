@@ -1,0 +1,28 @@
+library('shiny')
+library('DT')
+
+# cp ../metadata_web/meta_web_sra.Rdata .
+load('meta_web_sra.Rdata')
+
+meta_web$species <- factor(meta_web$species)
+colnames(meta_web)[colnames(meta_web) == 'number_samples'] <- 'number of samples'
+colnames(meta_web)[colnames(meta_web) == 'rse_gene'] <- 'RSE gene'
+colnames(meta_web)[colnames(meta_web) == 'rse_exon'] <- 'RSE exon'
+colnames(meta_web)[colnames(meta_web) == 'counts_gene'] <- 'counts gene'
+colnames(meta_web)[colnames(meta_web) == 'counts_exon'] <- 'counts exon'
+colnames(meta_web)[colnames(meta_web) == 'files_info'] <- 'files info'
+
+shinyServer(function(input, output, session) {
+    output$metadata = DT::renderDataTable(
+        meta_web[- which(colnames(meta_web) %in% c('genes', 'exons'))],
+        escape = which(colnames(meta_web) %in% c('number of samples', 'species',
+            'abstract')),
+        style = 'bootstrap', rownames = FALSE, filter = 'top',
+        options = list(
+            columnDefs = list(
+                list(className = 'dt-center', targets = 1)
+            ),
+            pageLength = 5
+        )
+    )
+})
