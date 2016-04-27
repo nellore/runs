@@ -1,0 +1,31 @@
+Loading required package: colorout
+2016-04-26 21:48:45 number of samples per project
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    4.00    8.00   24.57   18.00 1720.00 
+2016-04-26 21:48:45 number missing
+     accession number_samples        species       abstract       rse_gene 
+             0              0              0             30              5 
+      rse_exon    counts_gene    counts_exon          genes          exons 
+             5              5              5              0              0 
+    files_info 
+             5 
+   user  system elapsed 
+  3.673   0.579   4.932 
+2016-04-26 21:48:45
+Session info -----------------------------------------------------------------------------------------------------------
+ setting  value                                 
+ version  R version 3.3.0 RC (2016-04-25 r70548)
+ system   x86_64, linux-gnu                     
+ ui       X11                                   
+ language (EN)                                  
+ collate  en_US.UTF-8                           
+ tz       <NA>                                  
+ date     2016-04-26                            
+
+Packages ---------------------------------------------------------------------------------------------------------------
+ package  * version date       source                            
+ colorout * 1.1-2   2016-04-02 Github (jalvesaq/colorout@f96c00c)
+ devtools   1.10.0  2016-01-23 CRAN (R 3.3.0)                    
+ digest     0.6.9   2016-01-08 CRAN (R 3.3.0)                    
+ getopt   * 1.20.0  2013-08-30 CRAN (R 3.3.0)                    
+ memoise    1.0.0   2016-01-29 CRAN (R 3.3.0)                    
