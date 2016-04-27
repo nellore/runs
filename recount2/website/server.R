@@ -2,6 +2,9 @@ library('shiny')
 library('DT')
 
 # cp ../metadata_web/meta_web_sra.Rdata .
+# mkdir www
+# cp ../genes/ucsc-knowngene-hg38-exons.Rdata www/
+# cp ../genes/ucsc-knowngene-hg38-genes-bp-length.Rdata www/
 load('meta_web_sra.Rdata')
 
 meta_web$species <- factor(meta_web$species)
