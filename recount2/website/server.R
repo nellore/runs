@@ -26,7 +26,8 @@ shinyServer(function(input, output, session) {
             columnDefs = list(
                 list(className = 'dt-center', targets = 1)
             ),
-            pageLength = 5
+            pageLength = 10,
+            lengthMenu = c(5, 10, 25, 50, 100, nrow(meta_web))
         )
     )
     output$popular = DT::renderDataTable(
@@ -39,7 +40,8 @@ shinyServer(function(input, output, session) {
             columnDefs = list(
                 list(className = 'dt-center', targets = 1)
             ),
-            pageLength = 5
+            pageLength = 10,
+            lengthMenu = c(5, 10, 25, 50, 100, nrow(meta_web))
         )
     )
 })
