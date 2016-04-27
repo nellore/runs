@@ -1,17 +1,17 @@
 Loading required package: colorout
-2016-04-26 21:48:45 number of samples per project
+2016-04-26 22:44:26 number of samples per project
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    1.00    4.00    8.00   24.57   18.00 1720.00 
-2016-04-26 21:48:45 number missing
+2016-04-26 22:44:26 number missing
      accession number_samples        species       abstract       rse_gene 
              0              0              0             30              5 
-      rse_exon    counts_gene    counts_exon          genes          exons 
+      rse_exon    counts_gene    counts_exon       metadata          genes 
              5              5              5              0              0 
-    files_info 
-             5 
+         exons     files_info 
+             0              5 
    user  system elapsed 
-  3.673   0.579   4.932 
-2016-04-26 21:48:45
+  3.628   1.184   6.409 
+2016-04-26 22:44:26
 Session info -----------------------------------------------------------------------------------------------------------
  setting  value                                 
  version  R version 3.3.0 RC (2016-04-25 r70548)
