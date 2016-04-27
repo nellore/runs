@@ -82,8 +82,8 @@ sapply(meta_web, function(x) sum(is.na(x)))
 
 ## Save info
 save(meta_web, file = paste0('meta_web_', opt$project, '.Rdata'))
-write(meta_web, file = paste0('meta_web_', opt$project, '.tsv'), sep = '\t',
-    row.names = FALSE, quote = FALSE, col.names = TRUE)
+write.table(meta_web, file = paste0('meta_web_', opt$project, '.tsv'),
+    sep = '\t', row.names = FALSE, quote = FALSE, col.names = TRUE)
 
 
 ## Reproducibility info
