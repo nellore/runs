@@ -1,5 +1,6 @@
 library('shiny')
 library('DT')
+library('markdown')
 
 # cp ../metadata_web/meta_web_sra.Rdata .
 # mkdir www
@@ -17,7 +18,20 @@ colnames(meta_web)[colnames(meta_web) == 'files_info'] <- 'files info'
 
 shinyServer(function(input, output, session) {
     output$metadata = DT::renderDataTable(
-        meta_web[- which(colnames(meta_web) %in% c('genes', 'exons'))],
+        meta_web[, - which(colnames(meta_web) %in% c('genes', 'exons'))],
+        escape = which(colnames(meta_web) %in% c('number of samples', 'species',
+            'abstract')),
+        style = 'bootstrap', rownames = FALSE, filter = 'top',
+        options = list(
+            columnDefs = list(
+                list(className = 'dt-center', targets = 1)
+            ),
+            pageLength = 5
+        )
+    )
+    output$popular = DT::renderDataTable(
+        meta_web[meta_web[, 2] > 500, - which(colnames(meta_web) %in%
+            c('genes', 'exons'))],
         escape = which(colnames(meta_web) %in% c('number of samples', 'species',
             'abstract')),
         style = 'bootstrap', rownames = FALSE, filter = 'top',
