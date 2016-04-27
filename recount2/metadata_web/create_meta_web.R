@@ -44,14 +44,14 @@ meta_web <- data.frame(
         projects, '">', projects, '</a>'),
     number_samples = as.vector(tapply(metadata$project, metadata$project,
         length)),
-    species = 'homo sapiens',
+    species = 'human',
     abstract = abstracts$study_abstract[match(projects,
         abstracts$study_accession)],
     rse_gene = NA,
     rse_exon = NA,
     counts_gene = NA,
     counts_exon = NA,
-    metadata = NA,
+    phenotype = NA,
     genes = 'ucsc-knowngene-hg38-genes-bp-length.Rdata',
     exons = 'ucsc-knowngene-hg38-exons.Rdata',
     files_info = NA,
@@ -61,19 +61,31 @@ rownames(meta_web) <- NULL
 for(project in projects) {
     if(dir.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/rse/', paste0('rse_', opt$project), project))) {
         ## Have to change this to actual URLs once the data is uploaded        
-        meta_web$rse_gene[projects == project] <- 'rse_gene'
-        meta_web$rse_exon[projects == project] <- 'rse_exon'
-        meta_web$counts_gene[projects == project] <- 'counts_gene'
-        meta_web$counts_exon[projects == project] <- 'counts_exon'
+        meta_web$rse_gene[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            ' rse_gene.Rdata">link</a>')
+        meta_web$rse_exon[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            ' rse_exon.Rdata">link</a>')
+        meta_web$counts_gene[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            ' counts_gene.tsv.gz">link</a>')
+        meta_web$counts_exon[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            ' counts_exon.tsv.gz">link</a>')
     }
     if(file.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/metadata/', paste0('project_metadata_', opt$project), paste0(project, '.tsv')))) {
        ## Have to change this to actual URLs once the data is uploaded    
-        meta_web$metadata[projects == project] <- 'metadata'
+        meta_web$phenotype[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            '.tsv">link</a>')
     }
     if(dir.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/fileinfo/', paste0('fileinfo_', opt$project), project))) {
         ## Might host these files on the website itself, if so we'll have to
         ## change them to relative URLs
-        meta_web$files_info[projects == project] <- 'files_info'
+        meta_web$files_info[projects == project] <- paste0(
+            '<a href="https://www.google.com/search?q=', project,
+            ' files_info.tsv">link</a>')
     }
 }
 
