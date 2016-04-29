@@ -51,7 +51,6 @@ mv ${WDIR}/${sname}.*.\${SGE_TASK_ID} ${WDIR}/logs/
 date
 EOF
 
-	call="qsub ${WDIR}/.${sname}.sh"
-	echo $call
-	$call
-done
+call="qsub ${WDIR}/.${sname}.sh"
+echo $call
+$call
