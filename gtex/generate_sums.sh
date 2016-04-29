@@ -11,7 +11,7 @@ BED=$2
 export GTEX=$3
 AUC=$4
 DUMP=$5
-for bw in $(find $GTEX -name "SRR*.bw" | grep -v unique)
+for bw in $(find $GTEX -name "*.bw" | grep -v -E "\\.[ACGNT]\\.bw" | grep -v -E "unique|mean|median" )
 do
 	echo "sh ${DIR}/sum.sh $BWTOOL $BED $bw $AUC $DUMP"
 done
