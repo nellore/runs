@@ -1,0 +1,8 @@
+## shell files
+.*.sh
+
+## log files
+logs
+
+## files with commands
+bwtool_cmds*
