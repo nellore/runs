@@ -9,8 +9,8 @@ mkdir -p ${WDIR}
 mkdir -p ${WDIR}/logs
 
 # Construct shell files
-# For testing use: "head -n 10 |" before the "while read bwtoolcmd", without quotes
-sh /dcl01/leek/data/gtex_work/runs/gtex/generate_sums.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/region_bed/regions-cut0.5.bed /dcl01/leek/data/sra/v2 /dcl01/leek/data/gtex_work/runs/sra/v2/auc.tsv /dcl01/leek/data/sra_work/mean_cov_ers_gtex | head -n 10 > ${WDIR}/bwtool_cmds.txt
+# For testing use: "head -n 10 |" before  > ${WDIR}/bwtool_cmds.txt
+sh /dcl01/leek/data/gtex_work/runs/gtex/generate_sums.sh /dcl01/leek/data/bwtool/bwtool-1.0/bwtool /dcl01/leek/data/gtex_work/runs/gtex/DER_analysis/coverageMatrix/region_bed/regions-cut0.5.bed /dcl01/leek/data/sra/v2 /dcl01/leek/data/gtex_work/runs/sra/v2/auc.tsv /dcl01/leek/data/sra_work/mean_cov_ers_gtex > ${WDIR}/bwtool_cmds.txt
 
 
 # Count how many commands there are
