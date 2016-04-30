@@ -47,8 +47,6 @@ date
 
 ## Move log files
 mv ${WDIR}/${sname}.*.\${SGE_TASK_ID} ${WDIR}/logs/
-
-date
 EOF
 
 call="qsub ${WDIR}/.${sname}.sh"

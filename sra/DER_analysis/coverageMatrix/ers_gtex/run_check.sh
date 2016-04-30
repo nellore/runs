@@ -17,7 +17,7 @@ module load R/3.3
 Rscript check_tsv.R
 
 ## Move log files into the logs directory
-mv check-tsv.* logs/
+mv ers_gtex-check-tsv.* logs/
 
 echo '**** Job ends ****'
 date
