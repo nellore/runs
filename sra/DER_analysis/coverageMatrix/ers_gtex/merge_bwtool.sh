@@ -14,7 +14,7 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=20G,h_vmem=25G,h_fsize=300G
+#$ -l mem_free=15G,h_vmem=20G,h_fsize=300G
 #$ -N ${sname}
 #$ -pe local 20
 #$ -hold_jid sra_ers_gtex_bwtool
