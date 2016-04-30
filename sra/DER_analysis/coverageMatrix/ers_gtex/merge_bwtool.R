@@ -50,7 +50,13 @@ save(regions_subset, file = 'regions_subset-cut0.5.Rdata')
 ## Compute overall coverage matrix, but subsetted to the regions of interest
 coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
     message(paste(Sys.time(), 'reading file', tsvFile))
-    res <- read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL, NULL, 'numeric'))[regions_keep, ]
+    res <- tryCatch(
+        read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL, NULL,
+            'numeric'))[regions_keep, ],
+            error = function(e) {
+                data.frame(empty = rep(0, length(regions_keep)))
+            }
+    )
     colnames(res) <- sampleName
     return(as.matrix(res))
 }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE)
