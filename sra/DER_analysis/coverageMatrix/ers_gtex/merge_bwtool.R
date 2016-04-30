@@ -4,7 +4,7 @@ library('BiocParallel')
 library('devtools')
 
 ## Parallel environment to use
-bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- SnowParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
 load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
