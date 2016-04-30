@@ -4,7 +4,7 @@ library('BiocParallel')
 library('devtools')
 
 ## Parallel environment to use
-bp <- MulticoreParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- MulticoreParam(workers = 15, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
 load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
@@ -72,7 +72,7 @@ save(coverageMatrix, file = 'coverageMatrix-cut0.5.Rdata')
 covMat <- coverageMatrix
 
 ## Export coverage matrices by chr
-s <- split(seq_len(length(regions)), seqnames(regions))
+s <- split(seq_len(length(regions_subset)), seqnames(regions_subset))
 for(chr in names(s)) {
     message(paste(Sys.time(), 'creating coverage matrix for', chr))
     coverageMatrix <- covMat[s[[chr]], ]

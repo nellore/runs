@@ -14,9 +14,9 @@ cat > ${WDIR}/.${sname}.sh <<EOF
 #!/bin/bash
 #$ -cwd
 #$ -m e
-#$ -l mem_free=10G,h_vmem=15G,h_fsize=300G
+#$ -l mem_free=10G,h_vmem=20G,h_fsize=300G
 #$ -N ${sname}
-#$ -pe local 20
+#$ -pe local 15
 #$ -hold_jid sra_ers_gtex_bwtool
 
 echo '**** Job starts ****'
