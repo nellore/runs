@@ -4,7 +4,7 @@ library('BiocParallel')
 library('devtools')
 
 ## Parallel environment to use
-bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- SnowParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
 load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
@@ -38,10 +38,11 @@ save(regions, file = 'regions-cut0.5.Rdata')
 sampleNames <- metadata$run[!is.na(i)]
 
 ## Load regions to subset
-load('some_file.Rdata') ## Assume it has a GRanges object called regions_to_subset
+#load('some_file.Rdata') ## Assume it has a GRanges object called regions_to_subset
 
 ## Identify which regions to keep
-regions_keep <- which(countOverlaps(regions, regions_to_subset) > 0)
+#regions_keep <- which(countOverlaps(regions, regions_to_subset) > 0)
+regions_keep <- seq_len(length(regions))
 
 ## Save actual subset of regions used
 regions_subset <- regions[regions_keep]
