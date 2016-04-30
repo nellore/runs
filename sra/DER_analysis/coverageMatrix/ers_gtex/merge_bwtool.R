@@ -54,7 +54,7 @@ coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
     message(paste(Sys.time(), 'reading file', tsvFile))
     res <- tryCatch(
         read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL, NULL,
-            'numeric'))[regions_keep, ],
+            'numeric'))[regions_keep, , drop = FALSE],
             error = function(e) {
                 data.frame(empty = rep(0, length(regions_keep)))
             }
