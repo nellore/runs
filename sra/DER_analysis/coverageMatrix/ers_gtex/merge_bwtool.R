@@ -63,6 +63,7 @@ coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
     res <- DataFrame(res) ## To compress memory by sample
     return(res)
 }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE)
+names(coverageMatrix) <- NULL
 coverageMatrix <- do.call(cbind, coverageMatrix)
 
 save(coverageMatrix, file = 'coverageMatrix-cut0.5.Rdata')
