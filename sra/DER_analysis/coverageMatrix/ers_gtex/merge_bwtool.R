@@ -8,6 +8,7 @@ bp <- MulticoreParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
 load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
+metadata <- metadata[!is.na(metadata$bigwig_path), ]
 
 ## Load bwtool results
 tsv <- dir('/dcl01/leek/data/sra_work/mean_cov_ers_gtex', pattern = 'tsv', full.names = TRUE)
