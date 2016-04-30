@@ -4,7 +4,7 @@ library('BiocParallel')
 library('devtools')
 
 ## Parallel environment to use
-bp <- MulticoreParam(workers = 15, outfile = Sys.getenv('SGE_STDERR_PATH'))
+bp <- SnowParam(workers = 25, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
 load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
@@ -50,7 +50,7 @@ regions_subset <- regions[regions_keep]
 save(regions_subset, file = 'regions_subset-cut0.5.Rdata')
 
 ## Compute overall coverage matrix, but subsetted to the regions of interest
-coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
+coverageMatrix <- bpmapply(function(tsvFile, sampleName, regions_keep) {
     message(paste(Sys.time(), 'reading file', tsvFile))
     res <- tryCatch(
         read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL, NULL,
@@ -60,9 +60,11 @@ coverageMatrix <- bpmapply(function(tsvFile, sampleName) {
             }
     )
     colnames(res) <- sampleName
-    res <- DataFrame(res) ## To compress memory by sample
+    res <- as.matrix(res)
     return(res)
-}, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE)
+    }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE,
+        MoreArgs = list(regions_keep = regions_keep)
+)
 names(coverageMatrix) <- NULL
 coverageMatrix <- do.call(cbind, coverageMatrix)
 
