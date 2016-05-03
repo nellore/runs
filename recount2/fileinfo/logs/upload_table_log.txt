@@ -1,0 +1,36 @@
+Loading required package: colorout
+                                                                                  path
+1    /dcl01/leek/data/gtex_work/runs/recount2/rse/rse_sra/DRP000366/counts_exon.tsv.gz
+2    /dcl01/leek/data/gtex_work/runs/recount2/rse/rse_sra/DRP000366/counts_gene.tsv.gz
+3        /dcl01/leek/data/gtex_work/runs/recount2/rse/rse_sra/DRP000366/rse_exon.Rdata
+4        /dcl01/leek/data/gtex_work/runs/recount2/rse/rse_sra/DRP000366/rse_gene.Rdata
+5 /dcl01/leek/data/gtex_work/runs/recount2/metadata/project_metadata_sra/DRP000366.tsv
+6            /dcl01/leek/data/gtex_work/runs/recount2/mean/means_sra/mean_DRP000366.bw
+           file_name   project
+1 counts_exon.tsv.gz DRP000366
+2 counts_gene.tsv.gz DRP000366
+3     rse_exon.Rdata DRP000366
+4     rse_gene.Rdata DRP000366
+5      DRP000366.tsv DRP000366
+6  mean_DRP000366.bw DRP000366
+[1] 63895     3
+   user  system elapsed 
+ 14.274   2.752  20.135 
+2016-05-03 15:26:06
+Session info -----------------------------------------------------------------------------------------------------------
+ setting  value                                      
+ version  R version 3.3.0 Patched (2016-05-03 r70575)
+ system   x86_64, linux-gnu                          
+ ui       X11                                        
+ language (EN)                                       
+ collate  en_US.UTF-8                                
+ tz       <NA>                                       
+ date     2016-05-03                                 
+
+Packages ---------------------------------------------------------------------------------------------------------------
+ package  * version date       source                            
+ colorout * 1.1-2   2016-04-02 Github (jalvesaq/colorout@f96c00c)
+ devtools   1.11.1  2016-04-21 CRAN (R 3.3.0)                    
+ digest     0.6.9   2016-01-08 CRAN (R 3.3.0)                    
+ memoise    1.0.0   2016-01-29 CRAN (R 3.3.0)                    
+ withr      1.0.1   2016-02-04 CRAN (R 3.3.0)                    

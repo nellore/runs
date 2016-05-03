@@ -1,7 +1,7 @@
 ## Usage
 # mkdir -p logs
 # module load R/3.3
-# Rscript upload_table.R -p "sra" > logs/upload_table_log.txt 2>&1
+# Rscript upload_table.R > logs/upload_table_log.txt 2>&1
 
 ## Identify files to upload
 upload <- dir('/dcl01/leek/data/gtex_work/runs/recount2/fileinfo/fileinfo_sra', full.names = TRUE)
