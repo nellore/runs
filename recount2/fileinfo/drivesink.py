@@ -13,6 +13,7 @@ global_session.mount('https://', HTTPAdapter(max_retries=10))
 import requests_toolbelt
 import sys
 import uuid
+import time
 import mimetypes
 
 
@@ -94,6 +95,7 @@ class CloudNode(object):
                 "name": name,
                 "parents": [self.node["id"]]}))
         self._children[name] = node
+        time.sleep(.05)
         return node
 
 
