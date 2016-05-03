@@ -7,13 +7,9 @@ import logging
 import os
 import requests
 from requests.adapters import HTTPAdapter
-# Retry requests
-global_session = requests.Session()
-global_session.mount('https://', HTTPAdapter(max_retries=10))
 import requests_toolbelt
 import sys
 import uuid
-import time
 import mimetypes
 
 
@@ -95,7 +91,6 @@ class CloudNode(object):
                 "name": name,
                 "parents": [self.node["id"]]}))
         self._children[name] = node
-        time.sleep(.05)
         return node
 
 
@@ -226,10 +221,13 @@ class DriveSink(object):
             "Authorization": "Bearer %s" % self._config()["access_token"],
         }
         headers.update(kwargs.pop("headers", {}))
-        req = global_session.request(url=url, headers=headers, **kwargs)
+        # Retry requests
+        new_session = requests.Session()
+        new_session.mount('https://', HTTPAdapter(max_retries=10))
+        req = new_session.request(url=url, headers=headers, **kwargs)
         if req.status_code == 401 and refresh:
             # Have to proxy to get the client id and secret
-            req = global_session.post("%s/refresh" % self.args.drivesink, data={
+            req = new_session.post("%s/refresh" % self.args.drivesink, data={
                 "refresh_token": self._config()["refresh_token"],
             })
             if req.status_code != 200:
