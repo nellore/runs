@@ -42,8 +42,8 @@ meta_web <- data.frame(
     accession = paste0(
         '<a href="http://trace.ncbi.nlm.nih.gov/Traces/sra/?study=',
         projects, '">', projects, '</a>'),
-    number_samples = as.vector(tapply(metadata$project, metadata$project,
-        length)),
+    number_samples = sapply(projects, function(project) {
+        sum(metadata$project == project)}),
     species = 'human',
     abstract = abstracts$study_abstract[match(projects,
         abstracts$study_accession)],
