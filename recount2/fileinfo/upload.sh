@@ -8,6 +8,7 @@ ACDCLI=$1
 INPUT=$2
 OUT=$3
 PROCESSES=$4
+THREADS=$5
 
 function nrwait() {
     local nrwait_my_arg
@@ -27,7 +28,7 @@ $ACDCLI sync
 cd $INPUT
 for project in *
 do
-	$ACDCLI upload -x 5 ${project}/ $OUT/ &
+	$ACDCLI upload -x $THREADS ${project}/ $OUT/ &
 	nrwait $PROCESSES
 done
 wait
