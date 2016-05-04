@@ -30,6 +30,6 @@ for line in sys.stdin:
         os.makedirs(bw_dir)
         current_project = project
     if basename.endswith('.bw'):
-        os.symlink(filename, os.path.join(bw_dir, basename))
+        os.link(filename, os.path.join(bw_dir, basename))
     else:
-        os.symlink(filename, os.path.join(project_dir, basename))
+        os.link(filename, os.path.join(project_dir, basename))
