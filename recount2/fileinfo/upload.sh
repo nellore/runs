@@ -22,6 +22,8 @@ function nrwait() {
     done
   }
 
+$ACDCLI sync
+
 cd $INPUT
 for project in *
 do
