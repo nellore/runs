@@ -28,7 +28,6 @@ $ACDCLI sync
 cd $INPUT
 for project in *
 do
-	$ACDCLI upload -x $THREADS ${project}/ $OUT/ &
-	nrwait $PROCESSES
+	$ACDCLI upload -x $THREADS ${project}/ $OUT/
 done
 wait
