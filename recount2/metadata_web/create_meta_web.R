@@ -85,7 +85,7 @@ for(project in projects) {
         ## change them to relative URLs
         meta_web$files_info[projects == project] <- paste0(
             '<a href="http://duffel.rail.bio/recount/', project,
-            'files_info.tsv">link</a>')
+            '/files_info.tsv">link</a>')
     }
 }
 
