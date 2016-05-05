@@ -62,30 +62,30 @@ for(project in projects) {
     if(dir.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/rse/', paste0('rse_', opt$project), project))) {
         ## Have to change this to actual URLs once the data is uploaded        
         meta_web$rse_gene[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
-            ' rse_gene.Rdata">link</a>')
+            '<a href="http://duffel.rail.bio/recount/', project,
+            '/rse_gene.Rdata">link</a>')
         meta_web$rse_exon[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
-            ' rse_exon.Rdata">link</a>')
+            '<a href="http://duffel.rail.bio/recount/', project,
+            '/rse_exon.Rdata">link</a>')
         meta_web$counts_gene[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
-            ' counts_gene.tsv.gz">link</a>')
+            '<a href="http://duffel.rail.bio/recount/', project,
+            '/counts_gene.tsv.gz">link</a>')
         meta_web$counts_exon[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
-            ' counts_exon.tsv.gz">link</a>')
+            '<a href="http://duffel.rail.bio/recount/', project,
+            '/counts_exon.tsv.gz">link</a>')
     }
     if(file.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/metadata/', paste0('project_metadata_', opt$project), paste0(project, '.tsv')))) {
        ## Have to change this to actual URLs once the data is uploaded    
         meta_web$phenotype[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
+            '<a href="http://duffel.rail.bio/recount/', project, '/', project,
             '.tsv">link</a>')
     }
     if(dir.exists(file.path('/dcl01/leek/data/gtex_work/runs/recount2/fileinfo/', paste0('fileinfo_', opt$project), project))) {
         ## Might host these files on the website itself, if so we'll have to
         ## change them to relative URLs
         meta_web$files_info[projects == project] <- paste0(
-            '<a href="https://www.google.com/search?q=', project,
-            ' files_info.tsv">link</a>')
+            '<a href="http://duffel.rail.bio/recount/', project,
+            'files_info.tsv">link</a>')
     }
 }
 
