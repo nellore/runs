@@ -1,9 +1,0 @@
-.httr-oauth
-.auth_string.Rdata
-
-## Script files
-.*.sh
-
-## Output
-logs
-upload_*/
