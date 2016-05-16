@@ -149,6 +149,7 @@ if __name__ == '__main__':
 
     for srp_batch in srp_batches:
         # For storing file handles
+        srp_batch_set = set(srp_batch)
         project_bed_handles = {}
         project_coverage_handles = {}
         with open(merged_sorted_junctions) as merged_stream:
@@ -162,6 +163,7 @@ if __name__ == '__main__':
                     )
                 for _, tokens in group:
                     if tokens[-1] == 'g':
+                        if _gtex_project_id not in srp_batch_set: continue
                         try:
                             print >>project_bed_handles[_gtex_project_id], (
                                     junction
@@ -217,6 +219,7 @@ if __name__ == '__main__':
                                     coverage
                                 )
                         for project in project_to_samples:
+                            if project not in srp_batch_set: continue
                             try:
                                 print >>project_bed_handles[project], (
                                         junction
