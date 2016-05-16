@@ -85,6 +85,7 @@ if __name__ == '__main__':
     srr_to_read_count = {}
     srr_to_line = {}
     srr_to_paired_status = {}
+    srr_to_GSM = defaultdict(lambda: 'NA')
     with open(os.path.join(containing_dir, 'hg38',
                             'SraRunInfo.csv')) as run_stream:
         run_stream.readline()
@@ -94,6 +95,8 @@ if __name__ == '__main__':
             srr_to_line[tokens[0]] = '\t'.join(
                     [tokens[20], tokens[24], tokens[10], tokens[0]]
                 )
+            if tokens[29]:
+                srr_to_line[tokens[0]] = tokens[29]
             if tokens[15] == 'PAIRED':
                 srr_to_read_count[tokens[0]] = int(tokens[3]) * 2
                 srr_to_paired_status[tokens[0]] = '1'
@@ -114,7 +117,7 @@ if __name__ == '__main__':
                         'SHARQ tissue', 'SHARQ cell type',
                         'Biosample submission date',
                         'Biosample publication date',
-                        'Biosample update date'])
+                        'Biosample update date', 'GSM'])
     srr_to_mapped_reads = defaultdict(int)
     for i in xrange(100):
         with gzip.open(
