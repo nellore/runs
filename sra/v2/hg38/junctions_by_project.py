@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
     merged_junctions = os.path.join(temp_dir, 'merged_junctions.tsv')
-    merged_sorted junctions = os.path.join(temp_dir,
+    merged_sorted_junctions = os.path.join(temp_dir,
                                             'merged_sorted_junctions.tsv')
     subprocess.check_output('gzip -cd {} | awk "print $0 "\tg" >>{}'.format(
                                                     args.gtex_junctions,
