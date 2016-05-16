@@ -95,8 +95,8 @@ if __name__ == '__main__':
             srr_to_line[tokens[0]] = '\t'.join(
                     [tokens[20], tokens[24], tokens[10], tokens[0]]
                 )
-            if tokens[33]:
-                srr_to_gsm[tokens[0]] = tokens[33]
+            if tokens[29]:
+                srr_to_gsm[tokens[0]] = tokens[29]
             if tokens[15] == 'PAIRED':
                 srr_to_read_count[tokens[0]] = int(tokens[3]) * 2
                 srr_to_paired_status[tokens[0]] = '1'
