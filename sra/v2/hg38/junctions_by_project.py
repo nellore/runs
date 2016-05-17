@@ -134,6 +134,7 @@ if __name__ == '__main__':
     srps = id_to_srp.values()
     srp_batches = [srps[i:i+args.projects_per_batch]
                     for i in xrange(0, len(srps), args.projects_per_batch)]
+    srp_batches[-1].append(_gtex_project_id)
     score = '1000'
 
     # Number by which to increment every GTEx sample id
