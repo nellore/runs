@@ -117,7 +117,10 @@ if __name__ == '__main__':
                                                 ),
                                 executable='/bin/bash',
                                 shell=True)
-    subprocess.check_output('sort -k1,6 {} >{}'.format(
+    subprocess.check_output('sort {}-k1,6 {} >{}'.format(
+                                                    '-T %s ' % args.temp_dir
+                                                    if args.temp_dir
+                                                    is not None else '', 
                                                     merged_junctions,
                                                     merged_sorted_junctions
                                                 ),
