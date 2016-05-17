@@ -117,7 +117,7 @@ if __name__ == '__main__':
                                                 ),
                                 executable='/bin/bash',
                                 shell=True)
-    subprocess.check_output('sort {}-k1,6 {} >{}'.format(
+    subprocess.check_output('sort {}-k1,1 -k2,2n -k3,3n {} >{}'.format(
                                                     '-T %s ' % args.temp_dir
                                                     if args.temp_dir
                                                     is not None else '', 
