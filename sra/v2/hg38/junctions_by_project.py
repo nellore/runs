@@ -42,6 +42,8 @@ import tempfile
 import subprocess
 import itertools
 from collections import defaultdict
+import shutil
+import atexit
 
 _gtex_project_id = 'SRP012682'
 
@@ -97,6 +99,7 @@ if __name__ == '__main__':
         if os.path.isdir(args.output_dir): pass
 
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
+    atexit.register(shutil.rmtree, temp_dir)
     merged_junctions = os.path.join(temp_dir, 'merged_junctions.tsv')
     merged_sorted_junctions = os.path.join(temp_dir,
                                             'merged_sorted_junctions.tsv')
