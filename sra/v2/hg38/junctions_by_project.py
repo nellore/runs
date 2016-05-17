@@ -41,6 +41,7 @@ import gzip
 import tempfile
 import subprocess
 import itertools
+from collections import defaultdict
 
 _gtex_project_id = 'SRP012682'
 
@@ -99,21 +100,26 @@ if __name__ == '__main__':
     merged_junctions = os.path.join(temp_dir, 'merged_junctions.tsv')
     merged_sorted_junctions = os.path.join(temp_dir,
                                             'merged_sorted_junctions.tsv')
-    subprocess.check_output('gzip -cd {} | awk "print $0 "\tg" >>{}'.format(
+    subprocess.check_output(
+        'gzip -cd {} | awk \'{{print $0 "\\tg"}}\' >>{}'.format(
                                                     args.gtex_junctions,
                                                     merged_junctions
                                                 ),
-                                executable='/bin/bash')
-    subprocess.check_output('gzip -cd {} | awk "print $0 "\ts" >>{}'.format(
+                                executable='/bin/bash',
+                                shell=True)
+    subprocess.check_output(
+        'gzip -cd {} | awk \'{{print $0 "\\ts"}}\' >>{}'.format(
                                                     args.sra_junctions,
                                                     merged_junctions
                                                 ),
-                                executable='/bin/bash')
+                                executable='/bin/bash',
+                                shell=True)
     subprocess.check_output('sort -k1,6 {} >{}'.format(
                                                     merged_junctions,
                                                     merged_sorted_junctions
                                                 ),
-                                executable='/bin/bash'
+                                executable='/bin/bash',
+                                shell=True
         )
 
     '''Map SRA sample numbers to projects; note GTEx project number is always
@@ -128,7 +134,7 @@ if __name__ == '__main__':
     score = '1000'
 
     # Number by which to increment every GTEx sample id
-    translation = len(id_to_srp)
+    translation = max([int(sample_id) for sample_id in id_to_srp.keys()]) + 1
 
     # Print all sample ids
     with open(
@@ -144,127 +150,139 @@ if __name__ == '__main__':
             for line in gtex_id_stream:
                 tokens = line.strip().split('\t')
                 print >>sample_id_stream, '\t'.join(
-                        [tokens[0], _gtex_project_id, tokens[1]]
+                        [str(int(tokens[0]) + translation), _gtex_project_id,
+                            tokens[1]]
                     )
-
     for srp_batch in srp_batches:
         # For storing file handles
-        srp_batch_set = set(srp_batch)
         project_bed_handles = {}
         project_coverage_handles = {}
-        with open(merged_sorted_junctions) as merged_stream:
-            for key, group in itertools.groupby(stream_to_tokens,
-                                                lambda x: x[:6]):
-                junction_id = 0
-                junction_id_string = str(junction_id)
-                junction = '\t'.join(
-                        [key[0], key[1], key[2],
-                            junction_id_string, score, key[3]]
-                    )
-                for _, tokens in group:
-                    if tokens[-1] == 'g':
-                        if _gtex_project_id not in srp_batch_set: continue
-                        try:
-                            print >>project_bed_handles[_gtex_project_id], (
-                                    junction
-                                )
-                        except KeyError:
-                            project_bed_handles[_gtex_project_id] = gzip.open(
-                                    os.path.join(
-                                            args.output_dir,
-                                            _gtex_project_id
-                                            + '.junction_id.bed.gz'
-                                        ), 'w'
-                                )
-                            print >>project_bed_handles[_gtex_project_id], (
-                                    junction
-                                )
-                        current_samples = [str(int(token) + translation)
-                                            for token in tokens[-2].split(',')]
-                        try:
-                            print >>project_coverage_handles[
-                                    _gtex_project_id
-                                ], '\t'.join(
-                                        [junction_id_string,
-                                            ','.join(current_samples),
-                                            tokens[-1]]
-                                    )
-                        except KeyError:
-                            project_coverage_handles[
+        junction_id = 0
+        try:
+            srp_batch_set = set(srp_batch)
+            with open(merged_sorted_junctions) as merged_stream:
+                for key, group in itertools.groupby(
+                                    stream_to_tokens(merged_stream),
+                                    lambda x: x[:6]
+                                ):
+                    junction_id_string = str(junction_id)
+                    junction = '\t'.join(
+                            [key[0], key[1], key[2],
+                                junction_id_string, score, key[3]]
+                        )
+                    for tokens in group:
+                        if tokens[-1] == 'g':
+                            if _gtex_project_id not in srp_batch_set: continue
+                            try:
+                                print >>project_bed_handles[
+                                                _gtex_project_id
+                                            ], junction
+                            except KeyError:
+                                project_bed_handles[
                                         _gtex_project_id
                                     ] = gzip.open(
-                                            os.path.join(
-                                                args.output_dir,
-                                                _gtex_project_id
-                                                + '.junction_coverage.tsv.gz'
-                                            ), 'w'
-                                        )
-                            print >>project_coverage_handles[
-                                    _gtex_project_id
-                                ], '\t'.join(
-                                        [junction_id_string,
-                                            ','.join(current_samples),
-                                            tokens[-1]]
-                                    )
-                    else:
-                        # SRA
-                        project_to_samples = defaultdict(list)
-                        project_to_coverage = defaultdict(list)
-                        for sample, coverage in zip(tokens[-2].split(','),
-                                                    tokens[-1].split(',')):
-                            project_to_samples[id_to_srp[sample]].append(
-                                    sample
-                                )
-                            project_to_coverage[id_to_srp[sample]].append(
-                                    coverage
-                                )
-                        for project in project_to_samples:
-                            if project not in srp_batch_set: continue
-                            try:
-                                print >>project_bed_handles[project], (
-                                        junction
-                                    )
-                            except KeyError:
-                                project_bed_handles[project] = gzip.open(
                                         os.path.join(
                                                 args.output_dir,
-                                                project + '.junction_id.bed.gz'
+                                                _gtex_project_id
+                                                + '.junction_id.bed.gz'
                                             ), 'w'
                                     )
-                                print >>project_bed_handles[project], (
-                                        junction
-                                    )
+                                print >>project_bed_handles[
+                                                    _gtex_project_id
+                                                ], junction
+                            current_samples = [
+                                        str(int(token) + translation)
+                                        for token in tokens[-3].split(',')
+                                    ]
                             try:
                                 print >>project_coverage_handles[
-                                        project
+                                        _gtex_project_id
                                     ], '\t'.join(
-                                         [junction_id_string,
-                                            ','.join(
-                                                project_to_samples[project]
-                                            ),
-                                            ','.join(
-                                                project_to_coverages[project]
-                                            )]
+                                            [junction_id_string,
+                                                ','.join(current_samples),
+                                                tokens[-2]]
                                         )
                             except KeyError:
                                 project_coverage_handles[
-                                            project
+                                            _gtex_project_id
                                         ] = gzip.open(
-                                            os.path.join(
-                                                args.output_dir,
-                                                project
+                                                os.path.join(
+                                                    args.output_dir,
+                                                    _gtex_project_id
                                                 + '.junction_coverage.tsv.gz'
                                             ), 'w'
                                         )
                                 print >>project_coverage_handles[
-                                        project
+                                        _gtex_project_id
                                     ], '\t'.join(
-                                         [junction_id_string,
-                                            ','.join(
-                                                project_to_samples[project]
-                                            ),
-                                            ','.join(
+                                            [junction_id_string,
+                                                ','.join(current_samples),
+                                                tokens[-2]]
+                                        )
+                        else:
+                            # SRA
+                            project_to_samples = defaultdict(list)
+                            project_to_coverages = defaultdict(list)
+                            for sample, coverage in zip(tokens[-3].split(','),
+                                                        tokens[-2].split(',')):
+                                project_to_samples[id_to_srp[sample]].append(
+                                        sample
+                                    )
+                                project_to_coverages[id_to_srp[sample]].append(
+                                        coverage
+                                    )
+                            for project in project_to_samples:
+                                if project not in srp_batch_set: continue
+                                try:
+                                    print >>project_bed_handles[project], (
+                                            junction
+                                        )
+                                except KeyError:
+                                    project_bed_handles[project] = gzip.open(
+                                            os.path.join(
+                                                args.output_dir,
+                                                project + '.junction_id.bed.gz'
+                                            ), 'w'
+                                        )
+                                    print >>project_bed_handles[project], (
+                                            junction
+                                        )
+                                try:
+                                    print >>project_coverage_handles[
+                                            project
+                                        ], '\t'.join(
+                                             [junction_id_string,
+                                                ','.join(
+                                                    project_to_samples[project]
+                                                ),
+                                                ','.join(
                                                 project_to_coverages[project]
                                             )]
                                         )
-                junction_id += 1
+                                except KeyError:
+                                    project_coverage_handles[
+                                                project
+                                            ] = gzip.open(
+                                                os.path.join(
+                                                    args.output_dir,
+                                                    project
+                                                + '.junction_coverage.tsv.gz'
+                                            ), 'w'
+                                        )
+                                    print >>project_coverage_handles[
+                                            project
+                                        ], '\t'.join(
+                                             [junction_id_string,
+                                                ','.join(
+                                                    project_to_samples[project]
+                                                ),
+                                                ','.join(
+                                                project_to_coverages[project]
+                                            )]
+                                        )
+                    junction_id += 1
+        finally:
+            for project in project_bed_handles:
+                project_bed_handles[project].close()
+            for project in project_coverage_handles:
+                project_coverage_handles[project].close()
