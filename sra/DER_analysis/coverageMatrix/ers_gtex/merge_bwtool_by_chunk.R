@@ -59,7 +59,7 @@ regions_split <- split(regions, chunk_grp)
 
 ## Load data for each chunk and save it
 
-mapply(function(regions_to_subset, chunk_name) {
+xx <- mapply(function(regions_to_subset, chunk_name) {
     message(paste(Sys.time(), 'processing', chunk_name))
     
     ## Identify which regions to keep
@@ -94,7 +94,7 @@ mapply(function(regions_to_subset, chunk_name) {
     
     ## Finish
     return(invisible(NULL))
-})
+}, regions_split, names(regions_split))
 
 ## Reproducibility info
 proc.time()
