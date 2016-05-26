@@ -52,13 +52,34 @@ chunks <- unlist(sapply(chr_n, function(n) {
 }))
 stopifnot(length(chunks) == length(regions))
 chunk_grp <- paste0(seqnames(regions), chunks)
-
 save(chunk_grp, file = 'chunk_grp.Rdata')
-
 regions_split <- split(regions, chunk_grp)
 
-## Load data for each chunk and save it
 
+## Load the data for each sample and save it as it's own Rdata file
+dir.create('sampleFiles-cut0.5', showWarnings = FALSE)
+sampleFiles <- bpmapply(function(tsvFile, sampleName) {
+    message(paste(Sys.time(), 'reading file', tsvFile))
+    res <- tryCatch(
+        read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL,
+            NULL, 'numeric')),
+            error = function(e) {
+                data.frame(empty = rep(0, length(regions_keep)))
+            }
+    )
+    colnames(res) <- sampleName
+    res <- as.matrix(res)
+    
+    sFile <- file.path('sampleFiles-cut0.5', paste0(sampleName, '.Rdata'))
+    message(paste(Sys.time(), 'creating file', sFile))
+    save(res, file = sFile)
+        
+    return(sFile)
+    }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE,
+        MoreArgs = list(regions_keep = regions_keep)
+)
+
+## Load data for each chunk and save it
 xx <- mapply(function(regions_to_subset, chunk_name) {
     message(paste(Sys.time(), 'processing', chunk_name))
     
@@ -71,20 +92,11 @@ xx <- mapply(function(regions_to_subset, chunk_name) {
     save(regions_subset, file = paste0('regions_', chunk_name, '-cut0.5.Rdata'))
     
     ## Compute chunk coverage matrix
-    coverageMatrix <- bpmapply(function(tsvFile, sampleName, regions_keep) {
-        message(paste(Sys.time(), 'reading file', tsvFile))
-        res <- tryCatch(
-            read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL,
-                NULL, 'numeric'))[regions_keep, , drop = FALSE],
-                error = function(e) {
-                    data.frame(empty = rep(0, length(regions_keep)))
-                }
-        )
-        colnames(res) <- sampleName
-        res <- as.matrix(res)
+    coverageMatrix <- bplapply(sampleFiles, function(sFile, regions_keep) {
+        load(sFile)
+        res <- res[regions_keep, , drop = FALSE]
         return(res)
-        }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE,
-            MoreArgs = list(regions_keep = regions_keep)
+        }, regions_keep = regions_keep, BPPARAM = bp
     )
     names(coverageMatrix) <- NULL
     coverageMatrix <- do.call(cbind, coverageMatrix)

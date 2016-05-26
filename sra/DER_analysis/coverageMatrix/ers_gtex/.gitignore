@@ -6,3 +6,6 @@ logs
 
 ## files with commands
 bwtool_cmds*
+
+## Individual sample Rdata files
+sampleFiles
