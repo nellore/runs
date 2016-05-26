@@ -9,3 +9,6 @@ bwtool_cmds*
 
 ## Individual sample Rdata files
 sampleFiles
+
+## Output files
+*Rdata
