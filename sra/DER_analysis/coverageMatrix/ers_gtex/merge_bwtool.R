@@ -7,7 +7,7 @@ library('devtools')
 bp <- SnowParam(workers = 20, outfile = Sys.getenv('SGE_STDERR_PATH'))
 
 ## Load pheno data
-load('/dcl01/leek/data/gtex_work/runs/recount2/metadata/metadata_sra.Rdata')
+load('/dcl01/leek/data/recount-website/metadata/metadata_sra.Rdata')
 metadata <- metadata[!is.na(metadata$bigwig_path), ]
 
 ## Load bwtool results
