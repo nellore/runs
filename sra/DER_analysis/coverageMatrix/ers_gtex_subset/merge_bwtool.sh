@@ -2,7 +2,7 @@
 
 # Directories
 MAINDIR=/dcl01/leek/data/gtex_work/runs/sra/DER_analysis/coverageMatrix
-WDIR=${MAINDIR}/ers_gtex
+WDIR=${MAINDIR}/ers_gtex_subset
 
 
 mkdir -p ${WDIR}

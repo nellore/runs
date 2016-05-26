@@ -34,8 +34,7 @@ names(chr_n) <- names(table(regs_raw$chr))
 chr_n <- chr_n[match(unique(regs_raw$chr), names(chr_n))]
 names(regions) <- paste(regs_raw$chr, unlist(sapply(chr_n, seq_len)), sep = '.')
 
-## Already created by merge_bwtool.R
-# save(regions, file = 'regions-cut0.5.Rdata')
+save(regions, file = 'regions-cut0.5.Rdata')
 
 ## Define sample names
 sampleNames <- metadata$run[!is.na(i)]
