@@ -53,6 +53,8 @@ chunks <- unlist(sapply(chr_n, function(n) {
 stopifnot(length(chunks) == length(regions))
 chunk_grp <- paste0(seqnames(regions), chunks)
 
+save(chunk_grp, file = 'chunk_grp.Rdata')
+
 regions_split <- split(regions, chunk_grp)
 
 ## Load data for each chunk and save it
