@@ -64,7 +64,7 @@ sampleFiles <- bpmapply(function(tsvFile, sampleName) {
         read.table(tsvFile, header = FALSE, colClasses = list(NULL, NULL,
             NULL, 'numeric')),
             error = function(e) {
-                data.frame(empty = rep(0, length(regions_keep)))
+                data.frame(empty = rep(0, 1187643))
             }
     )
     colnames(res) <- sampleName
@@ -75,8 +75,7 @@ sampleFiles <- bpmapply(function(tsvFile, sampleName) {
     save(res, file = sFile)
         
     return(sFile)
-    }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE,
-        MoreArgs = list(regions_keep = regions_keep)
+    }, tsv[i[!is.na(i)]], sampleNames, BPPARAM = bp, SIMPLIFY = FALSE
 )
 
 ## Load data for each chunk and save it
