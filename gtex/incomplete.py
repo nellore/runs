@@ -69,7 +69,7 @@ if __name__ == '__main__':
                         'paired-end', 'SRA misreported paired-end'])
     for i in xrange(100):
         with gzip.open(
-                os.path.join(args.sra_dir,
+                os.path.join(args.gtex_dir,
                                 'batch_{}'.format(i),
                                 'cross_sample_results',
                                 'counts.tsv.gz')
