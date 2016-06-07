@@ -67,7 +67,7 @@ if __name__ == '__main__':
                         'read count as reported by SRA', 'reads aligned',
                         'proportion of reads reported by SRA aligned',
                         'paired-end', 'SRA misreported paired-end'])
-    for i in xrange(100):
+    for i in xrange(30):
         with gzip.open(
                 os.path.join(args.gtex_dir,
                                 'batch_{}'.format(i),
