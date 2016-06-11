@@ -21,7 +21,7 @@ sample IDs in first_pass_gtex_junctions.tsv.gz)
 and intropolis.idmap.v2.hg38.tsv output by sra/v2/hg38/combine_sra.py
 
 and for each SRA project accession writes:
-A) A BED.gz file assigning IDs to junctions. Columns are:
+A) A BED file assigning IDs to junctions. Columns are:
   1. chromosome
   2. start position (1-based, inclusive)
   3. end position (1-based, inclusive)
@@ -29,7 +29,7 @@ A) A BED.gz file assigning IDs to junctions. Columns are:
   5. the number 1000 (this is the score, and here just says use a dark color
                       in the UCSC genome browser)
   6. strand (+ or -)
-B) A TSV.gz file mapping junction IDs to sample IDs and their corresponding
+B) A TSV file mapping junction IDs to sample IDs and their corresponding
     coverages. Columns are:
   1. junction ID
   2. comma-separated list of IDs of samples in which junction is found
@@ -44,7 +44,6 @@ import itertools
 from collections import defaultdict
 import shutil
 import atexit
-import contextlib
 
 _gtex_project_id = 'SRP012682'
 
@@ -57,78 +56,6 @@ def stream_to_tokens(input_stream):
     """
     for line in input_stream:
         yield line.strip().split('\t')
-
-@contextlib.contextmanager
-def xopen(gzipped, *args):
-    """ Passes args on to the appropriate opener, gzip or regular.
-
-        In compressed mode, functionality almost mimics gzip.open,
-        but uses gzip at command line.
-
-        As of PyPy 2.5, gzip.py appears to leak memory when writing to
-        a file object created with gzip.open().
-
-        gzipped: True iff gzip.open() should be used to open rather than
-            open(); False iff open() should be used; None if input should be
-            read and guessed; '-' if writing to stdout
-        *args: unnamed arguments to pass
-
-        Yield value: file object
-    """
-    import sys
-    if gzipped == '-':
-        fh = sys.stdout
-    else:
-        if not args:
-            raise IOError, 'Must provide filename'
-        import gzip
-        if gzipped is None:
-            with open(args[0], 'rb') as binary_input_stream:
-                # Check for magic number
-                if binary_input_stream.read(2) == '\x1f\x8b':
-                    gzipped = True
-                else:
-                    gzipped = False
-        if gzipped:
-            try:
-                mode = args[1]
-            except IndexError:
-                mode = 'rb'
-            if 'r' in mode:
-                # Be forgiving of gzips that end unexpectedly
-                old_read_eof = gzip.GzipFile._read_eof
-                gzip.GzipFile._read_eof = lambda *args, **kwargs: None
-                fh = gzip.open(*args)
-            elif 'w' in mode or 'a' in mode:
-                try:
-                    compresslevel = int(args[2])
-                except IndexError:
-                    compresslevel = 9
-                if 'w' in mode:
-                    output_stream = open(args[0], 'wb')
-                else:
-                    output_stream = open(args[0], 'ab')
-                gzip_process = subprocess.Popen(['gzip',
-                                                    '-%d' % compresslevel],
-                                                    bufsize=-1,
-                                                    stdin=subprocess.PIPE,
-                                                    stdout=output_stream)
-                fh = gzip_process.stdin
-            else:
-                raise IOError, 'Mode ' + mode + ' not supported'
-        else:
-            fh = open(*args)
-    try:
-        yield fh
-    finally:
-        if fh is not sys.stdout:
-            fh.close()
-        if 'gzip_process' in locals():
-            gzip_process.wait()
-        if 'output_stream' in locals():
-            output_stream.close()
-        if 'old_read_eof' in locals():
-            gzip.GzipFile._read_eof = old_read_eof
 
 if __name__ == '__main__':
     import argparse
@@ -260,12 +187,11 @@ if __name__ == '__main__':
                             except KeyError:
                                 project_bed_handles[
                                         _gtex_project_id
-                                    ] = xopen(
-                                        True,
+                                    ] = open(
                                         os.path.join(
                                                 args.output_dir,
                                                 _gtex_project_id
-                                                + '.junction_id.bed.gz'
+                                                + '.junction_id.bed'
                                             ), 'w'
                                     )
                                 print >>project_bed_handles[
@@ -286,11 +212,10 @@ if __name__ == '__main__':
                             except KeyError:
                                 project_coverage_handles[
                                             _gtex_project_id
-                                        ] = xopen(True,
-                                                os.path.join(
+                                        ] = open(os.path.join(
                                                     args.output_dir,
                                                     _gtex_project_id
-                                                + '.junction_coverage.tsv.gz'
+                                                + '.junction_coverage.tsv'
                                             ), 'w'
                                         )
                                 print >>project_coverage_handles[
@@ -319,8 +244,7 @@ if __name__ == '__main__':
                                             junction
                                         )
                                 except KeyError:
-                                    project_bed_handles[project] = xopen(
-                                            True,
+                                    project_bed_handles[project] = open(
                                             os.path.join(
                                                 args.output_dir,
                                                 project + '.junction_id.bed.gz'
@@ -344,12 +268,11 @@ if __name__ == '__main__':
                                 except KeyError:
                                     project_coverage_handles[
                                                 project
-                                            ] = xopen(
-                                                True,
+                                            ] = open(
                                                 os.path.join(
                                                     args.output_dir,
                                                     project
-                                                + '.junction_coverage.tsv.gz'
+                                                + '.junction_coverage.tsv'
                                             ), 'w'
                                         )
                                     print >>project_coverage_handles[
