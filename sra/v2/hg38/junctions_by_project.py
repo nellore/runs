@@ -44,6 +44,7 @@ import itertools
 from collections import defaultdict
 import shutil
 import atexit
+import contextlib
 
 _gtex_project_id = 'SRP012682'
 
