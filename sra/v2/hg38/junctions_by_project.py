@@ -247,7 +247,7 @@ if __name__ == '__main__':
                                     project_bed_handles[project] = open(
                                             os.path.join(
                                                 args.output_dir,
-                                                project + '.junction_id.bed.gz'
+                                                project + '.junction_id.bed'
                                             ), 'w'
                                         )
                                     print >>project_bed_handles[project], (
