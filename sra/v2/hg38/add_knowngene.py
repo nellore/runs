@@ -6,13 +6,12 @@ junctions_by_project.py: one is a comma-separated list of IDs of transcripts in
 which the junction is found, and the other is a comma-separated list of
 corresponding gene IDs.
 
-Requires that knownGene.gtf has been downloaded via the UCSC Table Browser at 
-http://genome.ucsc.edu/cgi-bin/hgTables?command=start .
-
-Reads junction ID BEDs from 
+Requires that GTF has been downloaded via the UCSC Table Browser at 
+http://genome.ucsc.edu/cgi-bin/hgTables?command=start ; we downloaded this GTF
+on June 13, 2016 as knownGene_hg38.gtf, which is in the same dir as this
+script.
 """
 from collections import defaultdict
-import sys
 
 if __name__ == '__main__':
     import argparse
@@ -24,29 +23,29 @@ if __name__ == '__main__':
         help='paths to BED files to process')
     args = parser.parse_args()
     # Get junctions and associated gene/transcript IDs
+    exons = defaultdict(set)
     with open(args.gtf) as gtf_stream:
-    	exons = defaultdict(set)
-    for line in sys.stdin:
-        if line[0] == '#': continue
-        tokens = line.strip().split('\t')
-        if tokens[2].lower() != 'exon': continue
-        '''key: transcript_id
-           value: (rname, exon start (1-based), exon end (1-based))
+        for line in gtf_stream:
+            if line[0] == '#': continue
+            tokens = line.strip().split('\t')
+            if tokens[2].lower() != 'exon': continue
+            '''key: transcript_id
+               value: (rname, exon start (1-based), exon end (1-based))
 
-        transcript_id in token 12 is decked with " on the left and "; on the
-        right; kill them in key below.
-        '''
-        attribute = tokens[-1].split(';')
-        id_index = [i for i, name in enumerate(attribute)
-                    if 'transcript_id' in name]
-        assert len(id_index) == 1, ('More than one transcript ID specified; '
-                                    'offending line: %s') % line 
-        id_index = id_index[0]
-        attribute[id_index] = attribute[id_index].strip()
-        quote_index = attribute[id_index].index('"')
-        exons[attribute[id_index][quote_index+1:-1]].add(
-                (tokens[0], int(tokens[3]), int(tokens[4]))
-            )
+            transcript_id in token 12 is decked with " on the left and "; on
+            the right; kill them in key below.
+            '''
+            attribute = tokens[-1].split(';')
+            id_index = [i for i, name in enumerate(attribute)
+                        if 'transcript_id' in name]
+            assert len(id_index) == 1, ('More than one transcript ID specified; '
+                                        'offending line: %s') % line 
+            id_index = id_index[0]
+            attribute[id_index] = attribute[id_index].strip()
+            quote_index = attribute[id_index].index('"')
+            exons[attribute[id_index][quote_index+1:-1]].add(
+                    (tokens[0], int(tokens[3]), int(tokens[4]))
+                )
 
     junctions = defaultdict(list)
     for transcript_id in exons:
@@ -78,11 +77,11 @@ if __name__ == '__main__':
                 if junction in junctions:
                     print >>output_stream, '\t'.join(
                             tokens[:3]
-                            + [tokens[4] + ':' + ';'.join(
+                            + [tokens[3] + ':' + ';'.join(
                                     [str(el) for el in junctions[junction]]
-                                )] + tokens[5:]
+                                )] + tokens[4:]
                         )
                 else:
                     print >>output_stream, '\t'.join(
-                            tokens[:3] + [tokens[4] + ':NA'] + tokens[5:]
+                            tokens[:3] + [tokens[3] + ':NA'] + tokens[4:]
                         )
