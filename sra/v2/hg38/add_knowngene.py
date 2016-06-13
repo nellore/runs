@@ -65,11 +65,11 @@ if __name__ == '__main__':
 
     # Modify BED files
     for bed in args.beds:
-        assert bed.endswith('.bed'), (
-                '{} does not have extension ".bed".'.format(bed)
+        assert bed.endswith('.bed.gz'), (
+                '{} does not have extension ".bed.gz".'.format(bed)
             )
-        modified_bed_filename = bed[:-4] + '_with_transcript.bed'
-        with open(modified_bed_filename, 'w') as output_stream, open(
+        modified_bed_filename = bed[:-7] + '_with_transcript.bed.gz'
+        with gzip.open(modified_bed_filename, 'w') as output_stream, gzip.open(
                 bed
             ) as input_stream:
             for line in input_stream:
