@@ -15,7 +15,7 @@ from collections import defaultdict
 import sys
 
 if __name__ == '__main__':
-	import argparse
+    import argparse
     parser = argparse.ArgumentParser(description=__doc__, 
             formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--gtf', required=True,
