@@ -8,23 +8,24 @@ corresponding gene IDs.
 
 Requires that GTF has been downloaded via the UCSC Table Browser at 
 http://genome.ucsc.edu/cgi-bin/hgTables?command=start ; we downloaded this GTF
-on June 13, 2016 as knownGene_hg38.gtf, which is in the same dir as this
+on June 13, 2016 as knownGene_hg38.gtf.gz, which is in the same dir as this
 script.
 """
 from collections import defaultdict
+import gzip
 
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description=__doc__, 
             formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--gtf', required=True,
-        help='path to UCSC knownGene GTF file for hg38')
+        help='path to UCSC knownGene GTF.gz file for hg38')
     parser.add_argument('--beds', required=True, nargs='+',
         help='paths to BED files to process')
     args = parser.parse_args()
     # Get junctions and associated gene/transcript IDs
     exons = defaultdict(set)
-    with open(args.gtf) as gtf_stream:
+    with gzip.open(args.gtf) as gtf_stream:
         for line in gtf_stream:
             if line[0] == '#': continue
             tokens = line.strip().split('\t')
