@@ -103,7 +103,7 @@ if __name__ == '__main__':
                 if strand == '-':
                     donor, acceptor = acceptor, donor
                 print >>output_stream, '\t'.join(
-                            tokens[:3]
+                            list(map(str, junction))
                             + [''.join([tokens[3],
                                         '|D:',
                                         donors_write[donor],
