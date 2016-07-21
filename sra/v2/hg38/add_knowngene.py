@@ -7,7 +7,7 @@ which the junction is found, and the other is a comma-separated list of
 corresponding gene IDs.
 
 Requires that GTF has been downloaded via the UCSC Table Browser at 
-http://genome.ucsc.edu/cgi-bin/hgTables?command=start ; we downloaded this GTF
+j ; we downloaded this GTF
 on June 13, 2016 as knownGene_hg38.gtf.gz, which is in the same dir as this
 script. ALSO CORRECTS JUNCTION COORDINATES FROM junctions_by_project.py so
 they're zero-based!
@@ -58,7 +58,7 @@ if __name__ == '__main__':
         # Recall that GTF is end-inclusive, and so is STAR's junctions.txt
         for i in xrange(1, len(exons_from_transcript)):
             if exons_from_transcript[i][0] == exons_from_transcript[i-1][0]:
-                # Kill any introns 4 bases or smaller
+                # Kill any introns 3 bases or smaller
                 if (exons_from_transcript[i][1]
                     - exons_from_transcript[i-1][2]) < 5:
                     continue
