@@ -24,7 +24,7 @@ function nrwait() {
 
 mkdir -p $OUT/tempaucs
 cd $OUT/tempaucs
-for bigwig in $(for i in $INPUT/*; do find $i/coverage_bigwigs -name \*.bw | grep -Ev 'mean|median|unique|\.A\.|\.T\.|\.C\.|\.G\.|\.N\.'; done)
+for bigwig in $(for i in $INPUT/*; do find $i/coverage_bigwigs -name \*.bw | grep -v SRR | grep -Ev 'mean|median|unique|\.A\.|\.T\.|\.C\.|\.G\.|\.N\.'; done)
 do
 	$WIGGLETOOLS AUC $bigwig >$(basename $bigwig | cut -d'_' -f1) &
 	nrwait $PROCESSES
