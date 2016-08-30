@@ -35,6 +35,8 @@ pypy rip_annotated_junctions.py
     --liftover /path/to/liftOver
     --unmapped unmapped_hg38.bed 2>annotated_junctions_stats.txt
     | sort -k1,1 -k2,2n -k3,3n | gzip >annotated_junctions.tsv.gz
+
+We eliminate all introns lifted over that are < 4 bases long.
 """
 
 import subprocess
@@ -149,7 +151,7 @@ if __name__ == '__main__':
     with open(temp_hg38, 'w') as hg38_stream:
         for i, junction in enumerate(annotated_junctions_hg38):
             print >>hg38_stream, '{}\t{}\t{}\tdummy_{}\t1\t{}'.format(
-                    junction[0], junction[1], junction[2], i, junction[3]
+                    junction[0], junction[1] - 1, junction[2], i, junction[3]
                 )
     liftover_process = subprocess.call(' '.join([
                                             args.liftover,
@@ -172,9 +174,10 @@ if __name__ == '__main__':
             chrom, start, end, name, score, strand = line.strip().split(
                                                                     '\t'
                                                                 )[:6]
-            if chrom in refs:
+            start, end = int(start), int(end)
+            if chrom in refs and end - start >= 4:
                 annotated_junctions_hg19.add(
-                    (chrom, int(start), int(end), strand)
+                    (chrom, start + 1, end, strand)
                 )
             else:
                 print >>sys.stderr, '({}, {}, {}) not recorded.'.format(
