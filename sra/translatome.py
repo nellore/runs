@@ -29,9 +29,9 @@ Stats are written to stderr; we store them in
 From the runs/sra directory, we ran
 
 pypy translatome.py
-    --chain /path/to/hg38ToHg19.over.chain
+    --chain /path/to/mm10ToHg19.over.chain
     --liftover /path/to/liftOver
-    --unmapped unmapped_hg38.bed 2>translatome_stats.txt
+    --unmapped unmapped_mm10.bed 2>translatome_stats.txt
     | sort -k1,1 -k2,2n -k3,3n | gzip
     >translatome_mm10_to_hg19_junctions.tsv.gz
 
@@ -60,6 +60,9 @@ import gzip
 import shutil
 import atexit
 import subprocess
+import argparse
+import tempfile
+import os
 
 if __name__ == '__main__':
     # Print file's docstring if -h is invoked
@@ -72,7 +75,7 @@ if __name__ == '__main__':
         )
     parser.add_argument('--chain', type=str, required=True,
             help=('path to unzipped liftover chain; this should be '
-                  'hg38ToHg19.over.chain')
+                  'mm10ToHg19.over.chain')
         )
     parser.add_argument('--intropolis', type=str, required=True,
             help=('path to intropolis.v1.hg19.tsv.gz')
@@ -82,7 +85,7 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp()
-    atexit.register(shutil.rmtree, temp_dir)
+    #atexit.register(shutil.rmtree, temp_dir)
     current_dir = os.path.abspath(os.path.dirname(__file__))
     # Read annotated junctions
     annotated_junctions = set()
@@ -123,8 +126,8 @@ if __name__ == '__main__':
                                         executable='/bin/bash'
                                     )
     to_sort = os.path.join(temp_dir, 'intropolis_and_translatome.tsv.gz')
-    with open(temp_hg19) as hg19_stream:
-        with gzip.open(to_sort, 'w') as both_stream:
+    with gzip.open(to_sort, 'w') as both_stream:
+        with open(temp_hg19) as hg19_stream:
             for line in hg19_stream:
                 chrom, start, end, name, score, strand = line.strip().split(
                                                                         '\t'
@@ -134,7 +137,7 @@ if __name__ == '__main__':
                     (_, mm10_chrom, mm10_start, mm10_end, mm10_strand,
                         mm10_samples, mm10_coverages) = name.split(';')
                     start, mm10_start = int(start), int(mm10_start)
-                    if end - start >= 4:
+                    if int(end) - start >= 4:
                         # Only write lifted-over introns >= 4 bases long
                         print >>both_stream, '\t'.join(
                                 [chrom, str(start + 1),
@@ -164,3 +167,4 @@ if __name__ == '__main__':
                     mm10_tokens = tokens
                     hg19_tokens = last_tokens
                 print '\t'.join(hg19_tokens + mm10_tokens[4:])
+            last_tokens, last_junction = tokens, tokens[4:]

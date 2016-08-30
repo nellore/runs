@@ -1,0 +1,7 @@
+Reading liftover chains
+Mapping coordinates
+Traceback (most recent call last):
+  File "app_main.py", line 75, in run_toplevel
+  File "translatome.py", line 149, in <module>
+    for line in intropolis_stream:
+KeyboardInterrupt
