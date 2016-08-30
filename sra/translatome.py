@@ -83,8 +83,12 @@ if __name__ == '__main__':
     parser.add_argument('--unmapped', type=str, required=True,
             help='BED in which unmapped junctions should be stored'
         )
+    parser.add_argument('--temp-dir', type=str, required=False,
+            default=None,
+            help='where to store temporary files; defaults to TMPDIR'
+        )
     args = parser.parse_args()
-    temp_dir = tempfile.mkdtemp()
+    temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
     #atexit.register(shutil.rmtree, temp_dir)
     current_dir = os.path.abspath(os.path.dirname(__file__))
     # Read annotated junctions
