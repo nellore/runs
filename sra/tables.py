@@ -103,6 +103,7 @@ pypy tables.py
     --seqc /path/to/nbt.2957-S4.zip
     --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
     --biosample-metadata /path/to/biosample_tags.tsv
+    --annotation /path/to/annotated_junctions.tsv.gz
 
 Note that the argument of --hisat2-dir is the directory containing the HISAT 2
 binary and extract_splice_sites.py.
