@@ -1,6 +1,6 @@
 # Human splicing diversity across SRA
 
-This repo contains scripts and processed data for reproducing results from (insert preprint here), an analysis of human splicing diversity across 21,504 RNA-seq samples on SRA. Some of the scripts here draw heavily from the scripts used to generate Abhi Nellore's Genome Informatics 2015 talk, available [here](https://github.com/nellore/gi2015).
+This repo contains scripts and processed data for reproducing results from [this](http://www.biorxiv.org/content/early/2016/01/29/038224) paper, an analysis of human splicing diversity across 21,504 RNA-seq samples on SRA. Please see [this](https://github.com/nellore/runs/tree/aba78ce5314a930f1dba16bc39bbf9a15e54abaa/sra) commit to reproduce results from v1 of the preprint; the latest commit pertains to revisions of the paper in progress. Some of the scripts here draw heavily from the scripts used to generate Abhi Nellore's Genome Informatics 2015 talk, available [here](https://github.com/nellore/gi2015).
 
 The Python script `tables.py` generates all the data used to create most of the paper's figures in the Mathematica 10 notebook `preprint_figures.nb`. (See `preprint_figures.pdf` for a PDF version of this notebook's output.) It depends on:
 
