@@ -5,3 +5,4 @@
 MM10=/scratch2/langmead-fs1/mm10/Mus_musculus/UCSC/mm10/Sequence/
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 rail-rna go local -m $DIR/translatome.manifest -x $MM10/BowtieIndex/genome,$MM10/Bowtie2Index/genome -d jx
+cp rail-rna_out/cross_sample_results/first_pass_junctions.tsv.gz $DIR/mm10_translatome_junctions.tsv.gz
