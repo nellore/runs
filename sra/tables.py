@@ -96,12 +96,10 @@ Each line of intropolis.idmap.v1.hg19.tsv specifies a different sample
 
 We used PyPy 2.5.0 with GCC 4.9.2 for our Python implementation and ran:
 pypy tables.py
-    --hisat2-dir /path/to/hisat2-2.0.0-beta
+    --hisat2-dir /path/to/hisat2-2.0.1-beta
     --gencode-dir /path/to/directory/with/gencode/gtf.gzs
-    --refgene /path/to/refGene.gtf.gz
     --junctions /path/to/intropolis.v1.hg19.tsv.gz
     --index-to-sra /path/to/intropolis.idmap.v1.hg19.tsv
-    --tmp /path/to/temp_dir_with_200_GB_free_space
     --seqc /path/to/nbt.2957-S4.zip
     --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
     --biosample-metadata /path/to/biosample_tags.tsv
