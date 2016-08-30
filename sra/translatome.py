@@ -163,4 +163,4 @@ if __name__ == '__main__':
                 else:
                     mm10_tokens = tokens
                     hg19_tokens = last_tokens
-                print '\t'.join()
+                print '\t'.join(hg19_tokens + mm10_tokens[4:])

@@ -101,7 +101,6 @@ pypy tables.py
     --junctions /path/to/intropolis.v1.hg19.tsv.gz
     --index-to-sra /path/to/intropolis.idmap.v1.hg19.tsv
     --seqc /path/to/nbt.2957-S4.zip
-    --sra-metadata /path/to/all_illumina_sra_for_human.tsv.gz
     --biosample-metadata /path/to/biosample_tags.tsv
     --annotation /path/to/annotated_junctions.tsv.gz
 
