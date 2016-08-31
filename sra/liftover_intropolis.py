@@ -21,7 +21,7 @@ pypy liftover_intropolis.py
     --liftover /path/to/liftOver
     --chain /path/to/hg19ToHg38.over.chain
     --intropolis /path/to/intropolis.v1.hg19.tsv.gz
-    | gzip >intropolis.v1.hg19_with_hg38_liftover.tsv.gz
+    | gzip >intropolis.v1.hg19_with_liftover_to_hg38.tsv.gz
 
 Tab-separated output fields
 1. hg19 chrom
