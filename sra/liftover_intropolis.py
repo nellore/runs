@@ -48,6 +48,8 @@ import subprocess
 if __name__ == '__main__':
     import argparse
     # Print file's docstring if -h is invoked
+    parser = argparse.ArgumentParser(description=__doc__, 
+                formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--liftover', type=str, required=True,
             help=('path to liftOver executable available from '
                   'https://genome-store.ucsc.edu/products/')
@@ -133,12 +135,17 @@ if __name__ == '__main__':
                     hg38_tokens = junction_2_tokens
                     hg19_tokens = junction_1_tokens
                 print '\t'.join(hg19_tokens + hg38_tokens[:4])
-                junction_1_tokens = sorted_stream.readline().strip().split(
-                                                                        '\t'
-                                                                    )
-                junction_2_tokens = sorted_stream.readline().strip().split(
-                                                                        '\t'
-                                                                    )
+                junction_1_tokens = sorted_stream.readline().strip()
+                if not junction_1_tokens:
+                    # End of file; nothing to print
+                    break
+                junction_1_tokens = junction_1_tokens.split('\t')
+                junction_2_tokens = sorted_stream.readline().strip()
+                if not junction_2_tokens:
+                    # End of file; print junction 1 tokens and sign out
+                    print '\t'.join(junction_1_tokens + ['NA'] * 4)
+                    break
+                junction_2_tokens = junction_2_tokens.split('\t')
             else:
                 '''Liftover not available for junction 1, but have to check
                 junction 2 against next junction.'''
