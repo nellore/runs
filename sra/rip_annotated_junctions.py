@@ -155,6 +155,8 @@ if __name__ == '__main__':
                 )
     liftover_process = subprocess.call(' '.join([
                                             args.liftover,
+                                            '-ends=2',
+                                            '-minMatch=1.0',
                                             temp_hg38,
                                             args.chain,
                                             temp_hg19,

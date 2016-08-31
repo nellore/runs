@@ -88,6 +88,8 @@ if __name__ == '__main__':
     # Convert junctions from hg19 to hg38
     liftover_process = subprocess.call(' '.join([
                                             args.liftover,
+                                            '-ends=2',
+                                            '-minMatch=1.0',
                                             temp_hg19,
                                             args.chain,
                                             temp_hg38,
