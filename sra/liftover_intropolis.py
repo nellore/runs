@@ -44,6 +44,7 @@ import gzip
 import shutil
 import atexit
 import subprocess
+import os
 
 if __name__ == '__main__':
     import argparse
@@ -67,7 +68,7 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
-    to_liftover = os.path.join(args.temp_dir, 'to_liftover.bed')
+    to_liftover = os.path.join(temp_dir, 'to_liftover.bed')
     temp_hg38 = os.path.join(temp_dir, 'hg38.bed')
     temp_hg19 = os.path.join(temp_dir, 'hg19.bed')
     with open(temp_hg19, 'w') as hg19_stream, gzip.open(
@@ -75,9 +76,9 @@ if __name__ == '__main__':
         ) as input_stream:
         for i, line in enumerate(input_stream):
             tokens = line.strip().split('\t')
-            chrom, strand, start, end = (
-                    tokens[0][:-1], tokens[0][-1], str(int(tokens[1]) - 1),
-                    tokens[2]
+            chrom, start, end, strand = (
+                    tokens[0], str(int(tokens[1]) - 1),
+                    tokens[2], tokens[3], 
                 ) # zero-based, half-open coordinates for BED
             # Tack original junction onto junction name
             junction_name = ';'.join([str(i), chrom, start, end, strand])
@@ -107,7 +108,7 @@ if __name__ == '__main__':
                                                                     )[:6]
                 (_, hg19_chrom, hg19_start,
                         hg19_end, hg19_strand) = name.split(';')
-                hg19_start = int(hg19_start), int(start)
+                hg19_start, start = int(hg19_start), int(start)
                 print >>both_stream, '\t'.join(
                                 [hg19_chrom, str(hg19_start + 1), hg19_end,
                                     hg19_strand, chrom, str(start + 1),
@@ -134,7 +135,7 @@ if __name__ == '__main__':
                 else:
                     hg38_tokens = junction_2_tokens
                     hg19_tokens = junction_1_tokens
-                print '\t'.join(hg19_tokens + hg38_tokens[:4])
+                print '\t'.join(hg19_tokens + hg38_tokens[4:8])
                 junction_1_tokens = sorted_stream.readline().strip()
                 if not junction_1_tokens:
                     # End of file; nothing to print
@@ -153,7 +154,7 @@ if __name__ == '__main__':
                 junction_1_tokens = junction_2_tokens
                 junction_2_tokens = sorted_stream.readline().strip()
                 if not junction_2_tokens:
-                    # End of file; print junction 1 tokens and sign out
+                    # End of file; print new junction 1 tokens and sign out
                     print '\t'.join(junction_1_tokens + ['NA'] * 4)
                     break
                 junction_2_tokens = junction_2_tokens.split('\t')
