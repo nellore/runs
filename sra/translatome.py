@@ -55,6 +55,9 @@ Tab-separated output is unannotated lifted-over junctions in intropolis:
     from 0 thru 13
 14. comma-separated list of numbers of reads in corresponding samples from
     field 9 overlapping junction
+15. 1 if donor is annotated else 0
+16. 1 if acceptor is annotated else 0
+17. 1 if junction is annotated else 0
 """
 import gzip
 import shutil
@@ -93,13 +96,22 @@ if __name__ == '__main__':
     current_dir = os.path.abspath(os.path.dirname(__file__))
     # Read annotated junctions
     annotated_junctions = set()
+    annotated_donors = set()
+    annotated_acceptors = set()
     with gzip.open(
                 os.path.join(current_dir, 'annotated_junctions.tsv.gz')
             ) as annotation_stream:
         for line in annotation_stream:
-            tokens = line.strip().split('\t')
+            chrom, start, end, strand = line.strip().split('\t')
+            if strand == '-':
+                annotated_donors.add((chrom, end, strand))
+                annotated_acceptors.add((chrom, start, strand))
+            else:
+                assert strand == '+'
+                annotated_donors.add((chrom, start, strand))
+                annotated_acceptors.add((chrom, end, strand))
             annotated_junctions.add(
-                    (tokens[0], str(int(tokens[1]) - 1), tokens[2], tokens[3])
+                    (chrom, start, end, strand)
                 ) # zero-based, half-open
     # Convert translatome junctions from mm10 to hg19
     temp_mm10 = os.path.join(temp_dir, 'mm10.bed')
@@ -136,19 +148,17 @@ if __name__ == '__main__':
                 chrom, start, end, name, score, strand = line.strip().split(
                                                                         '\t'
                                                                     )[:6]
-                if (chrom, start, end, strand) not in annotated_junctions:
-                    # Only care about unannotated variation
-                    (_, mm10_chrom, mm10_start, mm10_end, mm10_strand,
-                        mm10_samples, mm10_coverages) = name.split(';')
-                    start, mm10_start = int(start), int(mm10_start)
-                    if int(end) - start >= 4:
-                        # Only write lifted-over introns >= 4 bases long
-                        print >>both_stream, '\t'.join(
-                                [chrom, str(start + 1),
-                                    end, strand, mm10_chrom,
-                                    str(mm10_start + 1), mm10_end,
-                                    mm10_strand, mm10_samples, mm10_coverages]
-                            )
+                (_, mm10_chrom, mm10_start, mm10_end, mm10_strand,
+                    mm10_samples, mm10_coverages) = name.split(';')
+                start, mm10_start = int(start), int(mm10_start)
+                if int(end) - start >= 4:
+                    # Only write lifted-over introns >= 4 bases long
+                    print >>both_stream, '\t'.join(
+                            [chrom, str(start + 1),
+                                end, strand, mm10_chrom,
+                                str(mm10_start + 1), mm10_end,
+                                mm10_strand, mm10_samples, mm10_coverages]
+                        )
         with gzip.open(args.intropolis) as intropolis_stream:
             for line in intropolis_stream:
                 print >>both_stream, line,
@@ -162,7 +172,7 @@ if __name__ == '__main__':
         last_junction, last_tokens = None, None
         for line in sorted_stream:
             tokens = line.strip().split('\t')
-            junction = tokens[:4]
+            junction = tuple(tokens[:4])
             if junction == last_junction:
                 if len(last_tokens) > len(tokens):
                     mm10_tokens = last_tokens
@@ -170,5 +180,18 @@ if __name__ == '__main__':
                 else:
                     mm10_tokens = tokens
                     hg19_tokens = last_tokens
-                print '\t'.join(hg19_tokens + mm10_tokens[4:])
+                chrom, start, end, strand = junction
+                if strand == '-':
+                    donor = (chrom, end, strand)
+                    acceptor = (chrom, start, strand)
+                else:
+                    assert strand == '+'
+                    donor = (chrom, start, strand)
+                    acceptor = (chrom, end, strand)
+                print '\t'.join(
+                        hg19_tokens + mm10_tokens[4:] + 
+                        ['1' if donor in annotated_donors else '0',
+                         '1' if acceptor in annotated_acceptors else '0',
+                         '1' if junction in annotated_junctions else '0']
+                    )
             last_tokens, last_junction = tokens, tokens[:4]
