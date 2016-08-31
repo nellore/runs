@@ -89,7 +89,7 @@ if __name__ == '__main__':
         )
     args = parser.parse_args()
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
-    #atexit.register(shutil.rmtree, temp_dir)
+    atexit.register(shutil.rmtree, temp_dir)
     current_dir = os.path.abspath(os.path.dirname(__file__))
     # Read annotated junctions
     annotated_junctions = set()
@@ -171,4 +171,4 @@ if __name__ == '__main__':
                     mm10_tokens = tokens
                     hg19_tokens = last_tokens
                 print '\t'.join(hg19_tokens + mm10_tokens[4:])
-            last_tokens, last_junction = tokens, tokens[4:]
+            last_tokens, last_junction = tokens, tokens[:4]
