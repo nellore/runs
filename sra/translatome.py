@@ -196,4 +196,4 @@ if __name__ == '__main__':
                          '1' if acceptor in annotated_acceptors else '0',
                          '1' if junction in annotated_junctions else '0']
                     )
-            last_tokens, last_junction = tokens, tokens[:4]
+            last_tokens, last_junction = tokens, junction
