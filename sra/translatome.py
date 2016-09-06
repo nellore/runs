@@ -42,22 +42,15 @@ Tab-separated output is unannotated lifted-over junctions in intropolis:
 4. lifted-over strand
 5. lifted-over 5' motif (e.g., GT)
 6. lifted-over 3' motif (e.g., AG)
-7. comma-separated list of indexes of samples from
-    intropolis in which junction was found
-8. comma-separated list of numbers of reads in corresponding samples from 
-    field 7 overlapping junction
-9. mm10 chrom
-10. mm10 start position
-11. mm10 end position
-12. mm10 strand
-13. comma-separated list of indexes of translatome samples in which junction
-    was found; see translatome.manifest for these samples in order, indexed
-    from 0 thru 13
-14. comma-separated list of numbers of reads in corresponding samples from
-    field 9 overlapping junction
-15. 1 if donor is annotated else 0
-16. 1 if acceptor is annotated else 0
-17. 1 if junction is annotated else 0
+7. number of intropolis samples in which junction was found
+8. mm10 chrom
+9. mm10 start position
+10. mm10 end position
+11. mm10 strand
+12. number of translatome samples in which junction was found
+13. 1 if donor is annotated else 0
+14. 1 if acceptor is annotated else 0
+15. 1 if junction is annotated else 0
 """
 import gzip
 import shutil
@@ -191,9 +184,12 @@ if __name__ == '__main__':
                     donor = (chrom, start, strand)
                     acceptor = (chrom, end, strand)
                 print '\t'.join(
-                        hg19_tokens + mm10_tokens[4:] + 
-                        ['1' if donor in annotated_donors else '0',
-                         '1' if acceptor in annotated_acceptors else '0',
-                         '1' if junction in annotated_junctions else '0']
+                        hg19_tokens[:-2]
+                        + [str(len(hg19_tokens[-2].split(',')))]
+                        + mm10_tokens[4:-2]
+                        + [str(len(mm10_tokens[-2].split(',')))]
+                        + ['1' if donor in annotated_donors else '0',
+                           '1' if acceptor in annotated_acceptors else '0',
+                           '1' if junction in annotated_junctions else '0']
                     )
             last_tokens, last_junction = tokens, junction
