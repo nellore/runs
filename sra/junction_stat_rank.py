@@ -18,6 +18,14 @@ We ran gzip -cd intropolis.v1.hg19.tsv.gz
         >junction_stats.tsv
 
 junction_stats.tsv in this directory is the output.
+
+We also executed
+
+awk '$6 >= 100000 {print $0 "\t" $7/$6}' junction_stats.tsv 
+    | sort -k9,9gr >junction_stats_with_unique_to_total_ratio.tsv
+
+to add an extra column giving the ratio of unique junctions contributed to
+total junctions contributed in those samples with over 100,000 junctions.
 """
 import argparse
 import os
