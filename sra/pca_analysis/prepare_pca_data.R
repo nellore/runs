@@ -1,7 +1,8 @@
-pca.matrix.all <- read.table("../extdata/sra_junctions_pcmatrix_cutoff1000_cleaned.tsv", head=TRUE)
-pca.matrix.ann <- read.table("../extdata/sra_junctions_pcmatrix_cutoff1000_annotated.tsv", head=TRUE)
-pca.matrix.una <- read.table("../extdata/sra_junctions_pcmatrix_cutoff1000_unannotated.tsv", head=TRUE)
+#pca.matrix.all <- read.table("/extdata/sra_junctions_pcmatrix_cutoff1000_cleaned.tsv", head=TRUE)
+pca.matrix.ann <- read.table("extdata/sra_junctions_pcmatrix_cutoff1000_annotated.tsv", head=TRUE)
+pca.matrix.una <- read.table("extdata/sra_junctions_pcmatrix_cutoff1000_unannotated.tsv", head=TRUE)
 pca.matrices <- list(all=pca.matrix.all, ann=pca.matrix.ann, una=pca.matrix.una)
+pca.matrices <- list(ann=pca.matrix.ann, una=pca.matrix.una)
 pcs.list <- lapply(pca.matrices, function(pca.matrix){
 	pcs <- lapply(1:10, function(i){ pca.matrix[,i]})
 	pcs
@@ -28,15 +29,15 @@ for (i in 1:10){
 	if (sign==-1){
 		pcs.list[[2]][[i]] <- - pcs.list[[2]][[i]]
 	}
-	sign <- sign(cor(pcs.list[[1]][[i]], pcs.list[[3]][[i]]))
-	if (sign==-1){
-		pcs.list[[3]][[i]] <- - pcs.list[[3]][[i]]
-	}
+	#sign <- sign(cor(pcs.list[[1]][[i]], pcs.list[[3]][[i]]))
+	#if (sign==-1){
+	#		pcs.list[[3]][[i]] <- - pcs.list[[3]][[i]]
+	#}
 }
 
 
 # pcs for unannotated junctions:
-pcs <- do.call(cbind,pcs.list$una
+pcs <- do.call(cbind,pcs.list$una)
 pcs <- as.data.frame(pcs[,1:5])
 names(pcs) <- paste0("PC", 1:5)
 
@@ -100,7 +101,7 @@ pcs$mixture[indices.abrf[labels=="C"]] <- "1:3"
 pcs$mixture[indices.abrf[labels=="D"]] <- "3:1"
 rownames(pcs) <- rownames(pca.matrices[[1]])
 
-write.table(pcs, row.names=TRUE, col.names=TRUE, quote=FALSE, file="../extdata/pcs_unannotated_with_pd.tsv")
+write.table(pcs, row.names=TRUE, col.names=TRUE, quote=FALSE, file="../pcs_unannotated_with_pd.tsv")
 
 
 

@@ -39,7 +39,7 @@ getColorsBuci <- function(){
 
 getMetadata <- function(indices=(1:21505-1)){
 #### Now working with the metadata
-	code <- read.table("../extdata/metadata/index_to_SRA_accession.tsv", head=FALSE)
+	code <- read.table("metadata/index_to_SRA_accession.tsv", head=FALSE)
 	#indices <- 1:21505-1
 	code <- code[match(indices, code$V1),]
 	thecall = pipe("cut -f1-88,90- /dcl01/leek/data/sraintrons/all_SRA_metadata.tsv")
@@ -58,7 +58,7 @@ getMetadata <- function(indices=(1:21505-1)){
 	totalReads10M <- totalReads/10e6 
 	metadata$totalReads[match(depth$run_accession, metadata$run_accession)] <- totalReads 
 	metadata$totalReads10M[match(depth$run_accession, metadata$run_accession)] <- totalReads10M 
-	file <-  pipe("cut -d ',' -f1-7 ../sra-all-fields-2015-9-13.txt")
+	file <-  pipe("cut -d ',' -f1-7 metadata/sra-all-fields-2015-9-13.txt")
 	tissue_info <-  read.delim(file, sep=",")
 	indices <- match(metadata$run_accession, tissue_info$run)
 	metadata$shark_tissue <- tissue_info$tissue[indices]

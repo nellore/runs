@@ -19,6 +19,7 @@ getTiles <- function(counts, step=10000){
 ann <- read.table("extdata/annotated_junctions.tsv")
 ann.names <- paste0(ann$V1, ":", ann$V2, "-", ann$V3, "(", ann$V4, ")")
 
+
 # Discarding samples with low coverage:
 load("/dcl01/leek/data/sraintrons/filtered_sra_data_N1000_normCounts.rda")
 good <- pd$totalReadsPred > 1e5
@@ -26,7 +27,8 @@ adjCounts <- adjCounts[,good]
 
 
 # Annotated junctions:
-ann.indices  <-  which(rownames(adjCounts) %in% ann.names) #248711
+ann.indices  <-  which(rownames(adjCounts) %in% ann.names) #248711 #new 248715
+length(ann.indices)
 adjCountsAnn <- adjCounts[ann.indices,]
 totalJunctionCovAnn <- colSums(adjCountsAnn)
 save(totalJunctionCovAnn, file="extdata/coverage_ann_info.rda")
@@ -44,6 +46,7 @@ gc()
 
 # Unannotated junctions:
 una.indices <-  which(!rownames(adjCounts) %in% ann.names)
+length(una.indices) #56861
 adjCountsUna <- adjCounts[una.indices,]
 totalJunctionCovUna <- colSums(adjCountsUna)
 save(totalJunctionCovUna, file="extdata/coverage_una_info.rda")
@@ -59,18 +62,18 @@ rm(adjCountsUna)
 gc()
 
 
-# All junctions:
-tiles <- getTiles(adjCounts)
-save(tiles, file="extdata/data/tiles_all.rda")
-totalJunctionCov <- colSums(adjCounts)
-totalNumberOfJunctions <- colSums(adjCounts!=0)
-njunctions <- nrow(adjCounts)
-save(totalJunctionCov, totalNumberOfJunctions,njunctions, file="extdata/coverage_info.rda")
-for (i in 1:nrow(tiles)){
-    intM <- adjCounts[tiles[i,1]:tiles[i,2],]
-    intM <- intM - rowMeans(intM, na.rm=TRUE)
-    save(intM, file=paste0("extdata/data/intM_all_", i, ".rda"))
-    print(i)
-}
+# # All junctions:
+# tiles <- getTiles(adjCounts)
+# save(tiles, file="extdata/data/tiles_all.rda")
+# totalJunctionCov <- colSums(adjCounts)
+# totalNumberOfJunctions <- colSums(adjCounts!=0)
+# njunctions <- nrow(adjCounts)
+# save(totalJunctionCov, totalNumberOfJunctions,njunctions, file="extdata/coverage_info.rda")
+# for (i in 1:nrow(tiles)){
+#     intM <- adjCounts[tiles[i,1]:tiles[i,2],]
+#     intM <- intM - rowMeans(intM, na.rm=TRUE)
+#     save(intM, file=paste0("extdata/data/intM_all_", i, ".rda"))
+#     print(i)
+# }
 
 
