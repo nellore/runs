@@ -165,6 +165,11 @@ if __name__ == '__main__':
                                         shell=True,
                                         executable='/bin/bash'
                                     )
+    # Remove too-short junctions from hg19 set
+    annotated_junctions_hg19 = set(
+            [junction for junction in annotated_junctions_hg19
+                if junction[2] - junction[1] >= 3]
+        )
     # Add all new junctions to hg19 set
     before_liftover = len([junction for junction
                             in annotated_junctions_hg19
