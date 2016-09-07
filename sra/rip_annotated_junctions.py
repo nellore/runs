@@ -195,5 +195,5 @@ if __name__ == '__main__':
                                 after_liftover - before_liftover
                             )
     for junction in annotated_junctions_hg19:
-        if junction[0] in refs:
+        if junction[0] in refs and (junction[2] - junction[1]) >= 3:
             print '\t'.join(map(str, junction))
