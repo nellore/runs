@@ -10,4 +10,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mkdir -p $DEST
 gzip -cd $INTROPOLIS | awk '{print $1 "\t" ($2 - 1) "\t" $3 "\tjunction_" NR "\t1000\t" $4}' | gzip >$DEST/intropolis.v1.hg19.bed.gz
 gzip -cd $DEST/intropolis.v1.hg19.bed.gz >intropolis.v1.hg19.bed
-$DIR/hg19.chrom.sizes
+$BEDTOBIGBED intropolis.v1.hg19.bed $DIR/hg19.chrom.sizes intropolis.v1.hg19.bb
