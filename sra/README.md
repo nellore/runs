@@ -92,3 +92,7 @@ Mathematica 10 was used to make all plots. See the notebook `figures.nb`.
 
         sh retrieve_and_combine_results.sh [output] [bowtie1 idx] [bucket]
 , where `[output]` is some output directory on your local filesystem (20 GB required), `[bowtie1 idx]` is the basename of the Bowtie index you just downloaded, and `[bucket]` is the S3 bucket you specified in step 4. The file `intropolis.v1.hg19.tsv.gz`, which is used by `tables.py`, will be written to `[output]`.
+
+# License
+
+All software in this repository is licensed under the MIT license. See `LICENSE` in this directory for details.
