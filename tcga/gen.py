@@ -11,9 +11,11 @@ uses the CGC API to replace them with S3 URLs.
 
 We ran
 
-python gen.py --s3-bucket s3://dbgap-stack-361204003210 --region us-east-1
-    --c3-2xlarge-bid-price 1.00 --c3-8xlarge-bid-price 1.20
-    --prep-stack-names dbgap --align-stack-names dbgap
+python gen.py --s3-bucket s3://sb-rail-rna-mapreduce --region us-east-1
+    --c3-2xlarge-bid-price 0.90 --c3-8xlarge-bid-price 1.90
+    --prep-stack-names dbgap-us-east-1a dbgap-us-east-1b dbgap-us-east-1d
+    dbgap-us-east-1e --align-stack-names dbgap-us-east-1a dbgap-us-east-1b
+    dbgap-us-east-1d dbgap-us-east-1e
     --cgc-auth-token /path/to/cgc_authorization_token.txt
 
 and used Rail-RNA v0.2.1 . Note that /path/to/cgc_authorization_token.txt is
@@ -33,16 +35,13 @@ availability zones in us-east-1 using
 https://github.com/nellore/rail/blob/v0.2.1/src/cloudformation/
     dbgap_minus_cloudtrail.template
 
-, and name them "dbgap-1", "dbgap-2", "dbgap-3", and "dbgap-4". Each subnet
-accommodates up to 256 IPs. This means more than 256 instances with public IPs
-can't be launched into the same subnet, which translates to a limit of 
-3 alignment flows with 80 core instances each per subnet. Alternatively, a
-public subnet with a larger CIDR block can be created to launch more flows into
-the same subnet, or a single VPC with more than one public subnet, each in a 
-different availability zone, can be created.)
-We executed each prep_gtex_batch_<index>.sh script and waited for the job
-flow to finish before executing the corresponding align_gtex_batch_<index>.sh
-script.
+, and name them "dbgap-us-east-1a", "dbgap-us-east-1b", "dbgap-us-east-1c", and
+"dbgap-us-east-1d". Each subnet accommodates up to ~65k IPs and is associated
+with a given availability zone. We executed each prep_tcga_batch_<index>.sh
+script and waited for the job flow to finish before executing the corresponding
+align_tcga_batch_<index>.sh script. Sometimes, we changed the availability
+zone to which we submitted a job flow to minimize cost. (At a given time, the 
+market price in one availability zone may be lower than in another.)
 """
 import random
 import sys
@@ -100,7 +99,7 @@ if __name__ == '__main__':
             help='path to text file containing CGC authorization token; '
         )
     parser.add_argument('--batch-count', type=int, required=False,
-            default=20,
+            default=30,
             help='number of batches to create; batches are designed to be '
                  'of approximately equal size'
         )

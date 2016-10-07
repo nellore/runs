@@ -11,5 +11,5 @@ function cleanup {
 
 # register the cleanup function to be called on the EXIT signal
 trap cleanup EXIT
-cat tcga_batch_8.manifest | python $DIR/true_manifest.py >$WORKDIR/tcga_batch_8.manifest
-rail-rna prep elastic -m $WORKDIR/tcga_batch_8.manifest --profile dbgap --secure-stack-name dbgap --core-instance-type c3.2xlarge --master-instance-type c3.2xlarge -o s3://dummy-bucket/gtex_prep_batch_8 -c 63 --core-instance-bid-price 0.2 --master-instance-bid-price 0.2 -f --max-task-attempts 6
+cat tcga_batch_8.manifest | python $DIR/true_manifest.py --cgc-auth-token /Users/eterna/cgcauth.txt >$WORKDIR/tcga_batch_8.manifest
+rail-rna prep elastic -m $WORKDIR/tcga_batch_8.manifest --profile dbgap --secure-stack-name dbgap-us-east-1a --core-instance-type c3.2xlarge --master-instance-type c3.2xlarge -o s3://sb-rail-rna-mapreduce/gtex_prep_batch_8 -c 63 --core-instance-bid-price 0.9 --master-instance-bid-price 0.9 -f --max-task-attempts 6 --skip-bad-records
