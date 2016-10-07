@@ -18,7 +18,7 @@ python gen.py --s3-bucket s3://sb-rail-rna-mapreduce --region us-east-1
     dbgap-us-east-1d dbgap-us-east-1e
     --cgc-auth-token /path/to/cgc_authorization_token.txt
 
-and used Rail-RNA v0.2.1 . Note that /path/to/cgc_authorization_token.txt is
+and used Rail-RNA v0.2.4 . Note that /path/to/cgc_authorization_token.txt is
 the path to a text file with a single line of text: the CGC authorization token
 which we obtained at https://cgc.sbgenomics.com/account/#developer. After
 the manifests, preprocess, and align scripts were generated, we modified some
