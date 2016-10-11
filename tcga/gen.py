@@ -18,7 +18,7 @@ python gen.py --s3-bucket s3://sb-rail-rna-mapreduce --region us-east-1
     dbgap-us-east-1d dbgap-us-east-1e
     --cgc-auth-token /path/to/cgc_authorization_token.txt
 
-and used Rail-RNA v0.2.4 . Note that /path/to/cgc_authorization_token.txt is
+and used Rail-RNA v0.2.4a. Note that /path/to/cgc_authorization_token.txt is
 the path to a text file with a single line of text: the CGC authorization token
 which we obtained at https://cgc.sbgenomics.com/account/#developer. After
 the manifests, preprocess, and align scripts were generated, we modified some
@@ -152,9 +152,10 @@ rail-rna prep elastic -m $WORKDIR/{manifest_file} --profile dbgap \
 --secure-stack-name {stack_name} \
 --core-instance-type c3.2xlarge --master-instance-type c3.2xlarge \
 -o {s3_bucket}/tcga_prep_batch_{batch_number} \
--c 63 --core-instance-bid-price {core_price} \
+-c 48 --core-instance-bid-price {core_price} \
 --master-instance-bid-price {core_price} -f \
---max-task-attempts 6 --skip-bad-records"""
+--max-task-attempts 6 --skip-bad-records --do-not-check-manifest
+"""
                 ).format(manifest_file='tcga_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
