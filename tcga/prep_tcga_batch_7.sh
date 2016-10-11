@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # based on http://stackoverflow.com/questions/4632028/how-to-create-a-temporary-directory
-WORKDIR=`mktemp -d -p "$DIR"`
+WORKDIR=$(mktemp -d)
 
 # deletes the temp directory
 function cleanup {
-  rm -rf "$WORKDIR"
+  rm -rf $WORKDIR
   echo "Deleted temp working directory $WORKDIR"
 }
 
