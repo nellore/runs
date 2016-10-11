@@ -85,7 +85,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, required=False,
             default=78943,
             help=('seed for random number generator; random.shuffle is used '
-                  'to shuffle the GTEx samples before dividing them up into '
+                  'to shuffle the TCGA samples before dividing them up into '
                   '--batch-count batches')
         )
     parser.add_argument('--tcga-file-list', type=str, required=False,
@@ -151,7 +151,7 @@ cat {manifest_file} | python $DIR/true_manifest.py \
 rail-rna prep elastic -m $WORKDIR/{manifest_file} --profile dbgap \
 --secure-stack-name {stack_name} \
 --core-instance-type c3.2xlarge --master-instance-type c3.2xlarge \
--o {s3_bucket}/gtex_prep_batch_{batch_number} \
+-o {s3_bucket}/tcga_prep_batch_{batch_number} \
 -c 63 --core-instance-bid-price {core_price} \
 --master-instance-bid-price {core_price} -f \
 --max-task-attempts 6 --skip-bad-records"""
