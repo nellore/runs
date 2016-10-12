@@ -155,6 +155,7 @@ rail-rna prep elastic -m $WORKDIR/{manifest_file} --profile dbgap \
 -c 48 --core-instance-bid-price {core_price} \
 --master-instance-bid-price {core_price} -f \
 --max-task-attempts 10 --skip-bad-records --do-not-check-manifest
+--name "TCGA prep batch {batch_number} job flow"
 """
                 ).format(manifest_file='tcga_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
@@ -177,7 +178,8 @@ rail-rna prep elastic -m $WORKDIR/{manifest_file} --profile dbgap \
                     '-i {s3_bucket}/tcga_prep_batch_{batch_number} '
                     '-o {s3_bucket}/tcga_align_batch_{batch_number} '
                     '-a hg38 -f -d jx,tsv,bed,bw,idx '
-                    '--max-task-attempts 6'
+                    '--max-task-attempts 6 '
+                    '--name "TCGA align batch {batch_number} job flow"'
                 ).format(manifest_file='tcga_batch_{}.manifest'.format(i),
                             s3_bucket=args.s3_bucket,
                             batch_number=i,
