@@ -174,7 +174,7 @@ rail-rna prep elastic -m $WORKDIR/{manifest_file} --profile dbgap \
                     '--core-instance-type c3.8xlarge '
                     '--master-instance-type c3.8xlarge '
                     '--junction-criteria .01,-1 '
-                    '-c 80 --core-instance-bid-price {core_price} '
+                    '-c 60 --core-instance-bid-price {core_price} '
                     '--master-instance-bid-price {core_price} '
                     '-i {s3_bucket}/tcga_prep_batch_{batch_number} '
                     '-o {s3_bucket}/tcga_align_batch_{batch_number} '
