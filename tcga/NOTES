@@ -1,0 +1,21 @@
+The sample TCGA-AB-2909-03A-01T-0744-13_rnaseq_fastq.tar was eliminated. It contained the following files:
+
+[anellor1@langmead-fs1 bad9]$ ls -laFtr
+total 12684428
+-rw-r--r-- 1 anellor1 langmead 1390899381 Feb 25  2014 622DDAAXX_1_1.fastq.gz
+-rw-r--r-- 1 anellor1 langmead 1428147556 Feb 25  2014 622DDAAXX_1_2.fastq.gz
+-rw-r--r-- 1 anellor1 langmead 1696833063 Feb 25  2014 61YETAAXX_1_ATCACG_1.fastq.gz
+-rw-r--r-- 1 anellor1 langmead 1978533328 Feb 25  2014 61YETAAXX_1_ATCACG_2.fastq.gz
+drwxr-xr-x 9 anellor1 langmead       4096 Oct 15 10:53 ../
+-rw-r--r-- 1 anellor1 langmead 6494423040 Oct 15 10:56 TCGA-AB-2909-03A-01T-0744-13_rnaseq_fastq.tar
+drwxr-xr-x 2 anellor1 langmead       4096 Oct 15 10:57 ./
+
+wc -l-ing the files corresponding to the barcode ATCACG gave
+
+[anellor1@langmead-fs1 bad9]$ gzip -cd 61YETAAXX_1_ATCACG_2.fastq.gz | wc -l
+332487112
+[anellor1@langmead-fs1 bad9]$ gzip -cd 61YETAAXX_1_ATCACG_1.fastq.gz | wc -l
+166243556
+
+So the numbers of records in these FASTQs are mismatched. This particular sample made the prep_batch_9 job flow hang. We terminated the job flow and deleted the input LZO corresponding to the offending sample before running the corresponding alignment job flow.
+
