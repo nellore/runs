@@ -12,7 +12,7 @@ uses the CGC API to replace them with S3 URLs.
 We ran
 
 python gen.py --s3-bucket s3://sb-rail-rna-mapreduce --region us-east-1
-    --c3-2xlarge-bid-price 0.90 --c3-8xlarge-bid-price 1.90
+    --c3-2xlarge-bid-price 0.50 --c3-8xlarge-bid-price 1.90
     --prep-stack-names dbgap-us-east-1a dbgap-us-east-1b dbgap-us-east-1d
     dbgap-us-east-1e --align-stack-names dbgap-us-east-1a dbgap-us-east-1b
     dbgap-us-east-1d dbgap-us-east-1e
