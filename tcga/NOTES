@@ -19,5 +19,6 @@ wc -l-ing the files corresponding to the barcode ATCACG gave
 
 So the numbers of records in these FASTQs are mismatched. This particular sample made the prep_batch_9 job flow hang. We terminated the job flow and deleted the input LZO corresponding to the offending sample before running the corresponding alignment job flow.
 
-Batch 5 alignment job experienced instance failure after align readlets step. All output had been written; probably random failure. Resumed at align readlets anyway.
+Batch 5 alignment job experienced instance failure after align readlets step. All output had been written; probably random failure. Resumed with 70 cores at align readlets anyway. Started hanging again at counting mapped reads because cluster contracted to 67 instances; resumed with 80 instances.
 
+JSON for resumed job flows is in resumed_json/ of this directory. We ran cat X.json | python emr_runner.py --profile dbgap to resume all job flows.
