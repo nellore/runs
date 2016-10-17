@@ -22,3 +22,7 @@ So the numbers of records in these FASTQs are mismatched. This particular sample
 Batch 5 alignment job experienced instance failure after align readlets step. All output had been written; probably random failure. Resumed with 70 cores at align readlets anyway. Started hanging again at counting mapped reads because cluster contracted to 67 instances; resumed with 80 instances.
 
 JSON for resumed job flows is in resumed_json/ of this directory. We ran cat X.json | python emr_runner.py --profile dbgap to resume all job flows.
+
+Batch 1 alignment job hung again on first step with 80 c3.8xlarges. Restarted with 100.
+
+Instance failures occurred for batches 13 and 14. Resumed.
