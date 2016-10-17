@@ -26,3 +26,8 @@ JSON for resumed job flows is in resumed_json/ of this directory. We ran cat X.j
 Batch 1 alignment job hung again on first step with 80 c3.8xlarges. Restarted with 100.
 
 Instance failures occurred for batches 13 and 14. Resumed.
+
+Batch 0 was hanging on compare-alignments. Resumed with 120 c3.8xlarges.
+
+Batch 12 was hanging on compare-alignments. Resumed with 100 c3.8xlarges.
+
