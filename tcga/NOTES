@@ -31,3 +31,7 @@ Batch 0 was hanging on compare-alignments. Resumed with 120 c3.8xlarges.
 
 Batch 12 was hanging on compare-alignments. Resumed with 100 c3.8xlarges.
 
+Started batches 15, 16, 17, 18, 19, 20, and 21 on 90 cores. Batch 17 started hanging on first step, so restarted on 110 cores.
+
+Batch 27 encountered step failure at count mapped reads step. Restarted at that step.
+
