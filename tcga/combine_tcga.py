@@ -274,7 +274,7 @@ if __name__ == '__main__':
             for j, line in enumerate(manifest_stream):
                 line = line.strip()
                 if not line: continue
-                sample_name = line.partition('\t')[0].partition(':')[2]
+                sample_name = line.rpartition('\t')[2]
                 original_index_to_final_index[(batch_number, j)] = i
                 final_index_to_sample_name[i] = sample_name
                 sample_name_to_final_index[sample_name] = i
