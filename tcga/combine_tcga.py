@@ -290,7 +290,7 @@ if __name__ == '__main__':
     first_pass_handles = [
         gzip.open(
             os.path.join(args.tcga_dir, 'batch_%d' % batch_number,
-                         'collected_junctions', 'collected_junctions.tsv.gz')
+                         'cross_sample_results', 'first_pass_junctions.tsv.gz')
         ) for batch_number in batch_numbers]
     second_pass_handles = [
         gzip.open(
