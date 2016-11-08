@@ -402,7 +402,7 @@ if __name__ == '__main__':
                         second_pass_dict[sample_index] = coverage
             start_motif = reference_index.get_stretch(key[0], int(key[1]) - 1,
                                                         2)
-            end_motif = reference_index.get_stretch(key[0], int(key[2]) - 2, 2)
+            end_motif = reference_index.get_stretch(key[0], int(key[2]) - 1, 2)
             if key[3] == '-':
                 start_motif, end_motif = reversed_complements[
                                                (start_motif, end_motif)
