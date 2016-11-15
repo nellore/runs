@@ -21,6 +21,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 import json
 import csv
 import sys
+from collections import defaultdict
 
 if __name__ == '__main__':
     # Get query type
@@ -47,27 +48,26 @@ WHERE
 """
     ).format(query_type=query_type, query_type_lower=query_type_lower)
 
-sparql.setQuery(props)
+    sparql.setQuery(props)
 
-sparql.setReturnFormat(JSON)
-results = sparql.query().convert()
-hases = [result['p']['value'].rpartition('#')[2]
-          for result in results['results']['bindings']
-          if 'www.w3.org' not in result['p']['value']]
+    sparql.setReturnFormat(JSON)
+    results = sparql.query().convert()
+    hases = [result['p']['value'].rpartition('#')[2]
+              for result in results['results']['bindings']
+              if 'www.w3.org' not in result['p']['value']]
 
-data = {}
-fields = set()
-
-for has in hases:
-    after_has = has[3:]
-    underscored = ''.join([('_' + letter.lower() if letter.isupper() 
-                                and (i > 0
-                                     and after_has[i-1].islower())
-                                and i != 0
-                                else letter.lower())
-                            for i, letter in enumerate(after_has)])
-    fields.add(underscored)
-    current_query = (
+    data = {}
+    fields = set()
+    for has in hases:
+        after_has = has[3:]
+        underscored = ''.join([('_' + letter.lower() if letter.isupper() 
+                                    and (i > 0
+                                         and after_has[i-1].islower())
+                                    and i != 0
+                                    else letter.lower())
+                                for i, letter in enumerate(after_has)])
+        fields.add(underscored)
+        current_query = (
 """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tcga: <https://www.sbgenomics.com/ontologies/2014/11/tcga#>
@@ -77,77 +77,72 @@ WHERE
 {{
   ?{query_type_lower} a tcga:{query_type} .
   ?{query_type_lower} rdfs:label ?{query_type_lower}_label .
-  ?{query_type_lower} tcga:{has} ?{underscored}
-}}
-"""
-    ).format(
-        query_type_lower=query_type_lower,
-        query_type=query_type,
-        underscored=underscored,
-        has=has
-    )
-    sparql.setQuery(current_query)
-
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
-    '''if not results['results']['bindings']:
-        # No RDFS label; try different query
-        current_query = (
-"""
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX tcga: <https://www.sbgenomics.com/ontologies/2014/11/tcga#>
- 
-SELECT ?{query_type_lower}_label ?{underscored}
-WHERE
-{{
-  ?case a tcga:Case .
-  ?case rdfs:label ?{query_type_lower}_label .
-  ?case tcga:{has} ?{underscored}
+  ?{query_type_lower} tcga:{has} ?{underscored} .
 }}
 LIMIT 10
 """
         ).format(
             query_type_lower=query_type_lower,
+            query_type=query_type,
             underscored=underscored,
             has=has
-        )'''
-    label = '{query_type_lower}_label'.format(
-                                query_type_lower=query_type_lower
-                            )
-    other_label = [el for el in results['head']['vars'] if el != label][0]
-    for result in results['results']['bindings']:
-        if result[label]['value'] not in data:
-            data[result[label]['value']] = {}
-        data[result[label]['value']][underscored] = result[
-                                                        other_label
-                                                    ]['value']
-print data
-"""for result in results['results']['bindings']:
-    print '\t'.join(
-            [result[label]['value'] for label in
-                ['uuid', 'path', 'sample_details', 'disease']]
         )
+        sparql.setQuery(current_query)
 
-print '\t'.join(
-        ['GDC_UUID', 'CGC_path', 'sample_type', 'disease']
-    )
-
-query_prototype = (
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+        label = '{query_type_lower}_label'.format(
+                                    query_type_lower=query_type_lower
+                                )
+        other_label = [el for el in results['head']['vars'] if el != label][0]
+        redo = False
+        for result in results['results']['bindings']:
+            if result[label]['value'] not in data:
+                data[result[label]['value']] = defaultdict(lambda: 'NA')
+            if 'www.sbgenomics.com' in result[other_label]['value']:
+                # redo query with with rdfs label
+                redo = True
+                break
+            data[result[label]['value']][underscored] = result[
+                                                            other_label
+                                                        ]['value']
+        if redo:
+            current_query = (
+"""
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX tcga: <https://www.sbgenomics.com/ontologies/2014/11/tcga#>
  
-SELECT ?case_label ?{}
+SELECT ?{query_type_lower}_label ?{underscored}_label
 WHERE
-{
- ?case a tcga:Case .
- ?case rdfs:label ?case_label .
- ?case tcga:hasAgeAtDiagnosis ?age
-}
+{{
+  ?{query_type_lower} a tcga:{query_type} .
+  ?{query_type_lower} rdfs:label ?{query_type_lower}_label .
+  ?{query_type_lower} tcga:{has} ?{underscored} .
+  ?{underscored} rdfs:label ?{underscored}_label .
+}}
+LIMIT 10
+"""
+            ).format(
+                query_type_lower=query_type_lower,
+                query_type=query_type,
+                underscored=underscored,
+                has=has
+            )
+            sparql.setQuery(current_query)
 
-        )
-
-for result in results['results']['bindings']:
-    print '\t'.join(
-            [result[label]['value'] for label in
-                ['uuid', 'path', 'sample_details', 'disease']]
-        )"""
+            sparql.setReturnFormat(JSON)
+            results = sparql.query().convert()
+            other_label = [el for el in results['head']['vars']
+                            if el != label][0]
+            for result in results['results']['bindings']:
+                if result[label]['value'] not in data:
+                    data[result[label]['value']] = defaultdict(lambda: 'NA')
+                data[result[label]['value']][underscored] = result[
+                                                                other_label
+                                                            ]['value']
+    fields = list(fields)
+    print '\t'.join([''] + fields)
+    for label in data:
+        print '\t'.join(
+                [label] + [data[label][field] for field in fields]
+            )
