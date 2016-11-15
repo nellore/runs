@@ -24,6 +24,9 @@ import csv
 import sys
 from collections import defaultdict
 
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
 if __name__ == '__main__':
     # Get query type
     query_type = sys.argv[1]
