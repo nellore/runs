@@ -11,11 +11,12 @@ SPARQL_download_notebook.ipynb.
 
 Requires SPARQLWrapper, which can be installed with `pip install SPARQLWrapper`
 
-We ran this script on Tuesday, November 15 at 1:36 PM CDT as
+We ran this script on Tuesday, November 15 at ~12 PM PST as
 
-python cgc_tcga_metadata.py | gzip -9 >cgc_tcga_metadata.tsv.gz
+python cgc_tcga_metadata.py Sample | gzip -9 >sample.tsv.gz
+python cgc_tcga_metadata.py Case | gzip -9 >case.tsv.gz
 
-to obtain cgc_tcga_metadata.tsv.gz in the same directory as this script.
+as given in tcga_query.sh.
 """
 from SPARQLWrapper import SPARQLWrapper, JSON
 import json
@@ -79,7 +80,6 @@ WHERE
   ?{query_type_lower} rdfs:label ?{query_type_lower}_label .
   ?{query_type_lower} tcga:{has} ?{underscored} .
 }}
-LIMIT 10
 """
         ).format(
             query_type_lower=query_type_lower,
@@ -120,7 +120,6 @@ WHERE
   ?{query_type_lower} tcga:{has} ?{underscored} .
   ?{underscored} rdfs:label ?{underscored}_label .
 }}
-LIMIT 10
 """
             ).format(
                 query_type_lower=query_type_lower,
