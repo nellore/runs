@@ -11,10 +11,18 @@ SPARQL_download_notebook.ipynb.
 
 Requires SPARQLWrapper, which can be installed with `pip install SPARQLWrapper`
 
-We ran this script on Tuesday, November 15 at ~12 PM PST as
+We ran this script on Tuesday, November 15-16 as
 
 python cgc_tcga_metadata.py Sample | gzip -9 >sample.tsv.gz
 python cgc_tcga_metadata.py Case | gzip -9 >case.tsv.gz
+python cgc_tcga_metadata.py Slide | gzip -9 >slide.tsv.gz
+python cgc_tcga_metadata.py Analyte | gzip -9 >analyte.tsv.gz
+python cgc_tcga_metadata.py Portion | gzip -9 >portion.tsv.gz
+python cgc_tcga_metadata.py Aliquot | gzip -9 >aliquot.tsv.gz
+python cgc_tcga_metadata.py DrugTherapy | gzip -9 >drug_therapy.tsv.gz
+python cgc_tcga_metadata.py RadiationTherapy | gzip -9 >radiation_therapy.tsv.gz
+python cgc_tcga_metadata.py FollowUp | gzip -9 >follow_up.tsv.gz
+python cgc_tcga_metadata.py File | gzip -9 >file.tsv.gz
 
 as given in tcga_query.sh.
 """
@@ -82,13 +90,26 @@ WHERE
   ?{query_type_lower} a tcga:{query_type} .
   ?{query_type_lower} rdfs:label ?{query_type_lower}_label .
   ?{query_type_lower} tcga:{has} ?{underscored} .
-}}
 """
         ).format(
             query_type_lower=query_type_lower,
             query_type=query_type,
             underscored=underscored,
             has=has
+        ) + (
+"""
+}
+""" if query_type_lower != 'file' else
+"""
+?file tcga:hasExperimentalStrategy ?xs .
+?xs rdfs:label ?xs_label .
+filter(?xs_label="RNA-Seq") .
+
+?file tcga:hasDataSubtype ?subtype .
+?subtype rdfs:label ?subtype_label .
+filter(?subtype_label="Unaligned reads") .
+}
+"""
         )
         sparql.setQuery(current_query)
 
@@ -122,14 +143,27 @@ WHERE
   ?{query_type_lower} rdfs:label ?{query_type_lower}_label .
   ?{query_type_lower} tcga:{has} ?{underscored} .
   ?{underscored} rdfs:label ?{underscored}_label .
-}}
 """
-            ).format(
-                query_type_lower=query_type_lower,
-                query_type=query_type,
-                underscored=underscored,
-                has=has
-            )
+).format(
+            query_type_lower=query_type_lower,
+            query_type=query_type,
+            underscored=underscored,
+            has=has
+        ) + (
+"""
+}
+""" if query_type_lower != 'file' else
+"""
+?file tcga:hasExperimentalStrategy ?xs .
+?xs rdfs:label ?xs_label .
+filter(?xs_label="RNA-Seq") .
+
+?file tcga:hasDataSubtype ?subtype .
+?subtype rdfs:label ?subtype_label .
+filter(?subtype_label="Unaligned reads") .
+}
+"""
+        )
             sparql.setQuery(current_query)
 
             sparql.setReturnFormat(JSON)

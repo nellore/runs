@@ -9,3 +9,4 @@ python cgc_tcga_metadata.py Aliquot | gzip -9 >aliquot.tsv.gz
 python cgc_tcga_metadata.py DrugTherapy | gzip -9 >drug_therapy.tsv.gz
 python cgc_tcga_metadata.py RadiationTherapy | gzip -9 >radiation_therapy.tsv.gz
 python cgc_tcga_metadata.py FollowUp | gzip -9 >follow_up.tsv.gz
+python cgc_tcga_metadata.py File | gzip -9 >file.tsv.gz
