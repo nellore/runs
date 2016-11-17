@@ -71,7 +71,7 @@ WHERE
     data = {}
     fields = set()
     for has in hases:
-        after_has = has[3:]
+        after_has = has[3:] if has[:3].lower() == 'has' else has
         underscored = ''.join([('_' + letter.lower() if letter.isupper() 
                                     and (i > 0
                                          and after_has[i-1].islower())
