@@ -1816,4 +1816,4 @@ Below, if an RNAME is not in the chromosomal assembly, it's ignored.
 (chrUn_gl000211, 107062, 107221) not recorded.
 (chrUn_gl000211, 135782, 141723) not recorded.
 (chrUn_gl000211, 141794, 145846) not recorded.
-hg19 annotations contributed 506105 junctions, and liftover of hg38 annotations contributed an additional 31680 junctions.
+hg19 annotations contributed 505314 junctions, and liftover of hg38 annotations contributed an additional 31680 junctions.
