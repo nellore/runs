@@ -62,11 +62,11 @@ if __name__ == '__main__':
     max_id = -1
     for project_path in glob.glob(os.path.join(args.recount_dir, '*')):
         project = project_path.rpartition('/')[2]
-        with gzip.open(
-                os.path.join(project_path,
+        junction_file = os.path.join(project_path,
                                 project
                                     + '.junction_id_with_transcripts.bed.gz')
-                        ) as junction_stream:
+        if not os.path.exists(junction_file): continue
+        with gzip.open(junction_file) as junction_stream:
             for line in junction_stream:
                 chrom, start, end, name = line.strip().split('\t')[:4]
                 name = int(name.partition('|')[0])
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             junctions = {}
             jx_dump_count += 1
     if junctions:
-        # Dump junctions and start over; this limits size of dictionary
+        # Dump rest of junctions
         with open(os.path.join(
                         temp_dir, str(jx_dump_count) + '.junc'
                     ), 'w') as junction_stream:
