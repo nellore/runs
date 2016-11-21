@@ -96,17 +96,20 @@ if __name__ == '__main__':
     os.chdir(temp_dir)
     subprocess.check_call(
             ('set -exo pipefail; '
-             'cat *.junc | sort -k1,1 -k2,2n -k3,3n -u | gzip >{before_tcga}; '
+             'cat *.junc | sort -T {temp_dir} -k1,1 -k2,2n -k3,3n -u'
+             ' | gzip >{before_tcga}; '
              'rm -f *.junc; '
              '(gzip -cd {before_tcga}; gzip -cd {tcga_junctions}'
              ' | awk \'{{$2 -= 1; $3 -= 1; printf $1; '
                        'for (i=2;i<=NF;i++) {{printf "\t" $i}} printf "\n"}}\''
-             ') | sort -k1,1 -k2,2n -k3,3n | gzip >sorted_junctions.tsv.gz'
+             ') | sort -T {temp_dir} -k1,1 -k2,2n -k3,3n'
+             ' | gzip >sorted_junctions.tsv.gz'
              ).format(
                     before_tcga=os.path.join(
                         args.output_dir, 'recount_junctions_before_tcga.tsv.gz'
                     ),
-                    tcga_junctions=args.tcga_junctions
+                    tcga_junctions=args.tcga_junctions,
+                    temp_dir=args.temp_dir
                 ),
             executable='/bin/bash',
             shell=True
