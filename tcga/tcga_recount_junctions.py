@@ -95,7 +95,7 @@ if __name__ == '__main__':
                     ), 'w') as junction_stream:
             for junction in junctions:
                 print >>junction_stream, '\t'.join(
-                            junction + (junctions[junction],)
+                            junction + (str(junctions[junction]),)
                         )
 
     # Merge junction files
