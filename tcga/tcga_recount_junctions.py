@@ -147,7 +147,7 @@ if __name__ == '__main__':
             ) as coverage_stream:
         for key, group in itertools.groupby(
                 junction_stream, key=lambda x: x.split('\t')[:3]
-            )
+            ):
             group = [line.strip().split('\t') for line in list(group)]
             if len(group) == 2:
                 # There's already a junction ID
