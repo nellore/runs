@@ -85,7 +85,7 @@ if __name__ == '__main__':
                             )
             junctions = {}
             jx_dump_count += 1
-            processed += 1
+        processed += 1
         sys.stdout.write('Projects processed: {}\r'.format(processed))
         sys.stdout.flush()
     if junctions:
