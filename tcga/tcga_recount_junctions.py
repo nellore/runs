@@ -87,6 +87,7 @@ if __name__ == '__main__':
             jx_dump_count += 1
             processed += 1
         sys.stdout.write('Projects processed: {}\r'.format(processed))
+        sys.stdout.flush()
     if junctions:
         # Dump rest of junctions
         with open(os.path.join(
