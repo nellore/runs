@@ -13,6 +13,7 @@ import glob
 import gzip
 import itertools
 import shutil
+import sys
 
 if __name__ == '__main__':
     import argparse
