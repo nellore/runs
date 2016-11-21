@@ -12,6 +12,7 @@ import subprocess
 import glob
 import gzip
 import itertools
+import shutil
 
 if __name__ == '__main__':
     import argparse
@@ -54,7 +55,7 @@ if __name__ == '__main__':
         if os.path.isdir(args.output_dir): pass
 
     temp_dir = tempfile.mkdtemp(dir=args.temp_dir)
-    atexit.register(shutil.rmtree, temp_dir)
+    #atexit.register(shutil.rmtree, temp_dir)
 
     jx_dump_count = 0
     junctions = {}
@@ -109,7 +110,7 @@ if __name__ == '__main__':
                         args.output_dir, 'recount_junctions_before_tcga.tsv.gz'
                     ),
                     tcga_junctions=args.tcga_junctions,
-                    temp_dir=args.temp_dir
+                    temp_dir=temp_dir
                 ),
             executable='/bin/bash',
             shell=True
