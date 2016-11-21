@@ -60,6 +60,7 @@ if __name__ == '__main__':
     jx_dump_count = 0
     junctions = {}
     max_id = -1
+    processed = 0
     for project_path in glob.glob(os.path.join(args.recount_dir, '*')):
         project = project_path.rpartition('/')[2]
         junction_file = os.path.join(project_path,
@@ -83,6 +84,8 @@ if __name__ == '__main__':
                             )
             junctions = {}
             jx_dump_count += 1
+            processed += 1
+        sys.stdout.write('Projects processed: {}\r'.format(processed))
     if junctions:
         # Dump rest of junctions
         with open(os.path.join(
