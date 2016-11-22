@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
     # Get sample ID offset and write final sample ID file
     with open(
-                os.path.join(args.output_dir, 'sample_ids.tsv')
+                os.path.join(args.output_dir, 'sample_ids.tsv'), 'w'
             ) as output_stream:
         with open(
                 os.path.join(args.recount_dir, 'sample_ids.tsv')
@@ -136,7 +136,7 @@ if __name__ == '__main__':
             for line in id_stream:
                 current_id, gdc_uuid = line.strip().split('\t')
                 print >>output_stream, '\t'.join(
-                        str(int(current_id) + id_offset), 'TCGA', gdc_uuid
+                        [str(int(current_id) + id_offset), 'TCGA', gdc_uuid]
                     )
 
     # Write TCGA junction files; pick up junction IDs where they were left off
@@ -165,8 +165,10 @@ if __name__ == '__main__':
                 tokens = group[1]
             else:
                 assert len(group) == 1
+                if len(group[0]) == 4: continue
                 current_id += 1
                 junction_id = current_id
+                tokens = group[0]
             print >>bed_stream, '\t'.join(tokens[:3] + [
                     str(junction_id), '1000', tokens[4]
                 ])
