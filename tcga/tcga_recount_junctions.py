@@ -107,7 +107,7 @@ if __name__ == '__main__':
              'rm -f *.junc; '
              '(gzip -cd {before_tcga}; gzip -cd {tcga_junctions}'
              ' | awk \'{{$2 -= 1; $3 -= 1; printf $1; '
-                       'for (i=2;i<=NF;i++) {{printf "\t" $i}} printf "\n"}}\''
+                     'for (i=2;i<=NF;i++) {{printf "\\t" $i}} printf "\\n"}}\''
              ') | sort -T {temp_dir} -k1,1 -k2,2n -k3,3n'
              ' | gzip >sorted_junctions.tsv.gz'
              ).format(
