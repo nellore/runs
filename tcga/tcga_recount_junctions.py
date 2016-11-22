@@ -146,7 +146,7 @@ if __name__ == '__main__':
             ) as junction_stream, open(
                 os.path.join(
                         args.output_dir,
-                        'TCGA.junction_id.bed'
+                        'TCGA.junction_ids.bed'
                     ), 'w'
             ) as bed_stream, open(
                 os.path.join(

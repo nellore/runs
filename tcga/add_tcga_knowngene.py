@@ -88,7 +88,7 @@ if __name__ == '__main__':
         assert bed.endswith('.bed'), (
                 '{} does not have extension ".bed".'.format(bed)
             )
-        modified_bed_filename = bed[:-7] + '_with_transcripts.bed.gz'
+        modified_bed_filename = bed[:-5] + '_with_transcripts.bed.gz'
         with gzip.open(modified_bed_filename, 'w') as output_stream, open(
                 bed
             ) as input_stream:
