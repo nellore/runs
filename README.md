@@ -6,7 +6,10 @@
 See [`gtex/`](gtex/) for how to rerun GTEx alignment jobs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/) and how to reproduce figures from the Rail-dbGaP paper.
 
 ## SRA
-See [`sra/`](sra/) for how to rerun SRA alignment jobs GTEx on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/) and how to reproduce figures from the paper *Human splicing diversity across the Sequence Read Archive*.
+See [`sra/`](sra/) for how to rerun SRA alignment jobs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/) and how to reproduce figures from the paper *Human splicing diversity across the Sequence Read Archive*.
+
+## TCGA
+See [`tcga/`](tcga/) for how to rerun TCGA alignment jobs on [Amazon Elastic MapReduce](https://aws.amazon.com/elasticmapreduce/).
 
 # License
 
