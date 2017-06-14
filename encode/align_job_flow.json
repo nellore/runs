@@ -33,7 +33,7 @@
                     "-partitioner",
                     "org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner",
                     "-input",
-                    "hdfs:///encode_intermediates/preprocess/push",
+                    "hdfs:///encode_intermediates/preprocess",
                     "-output",
                     "hdfs:///encode_intermediates/align_reads",
                     "-mapper",
