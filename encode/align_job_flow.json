@@ -5,7 +5,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=3456",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -19,7 +19,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "mapreduce.reduce.memory.mb=20138",
                     "-D",
@@ -54,7 +54,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=3456",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -68,7 +68,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -99,7 +99,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=3456",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -113,7 +113,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -144,7 +144,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -158,7 +158,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -189,7 +189,52 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=1",
+                    "-D",
+                    "stream.num.map.output.key.fields=3",
+                    "-D",
+                    "mapreduce.partition.keypartitioner.options=-k1,3",
+                    "-D",
+                    "elephantbird.use.combine.input.format=true",
+                    "-D",
+                    "elephantbird.check.is.splitable=false",
+                    "-D",
+                    "elephantbird.lzo.output.index=true",
+                    "-D",
+                    "elephantbird.combine.split.size=268435456",
+                    "-D",
+                    "elephantbird.combined.split.count=192",
+                    "-D",
+                    "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
+                    "-D",
+                    "io.compression.codec.lzo.class=com.hadoop.compression.lzo.LzoCodec",
+                    "-libjars",
+                    "/local/libraries/hadoop-lzo-release-0.4.20/target/hadoop-lzo-0.4.20.jar,/local/jar/relevant-elephant.jar,/local/jar/custom-output-formats.jar",
+                    "-partitioner",
+                    "org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner",
+                    "-input",
+                    "hdfs:///encode_intermediates/junction_filter/collect",
+                    "-output",
+                    "hdfs:///encode_intermediates/junction_collect",
+                    "-mapper",
+                    "cut -f 2-",
+                    "-reducer",
+                    "/local/raildotbio/pypy-2.5-linux_x86_64-portable/bin/pypy /local/rail/src/rna/steps/junction_collect.py --out=hdfs:///encode_run/cross_sample_results --gzip-level 3 ",
+                    "-outputformat",
+                    "edu.jhu.cs.IndexedLzoTextOutputFormat",
+                    "-inputformat",
+                    "com.twitter.elephantbird.mapred.input.DeprecatedCombineLzoTextInputFormat"
+                ],
+                "Jar": "/home/hadoop/contrib/streaming/hadoop-streaming.jar"
+            },
+            "Name": "Write all detected junctions"
+        },
+        {
+            "ActionOnFailure": "",
+            "HadoopJarStep": {
+                "Args": [
+                    "-D",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=4",
                     "-D",
@@ -207,7 +252,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -238,7 +283,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -252,7 +297,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -301,7 +346,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -332,7 +377,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=11520",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -346,7 +391,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -379,7 +424,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=11520",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -393,7 +438,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -424,7 +469,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=13824",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -442,7 +487,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -473,7 +518,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=13824",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -487,7 +532,7 @@
                     "-D",
                     "elephantbird.combine.split.size=536870912",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "mapreduce.reduce.memory.mb=20138",
                     "-D",
@@ -522,7 +567,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=7",
                     "-D",
@@ -540,7 +585,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -571,7 +616,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=1",
                     "-D",
@@ -585,7 +630,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -601,7 +646,7 @@
                     "-mapper",
                     "cat",
                     "-reducer",
-                    "/local/raildotbio/pypy-2.5-linux_x86_64-portable/bin/pypy /local/rail/src/rna/steps/break_ties.py --exon-differentials --bowtie-idx /local/index/hg38/genome --partition-length 5000 --manifest hdfs:///encode_intermediates/MANIFEST --tie-margin 0  --output-bam-by-chr -- ",
+                    "/local/raildotbio/pypy-2.5-linux_x86_64-portable/bin/pypy /local/rail/src/rna/steps/break_ties.py --exon-differentials --bowtie-idx /local/index/hg38/genome --partition-length 5000 --manifest /local/encode/encode_shrna_knockdown_ployarna_metadata.tsv.files.rail.manifest.local.tsv --tie-margin 0  --output-bam-by-chr -- ",
                     "-outputformat",
                     "edu.jhu.cs.MultipleIndexedLzoTextOutputFormat",
                     "-inputformat",
@@ -616,7 +661,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -638,7 +683,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -687,7 +732,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -718,7 +763,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=13824",
                     "-D",
                     "stream.num.map.output.key.fields=4",
                     "-D",
@@ -732,7 +777,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -763,7 +808,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=13824",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -781,7 +826,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -814,7 +859,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=3",
                     "-D",
@@ -832,7 +877,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -863,7 +908,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=13824",
                     "-D",
                     "stream.num.map.output.key.fields=6",
                     "-D",
@@ -881,7 +926,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -912,7 +957,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=5",
                     "-D",
@@ -930,7 +975,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
@@ -961,7 +1006,7 @@
             "HadoopJarStep": {
                 "Args": [
                     "-D",
-                    "mapreduce.job.reduces=7",
+                    "mapreduce.job.reduces=192",
                     "-D",
                     "stream.num.map.output.key.fields=5",
                     "-D",
@@ -979,7 +1024,7 @@
                     "-D",
                     "elephantbird.combine.split.size=268435456",
                     "-D",
-                    "elephantbird.combined.split.count=7",
+                    "elephantbird.combined.split.count=192",
                     "-D",
                     "io.compression.codecs=org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec",
                     "-D",
