@@ -834,7 +834,7 @@
                     "-libjars",
                     "/local/libraries/hadoop-lzo-release-0.4.20/target/hadoop-lzo-0.4.20.jar,/local/jar/relevant-elephant.jar,/local/jar/custom-output-formats.jar",
                     "-files",
-                    "hdfs:///encode_intermediates/cross_sample_results/counts.tsv.gz#counts.tsv.gz",
+                    "hdfs:///encode_run/cross_sample_results/counts.tsv.gz#counts.tsv.gz",
                     "-partitioner",
                     "org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner",
                     "-input",
