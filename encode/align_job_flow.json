@@ -225,7 +225,7 @@
                     "-inputformat",
                     "com.twitter.elephantbird.mapred.input.DeprecatedCombineLzoTextInputFormat"
                 ],
-                "Jar": "/home/hadoop/contrib/streaming/hadoop-streaming.jar"
+                "Jar": ""
             },
             "Name": "Write all detected junctions"
         },
