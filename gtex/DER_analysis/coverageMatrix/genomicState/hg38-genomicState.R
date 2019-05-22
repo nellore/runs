@@ -4,7 +4,7 @@ library('devtools')
 library('TxDb.Hsapiens.UCSC.hg38.knownGene')
 
 ## Get data from Biomart
-system.time(xx <- makeTxDbPackageFromBiomart(version = '0.99', maintainer = 'Leonardo Collado-Torres <lcollado@jhu.edu>', author = 'Leonardo Collado-Torres <lcollado@jhu.edu>', destDir = '~/'))
+system.time(xx <- makeTxDbPackageFromBiomart(version = '0.99', maintainer = 'Leonardo Collado-Torres <lcolladotor@gmail.com>', author = 'Leonardo Collado-Torres <lcolladotor@gmail.com>', destDir = '~/'))
 
 ## Find sqlite file
 sql_file <- dir(file.path('~', 'TxDb.Hsapiens.BioMart.ENSEMBLMARTENSEMBL.GRCh38.p5', 'inst', 'extdata'), pattern = 'sqlite', full.names = TRUE)
